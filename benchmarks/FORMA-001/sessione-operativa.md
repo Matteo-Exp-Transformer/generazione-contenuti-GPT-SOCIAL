@@ -105,9 +105,9 @@ Mandato per una **nuova chat esecutrice**, non autorizzazione automatica a gener
 **Nota:** questo prompt non cambia brief, rubrica, gate o autorizzazioni. Il prossimo test preferito è T3 (B2) dopo approvazione B1; T1/T2 rimangono nel backlog.
 
 
-## Proposta LAYER-001 → workflow v0.2 (NON approvata)
+## Workflow creativo v0.2 — approvato per test LAYER-002 (2026-11-09)
 
-Questa sezione è una proposta di interfaccia conversazionale, non sostituisce il protocollo A/B G0–G5 né autorizza generazioni. Fonte osservativa: docs/audit-layer-001-handoff.md.
+L'utente ha approvato questa interfaccia per una run sperimentale LAYER-002. Non sostituisce il protocollo A/B G0–G5 né autorizza generazioni o modifiche all'ambiente. Fonte osservativa: docs/audit-layer-001-handoff.md.
 
 **Diagnosi:** 12 scelte provvisorie nella run LAYER-001 prima di qualsiasi fotografia; troppe microdecisioni e spiegazioni. Il benchmark precedente ha inoltre evidenziato il rischio di coprire la fotografia con pannelli e testo. Le misure di tempo/costo della run LAYER-001 non sono disponibili.
 
@@ -128,4 +128,4 @@ Questa sezione è una proposta di interfaccia conversazionale, non sostituisce i
 
 **Metriche della prossima run:** numero gate creativi (target ≤3), decisioni esplicite (≤3 prima della prima prova), parole mostrate per gate (≤120 escluse etichette anteprima), tentativi di generazione, minuti umani attivi, minuti macchina, costo incrementale verificato, revisite ai gate, errori critici, punteggio /100 secondo protocollo, output approvabile sì/no. Confrontare con LAYER-001 solo metriche osservabili: 12 scelte e nessuna fotografia generata; tempi e qualità finale non confrontabili. Fermarsi se dopo 3 gate non esiste una direzione approvata, se la prova viola aree protette o se occorre spesa/azione non autorizzata.
 
-**Compatibilità:** i tre gate sono un'interfaccia creativa proposta; G0–G5 del protocollo restano i gate sperimentali canonici. Non cambiare prompt A/B o risultati storici finché la proposta non è approvata e testata.
+**Compatibilità:** i tre gate sono l'interfaccia creativa sperimentale approvata; G0–G5 del protocollo restano i gate sperimentali canonici. Non cambiare prompt A/B o risultati storici senza un audit della run e ulteriore approvazione.
