@@ -8,3 +8,5 @@
 - 2026-11-09: repository minima iniziale; audit successivo di memory, app parquet e calendar backup per eventuali skill/system, senza import automatici.
 
 Decisioni ancora aperte: griglia definitiva, font/licenze, strumenti effettivi, asset, modalità di rendering, eventuali skill minime.
+
+- 2026-11-09: approvata per **test sperimentale**, non come protocollo canonico, la pipeline a **cono creativo adattivo**: fino a 3 direzioni iniziali, mix tra varianti, progressiva convergenza, interviste aperte, anteprime reali grandi in chat, codici V1/V2/V3 per varianti, A/B/C per testi e 1/2/3 per elementi fotografici, asset lock e modifiche circoscritte. Specifica e prompt in `docs/test-cono-creativo-v01.md`. I precedenti collage generativi **non** hanno verificato l'identità pixel della fotografia. Nuova run da zero e audit indipendente ancora da eseguire.
