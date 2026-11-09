@@ -42,3 +42,13 @@ I nomi sono quelli comunicati dalla sessione e non costituiscono link permanenti
 **Prossima decisione singola:** scegliere e autorizzare T1 oppure approvare B1 e il piano di T3; non generare né implementare automaticamente.
 
 Per metodo di replica, metriche, scheda-run e definizioni di costo: [protocollo.md](protocollo.md). Per gate e prompt di nuova chat: [sessione-operativa.md](sessione-operativa.md).
+
+
+## Localizzazione asset verificata su GitHub (2026-11-09)
+Commit di caricamento: [4d25bd85](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/commit/4d25bd85a5e571ca388b90b0406659b5fd65a279).
+I quattro file sono in **`forma - content/`** (non in `benchmarks/FORMA-001/assets/`):
+- [A1-post-completo.png](../../forma%20-%20content/A1-post-completo.png)
+- [A2-post-completo.png](../../forma%20-%20content/A2-post-completo.png)
+- [B1-fotografia.png](../../forma%20-%20content/B1-fotografia.png)
+- [manifest.json](../../forma%20-%20content/manifest.json)
+GitHub conferma esistenza e blob SHA dei file; il connettore non ha restituito i byte binari, quindi il confronto indipendente degli SHA-256 dichiarati nel manifest resta **non verificato**. L'agente deve usare il percorso reale e non chiedere di ricaricare asset già presenti.
