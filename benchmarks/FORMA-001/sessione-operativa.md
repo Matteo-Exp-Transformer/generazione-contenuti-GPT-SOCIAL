@@ -86,3 +86,20 @@ Applica la rubrica /100 del protocollo solo ai risultati osservabili. Distingui 
 
 ## Handoff per limite di contesto
 Non è disponibile una misura affidabile dei token consumati. Se la chat si avvicina a un limite pratico, consegnare: commit e file verificati; gate raggiunto; modelli e impostazioni; riferimenti agli asset; tentativi e tempi; costi; decisioni umane; QA svolto e mancante; problemi; prossima azione singola. Non duplicare tutto il brief.
+
+
+## Prompt 3 — Prosecuzione orientata alla fattibilità (2026-11-09)
+
+Mandato per una **nuova chat esecutrice**, non autorizzazione automatica a generare o modificare ambiente/repository:
+
+> Agisci come Senior Editorial Production Engineer per GPT SOCIAL. Leggi AGENTS.md, README.md, docs/decisioni.md e tutti i documenti di benchmarks/FORMA-001 nella repository https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL. Parti dallo stato verificato in risultati.md: 2 candidati A, 1 fotografia B1, nessun layout B2, nessun tempo storico misurato, costi per immagine ChatGPT non disponibili. Recupera gli asset originali dalla chat precedente o chiedi di allegarli; non assumere che i riferimenti temporanei siano persistenti.
+>
+> **Priorità:** misurare se si riesce a produrre un post davvero utilizzabile, con quanti tentativi, minuti umani, attesa macchina, crediti/quote e spesa monetaria. Non perfezionare inutilmente la direzione artistica. Non inventare costi, tempi o capacità. Separare costo incrementale, quote incluse, costo del lavoro e costo imputato dell'abbonamento.
+>
+> Avvia una nuova run con ID e cronometro dichiarato prima di qualsiasi azione. Verifica gli strumenti disponibili e la disponibilità reale di quote, annotando ciò che non è esposto. Presenta un piano minimo per utilizzare B1 come asset e produrre B2 editabile (sorgente HTML/CSS/SVG o equivalente già disponibile, PNG 1080×1350 sRGB, testi letteralmente esatti, nessuna dipendenza nuova). **B1 non è ancora approvata:** chiedi esplicitamente approvazione di B1 e del piano tecnico prima di creare B2. Non creare file, generare immagini, installare, spendere crediti o modificare repository prima di autorizzazione specifica. Budget esterno incrementale €0.
+>
+> Dopo autorizzazione, realizza un solo B2 minimo ma usabile; misura e verifica l'output, poi proponi una singola modifica del sottotitolo da replicare sul percorso A, con misurazione separata di tempo, tentativi, effetti collaterali e costo. Non avviare generazioni aggiuntive senza consenso. Valuta il primo output approvabile, non solo l'estetica; se fallisce, registra perché. Compila la scheda per ogni tentativo prevista in protocollo.md. Presenta prove e bozza di aggiornamento a risultati.md, chiedendo autorizzazione prima di scrivere. Un solo prossimo passo e handoff breve se serve.
+>
+> Non introdurre subagent o nuovi file di processo per inerzia. In caso di capacità di delega non disponibili, lavora direttamente e dichiaralo.
+
+**Nota:** questo prompt non cambia brief, rubrica, gate o autorizzazioni. Il prossimo test preferito è T3 (B2) dopo approvazione B1; T1/T2 rimangono nel backlog.
