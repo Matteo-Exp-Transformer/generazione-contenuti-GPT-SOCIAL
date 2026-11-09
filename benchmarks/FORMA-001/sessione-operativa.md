@@ -129,3 +129,19 @@ L'utente ha approvato questa interfaccia per una run sperimentale LAYER-002. Non
 **Metriche della prossima run:** numero gate creativi (target ≤3), decisioni esplicite (≤3 prima della prima prova), parole mostrate per gate (≤120 escluse etichette anteprima), tentativi di generazione, minuti umani attivi, minuti macchina, costo incrementale verificato, revisite ai gate, errori critici, punteggio /100 secondo protocollo, output approvabile sì/no. Confrontare con LAYER-001 solo metriche osservabili: 12 scelte e nessuna fotografia generata; tempi e qualità finale non confrontabili. Fermarsi se dopo 3 gate non esiste una direzione approvata, se la prova viola aree protette o se occorre spesa/azione non autorizzata.
 
 **Compatibilità:** i tre gate sono l'interfaccia creativa sperimentale approvata; G0–G5 del protocollo restano i gate sperimentali canonici. Non cambiare prompt A/B o risultati storici senza un audit della run e ulteriore approvazione.
+
+
+## LAYER-002 — feedback in corso e restart R2 (2026-11-09)
+
+**Stato:** l'utente ha approvato la direzione fotografica A e poi l'opzione compositiva B (interno vissuto); non è stata autorizzata né eseguita alcuna generazione. Prima della prova ha chiesto di cambiare metodo e ripartire da zero. La schermata di opzioni chiuse su posizione, luce e numero di oggetti è stata rifiutata come esperienza troppo rigida. Le scelte creative precedenti sono **osservazioni della run interrotta, non vincoli del restart**.
+
+**Regola sperimentale aggiornata — v0.3 (sostituisce v0.2 soltanto per l'interfaccia creativa, non il protocollo FORMA-001):**
+- Sequenza obbligatoria per ogni macro-gate: **proposta del gate → breve intervista aperta → riepilogo/approvazione → avanzamento di UN layer**. Non passare al gate successivo prima di aver offerto l'intervista, anche se la scelta sembra completa.
+- Il gate presenta in poche righe: **su cosa lavoriamo, cosa cambia visivamente, quando/perché un professionista lo decide**. Mostrare 2 alternative realmente distinguibili quando aiutano; non trasformare ogni dettaglio in un sondaggio o in un form.
+- Dopo il gate, una **sola domanda aperta**: «Vuoi indicarmi elementi da inserire, posizione, stile o altri vincoli? Puoi anche rispondere “interpreta tu”.» Le istruzioni possono essere libere, parziali o assenti. Nessun obbligo di compilare campi. Se mancano dettagli, l'agente propone scelte professionali motivate, senza bloccare la run.
+- Se l'utente anticipa indicazioni per layer futuri, **registrarle come vincoli/proposte per i rispettivi layer**, senza applicarle prematuramente né saltare gate o verifiche. Ogni layer resta revisionabile; evitare fretta di chiudere il post.
+- Ordine dei layer nel percorso B: **direzione/sfondo → fotografia e oggetti (posizioni, inquadratura, luce) → tipografia/layout → verifica e revisione**. Un gate può accorpare decisioni tecniche, ma non eliminare l'intervista aperta e la conferma umana.
+- Per la fotografia, chiedere autorizzazione **separata ed esplicita** prima di generare. Non creare immagini, file, installazioni o spese per effetto della sola scelta di un gate. Budget esterno incrementale €0.
+- Testare se il flusso è meno oneroso misurando: domande aperte, richieste di chiarimento superflue, parole mostrate, correzioni richieste, decisioni umane, generazioni autorizzate, qualità finale e tempi se disponibili. Non dichiarare qualità o risparmio dimostrati prima della prova.
+
+**Restart:** ID **LAYER-002-R2**. Azzerare le scelte visive della run interrotta; mantenere soltanto brief FORMA-001, protocollo canonico, vincoli generali approvati (fotografia protagonista, niente pannelli opachi non autorizzati), e metodo v0.3. Iniziare dal **Gate 1 — direzione visiva**, presentare opzioni concise e chiudere con **intervista aperta**, non con un questionario. Non generare alcuna immagine finché non arriva un'esplicita autorizzazione.
