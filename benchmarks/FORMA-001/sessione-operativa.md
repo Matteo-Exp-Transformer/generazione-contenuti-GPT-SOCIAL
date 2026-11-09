@@ -103,3 +103,29 @@ Mandato per una **nuova chat esecutrice**, non autorizzazione automatica a gener
 > Non introdurre subagent o nuovi file di processo per inerzia. In caso di capacità di delega non disponibili, lavora direttamente e dichiaralo.
 
 **Nota:** questo prompt non cambia brief, rubrica, gate o autorizzazioni. Il prossimo test preferito è T3 (B2) dopo approvazione B1; T1/T2 rimangono nel backlog.
+
+
+## Proposta LAYER-001 → workflow v0.2 (NON approvata)
+
+Questa sezione è una proposta di interfaccia conversazionale, non sostituisce il protocollo A/B G0–G5 né autorizza generazioni. Fonte osservativa: docs/audit-layer-001-handoff.md.
+
+**Diagnosi:** 12 scelte provvisorie nella run LAYER-001 prima di qualsiasi fotografia; troppe microdecisioni e spiegazioni. Il benchmark precedente ha inoltre evidenziato il rischio di coprire la fotografia con pannelli e testo. Le misure di tempo/costo della run LAYER-001 non sono disponibili.
+
+**Tre gate creativi + verifica:**
+1. **Direzione:** messaggio, atmosfera, rapporto immagine/testo; approvazione umana.
+2. **Composizione + fotografia:** soggetto, posizione, sfondo, camera, luce, materiali e aree protette in un'unica scelta fra 2–3 proposte; approvazione umana. Sul percorso B, chiedere qui autorizzazione separata per UNA prima generazione fotografica, prima della tipografia di dettaglio.
+3. **Tipografia + layout:** gerarchia, stile e collocazione del testo in 2–3 alternative basate sull'asset effettivo; approvazione umana. L'agente sceglie metriche, spaziature e allineamenti tecnici, verificandoli sul rendering finale.
+4. **Verifica:** output reale, controllo su smartphone, correzione mirata, decisione di accettazione. Ogni generazione, creazione file o modifica dell'ambiente richiede la specifica autorizzazione prevista dalle regole vigenti.
+
+**Template di risposta (max 120 parole prima delle anteprime):**
+- **Decidiamo:** [una macrodecisione].
+- **Cambia:** [effetto concreto nell'immagine].
+- **Perché ora:** [quando/come decide un professionista, una frase].
+- **Opzioni:** A/B, massimo C, differenze visibili e un compromesso ciascuna; anteprime comparabili se disponibili e fedeltà dichiarata (schema ≠ fotografia/render reale).
+- **Consiglio:** [una proposta motivata]. **Scegli:** A/B/C, modifica o torna al gate precedente.
+
+**Delegare:** margini numerici, gutter, micro-crop, scelta fra font equivalenti compatibili con licenze, kerning, contrasto e QA tecnico; chiedere all'umano solo se cambia la direzione creativa, oscura il soggetto o viola il brief. Nessun pannello opaco sopra la fotografia senza approvazione esplicita.
+
+**Metriche della prossima run:** numero gate creativi (target ≤3), decisioni esplicite (≤3 prima della prima prova), parole mostrate per gate (≤120 escluse etichette anteprima), tentativi di generazione, minuti umani attivi, minuti macchina, costo incrementale verificato, revisite ai gate, errori critici, punteggio /100 secondo protocollo, output approvabile sì/no. Confrontare con LAYER-001 solo metriche osservabili: 12 scelte e nessuna fotografia generata; tempi e qualità finale non confrontabili. Fermarsi se dopo 3 gate non esiste una direzione approvata, se la prova viola aree protette o se occorre spesa/azione non autorizzata.
+
+**Compatibilità:** i tre gate sono un'interfaccia creativa proposta; G0–G5 del protocollo restano i gate sperimentali canonici. Non cambiare prompt A/B o risultati storici finché la proposta non è approvata e testata.
