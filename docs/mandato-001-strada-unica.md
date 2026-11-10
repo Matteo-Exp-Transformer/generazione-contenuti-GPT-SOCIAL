@@ -9,6 +9,33 @@ Entro il **13/11** sapere se la strada «foto bloccata + render deterministico»
 post sulla propria foto; altrimenti passare a Canva/Figma via MCP. Se i risultati sono lontani, non si
 insiste: si cambia strada.
 
+## 0-bis. Direzione approvata e mandato esecutivo (utente, 2026-11-10)
+La revisione Claude recepita in questo mandato e le decisioni dell'utente concordate con lui
+sono la direzione operativa della repo. Le successive decisioni esplicite dell'utente prevalgono;
+le proposte di un agente non diventano decisioni senza approvazione. F0 riporta questa conferma
+in `docs/decisioni.md`. Lo storico non riapre strade superate.
+
+La prossima run Sol 6.1 è il Senior Orchestrator con un sub agent esecutore:
+- Massimo due task delegati complessivi: F0 (§5), poi engine F1-A (§6). Nessun terzo task,
+  retry delegato o ciclo supplementare dopo il secondo; gli incompleti si dichiarano.
+- Contesto orchestratore ≤170k token. Legge solo AGENTS.md, questo mandato,
+  skills/post-director/SKILL.md e tests/creative-console/*.py; nessuna lettura storica.
+  Sono consentiti metadati Git/PR, diff e output necessari alle verifiche e il readback dei file
+  prodotti. Il sub agent legge i file operativi da modificare, archivia lo storico senza studiarlo.
+- Brief autosufficienti; report del sub agent ≤300 parole con diff e output dei test
+  (output esteso nella PR, riferimento e sintesi nel report).
+- Nessuna spesa, installazione, download di asset/dipendenze, generazione AI o foto reale.
+  Restano necessari l'accesso ai sorgenti della repo e la fixture sintetica prodotta via codice.
+- Merge autorizzato per PR #14 e PR dei due task dopo verifica di diff e test pertinenti;
+  eliminare i branch conclusi dopo verifica di integrazione e dipendenze.
+  Se #14 risulta già merged, verificarlo e proseguire: non ripetere il merge.
+- L'engine passa con test sintetici verdi e output reale in PR. Questo NON è il PASS di TU-01:
+  il test sulla foto reale spetta al regista in una nuova chat ChatGPT avviata dall'utente.
+- Chiusura: aggiornare gate e «Ultimo passaggio» in STATO.md; Fatto (prove), Stato,
+  Prossimo passo; prompt ≤180 parole per il regista, con repo, STATO.md, mandato e skill,
+  esecuzione TU-01 e consegna della scheda per Gate D. F1-B è un'opzione separata,
+  avviabile dall'utente in parallelo, non una terza delega di questa run.
+
 ## 1. Perché (sintesi audit)
 - Tre tentativi su foto reale (Pilota A, T1-01, T1-02): tutti FAIL. Causa già diagnosticata nella
   [PR #11](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/11):
@@ -27,7 +54,7 @@ insiste: si cambia strada.
 | **Gate D** | Utente (+ revisore, una volta) | 30 min, 13/11 | Strada scelta, registrata in `decisioni.md` |
 | **F2** Pilota prodotto | Regista post + utente | 1 post reale, entro 17/11 | Post consegnato con la skill `post-director` |
 
-F1-A e F1-B corrono in parallelo per non perdere giorni se A fallisce. Toccano file diversi
+F1-B, se attivata dall'utente separatamente, corre in parallelo a F1-A per non perdere giorni se A fallisce. Toccano file diversi
 (`engine/` contro `evidence/tu-01-mcp/`). Superato un timebox senza uscita, la fase è FAIL: niente proroghe
 automatiche, decide l'utente al Gate D.
 
@@ -57,7 +84,7 @@ Il voto di qualità lo dà solo l'utente. Mai stimare minuti o voti.
 - **Falliscono entrambe:** stop e riformulazione del prodotto con l'utente. Non nuovi micro-gate.
 - **Kill rapido MCP:** se in 30 minuti uno strumento non sa importare la foto, inserire un testo
   modificabile ed esportare PNG, è scartato; si prova il secondo (massimo due strumenti).
-- Prima del Gate D nessun test oltre TU-01.
+- Prima del Gate D nessun nuovo gate prodotto oltre TU-01; ammessi i test automatici dell'engine al §6.
 
 ## 5. F0 — Consolidamento (Costruttore)
 1. **Integrare o chiudere:** PR #11 (merge come archivio); branch `docs/g-ui-02-evidence-20261110`
@@ -77,8 +104,8 @@ Il voto di qualità lo dà solo l'utente. Mai stimare minuti o voti.
 **Criterio:** un agente nuovo legge `AGENTS.md` + `STATO.md` (≤ 130 righe in tutto) e sa cosa fare.
 
 ## 6. F1-A — Strada A (Costruttore)
-- Nuovo `engine/`: `render(post.json, foto) → PNG` con tre tipi di layer: foto bloccata (crop/scala),
-  testo (font a licenza libera, versione fissata), forma/colore. Schema = quello della skill
+- Nuovo `engine/` con un solo file Python, stdlib + Pillow già disponibile, eseguibile anche nel Python della chat ChatGPT: `render(post.json, foto) → PNG` con tre tipi di layer: foto bloccata (crop/scala),
+  testo (font predefinito Pillow o già presente, versione registrata), forma/colore. Schema = quello della skill
   [`post-director`](../skills/post-director/SKILL.md).
 - **Test:** hash della foto sorgente; pixel fuori dall'area testo identici tra A e B; A→B→A identico.
   Includere le correzioni emerse dall'audit sull'harness 002: colori HEX normalizzati, `revision`
@@ -109,10 +136,11 @@ Ruoli
 - Revisore (sessione nuova): solo al gate indicato da STATO.md. Nessun audit di audit.
 
 Regole
+- Direzione: MANDATO-001 recepisce Claude e le decisioni utente; prevalgono le successive decisioni esplicite.
 - Fonti: STATO.md = stato corrente (si sovrascrive); decisioni.md = decisioni (si aggiunge una riga).
 - Fatto / ipotesi / proposta sempre distinti. Mai un PASS non eseguito.
 - Spese, installazioni, foto in repo, push su main: solo con ok dell'utente.
-- Un branch per mandato; si elimina dopo il merge. Prove in evidence/<caso>/ o nella PR.
+- Un branch per task del mandato; si elimina dopo il merge. Prove in evidence/<caso>/ o nella PR.
 - Vietati nuovi file di handoff, audit, report o protocollo: si aggiorna STATO.md.
 - Un file nuovo in docs/ solo se ne sostituisce o archivia uno esistente.
 
