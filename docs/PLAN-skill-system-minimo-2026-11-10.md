@@ -1,66 +1,58 @@
-# PLAN — Sistema minimo agentico per GPT SOCIAL
-Data: 2026-11-10 · Stato: PROPOSTA da revisionare, NON protocollo approvato
-Branch: `proposal/skill-system-minimo-plan-2026-11-10`
-Ambito esclusivo: routing del contesto, progettazione, esecuzione, verifica, debug/fix, chiusura e miglioramento del metodo. Non cambia il workflow creativo e non implementa codice.
+# Piano consolidato per la continuità di GPT SOCIAL
 
-## 1. Evidenze verificate e trasferibilità
-| Origine | Evidenza (file reale, main al momento dell'audit) | Lezione | Scelta GPT SOCIAL |
-|---|---|---|---|
-| CALENDARIO-V2 | `AGENTS.md`, `_skill-system-v0/00_BUSSOLA_SKILL.md` | Routing area/profilo; caricare solo il contesto pertinente, intensità light/standard/deep | ADATTARE in un routing corto dentro AGENTS, non copiare la bussola e tutte le skill |
-| CALENDARIO-V2 | `_skill-system-v0/comunicazione/CHIUSURA_SESSIONE.md` | Resoconto su diff reale, test effettuati, apprendimento; revisione esterna distinta | ADATTARE chiusura breve e proporzionale; no hook o fascicoli ad ogni micro-task |
-| memory | `AGENTS.md`, `.claude/skills/progetta/SKILL.md` | Distinguere fatti/incognite, premortem, brief con «finito quando»; lettura selettiva delle fonti | ADATTARE nelle task non banali, senza duplicare wiki né skill esterne |
-| memory | `.claude/skills/chiudi/SKILL.md` | Stato corrente corto nella repo del progetto; memoria storica separata | ADATTARE un solo stato sintetico *solo se* gli handoff esistenti non bastano; NON copiare dati privati di memory |
-| app-parquet | `AGENTS.md`, `METODO.md`, `docs/procedure/parallelo.md`, `REGISTRO.md` | Una task delimitata, branch e PR; test e prove reali; indipendenza di revisione; lavoro parallelo solo su superfici isolate; metodo evoluto da misure | RIUSARE il contratto di task e verificabilità, ADATTARE la review proporzionale; SCARTARE orchestrazione rigida e registro pesante iniziale |
-| GPT SOCIAL | `AGENTS.md`, `README.md`, `docs/decisioni.md`, `docs/handoff-agente-sistemi.md`, `docs/audit-layer-001-handoff.md` | Già fissati fonte unica, separazione fatti/ipotesi, nessun push main, niente skill per inerzia, test reali e handoff senza duplicazione | PRESERVARE: integrare, non sostituire |
+10 novembre 2026 · Proposta dell’agente 2, in revisione. La fusione del documento e l’autorizzazione a intervenire sul metodo sono decisioni distinte.
 
-**Limite dell'audit:** ricognizione mirata di file guida, skill e procedure; non verifica empirica del funzionamento di tutti gli hook, della CI o delle run; nessuna misurazione di token su GPT SOCIAL. Le lezioni sono proposte di trasferimento, non performance dimostrate.
+## Conclusione e ambito
 
-## 2. Architettura iniziale minima: zero nuove skill obbligatorie
-Preservare come fonti canoniche `AGENTS.md` (ingresso e regole), `docs/decisioni.md` (decisioni), `README.md` (indice), `benchmarks/<ID>/protocollo.md` e `risultati.md` (prove della run), il PRD per prodotto; handoff/audit specifici restano evidenze storiche e NON diventano secondi registri di decisione.
+Prima scelta proposta: provare una ripresa con le istruzioni esistenti. Una patch serve solo se il confronto individua una lacuna attribuibile alle istruzioni. Il problema osservabile oggi è ritrovare la prova pertinente sul ramo giusto e interpretarne i limiti. Nessuna necessità dimostrata di installare una skill per progettazione, sviluppo o debug. Questo documento serve per la revisione e il pilot, senza diventare lettura obbligatoria di ogni run.
 
-**Intervento proposto solo dopo review:** estendere `AGENTS.md` di circa 25–45 righe, evitando nuovi documenti attivi:
-1. **Instradamento:** richiesta → profilo **Progetta / Esegui / Verifica-fixa / Meta** → leggere solo README + decisioni + brief/protocollo o file della parte interessata. Non caricare tutti gli audit o repo esterne in automatico.
-2. **Contratto minimo di lavoro:** obiettivo concreto, in-scope/out-of-scope, evidenza attesa, criterio «finito quando», grado di rischio, eventuali fatti mancanti e chi può sbloccarli.
-3. **Ciclo operativo:** osserva/riproduci → ipotesi causa → intervento minimo → riprova stesso caso → controllo regressioni mirato → diff e prove → PR. Se non riproducibile: dichiarare la limitazione, non «fixato».
-4. **Gate di rischio:** light = documentazione o fix isolato, test pertinente + nota minima; standard = modifica multi-file / flusso, piano breve + test + PR; deep = spesa, permessi, dati sensibili, produzione, cambio irreversibile o pipeline di asset, premortem e revisore indipendente prima della fusione. Nessun automatismo sulla generazione d'immagini.
-5. **Chiusura:** file cambiati, esito di comandi/prove realmente eseguiti, limiti, decisioni proposte/approvate, unico passo successivo, prompt per nuova chat se richiesto. Aggiornare il file canonico esistente; non creare report di sessione se l'informazione ha già casa.
-6. **Branch safety:** branch isolato, PR verso main, nessun merge/push su main senza via libera; verificare sempre ref e SHA di partenza. Per lavori paralleli evitare stessi file canonici / asset / run.
+## Verifica delle fonti
 
-**Nessuna installazione, hook, CI nuova, subagente o duplicazione CLAUDE/AGENTS proposta nella fase zero.** Una `SKILL.md` locale specifica (es. visual QA o gestione asset) diventa candidata solo dopo almeno due difetti reali ricorrenti che un routing breve non risolve; attribuire owner, costo di lettura, prova di utilità e criterio di rimozione.
-
-## 3. Distinzione progettazione vs esecuzione
-- **Progetta:** leggere vincoli canonici e osservazioni pertinenti, separare fatto/ipotesi/decisione; individuare 3 fallimenti possibili se il lavoro è standard/deep. Consegna patch plan e test di accettazione, senza scambiare proposta per approvazione.
-- **Esegui:** riceve ambito chiuso; crea branch o usa branch esplicitamente assegnato; cambia solo file richiesti e produce evidenze. Non riapre scelte utente senza nuovo dato.
-- **Verifica/fixa:** riproduce un bug con prova, isola causa, propone o applica fix secondo mandato, confronta prima/dopo, riporta regressioni. Review indipendente su SHA esatto senza confondere consenso fra modelli e test.
-- **Meta:** valuta costi, errori ricorrenti e attrito umano; può proporre una variazione del metodo ma non promuoverla a nuova regola senza esplicita approvazione.
-
-## 4. Tranche, gates e rollback
-**G0 — Review indipendente:** comparare questo piano con istruzioni canoniche e branch attivi; trovare contraddizioni e scope creep. Output: revisione documentale e premortem, zero esecuzione creativa.
-**G1 — Patch minima:** dopo approvazione, modificare unicamente `AGENTS.md` (e il link README solo se strettamente indispensabile); testare lettura breve da una nuova chat con task fittizia. Evidenza: diff, percorso di lettura, criterio di completamento; rollback con revert della PR.
-**G2 — Pilot:** una run di produzione guidata *autorizzata separatamente*, con anteprima vera inline e preservazione degli asset; confrontare turno fino al primo visual, numero correzioni, duplicazioni doc, prove esplicite, costo/tempo se misurabili. Mai inventare metriche.
-**G3 — Estensione condizionale:** solo dai difetti osservati, scegliere fra nessun cambiamento, migliore routing o una skill specifica. Riesaminare dopo almeno due run comparabili.
-
-## 5. Premortem preliminare e contromisure
-| Fallimento plausibile | Segnale/prevenzione | Verifica |
+| Fonte ispezionata | Evidenza e limite | Conseguenza per il piano |
 |---|---|---|
-| Skill system pesa più del lavoro | Nessuna skill obbligatoria; audit del contesto effettivamente letto | Nuova chat riesce a orientarsi usando 2–4 file |
-| Handoff e decisioni divergono | Un solo registro canonico; gli audit sono osservazioni | Controllo manuale di conflitti nel diff |
-| «Fix» basato su spiegazione, non prova | Riproduzione e post-fix con stesso caso; stato NON VERIFICATO se mancano tool | PR include comandi e risultati reali |
-| Review fra agenti è solo consenso retorico | Revisore cerca scenari falsificabili su SHA e prove | Almeno 3 controesempi in premortem, con rischio residuo |
-| Workflow tecnico soffoca creatività | Separare metodo interno e UX, output utente sintetico | Pilot misura turni fino alla prima anteprima reale |
-| Riscrittura sovrappone lavoro concorrente | Base/ref riletti; PR, no main; evitare file condivisi paralleli | Diff per filename, SHA e confronto branch prima di fondere |
-| Gestione asset introduce generazioni/costi non autorizzati | G0/G1 documentali; asset/generazioni con permesso esplicito | Nessun output grafico o spesa prima di G2 |
+| CALENDARIO-V2 · [ingresso operativo](https://github.com/Matteo-Exp-Transformer/CALENDARIO-V2/blob/e5aa72d4a1ce2c402d5ab66fe42ed87fe0b7053d/AGENTS.md), [bussola](https://github.com/Matteo-Exp-Transformer/CALENDARIO-V2/blob/e5aa72d4a1ce2c402d5ab66fe42ed87fe0b7053d/_skill-system-v0/00_BUSSOLA_SKILL.md), [chiusura](https://github.com/Matteo-Exp-Transformer/CALENDARIO-V2/blob/e5aa72d4a1ce2c402d5ab66fe42ed87fe0b7053d/_skill-system-v0/comunicazione/CHIUSURA_SESSIONE.md) | L’ingresso indirizza alle aree attraverso APP_CONTEXT_SKILL. La bussola v0 contiene segnaposto di progetto e stack. Profili, report e hook sono descritti. In questo audit nessuna misura del loro beneficio né esecuzione degli hook. | Riutilizzare il rinvio mirato. La presenza del modello non giustifica tre livelli di controllo in SOCIAL. |
+| memory · [istruzioni](https://github.com/Matteo-Exp-Transformer/memory/blob/f7ccf397998430d9ae178c7bda0453527cf52e86/AGENTS.md), [progetta](https://github.com/Matteo-Exp-Transformer/memory/blob/f7ccf397998430d9ae178c7bda0453527cf52e86/.claude/skills/progetta/SKILL.md), [chiudi](https://github.com/Matteo-Exp-Transformer/memory/blob/f7ccf397998430d9ae178c7bda0453527cf52e86/.claude/skills/chiudi/SKILL.md) | Il metodo colloca il lavoro nella repo del progetto. La skill di progetto prescrive una scheda controllata, la chiusura riscrive lo stato e deposita una nota. Sono istruzioni ispezionate. Il recupero riuscito di una sessione SOCIAL tramite queste skill resta da provare. | Conservare criterio di completamento e fonte locale. Evitare il doppio aggiornamento stato/nota. |
+| app-parquet · [metodo](https://github.com/Matteo-Exp-Transformer/app-parquet/blob/a7a9c800e1a7df9edc7ef2e43af7d30f6395918a/METODO.md), [registro T-02/T-03/T-03b](https://github.com/Matteo-Exp-Transformer/app-parquet/blob/a7a9c800e1a7df9edc7ef2e43af7d30f6395918a/REGISTRO.md), [parallelo](https://github.com/Matteo-Exp-Transformer/app-parquet/blob/a7a9c800e1a7df9edc7ef2e43af7d30f6395918a/docs/procedure/parallelo.md), [PR 3](https://github.com/Matteo-Exp-Transformer/app-parquet/pull/3) | T-03 registra un ramo negativo SQL rotto scoperto con controprova, una correzione al verdetto offline e rilievi successivi di Codex. Per la ricognizione a quattro agenti il registro riporta 424.408 token dei sottoagenti e costo principale non letto. Sono esiti registrati dal progetto. Nessun test rieseguito qui e nessuna stima trasferibile a SOCIAL. | Provare anche il caso che deve fallire. Separare la superficie condivisa dal semplice elenco dei file. Affidare a un secondo operatore un dubbio preciso solo se serve. |
+| GPT SOCIAL · [baseline PR 1](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/455a7508d09763af60ed2b7f321c4ba6e641ee8d/AGENTS.md), [registro FORMA](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/b85b7c1df5dfff6d5f2fee1fcde3cf1cd1f59e2b/benchmarks/FORMA-001/risultati.md), [decisioni del ramo creativo](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/b85b7c1df5dfff6d5f2fee1fcde3cf1cd1f59e2b/docs/decisioni.md), [audit console](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/b85b7c1df5dfff6d5f2fee1fcde3cf1cd1f59e2b/docs/audit-creative-console-android-handoff-2026-11-10.md), [audit Tattoo](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/b85b7c1df5dfff6d5f2fee1fcde3cf1cd1f59e2b/docs/audit-run-tattoo-console-guidata-2026-11-10.md) | Le regole d’ingresso e chiusura esistono. Il registro mostra attività dove l’indice dice ancora «non eseguito». La console ha prove Android circoscritte. L’audit successivo riporta il salto del pannello e una modifica non ricostruibile. Sono osservazioni archiviate con portata diversa. Qui si sono letti i documenti, senza usare Android, verificare i pixel o ripetere le run. | Il ramo creativo è fonte di evidenze per il caso assegnato. Un audit su quel ramo non estende da solo le autorizzazioni, né sostituisce le decisioni del ramo di lavoro. |
 
-## 6. Criteri di accettazione del piano consolidato
-1. Ogni prescrizione nuova ha caso d'uso, benefici osservabili, costo e owner; nulla copiato in blocco dalle repo.
-2. Nessuna contraddizione con `AGENTS.md` e `docs/decisioni.md`; distinguere proposta da norma.
-3. Un nuovo agente può distinguere progettazione, esecuzione, debug e revisione caricando pochi file.
-4. Ogni «finito» ha prova; se non eseguibile, limitazione dichiarata.
-5. Il piano non modifica il prodotto, non duplica log, non impone dipendenze e rimane reversibile.
-6. La review produce un prompt per il TERZO agente finale, ma non anticipa implementazioni non approvate.
+## Revisione avversariale della [versione precedente](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/455a7508d09763af60ed2b7f321c4ba6e641ee8d/docs/PLAN-skill-system-minimo-2026-11-10.md)
 
-## 7. Mandato per revisore indipendente (agente 2)
-Revisionare **criticamente** e in sola analisi questo piano rispetto ai file canonici e alle tre repo di riferimento. Cercare rischi non notati, promesse non verificabili, overhead di token, duplicazione e conflitti con UX visuale. Distinguere severità P0/P1/P2, evidenza con file/linea o SHA, impatto, fix minimo e rischio residuo; usare almeno cinque scenari premortem concreti. Se necessario correggere SOLO questo PLAN in branch dedicato o PR derivata, tracciando differenze dalla versione originale e senza riscrivere la storia. Consegnare la variante consolidata e un prompt completamente incollabile per l'agente 3 che effettuerà implementazione SOLO dopo autorizzazione, pilot e verifica, oppure proporrà no-op se il sistema attuale basta.
+| Gravità | Evidenza e problema | Correzione minima proposta | Rischio residuo |
+|---|---|---|---|
+| Alta | §2 e G1 danno per opportune 25–45 righe prima di provare AGENTS. Questo contiene già lettura, prove e chiusura. | Baseline senza patch. Se passa, chiudere con esito «nessuna modifica». | Un singolo caso può mascherare una lacuna futura. |
+| Alta | §2 identifica i file per nome. Lo stesso percorso decisioni sul ramo creativo contiene esperimenti Android assenti sulla base della PR 1. Il README ha uno stato FORMA superato dal registro. | Nel passaggio aperto indicare ramo o SHA, percorso e punto preciso. Per lo stato effettivo consultare la voce pertinente del registro. Se due decisioni compatibili per data ma incompatibili per ambito restano ambigue, sospendere la sola azione dipendente. | Un altro ramo può avanzare durante la revisione. |
+| Alta | G2 misura i turni fino al primo visual. Nel caso Tattoo il visual è arrivato prima della scelta del template. | Usare come criterio il rispetto della fase e della scelta richiesta. Pilot documentale sul caso già avvenuto. Una prova live ha uno scopo e un’autorizzazione propri. | La lettura corretta del caso non prova la resa sul telefono. |
+| Alta | §3/G2 consentono di riferire una «anteprima vera» senza specificare quale proprietà sia provata. L’audit console distingue riferimenti, raster e pannello. Il registro FORMA distingue blob Git e checksum indipendente. | Ogni verdetto significativo riporta oggetto, proprietà, osservazione e limite. Per un fix ripetere lo stesso caso con la stessa variabile e un controllo negativo pertinente. | Cliente, versione o asset possono cambiare. |
+| Media | Contratto, quattro profili, tre livelli e tre fallimenti obbligatori ripetono parti di AGENTS. §2 lascia incerta la destinazione di idee senza decisione. | Obiettivo e prova attesa nella richiesta o PR esistente. Un’idea da riprendere riceve un riferimento alla sezione dell’audit nella PR pertinente, con stato «proposta» e prossimo passo. Chi approva rinvia alla decisione canonica quando viene registrata. | Alla chiusura della PR una proposta ancora viva può perdere visibilità. Trasferire solo il suo riferimento al lavoro che la prosegue. |
+| Media | §2/§5 isolano file e SHA, ma due agenti possono interpretare diversamente la stessa approvazione operando su documenti distinti. Il caso Tattoo assegna anche lavoro al PM. | Un responsabile della scrittura sulla stessa decisione o prova. Parallelismo solo per quesiti indipendenti, quando il costo di coordinamento è giustificato. Revisione sul diff e sulla prova alla revisione esatta. | La disponibilità di un revisore realmente indipendente varia. |
+| Media | Due difetti o due run (§2/G3) possono derivare dallo stesso episodio o da un limite del client. | Prima di proporre una skill identificare casi distinti, causa comune, tentativo più economico e prova che ne misurerebbe il vantaggio. | Campione piccolo, costo token spesso indisponibile. |
 
-## 8. Decisione sospesa
-**Nessuna nuova regola è approvata con questo commit.** Questo file è un PLAN candidato per revisione indipendente; la successiva patch su `AGENTS.md` richiede decisione distinta.
+## Premortem a un mese
+
+| Scenario concreto | Segnale precoce | Controllo economico e responsabile |
+|---|---|---|
+| Si ripete FORMA da zero perché l’indice lo dichiara ineseguito. | Lo stato riferito non menziona la sessione registrata. | Chi riprende apre il registro del caso prima di proporre lavoro. |
+| La PR di piano viene fusa e interpretata come consenso alla generazione. | Il mandato cita soltanto il merge. | Chi esegue verifica quale azione è stata autorizzata e da chi. |
+| Il revisore ritiene provata la fedeltà dei pixel perché trova un blob o uno screenshot. | La prova non contiene i dati necessari al confronto dichiarato. | Chi verifica nomina proprietà e limite. Se mancano byte o osservazione appropriata, esito «non verificato». |
+| Due audit della stessa run fanno scattare una skill costosa. | Entrambi rimandano alla stessa sessione. | Chi propone raggruppa per episodio e causa, con link alla fonte. |
+| Un’idea di preset sparisce con la PR chiusa oppure ricompare come funzionalità installata. | Manca la destinazione del prossimo lavoro o una prova di persistenza. | Chi chiude passa il solo riferimento aperto, indicandone stato e prova mancante. |
+| Una risposta perfetta nel pilot deriva dalla soluzione inclusa nel prompt. | Il tester riceve insieme caso, piano e risposta attesa. | Il revisore conserva la griglia di valutazione. All’esecutore in contesto pulito passa solo domanda, repo e ramo del caso. |
+| Il ramo creativo avanza dopo la revisione e la stessa PR riceve un verdetto riferito al vecchio contenuto. | SHA diverso o altra PR sullo stesso oggetto. | L’autore ricontrolla il diff pertinente e ripete solo la prova interessata. |
+| Un limite del client Android viene «risolto» su desktop. | La prova post-fix cambia superficie. | Il revisore lascia aperto l’esito Android fino a una prova sul client interessato. |
+
+## Scelte proposte e costo
+
+| Disposizione | Intervento, costo e responsabilità |
+|---|---|
+| **Da adottare subito se il piano viene accolto** | Usare gli ingressi e gli archivi esistenti. Per progettare esplicitare il risultato osservabile, per eseguire delimitare il diff, per debuggare registrare prima/dopo e controprova, per riprendere lasciare il riferimento e una sola azione. L’autore aggiunge nella PR o nel risultato del caso solo il dato mancante. Nessun modulo o file permanente aggiuntivo. |
+| **Da sperimentare** | Una ripresa documentale a costo esterno incrementale zero. L’agente 3 verifica le risposte e annota fonti effettivamente aperte, eventuali correzioni umane e limiti. Se la baseline fallisce per istruzioni insufficienti, e la modifica è autorizzata, aggiunge il solo rinvio o criterio mancante in AGENTS e ripete il confronto. |
+| **Da rimandare** | Test live su Android, skill per QA visiva o gestione asset, indice per richieste aperte. Proporli quando esista una domanda che il pilot non copre o un problema di recupero ricorrente con costo osservabile. Ogni estensione indica un responsabile, prova di beneficio e condizione di rimozione. |
+| **Da scartare per questa fase** | Form obbligatori, profili e livelli di rischio formali, STATO parallelo, registro token dedicato, hook, CI nuova, copia delle skill esterne e squadre fisse. Non emergono prove di un beneficio che giustifichi la manutenzione. |
+
+## Pilot riproducibile e rollback
+
+**Baseline.** Il valutatore usa una chat pulita, se disponibile e autorizzata, con questa sola consegna: «Sul ramo creativo di GPT SOCIAL, riprendi il caso Tattoo GUIDATA. Qual è la prossima azione consentita? Cita la fonte. La documentazione permette di dichiarare verificata l’identità della foto dopo un cambio di titolo?». Fornire URL e ref del caso. Mantenere presso il valutatore la soluzione e il piano. Per provare una patch su un altro ramo, indicare anche lo SHA delle istruzioni da usare e tenere fisso il ref del caso; la PR di piano si basa sulla PR 1, senza incorporare il ramo creativo.
+
+**Accettazione.** La risposta individua il passaggio saltato e riparte dalla scelta del template/pannello; identifica il feedback utente e distingue la soluzione tecnica proposta; per la prova mancante restituisce «non verificato». Il controllo negativo è la domanda sull’identità: riferimenti visibili, un hash dichiarato o un audit non dimostrano la modifica localizzata. Nessuna produzione o nuova decisione. Conservare consegna, ref, risposta effettiva e verdetto nella PR o nel resoconto già previsto. Una rilettura nella stessa chat vale come ispezione documentale; la ripresa indipendente resta non verificata. Un fallimento dovuto a permessi o fonti mancanti richiede il recupero della fonte, non una regola nuova.
+
+**Esito e ripristino.** Baseline riuscita: zero patch. Lacuna riprodotta: dopo autorizzazione patch isolata su branch, stesso input in nuovo contesto, verifica della controprova e del diff. Un solo passaggio assistito non dimostra risparmio di token. Se la modifica aumenta letture o altera il comportamento creativo, ritirarla. Prima del merge chiudere la PR d’implementazione; dopo un eventuale merge autorizzato, proporre un revert del solo commit di metodo su nuovo ramo e rieseguire la baseline. Nessun reset di rami condivisi. Questa revisione ha verificato documenti e riferimenti; il pilot e l’efficacia della patch restano da provare.
