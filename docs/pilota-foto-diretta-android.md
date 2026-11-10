@@ -106,6 +106,26 @@ Il checkpoint versionato `microtest-neutral-001-rev2.json` è verde `#3F8064`, c
 
 **Unico prossimo passo operativo:** Matteo recupera dalla chat G-UI-01 su Android e incolla qui il JSON originale già copiato/usato nella prova, senza modificarlo, specificandone la provenienza; se non è più recuperabile lo dichiara. Non richiedere una nuova prova o ricostruire il payload. Questo è il solo input mancante da richiedere ora; finché manca, G-UI-02 resta PARTIAL. Un eventuale adattamento esplicito e una successiva prova cross-chat andranno valutati soltanto sui dati realmente ricevuti.
 
+### Addendum G-UI-02-RETEST — ChatGPT Android, 10 novembre 2026
+
+**Prova distinta, non sostitutiva dell'originale G-UI-01.** Nella chat normale ChatGPT su Android (secondo dichiarazione dell'utente e screenshot allegato alla conversazione) è stato eseguito un pannello interattivo con preview SVG neutra, selettore Blu `#356B84` / Terracotta `#B36A48`, Reset, Crea snapshot, copia JSON, campo d'incolla e Recupera. L'utente dichiara: «Si torna terracotta anche se metto blu e poi clicco recupera». Uno screenshot finale mostra selettore e preview Terracotta, snapshot JSON, campo d'incolla con gli stessi valori e messaggio dell'interfaccia «JSON valido: colore recuperato Terracotta.»
+
+Payload **visibile nello screenshot**, trascritto come valori JSON (non recuperato indipendentemente dagli appunti originali né confrontato byte per byte con clipboard):
+
+```json
+{
+  "gate": "G-UI-02-RETEST",
+  "fixture": "neutral-color-chat-v1",
+  "accent": "#B36A48"
+}
+```
+
+**Verdetto circoscritto:** PASS riferito dall'utente e corroborato visivamente per recupero manuale assistito del colore; comportamento finale terracotta visibile. Il codice del pannello ha validazione locale di struttura, gate, fixture e accent e associa il valore accettato alla preview, ma non sono disponibili log indipendenti delle singole interazioni, acquisizione clipboard o telemetria di dispositivo. Lo screenshot finale non dimostra da solo l'intera sequenza Terracotta → Blu → Terracotta → snapshot → Reset → incolla → Recupera. Client: normale chat ChatGPT Android; versione/build esatta del client non rilevata durante la prova. L'immagine rimane allegato della conversazione; non è stata caricata nel repository.
+
+**Limiti e stato invariato:** il JSON `{gate,fixture,accent}` NON è lo schema renderer 002. Non dimostrati trasferimento nativo al renderer 002, parità SVG/Pillow, sincronizzazione, persistenza automatica, cold recovery, Undo versionato o fedeltà fotografica. Non recuperato lo snapshot originale G-UI-01; non richiederlo nuovamente. **G-UI-02 complessivo PARTIAL; T0 PARTIAL; nuovi T1 HOLD.** Nessuna nuova PR, modifica a codice/schema/roadmap o push su main.
+
+**Unico prossimo passo:** riesame indipendente dell'addendum e delle prove già presenti sul branch, mantenendo i limiti di provenienza e senza avviare nuovi T1.
+
 ## Direzione di prodotto e ragioni della prova
 
 Il [PRD](PRD-v0.1.md) punta al post statico professionale. [FORMA](../benchmarks/FORMA-001/risultati.md) ha mostrato problemi di fedeltà ai testi; [LAYER](audit-layer-001-handoff.md) il costo delle microdecisioni; [Istanbul](report-run-ecovillaggio-istanbul-2026-11-09.md) il fallimento del confronto quando le varianti sono invisibili sul telefono. Nel [Tattoo](audit-run-tattoo-console-guidata-2026-11-10.md) l’estetica scelta è andata persa durante una revisione del titolo. Il valore da verificare è il controllo dell’utente su quella revisione.
