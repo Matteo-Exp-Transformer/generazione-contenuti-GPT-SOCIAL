@@ -35,3 +35,12 @@ Aggiornare il file pertinente.
 Riportare prove, decisioni e un solo prossimo passo.
 Non creare un handoff separato se lo stato è già
 presente in risultati.md o decisioni.md.
+
+Prima di aprire un ramo o una PR, cerca il lavoro già aperto sullo stesso caso.
+Tieni nella PR o nel documento pertinente risultati e riferimenti recuperabili.
+Conserva prove e sorgenti uniche. Escludi dal commit cache, export provvisori
+e copie di lavoro; controlla l’elenco dei file nel diff prima della consegna.
+A fine task integra via PR se autorizzato. Prima di chiudere una PR superata
+o eliminare un ramo, verifica destinazione, commit o diff equivalenti e PR
+dipendenti. Elimina i rami conclusi e verifica su GitHub. Se un ramo serve
+ancora, indica nella PR o nella consegna il lavoro aperto e il prossimo passo.
