@@ -59,3 +59,16 @@ Simulazione GUIDATA in ChatGPT Android con fotografia originale di un avambracci
 
 ## Stato delle decisioni
 Fatti della run e feedback utente: osservati. Console-first e stop alla generazione prematura: correzioni esplicitamente richieste dall'utente per il futuro workflow. Architettura, persistenza, test e aggiornamenti ai protocolli: **proposte da verificare**, non funzionalità implementate.
+
+## Aggiornamento decisioni utente — 2026-11-10 (Creative Console)
+
+Decisioni esplicitamente confermate per il **piano e il prossimo micro-test**, non prova di implementazione:
+- Workflow **Console-first GUIDATA**: progettazione prima di qualsiasi generazione AI; nessun post definitivo.
+- **Architettura ibrida**: pannello nativo di chat per decisioni e anteprima reattiva, renderer deterministico per asset reali; entrambi leggono una specifica strutturata/versionata. L'equivalenza visiva è da testare, non presunta.
+- **Persistenza del primo prototipo anche nella repository**, oltre a JSON esportabile/ripristinabile, per sicurezza e continuità agentica. Scrittura esplicita su ramo di lavoro/PR, non su main, con consenso operativo per i singoli salvataggi; niente commit automatici a ogni interazione. Salvare configurazioni e riferimenti, non duplicare asset o inserire foto private senza autorizzazione specifica. Verificare la rilettura dal repository prima di dichiarare un preset persistente.
+- **Prossimo esperimento: micro-test tecnico isolato**, non simulazione Tattoo completa. Testare UI Android → stato → preview reale → renderer, modifica localizzata, snapshot e ripristino, hash della foto e continuità tra turni.
+- Stato del pannello locale, snapshot, JSON esportato e preset persistente sono quattro condizioni diverse; mostrarle distintamente.
+
+**Coordinamento metodo:** il piano di continuità consolidato su `main` è `docs/PLAN-skill-system-minimo-2026-11-10.md`; `AGENTS.md` su main include già regole di pulizia branch, verifica diff e chiusura PR. Non creare un nuovo file canonico di stato, non duplicare il piano del PM e non fondere il ramo creativo senza revisione del diff. Il presente aggiornamento registra solo decisioni Creative Console nel documento esistente. Prima di ogni implementazione verificare la base corrente e l'eventuale lavoro parallelo.
+
+**Prossima azione unica:** agente indipendente consolida il contratto JSON e il micro-test con criteri di accettazione; solo dopo autorizzazione separata si esegue il test tecnico su Android.
