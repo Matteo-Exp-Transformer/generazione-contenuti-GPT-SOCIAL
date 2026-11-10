@@ -2,6 +2,7 @@ import copy, hashlib, importlib.util, json, unittest
 from pathlib import Path
 from PIL import Image
 import io
+from unittest.mock import patch
 ROOT=Path(__file__).resolve().parent
 spec=importlib.util.spec_from_file_location('neutral_renderer',ROOT/'neutral-render.py')
 r=importlib.util.module_from_spec(spec);spec.loader.exec_module(r)
@@ -32,5 +33,8 @@ class ContractTests(unittest.TestCase):
     def test_tampered_asset(self):
         s=copy.deepcopy(self.state);s['assets'][0]['sha256']='0'*64
         with self.assertRaises(ValueError):r.render(s)
+        original=r.fixture_bytes()
+        with patch.object(r,'fixture_bytes',return_value=original[:-1]+bytes([original[-1]^1])):
+            with self.assertRaises(ValueError):r.render(self.state)
 
 if __name__=='__main__':unittest.main()
