@@ -54,3 +54,11 @@ La lettura recupera tutti e tre i criteri attesi (template/pannello, distinzione
 **Zero patch di AGENTS.md**: le istruzioni già prescrivono lettura delle decisioni, separazione di fatti e proposte e divieto di dichiarare prove ineseguite. Non c'è fallimento a freddo attribuibile alle istruzioni. Nessuna implementazione, generazione, installazione, prova Android, modifica di main o merge. Questo report è solo documentazione di verifica; non cambia autorizzazioni o workflow. Nessun rollback operativo necessario.
 
 **Un solo prossimo passo:** eseguire la baseline in una nuova chat pulita, fornendo soltanto URL, ramo/SHA del caso e domanda; conservare PLAN e risposta attesa presso il valutatore, poi registrare risposta effettiva e verdetto.
+
+## Esito dopo il confronto con il tester indipendente
+
+Il [report del tester](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/03fc74a438dc0b5aa00fd6c18ff826e88cd699ed/docs/report-test-ripresa-indipendente-tattoo-guidata-2026-11-10.md) documenta la ripresa separata sullo stesso snapshot. La baseline prima indicata come aperta dispone ora di una risposta effettiva.
+
+Il tester ritrova la fonte, identifica la revisione prima di una nuova run e rifiuta correttamente di attestare l’identità della fotografia. Il valutatore esplicita anche la scelta del template/pannello da recuperare alla prossima run. La domanda chiedeva il passo consentito ora; il tester risponde correttamente al mandato. Il criterio più ampio del PLAN, che attende anche il passaggio creativo saltato, è coperto solo parzialmente dalla risposta indipendente. Se questa distinzione serve in un prossimo caso, chiedere separatamente l’azione autorizzata ora e il passaggio da cui ripartire nella futura run.
+
+Esito limitato a questo caso: ripresa documentale riuscita, nessuna lacuna dimostrata che richieda una skill o una patch al routing. Restano aperte le prove operative Android e di invarianza dopo cambio del titolo. Le istruzioni di pulizia richieste separatamente riguardano la chiusura del lavoro in Git.
