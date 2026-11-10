@@ -1,48 +1,35 @@
 # GPT SOCIAL — Istruzioni per gli agenti
 
-## Scopo
-Discovery di workflow per contenuti social statici professionali.
-Non sviluppare un'applicazione senza approvazione.
+## Direzione operativa approvata — 2026-11-10
+La revisione Claude recepita in [MANDATO-001](docs/mandato-001-strada-unica.md)
+e le decisioni dell'utente concordate con lui guidano il progetto.
+Prevalgono le successive decisioni esplicite dell'utente.
+Non trasformare proposte degli agenti in decisioni approvate.
 
-## Lettura iniziale
-1. README.md
-2. docs/decisioni.md
-3. Il brief e il protocollo del benchmark assegnato
+## Avvio transitorio, fino al consolidamento F0
+Leggi questo file, il mandato attivo e skills/post-director/SKILL.md.
+Per la run Sol 6.1 valgono ambito, letture e limiti del §0-bis del mandato.
+Non leggere i documenti storici né riavviare G-FOTO-01 o gate su fixture neutra.
+STATO.md sarà creato da F0: la sua assenza iniziale non blocca F0.
+Se PR #14 è già merged, verifica e prosegui con i due task; non rifare il merge.
+F0 sostituisce questo file con lo scheletro del §8, mantenendo la direzione approvata.
 
-Per i mandati del pilota Android leggere il [piano attivo](docs/pilota-foto-diretta-android.md) e partire dalla sezione «Stato operativo». Al cambio di stato, l’agente responsabile aggiorna quella sezione con tentativo, esito osservato o riferito, riferimento alle prove e prossimo passo. Nel mandato B consultare audit, immagini e dati di utilizzo solo nella fase prevista dal piano.
-
-Leggere il PRD solo per decisioni di prodotto.
-Consultare memory/wiki/index.md solo quando servono
-informazioni sul metodo già adottato.
-
-## Regole
-- Una fonte canonica per ciascun argomento.
-- Separare fatti verificati, ipotesi e proposte.
-- Non duplicare informazioni nei documenti.
-- Nessuna immagine, installazione, spesa o modifica
-  dell'ambiente senza autorizzazione specifica.
-- Non aggiungere skill, agenti o strumenti per inerzia.
-- Non dichiarare completati test non eseguiti.
-- Preferire strumenti già disponibili.
-- Non eseguire push su main senza approvazione.
-
-## Benchmark
-Rispettare brief, prompt, protocollo e limiti.
-Registrare tentativi, tempi, costo, qualità e difetti.
-Confrontare i risultati con gli stessi criteri.
-Non inventare punteggi o risultati.
+## Ruoli e regole
+- Utente: decide, autorizza e valuta qualità.
+- Orchestratore/costruttore: repo, deleghe, engine, test, PR; non conduce il post reale.
+- Regista post: segue skills/post-director/SKILL.md in chat; non modifica la repo.
+- Massimo due task delegati: F0, poi engine F1-A. Nessun task extra.
+- Nessuna spesa, installazione, download di asset/dipendenze o foto reale nella run.
+- Fixture sintetica via codice ammessa per i test automatici richiesti.
+- Separare fatti, ipotesi e proposte. Mai dichiarare PASS un test non eseguito.
+- Test sintetici verdi non certificano TU-01, visibilità Android o qualità estetica.
+- Merge PR #14 e PR dei due task autorizzati dopo verifica di diff e test pertinenti.
+- Prima di chiudere PR o eliminare branch verificare integrazione e dipendenze.
+- Conservare prove e sorgenti uniche; archiviare lo storico senza riscriverlo.
+- Nessun nuovo handoff o audit: da F0 lo stato corrente è soltanto STATO.md.
+- T1 HOLD fino al Gate D. F1-B è opzionale e separata dalla run.
 
 ## Chiusura
-Aggiornare il file pertinente.
-Riportare prove, decisioni e un solo prossimo passo.
-Non creare un handoff separato se lo stato è già
-presente in risultati.md o decisioni.md.
-
-Prima di aprire un ramo o una PR, cerca il lavoro già aperto sullo stesso caso.
-Tieni nella PR o nel documento pertinente risultati e riferimenti recuperabili.
-Conserva prove e sorgenti uniche. Escludi dal commit cache, export provvisori
-e copie di lavoro; controlla l’elenco dei file nel diff prima della consegna.
-A fine task integra via PR se autorizzato. Prima di chiudere una PR superata
-o eliminare un ramo, verifica destinazione, commit o diff equivalenti e PR
-dipendenti. Elimina i rami conclusi e verifica su GitHub. Se un ramo serve
-ancora, indica nella PR o nella consegna il lavoro aperto e il prossimo passo.
+Seguire §0-bis e §8 del mandato: Fatto (prove), Stato, Prossimo passo.
+Alla fine dei due task aggiornare STATO.md e consegnare il prompt ≤180 parole
+per il regista ChatGPT che eseguirà TU-01 sulla foto caricata dall'utente.
