@@ -59,7 +59,7 @@ def main(argv=None):
         output = Path(args.out)
         if output.resolve() == Path(args.baseline).resolve():
             parser.error("do not overwrite the baseline")
-        output.write_text(canonical(candidate), encoding="utf-8")
+        output.write_bytes(canonical(candidate).encode("utf-8"))
     else:
         if not args.state or args.fill or args.out:
             parser.error("verify requires --state, not --fill/--out")

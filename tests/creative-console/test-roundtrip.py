@@ -62,6 +62,9 @@ class RoundTripTests(unittest.TestCase):
             result = subprocess.run(cmd + ["export", "--baseline", baseline, "--expected-revision", "1", "--fill", "#B36A48", "--out", str(output)], capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(json.loads(result.stdout)["revision"], 2)
+            recovered = bridge.load(output)
+            self.assertEqual(output.read_bytes(), bridge.canonical(recovered).encode("utf-8"))
+            self.assertEqual(json.loads(result.stdout), bridge.fingerprint(recovered))
             result = subprocess.run(cmd + ["verify", "--baseline", baseline, "--expected-revision", "1", "--state", str(output)], capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
 

@@ -3,8 +3,9 @@
 **Base:** main `9c9f929fe385d974707cf282bf18679e8d3c1d5a`. **Perimetro autorizzato:** un branch, una PR, nessuna installazione, nessuna generazione immagini. La fixture neutra e il contratto `schemaVersion=1.0.0` restano invariati.
 
 ### Implementazione minima
+- `fixtures/neutral.png`: byte della fixture originale versionati, con lo SHA già presente nella baseline; non rigenerare l'asset tramite encoder Pillow, la cui compressione può cambiare fra ambienti. L'export canonico usa UTF-8 e LF anche su Windows.
 - `tests/creative-console/roundtrip.py`: CLI `export` e `verify` con JSON canonico, SHA-256 dello stato, dell'asset e del render Pillow; validazione di una transizione `revision N → N+1` in cui cambia esclusivamente `layers[1].fill`.
-- `tests/creative-console/test-roundtrip.py`: sette test unitari aggiuntivi (export/import, singola proprietà, revisione obsoleta, asset alterato, modifica estranea, no-op, CLI). I sei test precedenti restano inalterati.
+- `tests/creative-console/test-roundtrip.py`: sette test unitari aggiuntivi (export/import, singola proprietà, revisione obsoleta, asset alterato, modifica estranea, no-op, CLI). I sei casi precedenti sono conservati; i controlli sui byte asset e sull'export canonico coprono le regressioni Windows.
 - **Importante:** il pannello Android non è collegato automaticamente alla CLI. L'export dal pannello e il commit GitHub sono operazioni **esplicite**; il checkpoint remoto sarà verificato solo quando sarà stato effettivamente creato e riletto. Non dichiarare sincronizzazione o parità pixel cross-engine.
 
 ### Comandi, in ambiente con Pillow già disponibile

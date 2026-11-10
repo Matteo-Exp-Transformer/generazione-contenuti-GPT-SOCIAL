@@ -7,10 +7,8 @@ ROOT = Path(__file__).resolve().parent
 REGION = (60, 100, 540, 190)
 
 def fixture_bytes():
-    im = Image.new('RGB', (600, 750), '#F3F0E8')
-    d = ImageDraw.Draw(im)
-    d.rectangle((60, 230, 540, 232), fill='#B4AFA6')
-    buf = io.BytesIO(); im.save(buf, format='PNG'); return buf.getvalue()
+    # Preserve the approved PNG bytes: encoder versions can change compression.
+    return (ROOT / 'fixtures' / 'neutral.png').read_bytes()
 
 def fixture_sha(): return hashlib.sha256(fixture_bytes()).hexdigest()
 
