@@ -4,7 +4,7 @@
 
 ## Stato operativo — riconciliazione del 10 novembre 2026
 
-**Stato: HOLD sui nuovi piloti creativi T1.** La sezione storica «Due chat, un solo caso» qui sotto descrive il protocollo precedente e non costituisce autorizzazione a ripeterlo. G-UI-01 è stato autorizzato e svolto separatamente dai T1; la sua chiusura QA è registrata qui sotto. Nessuna modifica alla roadmap, allo schema o al renderer.
+**Stato: HOLD sui nuovi piloti creativi T1. G-UI-02 PARTIAL: gate tecnico locale PASS, import originale Android non verificabile con le evidenze disponibili.** La sezione storica «Due chat, un solo caso» qui sotto descrive il protocollo precedente e non costituisce autorizzazione a ripeterlo. G-UI-01 è stato autorizzato e svolto separatamente dai T1; la sua chiusura QA è registrata qui sotto. Nessuna modifica alla roadmap, allo schema o al renderer.
 
 - **Pilota A precedente ai T1 — VERIFICATO documentalmente nella [PR #11](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/11)**, non ancora integrata in `main`: audit del percorso fotografico handpan con esito PARTIAL sul workflow, FAIL sulla fedeltà finale; titolo+Undo non eseguito. Non conteggiarlo come uno dei due T1.
 - **T1-01 — VERIFICATO nell'addendum della PR #11**, sessione `GPT-SOCIAL-T1-20261110-01`: FAIL procedurale prima della composizione, perché direzioni/titoli verbali sono stati proposti senza anteprime reattive collegate alle scelte. Output fotografico, Undo e controllo pixel NON TESTATI. L'addendum è sul branch `docs/android-photo-pilot-a-final-audit`, non su `main` al momento della riconciliazione.
@@ -23,7 +23,7 @@
 
 **Criteri di esito proposti — separati per capacità:** comportamento locale PASS soltanto se entrambe le selezioni HEX aggiornano coerentemente la medesima anteprima SVG, il reset ripristina colore iniziale e anteprima e l'utente conferma la visualizzazione su ChatGPT Android. Recupero PASS soltanto se uno snapshot serializzato viene trasferito mediante il meccanismo dichiarato, riletto e confrontato sui valori senza reinterpretazione; distinguere esplicitamente recupero manuale e readback GitHub. Un PASS di recupero manuale non attesta persistenza o sincronizzazione automatica. Per ciascuna dimensione assegnare separatamente PASS, PARTIAL o FAIL; usare NON TESTATO per le capacità non esercitate. Un difetto bloccante impone stop e diagnosi, non ulteriori tentativi incontrollati. Il PASS del gate non certifica parità SVG/Pillow, compatibilità di un checkpoint con il round-trip 002, rendering fotografico o Undo versionato. Il gate è stato successivamente autorizzato dall'utente ed eseguito come descritto nel verbale seguente.
 
-**Responsabilità e prossimo passo unico:** la chiusura QA del G-UI-01 è registrata sotto. Il solo incremento successivo proponibile (non autorizzato da questo esito) è una prova distinta stato → renderer neutro. Architettura candidata, NON decisione approvata: console progressiva → stato versionato → anteprima legata allo stato → renderer a livelli → revisioni circoscritte/Undo. Non estendere adesso lo schema tecnico 002.
+**Responsabilità:** la chiusura QA del G-UI-01 è registrata sotto. L'incremento stato → renderer neutro è stato successivamente autorizzato dal mandato G-UI-02 e verificato nel verbale seguente. Architettura candidata, NON decisione approvata: console progressiva → stato versionato → anteprima legata allo stato → renderer a livelli → revisioni circoscritte/Undo. Non estendere adesso lo schema tecnico 002.
 
 ### Verbale QA G-UI-01 — 10 novembre 2026
 
@@ -33,9 +33,78 @@
 - **Recupero stato: PASS per recupero manuale assistito (confermato dall'utente su Android).** Snapshot della fixture `{gate, fixture, accent}` copiato, trasferito tramite campo di incolla, validato e riapplicato alla UI secondo la conferma complessiva. L'esatto payload copiato non è stato conservato nella repository: manca un readback indipendente dei byte del JSON; la prova attesta il percorso assistito, **non** persistenza automatica.
 - **Fuori perimetro / NON TESTATO:** checkpoint persistente GitHub e readback del JSON, integrazione pannello → CLI 002, `schemaVersion=1.0.0`/round-trip 002, parità SVG/Pillow, renderer fotografico, lock pixel, Undo versionato, ripresa in nuova chat senza trasferimento manuale. Il JSON del pannello non va scambiato per lo schema della CLI 002.
 - **Verdetto G-UI-01: PASS nel perimetro locale + trasferimento manuale, su conferma utente; evidenza indipendente limitata.** Nessuna stop condition segnalata. Non è un PASS end-to-end del prodotto, non modifica i FAIL T1-01/T1-02 né lo stato PARTIAL T0. I nuovi T1 rimangono **HOLD**.
-- **Unico prossimo passo proposto (non eseguito):** progettare una prova minima e separata di passaggio esplicito dello stato validato al **renderer neutro 002**, verificando il contratto di `layers[1].fill` e `revision` e mantenendo intatti schema e renderer. Richiede mandato specifico prima dell'esecuzione.
+- **Passo proposto all'epoca:** prova minima separata stato → renderer neutro 002. Il mandato G-UI-02 successivo ne autorizza l'esecuzione; esito e prossimo passo corrente sono nel verbale seguente.
 
 **Coerenza documentale:** `README.md` rinvia già a questo piano; `AGENTS.md` chiede di iniziare dallo «Stato operativo». `docs/decisioni.md` e il piano skill system restano invariati. L'audit PR #11 conserva il proprio resoconto storico, mentre questo documento è l'unica sede del nuovo stato operativo. La presenza della PR #11 aperta non equivale alla sua integrazione.
+
+### Verbale QA G-UI-02 — 10 novembre 2026
+
+**Mandato:** chiusura integrale con soli strumenti/fixture/test esistenti; nessuna modifica di codice, schema, renderer o roadmap, nessuna installazione, generazione artistica, PR nuova o merge. Il mandato autorizza la registrazione delle evidenze, non il push su main. **Verdetto complessivo PARTIAL**, senza difetti nei controlli automatici eseguiti. T0 resta PARTIAL; nuovi T1 HOLD.
+
+**Remoto verificato:** clone della repository canonica privata; `main`, HEAD remoto e checkout iniziale coincidono con `357b9b19e02fe7c90864ea6c75313d2c479403a8`. `git ls-remote origin HEAD refs/heads/main` ripetuto dopo i test conferma lo stesso SHA. PR #6 MERGED (2026-11-10 13:08:08 UTC; merge `48e64064566e90f09bcdd5c5a0025f25e3b7a60b`), PR #13 MERGED, PR #11 OPEN sul ramo `docs/android-photo-pilot-a-final-audit` a `0847f13e7fabd7c144b3598c0f6f4af3de43fcec`. Inventariati anche i tre branch remoti documentali e la storia dei file. Nessun lavoro G-UI-02 aperto individuato. Permessi GitHub restituiti dal connettore: admin/maintain/pull/push/triage; questi permessi non sono autorizzazione a scrivere su main.
+
+**Registrazione:** solo questo documento canonico e i [log di evidenza](evidence/g-ui-02-20261110/) sul ramo `docs/g-ui-02-evidence-20261110`, senza PR e senza merge. La pubblicazione sul ramo non equivale a integrazione in main. JSON ricostruito e PNG temporanei restano fuori dal commit. Il contratto originale rimane [README-002](../tests/creative-console/README-002.md).
+
+**Provenienza e integrità:** recuperati fixture, baseline/schema 1.0.0, renderer, CLI, entrambe le suite e checkpoint esistenti dal commit sopra. Non esiste uno schema JSON separato: il contratto eseguibile è `validate()` nel renderer più `verify_transition()` nella CLI; non è stata aggiunta alcuna validazione. Rilettura GitHub Contents API al medesimo SHA, decodifica base64 e confronto esatto con `git show SHA:path` per tutti gli 11 file elencati in [provenance.json](evidence/g-ui-02-20261110/provenance.json). La fixture coincide byte per byte anche nel checkout. I file testuali nel checkout hanno CRLF invece dei LF remoti: verificata esclusivamente questa differenza; gli hash fisici sono quindi distinti dagli hash canonici dello stato. Nessuna modifica tracked ai sorgenti dopo l'esecuzione. `roundtrip.py` riletto anche tramite connettore GitHub al commit esatto.
+
+**Ambiente reale:** Windows, Python 3.13.7 MSC v.1944 AMD64, Pillow 12.1.1 già presente, zlib compilata/runtime 1.3.1. Nessuna installazione. I tempi seguenti sono quelli delle suite, non il tempo attivo utente.
+
+**Procedura eseguita**, dalla directory `tests/creative-console` (directory `../../../evidence` creata prima dei comandi):
+
+```powershell
+python test-neutral-render.py -v
+python test-roundtrip.py -v
+python roundtrip.py export --baseline neutral-state.json --expected-revision 1 --fill '#B36A48' --out ../../../evidence/local-reconstruction-002.json
+python roundtrip.py verify --baseline neutral-state.json --expected-revision 1 --state ../../../evidence/local-reconstruction-002.json
+python neutral-render.py
+```
+
+Entrambe le suite, export, verify e renderer: **exit 0**. [Suite renderer](evidence/g-ui-02-20261110/test-neutral-render.txt): 6 test, 0,235 s, OK. [Suite round-trip](evidence/g-ui-02-20261110/test-roundtrip.txt): 7 test, 0,242 s, OK. [Export](evidence/g-ui-02-20261110/export.txt) e [verify](evidence/g-ui-02-20261110/verify.txt) restituiscono fingerprint identici. [Rendering Pillow](evidence/g-ui-02-20261110/render.txt) realmente eseguito: due PNG prodotti dal renderer originale, senza generazione artistica. La sua funzione main riscrive la fixture con i medesimi byte: hash invariato e nessun diff tracked.
+
+Un primo tentativo aveva creato la directory dei log al livello sbagliato: Tee-Object non ha salvato le suite e export/verify sono falliti con FileNotFoundError. Il renderer era già riuscito. Corretta solo la directory, rieseguiti i comandi sopra con output conservato; il primo tentativo non è contato come prova positiva delle suite. Una stampa preliminare dei commenti PR ha inoltre incontrato l'encoding cp1252 della console: contenuto riletto in UTF-8, nessun file sorgente modificato.
+
+**Recupero locale effettivo e invarianti:** ricaricato il file esportato attraverso `load()`, eseguito `verify_transition(baseline, recovered, 1)`, confrontati i byte del file con `canonical(recovered).encode('utf-8')`. Diff ricorsivo esatto: soltanto `layers[1].fill` da `#356B84` a `#B36A48`, e `revision` da 1 a 2. `visible`, asset, lock, approvazioni, canvas, template, renderer e ogni altro dato restano invariati. Render ripetuti dello stato recuperato identici al PNG salvato da `neutral-render.py`; baseline verificata nello stesso modo. Riscontri in [verification.json](evidence/g-ui-02-20261110/verification.json); nessun nuovo test aggiunto alla suite.
+
+| Oggetto | SHA-256 ricalcolato |
+|---|---|
+| Fixture originale, baseline e candidato asset | `0fa828ab7b46009c890168addcca6db0bfb87e0baf75799a42abe93ba342e55a` |
+| Baseline JSON remoto, byte fisici LF | `324c03e3f6a01357dc0e0871d977eac06ad1d12f886a49bdfb95da2ec7961d36` |
+| Baseline stato canonico rev1 | `56acf2e2c721477e7acda0dc965828a1563ad03ccc003119da3510271f564fe2` |
+| Export locale e stato recuperato canonico rev2 | `0db6350e1db07dcb9753e7f987fe4c9d219eded099007396161380283b0fc235` |
+| Render Pillow rev1 | `9008d249614a42e17f081ff58c2e41305a702167a68a8769dcbecd312caa0260` |
+| Render Pillow rev2 terracotta | `f3ff5342d177339421336a5afa420fb8d0fa269717a431cee124a8fee469e3ed` |
+
+Hash fixture identico a quello dichiarato nella baseline; hash stato rev1 e render rev1 identici al [gate storico PR #6](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/6#issuecomment-6767783732). Rev2 stato e render differiscono da rev1 come previsto, e coincidono tra export, verifica, recupero e rendering ripetuto. Non esiste un raster originale Android G-UI-01 da confrontare. L'hash PNG è verificato in questo ambiente, non garantito fra encoder/versioni differenti.
+
+**Tutti i casi delle suite eseguiti:** renderer: repeatable, single_property, diff_localized, snapshot_restore, locked_and_stale, tampered_asset; round-trip: export_import_and_recovery, only_fill_and_revision, stale_revision, tampered_asset, unrelated_change, noop_rejected, cli_export_verify. I negativi rifiutano revisione obsoleta, layer locked, hash asset dichiarato alterato, byte fixture alterati (mock in memoria), projectId estraneo e no-op. Il test raster misura esattamente 480×90 = 43.200 pixel cambiati, tutti dentro x=[60,540), y=[100,190). Il ripristino da snapshot riottiene i byte del render iniziale. PASS riferito a questi casi effettivi; non si afferma copertura esaustiva di input arbitrari o dello schema.
+
+**Android originale vs ricostruzione:** ricerca nel tree e nella storia disponibile di main e dei tre branch remoti; consultati il verbale G-UI-01 e i commenti della PR #6. Il verbale G-UI-01 dichiara assente il payload effettivamente copiato; nessun originale recuperato. Lo snapshot del pannello era `{gate, fixture, accent}`, non uno stato schema 1.0.0; non esiste un import di quel formato nella CLI originale. Convertirlo usando la baseline sarebbe un adattamento locale da dichiarare, non un import nativo o una prova dell'origine Android. Il candidato terracotta di questa run è **ricostruzione locale dalla baseline tramite CLI**, non export Android. Non è pubblicato come checkpoint.
+
+Il checkpoint versionato `microtest-neutral-001-rev2.json` è verde `#3F8064`, con hash remoto `b555e5871e7528a51e266c0973038e5070530fb7b6dc3c8d7c4e4b444da6f5f3`: proviene dal precedente percorso 002, non da G-UI-01. Il [report di handoff storico](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/6#issuecomment-6767722400) distingue esplicitamente payload osservativo Android e costruzione locale; il [readback storico](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/6#issuecomment-6767834091) non sana la lacuna G-UI-01. Il checkpoint 003 è un concept e non input di questo renderer. Nessun accesso al dispositivo o al transcript originale G-UI-01 disponibile in questa sessione.
+
+**Riesame QA delle evidenze:** riesaminati i report precedenti senza assumere veri i loro PASS; confrontati commit, colori, formati e hash con i dati remoti. Verifiche automatiche locali, osservazioni Android riferite, ricostruzioni e capacità non esercitate rimangono distinte. Il controllo conclusivo delle nuove evidenze è svolto dallo stesso agente che ha eseguito i comandi: non costituisce una seconda firma indipendente. Non è stato coinvolto un secondo revisore né attestata indipendenza organizzativa.
+
+| Dimensione | Verdetto | Evidenza / limite |
+|---|---|---|
+| Remoto, PR, provenienza e integrità sorgenti | PASS | SHA fissato, readback API e confronti byte/LF |
+| Suite Python originali | PASS | 13/13 effettivi, nessuna installazione |
+| Export → verify → recupero locale | PASS | Fingerprint e byte canonici identici |
+| Render Pillow ripetibile | PASS | PNG realmente prodotti e ricalcolati |
+| Uniche modifiche fill/revision | PASS | Diff esatto e test single-property |
+| Asset e regioni protette | PASS | Hash fixture e diff 43.200 pixel localizzato |
+| Negativi previsti e ripristino locale | PASS | Tutti i casi delle suite sopra elencati |
+| G-UI-01 comportamento e recupero manuale | PASS riferito | Conferma utente storica; non ripetuta |
+| Snapshot originale G-UI-01 → stato 002 | PARTIAL | Originale assente; sola ricostruzione locale verificata |
+| Checkpoint Android terracotta e cold recovery | PARTIAL | Non eseguiti; nessun checkpoint originale da pubblicare |
+| Riesame documentale e limiti di prova | PASS | Report storici confrontati con remoto e nuove misure |
+| Seconda revisione indipendente della nuova run | PARTIAL | Nessun secondo revisore |
+| Parità SVG/Pillow, foto, sync, refresh, Undo versionato | PARTIAL / NON TESTATO | Fuori dalle capacità esercitate, nessuna attestazione |
+| G-UI-02 complessivo | **PARTIAL** | Tecnica locale PASS; catena originale Android mancante |
+| T0 / nuovi T1 | **PARTIAL / HOLD** | Nessuna promozione o riavvio |
+
+**Stop condition corrente:** manca lo snapshot originale. Fermare la promozione a PASS Android/end-to-end; non creare un sostituto, non cambiare il formato/schema o il renderer per superare il blocco. Eventuali differenze nei valori o una provenienza dubbia richiedono diagnosi prima di qualsiasi pubblicazione di checkpoint. Le suite verdi non autorizzano nuovi T1.
+
+**Unico prossimo passo operativo:** Matteo recupera dalla chat G-UI-01 su Android e incolla qui il JSON originale già copiato/usato nella prova, senza modificarlo, specificandone la provenienza; se non è più recuperabile lo dichiara. Non richiedere una nuova prova o ricostruire il payload. Questo è il solo input mancante da richiedere ora; finché manca, G-UI-02 resta PARTIAL. Un eventuale adattamento esplicito e una successiva prova cross-chat andranno valutati soltanto sui dati realmente ricevuti.
 
 ## Direzione di prodotto e ragioni della prova
 

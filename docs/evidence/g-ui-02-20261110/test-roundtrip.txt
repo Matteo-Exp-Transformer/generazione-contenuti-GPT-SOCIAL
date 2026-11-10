@@ -1,0 +1,12 @@
+test_cli_export_verify (__main__.RoundTripTests.test_cli_export_verify) ... ok
+test_export_import_and_recovery (__main__.RoundTripTests.test_export_import_and_recovery) ... ok
+test_noop_rejected (__main__.RoundTripTests.test_noop_rejected) ... ok
+test_only_fill_and_revision (__main__.RoundTripTests.test_only_fill_and_revision) ... ok
+test_stale_revision (__main__.RoundTripTests.test_stale_revision) ... ok
+test_tampered_asset (__main__.RoundTripTests.test_tampered_asset) ... ok
+test_unrelated_change (__main__.RoundTripTests.test_unrelated_change) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.242s
+
+OK

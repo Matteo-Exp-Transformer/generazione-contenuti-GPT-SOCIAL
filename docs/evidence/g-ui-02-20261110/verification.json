@@ -1,0 +1,26 @@
+{
+  "changedPaths": [
+    ".layers[1].fill",
+    ".revision"
+  ],
+  "before": {
+    "revision": 1,
+    "stateSha256": "56acf2e2c721477e7acda0dc965828a1563ad03ccc003119da3510271f564fe2",
+    "renderSha256": "9008d249614a42e17f081ff58c2e41305a702167a68a8769dcbecd312caa0260",
+    "assetSha256": "0fa828ab7b46009c890168addcca6db0bfb87e0baf75799a42abe93ba342e55a"
+  },
+  "recovered": {
+    "revision": 2,
+    "stateSha256": "0db6350e1db07dcb9753e7f987fe4c9d219eded099007396161380283b0fc235",
+    "renderSha256": "f3ff5342d177339421336a5afa420fb8d0fa269717a431cee124a8fee469e3ed",
+    "assetSha256": "0fa828ab7b46009c890168addcca6db0bfb87e0baf75799a42abe93ba342e55a"
+  },
+  "exportBytesCanonical": true,
+  "recoveredRenderEqualsSavedPillowRender": true,
+  "source": "LOCAL CLI RECONSTRUCTION; NOT ANDROID",
+  "fileSha256": {
+    "..\\evidence\\local-reconstruction-002.json": "0db6350e1db07dcb9753e7f987fe4c9d219eded099007396161380283b0fc235",
+    "tests\\creative-console\\render-original.png": "9008d249614a42e17f081ff58c2e41305a702167a68a8769dcbecd312caa0260",
+    "tests\\creative-console\\render-changed.png": "f3ff5342d177339421336a5afa420fb8d0fa269717a431cee124a8fee469e3ed"
+  }
+}
