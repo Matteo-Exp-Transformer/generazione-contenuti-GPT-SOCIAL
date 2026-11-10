@@ -91,3 +91,62 @@ Decisioni esplicitamente confermate per il **piano e il prossimo micro-test**, n
 - **Recupero GitHub ripetuto:** letti autonomamente dal ramo creativo `neutral-state.json`, `neutral-render.py`, `test-neutral-render.py` e questo audit; consultati `AGENTS.md` e il piano su `main`. JSON: `microtest-neutral-001`, schema `1.0.0`, revisione `1`, colore `#356B84`, asset `asset-neutral-01`, renderer `pillow-v1`. Il test si lancia con `cd tests/creative-console && python test-neutral-render.py` dove Pillow è già disponibile.
 - **Limite fondamentale:** questo recupero è svolto dallo stesso agente/conversazione; NON è un test indipendente a freddo. Il colore selezionato sul pannello Android non è stato automaticamente committato: il checkpoint GitHub rappresenta lo stato iniziale, non l'ultimo stato locale del pannello.
 - **Stato T8:** preparato, non superato. Prossima azione unica: aprire una nuova conversazione/agente senza cronologia e richiedere recupero di stato, vincoli e prossima azione usando solo repository e SHA di checkpoint. Non generare immagini o modificare repository nel test.
+
+## Cold Test Creative Console 001 — revisione documentale indipendente (2026-11-10)
+
+**Mandato:** sola lettura delle fonti durante il test, senza esecuzione di test, installazioni, generazioni o produzioni. Questa sezione viene depositata successivamente su richiesta esplicita dell'utente. **Checkpoint esaminato:** `895664406691a2156acc310466e60b2b261147c6`. **Branch del caso:** `proposal/layer-001-workflow-v02`. Il giudizio riguarda quel checkpoint, non modifiche successive.
+
+### Percorso effettivo di recupero e fonti
+
+1. Letto `AGENTS.md` da `main` (blob `d7ccd0ee5f0330f0e8e1c5a04c0b0f202adc51e9`): lettura mirata, distinzione fatti/ipotesi/proposte, divieto di dichiarare test non eseguiti, fonte canonica unica, pulizia branch/PR.
+2. Letti `README.md` (blob `338f1e28557839870ba1320e2c624c5a1902eb47`) e `docs/decisioni.md` (blob `ec4b40183673d4861207ff540f7376d0c308e1b5`) al checkpoint: il README descrive ancora il benchmark FORMA-001; il registro decisioni non è una prova del micro-test.
+3. Recuperato direttamente il commit `895664406691a2156acc310466e60b2b261147c6`, messaggio `docs: record Android user validation and cold-handoff boundary`, che aggiorna questo audit.
+4. Letto integralmente questo audit al checkpoint (blob `4cc6598e8ef9082ed5fdcdd40706974fc2338698`).
+5. Recuperati direttamente al checkpoint i tre file tecnici, con blob: `tests/creative-console/neutral-state.json` (`65824f59dff94e51103a31a2ef5c6d0c0a52c686`), `neutral-render.py` (`ca12ae3e46d0945fd8f104272fbc0acf0b95893f`), `test-neutral-render.py` (`3f65544615642eb5b25bf42225cd4257544505c8`).
+6. Consultato su `main` il piano `docs/PLAN-skill-system-minimo-2026-11-10.md` (blob `792c0a3b856605502263ceed1447578d665c5eac`) per i criteri di ripresa e i limiti del pilot.
+
+**Indipendenza:** la ricostruzione tecnica in questo test è stata fatta usando le fonti GitHub, senza citare cronologie o memorie come prova. Non è tuttavia certificabile dal solo contenuto della risposta l'isolamento tecnico della sessione rispetto a qualsiasi contesto precedente. Non attribuire per questo un PASS assoluto alla prova cold-start.
+
+### Contratto tecnico effettivamente letto
+
+- `projectId=microtest-neutral-001`, `schemaVersion=1.0.0`, `revision=1`.
+- `canvas={width:600,height:750,background:"#F3F0E8"}`.
+- `template={id:"neutral-card",version:"1.0.0"}`.
+- Asset neutro `asset-neutral-01`, `kind=fixture`, URI `fixtures/neutral.png`, `immutable=true`, SHA-256 `0fa828ab7b46009c890168addcca6db0bfb87e0baf75799a42abe93ba342e55a`. Fixture prodotta a runtime, non fotografia privata né file PNG committato.
+- Layer `background`: immagine approvata e bloccata. Layer `accent`: rettangolo visibile, `fill=#356B84`, `bounds=[60,100,480,90]`, non approvato e non bloccato.
+- Renderer `pillow-v1`, versione `1.0.0`; `neutral-render.py` usa Pillow, genera fixture e render in memoria e valida schema, asset, template, layer e revisioni. `change_fill` incrementa la revisione e rifiuta una revisione attesa obsoleta. Il comando storico indicato è `cd tests/creative-console && python test-neutral-render.py && python neutral-render.py`; **non eseguito in questo cold test**.
+
+### Test documentati: distinguere codice, esecuzione storica e verifica attuale
+
+L'audit storico dichiara Pillow 12.3.0 disponibile e **6/6 test Python superati localmente**. La lettura del codice conferma che esistono i seguenti sei test:
+1. `test_repeatable`: confronto degli hash di due chiamate al medesimo renderer sul medesimo stato; **non** dimostra equivalenza tra motori o dispositivi.
+2. `test_single_property`: verifica che cambino soltanto `layers[1].fill` e `revision`.
+3. `test_diff_localized`: confronto raster con esattamente 480×90 = 43.200 pixel modificati, nell'area x=60..539 e y=100..189.
+4. `test_snapshot_restore`: serializzazione JSON, ripristino e uguaglianza dei byte del rendering ripristinato.
+5. `test_locked_and_stale`: errori attesi per layer bloccato e revisione obsoleta.
+6. `test_tampered_asset`: rifiuto di hash asset falsificato.
+
+Hash dei raster **riportati nel precedente audit**, non ricalcolati: iniziale `95e0e87ac42fee7a9e75de59e86c34b8206203a9fe1b8784444eed6c26740263`; variante `6baa32e64811df33846babc8f5239921743e894c9175d29e9c041de1a95ea543`. Commit storico dei tre file: `66c7e97290a2032f32c08eae957ecb68ee494c13`. Questo revisore ha letto i sorgenti, **non** ha eseguito Python né verificato i PNG su Android.
+
+**Android:** il checkpoint registra conferma dichiarativa dell'utente che anteprima, cambio colore, undo, snapshot e ripristino funzionano sul dispositivo. Non è un test automatizzato del client, né prova di confronto pixel, né prova di persistenza remota. Non confondere con i sei test Python.
+
+### Stato persistente e lacune
+
+**Nessuna condivisione automatica persistente Android ↔ renderer dimostrata.** Il renderer legge il JSON dal filesystem; il pannello chat usa stato locale. Il codice recuperato non implementa sincronizzazione UI→JSON→GitHub, non effettua commit automatici, non avvia Python da Android. Lo snapshot locale non dimostra salvataggio fra chat. Il checkpoint GitHub conserva il colore iniziale `#356B84`, non l'ultimo colore selezionato sul dispositivo.
+
+Restano non dimostrati: round-trip completo UI→serializzazione→renderer→nuova sessione; parità pixel preview Android/raster Pillow; identità cross-engine; salvataggio e rilettura di preset persistente; ripetizione indipendente dei sei test; reale isolamento del contesto cold-start. Nessuna di queste lacune autorizza a riaprire la produzione Tattoo.
+
+### Incongruenze e rischi documentali
+
+- `README.md` è centrato su FORMA-001 e non indirizza chiaramente al checkpoint Creative Console: rischio di discovery incompleta, senza dimostrare un errore di funzionamento.
+- In questo audit una sezione precedente dice ancora «Android non verificato», mentre l'aggiornamento cronologicamente successivo registra conferma utente: chi legge deve privilegiare la data e il tipo di evidenza, senza scambiare conferma dichiarativa per prova automatica.
+- Il test `test_repeatable` è una verifica in-process, non una prova di pixel identity fra client e Pillow.
+- La dicitura «persistenza nel repository» è una scelta di progetto per il prototipo, non un'implementazione di sincronizzazione automatica.
+
+### Verdetto e singola prossima azione
+
+- **PASS circoscritto:** recupero delle fonti GitHub, ricostruzione esatta del contratto, individuazione dei sei test e distinzione delle evidenze.
+- **NON DIMOSTRATO:** persistenza automatica end-to-end, parità Android/Pillow, cold-start tecnicamente isolato.
+- **Verdetto complessivo continuità agentica: INCONCLUSIVE**, con evidenza positiva di continuità documentale. Non promuovere il sistema a PASS solo perché il checkpoint contiene documentazione.
+
+**Una sola prossima azione proposta, non autorizzazione all'esecuzione:** progettare un test minimo di round-trip JSON fra pannello Android e renderer, con modifica singola, serializzazione esplicita, ripresa in nuova sessione, controllo revisione/hash e confronto dell'output. Richiedere autorizzazione separata prima di implementare o eseguire. Nessuna nuova produzione creativa, installazione o modifica non richiesta.
