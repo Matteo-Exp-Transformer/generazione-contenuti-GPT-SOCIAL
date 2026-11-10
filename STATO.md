@@ -4,18 +4,19 @@ Mandato attivo: [MANDATO-001](docs/mandato-001-strada-unica.md).
 Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'utente; lo storico non riapre strade superate.
 
 ## Gate
-- F0 Consolidamento: IN CORSO — consolidamento pronto nel branch, attesa review/merge e pulizia branch; prove nella PR F0.
-- F1-A Strada A (TU-01): DA ESEGUIRE — prima engine e test sintetici, poi foto reale in nuova chat ChatGPT entro 13/11.
-- F1-B Sonda MCP (TU-01): OPZIONALE, NON AVVIATA — run separata attivabile dall'utente in parallelo, entro 13/11.
+- F0 Consolidamento: PARTIAL — [PR #15](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/15) merged, PR #11 integrata, tutti i 6 branch docs (incluso #14) e F0 eliminati; 16 archivi byte-identici, 52 righe iniziali AGENTS+STATO, link operativi verdi. Restano 25 rimandi storici locali non risolvibili, mappati nell'[indice](docs/archivio/README.md); non è PASS globale «nessun rimando rotto».
+- F1-A Engine: PASS test sintetici — 18 test verdi, hash foto e pixel, titolo A→B→A, schema chiuso, font/versioni, CLI/import autonomi; output reale nella PR engine. Review/merge finale in attesa.
+- F1-A Strada A (TU-01): NON ESEGUITO — foto reale, conferma Android senza download, voto utente, minuti/turni, costo e ripresa reale da raccogliere entro 13/11. I test sintetici non sono il PASS di TU-01.
+- F1-B Sonda MCP (TU-01): OPZIONALE, NON AVVIATA — run separata attivabile dall'utente in parallelo, entro 13/11; non è una terza delega.
 - Gate D: IN ATTESA — decisione dell'utente sulle schede TU-01, 13/11, revisore una volta.
 - F2 Pilota prodotto: HOLD — dopo Gate D, un post reale entro 17/11. T1 HOLD fino al Gate D.
 
 ## Prossimo passo (uno)
-Orchestratore — verificare e integrare F0, eliminare branch conclusi verificati, poi delegare engine F1-A (§6) — test sintetici verdi con output in PR; TU-01 resta al regista — entro 13/11.
+Regista, nuova chat ChatGPT — seguire [skill post-director](skills/post-director/SKILL.md), caricare engine e foto autorizzata dall'utente, eseguire TU-01 del mandato e consegnare la scheda con misure reali per Gate D — entro 13/11. Foto/PNG in repo solo con autorizzazione; post.json di ogni approvazione da consegnare al Costruttore.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore, 2026-11-10, task delegato 1/2 (F0).
-- Fatto: integrate ancestry PR #11, evidenze G-UI-02 e audit Claude; archivio immutabile; istruzioni e fonti operative consolidate.
-- Prove: PR F0 con diff, hash archivio, limiti righe e verifica link operativi; PR #14 già merged (3f0572c).
-- Aperto/bloccato: review/merge F0 e cancellazioni finali; engine F1-A e TU-01 non eseguiti.
-- Serve dall'utente: nulla per i due task autorizzati; foto e valutazioni solo nella successiva chat TU-01.
+- Chi/quando: Costruttore + orchestratore, 2026-11-10; completati i 2/2 task delegati, nessuna delega extra.
+- Fatto: F0 integrato e branch conclusi eliminati; engine Pillow in un file, schema skill con rettangoli opzionali, test sintetici e istruzioni ChatGPT; skill v0 invariata.
+- Prove: PR #14 e #15 merged; PR engine con diff/output completo; 18 test sintetici verdi, A finale identico ad A iniziale; nessuna foto reale usata.
+- Aperto/bloccato: review/merge PR engine e cancellazione suo branch; 25 rimandi storici locali; TU-01 reale, Android/qualità e Gate D aperti.
+- Serve dall'utente: nuova chat del regista con foto autorizzata, titoli A/B e palette prima del test, conferme Android, voto 1–5 e minuti attivi effettivi.
