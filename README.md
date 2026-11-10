@@ -15,7 +15,7 @@ Dal brief ai concept alternativi, con approvazione umana dell'idea, generazione 
 - [Prompt A — Post completo](benchmarks/FORMA-001/prompts/A-post-completo.md)
 - [Prompt B1 — Fotografia](benchmarks/FORMA-001/prompts/B1-fotografia.md)
 - [Prompt B2 — Layout](benchmarks/FORMA-001/prompts/B2-layout.md)
-- [Risultati (non ancora eseguito)](benchmarks/FORMA-001/risultati.md)
+- [Registro dei risultati](benchmarks/FORMA-001/risultati.md)
 
 ## Contesto di progetto
 - [PRD esplorativo v0.1](docs/PRD-v0.1.md)
