@@ -103,3 +103,54 @@ Mandato per una **nuova chat esecutrice**, non autorizzazione automatica a gener
 > Non introdurre subagent o nuovi file di processo per inerzia. In caso di capacità di delega non disponibili, lavora direttamente e dichiaralo.
 
 **Nota:** questo prompt non cambia brief, rubrica, gate o autorizzazioni. Il prossimo test preferito è T3 (B2) dopo approvazione B1; T1/T2 rimangono nel backlog.
+
+
+## Workflow creativo v0.2 — approvato per test LAYER-002 (2026-11-09)
+
+L'utente ha approvato questa interfaccia per una run sperimentale LAYER-002. Non sostituisce il protocollo A/B G0–G5 né autorizza generazioni o modifiche all'ambiente. Fonte osservativa: docs/audit-layer-001-handoff.md.
+
+**Diagnosi:** 12 scelte provvisorie nella run LAYER-001 prima di qualsiasi fotografia; troppe microdecisioni e spiegazioni. Il benchmark precedente ha inoltre evidenziato il rischio di coprire la fotografia con pannelli e testo. Le misure di tempo/costo della run LAYER-001 non sono disponibili.
+
+**Tre gate creativi + verifica:**
+1. **Direzione:** messaggio, atmosfera, rapporto immagine/testo; approvazione umana.
+2. **Composizione + fotografia:** soggetto, posizione, sfondo, camera, luce, materiali e aree protette in un'unica scelta fra 2–3 proposte; approvazione umana. Sul percorso B, chiedere qui autorizzazione separata per UNA prima generazione fotografica, prima della tipografia di dettaglio.
+3. **Tipografia + layout:** gerarchia, stile e collocazione del testo in 2–3 alternative basate sull'asset effettivo; approvazione umana. L'agente sceglie metriche, spaziature e allineamenti tecnici, verificandoli sul rendering finale.
+4. **Verifica:** output reale, controllo su smartphone, correzione mirata, decisione di accettazione. Ogni generazione, creazione file o modifica dell'ambiente richiede la specifica autorizzazione prevista dalle regole vigenti.
+
+**Template di risposta (max 120 parole prima delle anteprime):**
+- **Decidiamo:** [una macrodecisione].
+- **Cambia:** [effetto concreto nell'immagine].
+- **Perché ora:** [quando/come decide un professionista, una frase].
+- **Opzioni:** A/B, massimo C, differenze visibili e un compromesso ciascuna; anteprime comparabili se disponibili e fedeltà dichiarata (schema ≠ fotografia/render reale).
+- **Consiglio:** [una proposta motivata]. **Scegli:** A/B/C, modifica o torna al gate precedente.
+
+**Delegare:** margini numerici, gutter, micro-crop, scelta fra font equivalenti compatibili con licenze, kerning, contrasto e QA tecnico; chiedere all'umano solo se cambia la direzione creativa, oscura il soggetto o viola il brief. Nessun pannello opaco sopra la fotografia senza approvazione esplicita.
+
+**Metriche della prossima run:** numero gate creativi (target ≤3), decisioni esplicite (≤3 prima della prima prova), parole mostrate per gate (≤120 escluse etichette anteprima), tentativi di generazione, minuti umani attivi, minuti macchina, costo incrementale verificato, revisite ai gate, errori critici, punteggio /100 secondo protocollo, output approvabile sì/no. Confrontare con LAYER-001 solo metriche osservabili: 12 scelte e nessuna fotografia generata; tempi e qualità finale non confrontabili. Fermarsi se dopo 3 gate non esiste una direzione approvata, se la prova viola aree protette o se occorre spesa/azione non autorizzata.
+
+**Compatibilità:** i tre gate sono l'interfaccia creativa sperimentale approvata; G0–G5 del protocollo restano i gate sperimentali canonici. Non cambiare prompt A/B o risultati storici senza un audit della run e ulteriore approvazione.
+
+
+## LAYER-002 — feedback in corso e restart R2 (2026-11-09)
+
+**Stato:** l'utente ha approvato la direzione fotografica A e poi l'opzione compositiva B (interno vissuto); non è stata autorizzata né eseguita alcuna generazione. Prima della prova ha chiesto di cambiare metodo e ripartire da zero. La schermata di opzioni chiuse su posizione, luce e numero di oggetti è stata rifiutata come esperienza troppo rigida. Le scelte creative precedenti sono **osservazioni della run interrotta, non vincoli del restart**.
+
+**Regola sperimentale aggiornata — v0.3 (sostituisce v0.2 soltanto per l'interfaccia creativa, non il protocollo FORMA-001):**
+- Sequenza obbligatoria per ogni macro-gate: **proposta del gate → breve intervista aperta → riepilogo/approvazione → avanzamento di UN layer**. Non passare al gate successivo prima di aver offerto l'intervista, anche se la scelta sembra completa.
+- Il gate presenta in poche righe: **su cosa lavoriamo, cosa cambia visivamente, quando/perché un professionista lo decide**. Mostrare 2 alternative realmente distinguibili quando aiutano; non trasformare ogni dettaglio in un sondaggio o in un form.
+- Dopo il gate, una **sola domanda aperta**: «Vuoi indicarmi elementi da inserire, posizione, stile o altri vincoli? Puoi anche rispondere “interpreta tu”.» Le istruzioni possono essere libere, parziali o assenti. Nessun obbligo di compilare campi. Se mancano dettagli, l'agente propone scelte professionali motivate, senza bloccare la run.
+- Se l'utente anticipa indicazioni per layer futuri, **registrarle come vincoli/proposte per i rispettivi layer**, senza applicarle prematuramente né saltare gate o verifiche. Ogni layer resta revisionabile; evitare fretta di chiudere il post.
+- Ordine dei layer nel percorso B: **direzione/sfondo → fotografia e oggetti (posizioni, inquadratura, luce) → tipografia/layout → verifica e revisione**. Un gate può accorpare decisioni tecniche, ma non eliminare l'intervista aperta e la conferma umana.
+- Per la fotografia, chiedere autorizzazione **separata ed esplicita** prima di generare. Non creare immagini, file, installazioni o spese per effetto della sola scelta di un gate. Budget esterno incrementale €0.
+- Testare se il flusso è meno oneroso misurando: domande aperte, richieste di chiarimento superflue, parole mostrate, correzioni richieste, decisioni umane, generazioni autorizzate, qualità finale e tempi se disponibili. Non dichiarare qualità o risparmio dimostrati prima della prova.
+
+**Restart:** ID **LAYER-002-R2**. Azzerare le scelte visive della run interrotta; mantenere soltanto brief FORMA-001, protocollo canonico, vincoli generali approvati (fotografia protagonista, niente pannelli opachi non autorizzati), e metodo v0.3. Iniziare dal **Gate 1 — direzione visiva**, presentare opzioni concise e chiudere con **intervista aperta**, non con un questionario. Non generare alcuna immagine finché non arriva un'esplicita autorizzazione.
+
+
+### LAYER-002-R2 — regola di conservazione dell'asset (feedback utente, 2026-11-09)
+
+**Regola vincolante per il test:** una volta approvata una fotografia, uno sfondo o un template, **conservarne identità e versione**. Le modifiche successive si applicano soltanto agli elementi/layer espressamente richiesti. **Non sostituire, rigenerare o reinterpretare il fondo senza richiesta o autorizzazione esplicita dell'utente.** Se una modifica non può essere isolata con gli strumenti disponibili, dichiararlo prima e proporre un'alternativa; non presentare un nuovo scatto come revisione fedele del precedente.
+
+**Operatività:** conservare l'originale immutabile, riferimento/percorso recuperabile e versione; creare revisioni separate con changelog sintetico (cosa cambia / cosa resta bloccato); verificare visivamente che le aree protette siano rimaste identiche. Evitare query di immagini nuove per illustrare piccole revisioni di un riferimento già scelto: una query diversa può mostrare una scena completamente diversa. Se il riferimento non è stato salvato come asset recuperabile, dichiarare il limite e richiedere un file o autorizzazione a creare la base prima di promettere continuità pixel-identica.
+
+**Stato del Gate 2:** l'utente approva come **base concettuale** una composizione minimalista ma non vuota: circa tre piante da interno distribuite (Kentia, Monstera, Pothos), vegetazione esterna attraverso la vetrata, pochi arredi e spazio negativo. Ha osservato che le anteprime precedenti cambiavano completamente fotografia di sfondo, comportamento da evitare. L'immagine di riferimento mostrata in chat **non è un asset generato, salvato o versionato nella repository**; nessuna generazione fotografica è stata autorizzata in questa fase. Prima della prima generazione chiedere autorizzazione esplicita e poi conservare l'asset approvato come base per i layer successivi, previo consenso alla scrittura.

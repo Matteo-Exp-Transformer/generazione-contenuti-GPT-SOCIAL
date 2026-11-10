@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "microtest-neutral-001",
+  "revision": 1,
+  "canvas": {
+    "width": 600,
+    "height": 750,
+    "background": "#F3F0E8"
+  },
+  "template": {
+    "id": "neutral-card",
+    "version": "1.0.0"
+  },
+  "assets": [
+    {
+      "id": "asset-neutral-01",
+      "kind": "fixture",
+      "uri": "fixtures/neutral.png",
+      "sha256": "0fa828ab7b46009c890168addcca6db0bfb87e0baf75799a42abe93ba342e55a",
+      "immutable": true
+    }
+  ],
+  "layers": [
+    {
+      "id": "background",
+      "kind": "image",
+      "assetId": "asset-neutral-01",
+      "approved": true,
+      "locked": true
+    },
+    {
+      "id": "accent",
+      "kind": "rectangle",
+      "visible": true,
+      "fill": "#356B84",
+      "bounds": [
+        60,
+        100,
+        480,
+        90
+      ],
+      "approved": false,
+      "locked": false
+    }
+  ],
+  "renderer": {
+    "id": "pillow-v1",
+    "version": "1.0.0"
+  }
+}
