@@ -17,6 +17,9 @@ Dal brief ai concept alternativi, con approvazione umana dell'idea, generazione 
 - [Prompt B2 — Layout](benchmarks/FORMA-001/prompts/B2-layout.md)
 - [Registro dei risultati](benchmarks/FORMA-001/risultati.md)
 
+## Prossimo pilota
+[Dirigere un post sulla propria fotografia da Android — obiettivo, checkpoint e prove nelle due chat](docs/pilota-foto-diretta-android.md).
+
 ## Contesto di progetto
 - [PRD esplorativo v0.1](docs/PRD-v0.1.md)
 - [Registro delle decisioni](docs/decisioni.md)
