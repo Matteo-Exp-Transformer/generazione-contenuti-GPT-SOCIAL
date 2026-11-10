@@ -84,3 +84,10 @@ Decisioni esplicitamente confermate per il **piano e il prossimo micro-test**, n
 - **Non ancora verificato:** interazione del pannello su Android nel presente micro-test; collegamento diretto fra componente UI e renderer Python; equivalenza pixel della preview Android; ripresa realmente indipendente in una chat senza cronologia.
 - **Limite esplicito:** il pannello nativo può aggiornare lo stato locale, ma non esegue automaticamente il codice Python nel repository; non dichiarare pipeline end-to-end completa.
 - **Prossima azione unica:** verificare sul dispositivo Android il pannello neutro con una modifica e undo, poi affidare a un agente senza cronologia la rilettura del checkpoint. Non riaprire la produzione Tattoo prima dell'esito.
+
+## Aggiornamento verifica Android e recupero documentale — 2026-11-10
+
+- **Android, conferma utente:** nel client Android anteprima, cambio colore, undo, snapshot e ripristino funzionano correttamente. Evidenza dichiarativa dell'utente, non acquisizione automatizzata del client o test raster cross-engine.
+- **Recupero GitHub ripetuto:** letti autonomamente dal ramo creativo `neutral-state.json`, `neutral-render.py`, `test-neutral-render.py` e questo audit; consultati `AGENTS.md` e il piano su `main`. JSON: `microtest-neutral-001`, schema `1.0.0`, revisione `1`, colore `#356B84`, asset `asset-neutral-01`, renderer `pillow-v1`. Il test si lancia con `cd tests/creative-console && python test-neutral-render.py` dove Pillow è già disponibile.
+- **Limite fondamentale:** questo recupero è svolto dallo stesso agente/conversazione; NON è un test indipendente a freddo. Il colore selezionato sul pannello Android non è stato automaticamente committato: il checkpoint GitHub rappresenta lo stato iniziale, non l'ultimo stato locale del pannello.
+- **Stato T8:** preparato, non superato. Prossima azione unica: aprire una nuova conversazione/agente senza cronologia e richiedere recupero di stato, vincoli e prossima azione usando solo repository e SHA di checkpoint. Non generare immagini o modificare repository nel test.
