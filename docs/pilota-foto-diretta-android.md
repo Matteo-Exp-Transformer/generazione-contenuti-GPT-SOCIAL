@@ -104,7 +104,7 @@ Il checkpoint versionato `microtest-neutral-001-rev2.json` è verde `#3F8064`, c
 
 **Stop condition corrente:** manca lo snapshot originale. Fermare la promozione a PASS Android/end-to-end; non creare un sostituto, non cambiare il formato/schema o il renderer per superare il blocco. Eventuali differenze nei valori o una provenienza dubbia richiedono diagnosi prima di qualsiasi pubblicazione di checkpoint. Le suite verdi non autorizzano nuovi T1.
 
-**Unico prossimo passo operativo:** Matteo recupera dalla chat G-UI-01 su Android e incolla qui il JSON originale già copiato/usato nella prova, senza modificarlo, specificandone la provenienza; se non è più recuperabile lo dichiara. Non richiedere una nuova prova o ricostruire il payload. Questo è il solo input mancante da richiedere ora; finché manca, G-UI-02 resta PARTIAL. Un eventuale adattamento esplicito e una successiva prova cross-chat andranno valutati soltanto sui dati realmente ricevuti.
+**Passo storico superato (non eseguire):** la richiesta dello snapshot G-UI-01 non è più operativa. Decisione successiva dell'utente: proseguire senza richiederlo nuovamente. Rimane G-UI-02 PARTIAL; non ricostruire l'originale né promuovere la catena Android → renderer 002 a PASS.
 
 ### Addendum G-UI-02-RETEST — ChatGPT Android, 10 novembre 2026
 
@@ -125,6 +125,12 @@ Payload **visibile nello screenshot**, trascritto come valori JSON (non recupera
 **Limiti e stato invariato:** il JSON `{gate,fixture,accent}` NON è lo schema renderer 002. Non dimostrati trasferimento nativo al renderer 002, parità SVG/Pillow, sincronizzazione, persistenza automatica, cold recovery, Undo versionato o fedeltà fotografica. Non recuperato lo snapshot originale G-UI-01; non richiederlo nuovamente. **G-UI-02 complessivo PARTIAL; T0 PARTIAL; nuovi T1 HOLD.** Nessuna nuova PR, modifica a codice/schema/roadmap o push su main.
 
 **Unico prossimo passo:** riesame indipendente dell'addendum e delle prove già presenti sul branch, mantenendo i limiti di provenienza e senza avviare nuovi T1.
+
+### Riesame indipendente documentale — 10 novembre 2026
+
+Verificati tramite GitHub repository privata, permessi push, esistenza del branch `docs/g-ui-02-evidence-20261110`, commit `497864ef318b8aec4ceccbfa7aa3f767161a5f7f` e diff con `main` (2 commit avanti, 0 indietro al momento del controllo). I log e gli hash del gate tecnico sono evidenze precedenti rilette, non suite rieseguite in questo riesame. Conferma dell'utente e descrizione dello screenshot dimostrano soltanto il recupero manuale assistito e lo stato finale terracotta, non la sequenza completa osservata indipendentemente. Lo screenshot originale `g-ui-02-retest-android-20261110.jpg` non è risultato accessibile tra gli allegati/file disponibili e non esisteva nel percorso GitHub previsto al controllo: impossibile verificarne JPEG reale e SHA-256 atteso `969dc8d96d6ebe68a98ee48a8c4579b50305b3bab719bda195c5a0065366a121`; nessun sostituto pubblicato. Il payload `{gate,fixture,accent}` non è un documento renderer 002. Restano NON TESTATI import nativo, persistenza automatica, cold recovery, parità SVG/Pillow su origine Android, compositing fotografico e conservazione delle scelte durante revisioni reali. **Verdetti invariati: G-UI-02 PARTIAL, T0 PARTIAL, nuovi T1 HOLD.**
+
+**Unico prossimo passo proposto, soggetto ad autorizzazione separata per l'esecuzione:** definire un micro-gate di modifica circoscritta su una fotografia originale già disponibile, con checkpoint delle scelte approvate e verifica prima/dopo della sola modifica richiesta. Prima della prova fissare criteri di preservazione di asset, testo e layout; non avviare nuovi T1 e non alterare schema o renderer senza autorizzazione.
 
 ## Direzione di prodotto e ragioni della prova
 
