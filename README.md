@@ -22,5 +22,9 @@ Dal brief ai concept alternativi, con approvazione umana dell'idea, generazione 
 - [Registro delle decisioni](docs/decisioni.md)
 - [Handoff per agente audit skill/sistema](docs/handoff-agente-sistemi.md)
 
+
+## Creative Console 003 — handoff approvato
+Concept creativo approvato e persistito, **non** validato come input del renderer né come prova Android. [Checkpoint JSON canonico](tests/creative-console/checkpoints/creative-console-003-approved-concept.json) · [Audit Cold Test Cross-Chat 003](docs/audit-creative-console-003-cold-test-2026-11-10.md) · [PR originale #7](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/7).
+
 ## Vincoli
 Budget esterno incrementale iniziale **€0**. Nessuna generazione immagini, installazione, acquisto, automazione o modifica dell'ambiente senza via libera specifico. Un documento canonico per ciascun ambito, senza replicare automaticamente sistemi di altre repository.
