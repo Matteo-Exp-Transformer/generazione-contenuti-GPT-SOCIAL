@@ -72,3 +72,15 @@ Decisioni esplicitamente confermate per il **piano e il prossimo micro-test**, n
 **Coordinamento metodo:** il piano di continuità consolidato su `main` è `docs/PLAN-skill-system-minimo-2026-11-10.md`; `AGENTS.md` su main include già regole di pulizia branch, verifica diff e chiusura PR. Non creare un nuovo file canonico di stato, non duplicare il piano del PM e non fondere il ramo creativo senza revisione del diff. Il presente aggiornamento registra solo decisioni Creative Console nel documento esistente. Prima di ogni implementazione verificare la base corrente e l'eventuale lavoro parallelo.
 
 **Prossima azione unica:** agente indipendente consolida il contratto JSON e il micro-test con criteri di accettazione; solo dopo autorizzazione separata si esegue il test tecnico su Android.
+
+## Micro-test tecnico Creative Console 001 — esecuzione parziale autorizzata
+
+- Perimetro: fixture neutra; nessuna fotografia privata, post Tattoo o generazione creativa. Non modifica le decisioni del caso Tattoo.
+- File nuovi: `tests/creative-console/neutral-state.json`, `neutral-render.py`, `test-neutral-render.py`. Fixture PNG generata a runtime e non committata; nessuna installazione.
+- Ambiente locale: Pillow 12.3.0 già presente. Comando: `cd tests/creative-console && python test-neutral-render.py && python neutral-render.py`.
+- **Verificato localmente:** 6/6 test Python superati: doppio render, modifica di un solo campo, diff raster limitato a 480×90=43.200 pixel, snapshot/ripristino, lock/revision stale, hash asset alterato rifiutato.
+- Hash fixture neutra: `0fa828ab7b46009c890168addcca6db0bfb87e0baf75799a42abe93ba342e55a`. Hash raster iniziale: `95e0e87ac42fee7a9e75de59e86c34b8206203a9fe1b8784444eed6c26740263`; variante: `6baa32e64811df33846babc8f5239921743e894c9175d29e9c041de1a95ea543`. Valori relativi all'ambiente locale di test, non certificazione cross-platform.
+- **GitHub verificato:** tre file scritti nel ramo creativo, ultimo commit `66c7e97290a2032f32c08eae957ecb68ee494c13`; tutti e tre riletti tramite fetch_file dal ramo. Non equivale a verifica di esecuzione su GitHub.
+- **Non ancora verificato:** interazione del pannello su Android nel presente micro-test; collegamento diretto fra componente UI e renderer Python; equivalenza pixel della preview Android; ripresa realmente indipendente in una chat senza cronologia.
+- **Limite esplicito:** il pannello nativo può aggiornare lo stato locale, ma non esegue automaticamente il codice Python nel repository; non dichiarare pipeline end-to-end completa.
+- **Prossima azione unica:** verificare sul dispositivo Android il pannello neutro con una modifica e undo, poi affidare a un agente senza cronologia la rilettura del checkpoint. Non riaprire la produzione Tattoo prima dell'esito.
