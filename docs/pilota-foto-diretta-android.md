@@ -2,10 +2,30 @@
 
 **Domanda scelta dall’utente, 10 novembre 2026.** «Mi lascia dirigere un post sulla mia foto senza perdere quello che ho approvato?»
 
-## Stato operativo
+## Stato operativo — riconciliazione del 10 novembre 2026
 
-- **Mandato A — direzione su Android.** Primo tentativo fallito secondo l’utente; [audit del primo tentativo](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/11). Ripetizione in corso, esito aperto. L’agente A registra l’esito della ripetizione e, quando disponibile, lo SHA e il percorso del checkpoint approvato e verificato da remoto.
-- **Mandato B — ripresa indipendente.** In attesa del checkpoint della ripetizione. Alla consegna, B legge prima i soli dati e fissa la propria risposta; poi apre lo screenshot della stessa revisione, se disponibile. A verdetto concluso aggiorna qui l’esito, il riferimento alle prove e il prossimo passo. I dettagli della procedura e i criteri sono nelle sezioni sotto.
+**Stato: HOLD sui nuovi piloti creativi T1.** La sezione storica «Due chat, un solo caso» qui sotto descrive il protocollo precedente e non costituisce autorizzazione a ripeterlo. Nessun T1, implementazione o test Android è stato avviato con questo aggiornamento. La proposta di gate seguente non modifica la roadmap né lo schema o il renderer.
+
+- **Pilota A precedente ai T1 — VERIFICATO documentalmente nella [PR #11](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/11)**, non ancora integrata in `main`: audit del percorso fotografico handpan con esito PARTIAL sul workflow, FAIL sulla fedeltà finale; titolo+Undo non eseguito. Non conteggiarlo come uno dei due T1.
+- **T1-01 — VERIFICATO nell'addendum della PR #11**, sessione `GPT-SOCIAL-T1-20261110-01`: FAIL procedurale prima della composizione, perché direzioni/titoli verbali sono stati proposti senza anteprime reattive collegate alle scelte. Output fotografico, Undo e controllo pixel NON TESTATI. L'addendum è sul branch `docs/android-photo-pilot-a-final-audit`, non su `main` al momento della riconciliazione.
+- **T1-02 — RIFERITO dall'utente, episodio distinto:** seconda prova fermata per anteprime A/B assenti o inutilizzabili, pannello interattivo non conforme e mancato rispetto della procedura visuale. **Audit completo NON RECUPERATO** nella repository in questa ricognizione; non attribuire strumenti, sequenza, screenshot, verifiche Android o causa tecnica specifica non dimostrati. Il PASS/FAIL dei singoli sottorequisiti è indeterminato; esito complessivo riferito: FAIL.
+- **T0 — PARTIAL RIFERITO** da revisione indipendente e successiva riconciliazione delle evidenze associate a implementazioni differenti. Pacchetto tecnico riconciliato non rintracciato nel tree di `main` in questa ricognizione. Non dichiarare T0 PASS end-to-end.
+- **Mandato B — NON AVVIATO nel percorso T1 attuale**: nessun checkpoint T1 approvato e verificato da remoto da consegnare. Creative Console 003 ha un PASS *solo* di recupero documentale; il checkpoint 003 non è input del renderer 002.
+- **Capacità già documentate, non equivalenti a integrazione:** [controlli Android e preview UI locali](protocollo-ui-android-test-2026-11-10.md); [renderer neutro e round-trip JSON esplicito](../tests/creative-console/README-002.md). Non è dimostrato il percorso pannello Android → stato persistente → renderer fotografico → revisione locale → Undo.
+
+### Proposta di gate tecnico unico — NON APPROVATO/NON TESTATO
+
+**Problema:** una scelta dell'utente non risulta collegata in modo verificato a un'anteprima visiva e a uno stato recuperabile nella superficie ChatGPT Android.
+
+**Ipotesi:** controlli nativi con stato condiviso possono modificare coerentemente la *stessa* mini-preview neutra; l'eventuale recupero dello stato richiede un passaggio esplicito verificato, non la sola memoria locale della UI.
+
+**Intervento minimo proposto:** una sola fixture neutra, senza fotografie personali; selezione di due colori di un unico elemento, opzione mostra/nascondi, reset, conferma esplicita e lettura dei valori di stato risultanti. Confrontare valori selezionati, anteprima osservata dall'utente sul proprio Android e checkpoint serializzato/recuperato tramite passaggio esplicito. Non chiamare l'esempio un renderer fotografico né dichiarare salvataggio GitHub senza commit e readback. Nessuna installazione, nuova app o generazione artistica.
+
+**Criteri di esito:** PASS soltanto con controllo funzionante, variazione visiva corretta per ciascuna selezione, reset coerente, stato esplicito recuperato senza reinterpretazione, conferma Android e limiti tecnologici registrati. PARTIAL se una parte funziona ma manca recupero o conferma visiva. FAIL se controllo/preview non rispondono coerentemente. Se FAIL, isolare esecuzione, protocollo, componente o limite della piattaforma prima di ulteriori prove. Un solo tentativo concordato, con stop e diagnosi, non una sequenza indefinita.
+
+**Responsabilità e prossimo passo unico:** responsabile progettuale/QA definisce e revisiona la specifica operativa; l'utente autorizza separatamente l'esecuzione del gate. Soltanto dopo PASS si può *proporre* una prova distinta stato → renderer neutro. Architettura candidata, NON decisione approvata: console progressiva → stato versionato → anteprima legata allo stato → renderer a livelli → revisioni circoscritte/Undo. Non estendere adesso lo schema tecnico 002.
+
+**Coerenza documentale:** `README.md` rinvia già a questo piano; `AGENTS.md` chiede di iniziare dallo «Stato operativo». `docs/decisioni.md` e il piano skill system restano invariati. L'audit PR #11 conserva il proprio resoconto storico, mentre questo documento è l'unica sede del nuovo stato operativo. La presenza della PR #11 aperta non equivale alla sua integrazione.
 
 ## Direzione di prodotto e ragioni della prova
 
