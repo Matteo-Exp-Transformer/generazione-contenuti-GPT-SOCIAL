@@ -2,10 +2,30 @@
 
 **Domanda scelta dall’utente, 10 novembre 2026.** «Mi lascia dirigere un post sulla mia foto senza perdere quello che ho approvato?»
 
-## Stato operativo
+## Stato operativo — riconciliazione del 10 novembre 2026
 
-- **Mandato A — direzione su Android.** Primo tentativo fallito secondo l’utente; [audit del primo tentativo](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/11). Ripetizione in corso, esito aperto. L’agente A registra l’esito della ripetizione e, quando disponibile, lo SHA e il percorso del checkpoint approvato e verificato da remoto.
-- **Mandato B — ripresa indipendente.** In attesa del checkpoint della ripetizione. Alla consegna, B legge prima i soli dati e fissa la propria risposta; poi apre lo screenshot della stessa revisione, se disponibile. A verdetto concluso aggiorna qui l’esito, il riferimento alle prove e il prossimo passo. I dettagli della procedura e i criteri sono nelle sezioni sotto.
+**Stato: HOLD sui nuovi piloti creativi T1.** La sezione storica «Due chat, un solo caso» qui sotto descrive il protocollo precedente e non costituisce autorizzazione a ripeterlo. Nessun T1, implementazione o test Android è stato avviato con questo aggiornamento. La proposta di gate seguente non modifica la roadmap né lo schema o il renderer.
+
+- **Pilota A precedente ai T1 — VERIFICATO documentalmente nella [PR #11](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/11)**, non ancora integrata in `main`: audit del percorso fotografico handpan con esito PARTIAL sul workflow, FAIL sulla fedeltà finale; titolo+Undo non eseguito. Non conteggiarlo come uno dei due T1.
+- **T1-01 — VERIFICATO nell'addendum della PR #11**, sessione `GPT-SOCIAL-T1-20261110-01`: FAIL procedurale prima della composizione, perché direzioni/titoli verbali sono stati proposti senza anteprime reattive collegate alle scelte. Output fotografico, Undo e controllo pixel NON TESTATI. L'addendum è sul branch `docs/android-photo-pilot-a-final-audit`, non su `main` al momento della riconciliazione.
+- **T1-02 — RIFERITO dall'utente, episodio distinto:** seconda prova fermata per anteprime A/B assenti o inutilizzabili, pannello interattivo non conforme e mancato rispetto della procedura visuale. **Audit completo NON RECUPERATO** nella repository in questa ricognizione; non attribuire strumenti, sequenza, screenshot, verifiche Android o causa tecnica specifica non dimostrati. Il PASS/FAIL dei singoli sottorequisiti è indeterminato; esito complessivo riferito: FAIL.
+- **T0 — PARTIAL RIFERITO** da revisione indipendente e successiva riconciliazione delle evidenze associate a implementazioni differenti. Pacchetto tecnico riconciliato non rintracciato nel tree di `main` in questa ricognizione. Non dichiarare T0 PASS end-to-end.
+- **Mandato B — NON AVVIATO nel percorso T1 attuale**: nessun checkpoint T1 approvato e verificato da remoto da consegnare. Creative Console 003 ha un PASS *solo* di recupero documentale; il checkpoint 003 non è input del renderer 002.
+- **Capacità già documentate, non equivalenti a integrazione:** [controlli Android e preview UI locali](protocollo-ui-android-test-2026-11-10.md); [renderer neutro e round-trip JSON esplicito](../tests/creative-console/README-002.md). Non è dimostrato il percorso pannello Android → stato persistente → renderer fotografico → revisione locale → Undo.
+
+### Proposta di gate tecnico unico — NON APPROVATO/NON TESTATO
+
+**Problema:** una scelta dell'utente non risulta collegata in modo verificato a un'anteprima visiva e a uno stato recuperabile nella superficie ChatGPT Android.
+
+**Ipotesi:** controlli nativi con stato condiviso possono modificare coerentemente la *stessa* mini-preview neutra; l'eventuale recupero dello stato richiede un passaggio esplicito verificato, non la sola memoria locale della UI.
+
+**Intervento minimo proposto — G-UI-01, NON APPROVATO:** una sola fixture neutra, senza fotografie personali; un unico selettore di colore per il layer `accent`, con due valori HEX espliciti: `#356B84` (iniziale) e `#B36A48` (alternativo). Una sola anteprima SVG deve leggere direttamente lo stato del controllo e aggiornarsi per entrambe le selezioni. Un pulsante reset deve ripristinare effettivamente il valore iniziale nella UI; questo reset locale non costituisce Undo versionato né prova di round-trip 002. Produrre uno snapshot JSON esplicito e dichiarare il meccanismo di trasferimento e recupero, verificando che il valore recuperato corrisponda a quello serializzato senza reinterpretazione. Il passaggio manuale di JSON dimostra soltanto recupero assistito, non sincronizzazione automatica. Un eventuale readback GitHub richiede autorizzazione specifica, commit effettivo, SHA verificato e rilettura remota. Nel contratto 002 il solo cambiamento funzionale accettato da `verify_transition()` è `layers[1].fill` insieme all'incremento di `revision`; `layers[1].visible` resta invariato ed è escluso dal PASS di round-trip 002. Nessuna estensione dello schema o del renderer. L'anteprima SVG reattiva non dimostra rendering fotografico finale, identità pixel o integrazione automatica con la CLI. Nessuna installazione, nuova app o generazione artistica.
+
+**Criteri di esito proposti — separati per capacità:** comportamento locale PASS soltanto se entrambe le selezioni HEX aggiornano coerentemente la medesima anteprima SVG, il reset ripristina colore iniziale e anteprima e l'utente conferma la visualizzazione su ChatGPT Android. Recupero PASS soltanto se uno snapshot serializzato viene trasferito mediante il meccanismo dichiarato, riletto e confrontato sui valori senza reinterpretazione; distinguere esplicitamente recupero manuale e readback GitHub. Un PASS di recupero manuale non attesta persistenza o sincronizzazione automatica. Per ciascuna dimensione assegnare separatamente PASS, PARTIAL o FAIL; usare NON TESTATO per le capacità non esercitate. Un difetto bloccante impone stop e diagnosi, non ulteriori tentativi incontrollati. Il PASS del gate non certifica parità SVG/Pillow, compatibilità di un checkpoint con il round-trip 002, rendering fotografico o Undo versionato. Il gate rimane NON APPROVATO e NON ESEGUITO fino ad autorizzazione specifica.
+
+**Responsabilità e prossimo passo unico:** responsabile progettuale/QA definisce e revisiona la specifica operativa; l'utente autorizza separatamente l'esecuzione del gate. Soltanto dopo PASS si può *proporre* una prova distinta stato → renderer neutro. Architettura candidata, NON decisione approvata: console progressiva → stato versionato → anteprima legata allo stato → renderer a livelli → revisioni circoscritte/Undo. Non estendere adesso lo schema tecnico 002.
+
+**Coerenza documentale:** `README.md` rinvia già a questo piano; `AGENTS.md` chiede di iniziare dallo «Stato operativo». `docs/decisioni.md` e il piano skill system restano invariati. L'audit PR #11 conserva il proprio resoconto storico, mentre questo documento è l'unica sede del nuovo stato operativo. La presenza della PR #11 aperta non equivale alla sua integrazione.
 
 ## Direzione di prodotto e ragioni della prova
 
@@ -26,6 +46,8 @@ Tenere distinte parole dell’utente, valori applicati e scelte ancora delegate.
 | Riferimento visivo opzionale | Un solo screen della preview approvata sul telefono, collegato a ID/revisione e indicato come schema o raster. Ritagliare notifiche, dati personali e contenuti estranei. Registrare ciò che era davvero visibile. Se lo screen manca, il controllo visivo resta aperto. |
 
 Lo screen conserva l’aspetto visto, compresi a capo e ritaglio. L’originale e i parametri consentono di intervenire di nuovo. Una discrepanza fra screen e dati blocca solo la parte ambigua: mostrare il conflitto e chiedere quale versione vale. L’identità del file sorgente richiede un confronto sui byte; l’invarianza dell’immagine composta richiede un confronto delle regioni protette nelle stesse condizioni di rendering.
+
+> **PROTOCOLLO STORICO — SOSPESO, NON ESEGUIRE.** La sezione «Due chat, un solo caso» documenta la procedura precedente ai fallimenti T1 e rimane disponibile esclusivamente come riferimento storico. Le istruzioni imperative che seguono non costituiscono un mandato operativo né autorizzano nuovi piloti A/B. Prevale lo Stato operativo/HOLD sopra riportato; ogni ripresa richiede una decisione e un'autorizzazione esplicite dell'utente.
 
 ## Due chat, un solo caso
 
