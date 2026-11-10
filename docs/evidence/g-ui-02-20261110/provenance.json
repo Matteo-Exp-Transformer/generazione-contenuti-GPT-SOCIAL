@@ -1,0 +1,93 @@
+{
+  "commit": "357b9b19e02fe7c90864ea6c75313d2c479403a8",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "gitBlob": "f9a0d3c6e59aeb71d564c3a875ed095b338b89ce",
+      "remoteSha256": "021d1fabfb4bf4ca9a10825eda5cce30c23ed94db17715b8f15bf07de32f5f9b",
+      "workingSha256": "5091ba4608ed64ca64833ac08710fde2318c07433e5ca4b0d71c3fba84c4d2cc",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "docs/pilota-foto-diretta-android.md",
+      "gitBlob": "68e853d8041c52cd8f24cb364108c9ac3512cfe8",
+      "remoteSha256": "995e1d19a4a06f35a3b3912120987a71313113c8bf10e828e3dd7b98d6f33c46",
+      "workingSha256": "ccf1e771d74597ac8fe70eec1e16d4ef163b53043cb870847b04cb19eba1787a",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "tests/creative-console/neutral-render.py",
+      "gitBlob": "dda208db69316f2814b015b124c416a3a28fa440",
+      "remoteSha256": "af9764b8c3f832ded2fbd4d7f2b97739fb5447e89ad71397b3720f7a366ac2fc",
+      "workingSha256": "9f59e35e6c9d3af7308247bc1632e15619747c720bf5346ece6b37632b4ee741",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "tests/creative-console/neutral-state.json",
+      "gitBlob": "65824f59dff94e51103a31a2ef5c6d0c0a52c686",
+      "remoteSha256": "324c03e3f6a01357dc0e0871d977eac06ad1d12f886a49bdfb95da2ec7961d36",
+      "workingSha256": "59ce7abef61193328b59fbcf6e5ab8a20db9d804c461ecbad3a4c4ce4905e973",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "tests/creative-console/README-002.md",
+      "gitBlob": "316c16b5d4a90791178bd50e5cec95d3e16014cf",
+      "remoteSha256": "3bc767621d5bf0272617875f11ac50856ca8c483fe9f100a35f64969f8910daf",
+      "workingSha256": "e8fb1eea229efe3907a65c5a481fb51b49d93af26c5897db36de28fa3a02f132",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "tests/creative-console/roundtrip.py",
+      "gitBlob": "1b556dc340acf0c82c21bf3433de3ddb59c4caa6",
+      "remoteSha256": "93e6600688dd3ed7a657cd76ca71ba9d14b80574b0b811d781d88b5ee32b4a6c",
+      "workingSha256": "91f89ff103d18bb76db323dc8debed356a6b1a684d26bb07c906dc22ff08de03",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "tests/creative-console/test-neutral-render.py",
+      "gitBlob": "05e9a67dfdfb14b3fad9365e4331d71c0ed80f92",
+      "remoteSha256": "4f2f571f5430a1be63a7dc38f31a241de065241cedb18e80bc0e3595c3b975c4",
+      "workingSha256": "48df8ffa5f116b8af405fa4bc095a673ecbc90e97f649fb8f9a54a5ba6e48468",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "tests/creative-console/test-roundtrip.py",
+      "gitBlob": "904fc9a65751690e13c0a3372f95df90c7abb037",
+      "remoteSha256": "176d194b4999ef81c3121ea08f5d70d9920cd5f72020af74b694e3908b61277a",
+      "workingSha256": "6c25c62950f1822ba11be92a395fc8afc413a1e6de50e1cf351ef27ec6d62310",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "tests/creative-console/checkpoints/creative-console-003-approved-concept.json",
+      "gitBlob": "f1aba9df049906888cbccc30e8f16d8409166e88",
+      "remoteSha256": "7dddddfba8fe12c8d2e5d5ea2e7e9b97fc33fe51d94c2a1d9e52a0063219ba2d",
+      "workingSha256": "7fabcb2e61d882608d9341743ca6e1e4ff0ed12f8a2ce491cb178091325a1098",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "tests/creative-console/checkpoints/microtest-neutral-001-rev2.json",
+      "gitBlob": "e9cfbac0bb32cb9fb74835df85843bf901425aae",
+      "remoteSha256": "b555e5871e7528a51e266c0973038e5070530fb7b6dc3c8d7c4e4b444da6f5f3",
+      "workingSha256": "34d5ab47504539b893af75b15a64a6ef1038c6cab40c936921b8e3fb18707e4c",
+      "remoteEqualsGit": true,
+      "workingExact": false
+    },
+    {
+      "path": "tests/creative-console/fixtures/neutral.png",
+      "gitBlob": "9bc40d4662a96d3de5da3f75d5a181cb7f852287",
+      "remoteSha256": "0fa828ab7b46009c890168addcca6db0bfb87e0baf75799a42abe93ba342e55a",
+      "workingSha256": "0fa828ab7b46009c890168addcca6db0bfb87e0baf75799a42abe93ba342e55a",
+      "remoteEqualsGit": true,
+      "workingExact": true
+    }
+  ]
+}
