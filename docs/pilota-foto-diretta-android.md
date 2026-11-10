@@ -4,6 +4,18 @@
 
 ## Stato operativo — riconciliazione del 10 novembre 2026
 
+### Sequenza sintetica di continuità (stato, non roadmap approvata)
+
+**Arrivo di prodotto:** l'utente dirige visivamente un post sulla **propria fotografia**, approva scelte recuperabili e richiede una modifica limitata senza perdere asset, testi, layout e altre decisioni bloccate. La prova di arrivo richiede preview effettivamente visibile su Android, confronto prima/dopo, conservazione delle scelte e provenienza verificabile dei file; non è ancora raggiunta.
+
+- [x] **1. Controllo UI minimo — PASS riferito:** G-UI-01 e G-UI-02-RETEST mostrano selezione/recupero manuale di un colore su preview neutra; screenshot originale del retest non archiviato/verificato come file.
+- [x] **2. Meccanica renderer neutro — PASS tecnico storico:** test esistenti su fill/revision, invarianti, negativi e Pillow; non è una prova integrata con Android.
+- [ ] **3. Catena Android → renderer 002 — PARTIAL / NON TESTATO:** payload originario G-UI-01 indisponibile; non richiederlo nuovamente e non fabbricare un PASS. G-UI-02 resta PARTIAL.
+- [ ] **4. Modifica mirata su fotografia e scelte approvate — PROPOSTO, non autorizzato:** prima definire un micro-gate con asset/criteri recuperabili e confronto visivo; usare prove e capacità esistenti, non lanciare T1.
+- [ ] **5. Validazione del flusso di prodotto — HOLD:** nessun PASS end-to-end; T0 PARTIAL, T1-01 FAIL, T1-02 FAIL riferito e nuovi T1 HOLD fino a motivazione documentata e autorizzazione.
+
+Alla chiusura di ogni mandato, aggiornare queste sole righe **se cambia lo stato**, conservando il verbale dettagliato sottostante; riportarle condensate nella risposta all'utente secondo `AGENTS.md`. Se il prossimo passo cambia dopo un audit, separare proposta e decisione dell'utente. Non convertire questa sequenza di verifica in una roadmap di sviluppo approvata.
+
 **Stato: HOLD sui nuovi piloti creativi T1. G-UI-02 PARTIAL: gate tecnico locale PASS, import originale Android non verificabile con le evidenze disponibili.** La sezione storica «Due chat, un solo caso» qui sotto descrive il protocollo precedente e non costituisce autorizzazione a ripeterlo. G-UI-01 è stato autorizzato e svolto separatamente dai T1; la sua chiusura QA è registrata qui sotto. Nessuna modifica alla roadmap, allo schema o al renderer.
 
 - **Pilota A precedente ai T1 — VERIFICATO documentalmente nella [PR #11](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/11)**, non ancora integrata in `main`: audit del percorso fotografico handpan con esito PARTIAL sul workflow, FAIL sulla fedeltà finale; titolo+Undo non eseguito. Non conteggiarlo come uno dei due T1.
