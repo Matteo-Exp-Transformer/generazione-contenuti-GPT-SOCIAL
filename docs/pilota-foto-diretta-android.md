@@ -1,6 +1,11 @@
 # Pilota Android — dirigere un post sulla propria fotografia
 
-**Domanda scelta dall’utente, 10 novembre 2026.** «Mi lascia dirigere un post sulla mia foto senza perdere quello che ho approvato?» Stato: disegno di prova. Gli esiti delle due chat devono ancora essere raccolti.
+**Domanda scelta dall’utente, 10 novembre 2026.** «Mi lascia dirigere un post sulla mia foto senza perdere quello che ho approvato?»
+
+## Stato operativo
+
+- **Mandato A — direzione su Android.** Primo tentativo fallito secondo l’utente; [audit del primo tentativo](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/11). Ripetizione in corso, esito aperto. L’agente A registra l’esito della ripetizione e, quando disponibile, lo SHA e il percorso del checkpoint approvato e verificato da remoto.
+- **Mandato B — ripresa indipendente.** In attesa del checkpoint della ripetizione. Alla consegna, B legge prima i soli dati e fissa la propria risposta; poi apre lo screenshot della stessa revisione, se disponibile. A verdetto concluso aggiorna qui l’esito, il riferimento alle prove e il prossimo passo. I dettagli della procedura e i criteri sono nelle sezioni sotto.
 
 ## Direzione di prodotto e ragioni della prova
 
