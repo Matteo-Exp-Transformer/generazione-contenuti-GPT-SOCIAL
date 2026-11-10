@@ -76,3 +76,45 @@ La causa di fondo è l'assenza di un contratto fra decisione creativa, riferimen
 Progettare e validare **un prototipo minimo C2 con foto immutabile e layer decorativi fedeli allo screenshot**, usando un unico test A/B visibile su Android e criteri di accettazione espliciti. Prima di implementare, ottenere approvazione dello scope e del metodo; non ripetere altre generazioni integrali del poster.
 
 Riferimento metodologico: [protocollo pilota Android](pilota-foto-diretta-android.md). Questo documento è un audit di Chat A, **non** il checkpoint per Chat B e non contiene immagini personali.
+
+
+---
+
+## Addendum — Pilota Android T1 (10 novembre 2026)
+
+**Sessione:** GPT-SOCIAL-T1-20261110-01. **Mandato:** Strategia B, direzione creativa su fotografia originale dell'utente. **Esito:** **FAIL** per la conduzione visuale; **NOT TESTED** per poster, modifica locale e Undo. Questa sezione riguarda una **nuova corsa**, distinta dall'audit del pilota A riportato sopra. Fonte: messaggi osservabili nella chat T1 e segnalazione esplicita dell'utente; non sono disponibili screenshot Android di questa corsa, misure strumentali o raster generati.
+
+### Sequenza e decisioni
+1. L'agente legge da `main` `AGENTS.md`, `README.md`, `docs/decisioni.md` e `docs/pilota-foto-diretta-android.md`; il documento di audit non è su `main` e viene recuperato dal diff della PR #11.
+2. L'utente carica **una fotografia originale** di un musicista con handpan all'aperto. Non viene caricata su GitHub.
+3. L'utente fissa il brief: **giocoso e fiducia**, lezioni per bambini, su appuntamento, Bologna, contatto Matteo, **nessun prezzo**. Il numero di telefono è stato fornito in chat, ma non è riprodotto in questo documento pubblico.
+4. L'agente presenta due proposte verbali, «Giocosa elegante» e «Ludica fresca», più tre titoli alternativi. Non produce anteprime per le sezioni, né controlli che ne aggiornino il contenuto.
+5. L'utente ferma il flusso e segnala: **«per ogni sezione che mi dai devo vedere un'anteprima con le scelte che mi fai fare che cambiano l'anteprima»**, chiedendo audit della mancata procedura.
+6. L'agente riconosce il difetto. L'utente chiede di **registrare l'audit in repository, non in chat**.
+
+### Non conformità NC-T1-001 — anteprima interattiva assente
+- **Requisito operativo ribadito dall'utente:** ogni sezione con scelte deve rendere visibile un'anteprima pertinente e l'effetto della selezione sull'anteprima stessa; non basta descrivere palette, stile, layout o titoli.
+- **Osservato:** due direzioni e tre titoli in sola forma testuale; nessuna preview collegata alle selezioni, nessuna prova di aggiornamento della preview, nessuna verifica su Android.
+- **Classificazione:** **FAIL / bloccante per il processo di direzione creativa**. L'agente ha anticipato la richiesta di scelta anziché predisporre il dispositivo visivo necessario a giudicarla.
+- **Radice procedurale:** mancata traduzione del principio «direzione visuale progressiva» in un gate concreto: **mostrare e collegare la preview prima di chiedere la conferma**. Non è stata testata una causa tecnica; non attribuire il difetto all'app Android o ai controlli UI.
+
+### Stato delle verifiche
+| Requisito | Esito T1 | Evidenza o limite |
+|---|---|---|
+| Lettura contesto | PASS limitato | Quattro documenti letti da main; audit recuperato dalla PR #11, non da main |
+| Ricezione foto e brief | PASS | Input visibili in chat; hash file non calcolato |
+| Alternative distinguibili visivamente | FAIL | Solo descrizioni, nessuna anteprima delle due direzioni |
+| Anteprima aggiornata dalle selezioni | FAIL | Nessun controllo collegato a un'anteprima |
+| Direzione approvata e checkpoint creativo | NOT TESTED | Nessuna direzione approvata |
+| Poster esteticamente soddisfacente | NOT TESTED | Nessun poster prodotto |
+| Integrità della foto nel compositing | NOT TESTED | Nessuna composizione e nessun confronto pixel |
+| Visualizzazione risultato su Android | NOT TESTED | Nessuna preview generata/confermata |
+| Modifica locale V1 e Undo V2 | NOT TESTED | Nessun V0 approvato; nessuna revisione |
+| Confronti/hash/riproducibilità | NOT TESTED | Nessun artefatto di output da misurare |
+
+**Distinzione delle evidenze:** il difetto di procedura è confermato dalla sequenza dei messaggi e dal feedback dell'utente; non esistono conferme Android di visualizzazione, giudizi estetici su un poster o verifiche tecniche di invarianza della fotografia per T1. Le proprietà del precedente T0 **non** si trasferiscono automaticamente a questo test.
+
+### Miglioramento minimo raccomandato (proposta, non autorizzazione allo sviluppo)
+Per una nuova corsa, prima di chiedere qualunque scelta su stile, palette, tipografia, composizione, testo o decorazione, presentare una **preview della sezione effettivamente visibile e influenzata dalla selezione**, usando gli strumenti già disponibili. Dichiarare se si tratta di schema illustrativo o anteprima del post reale. Verificare che l'interazione cambi davvero la preview e che gli elementi già approvati restino invariati. Se non è possibile renderla visibile/aggiornabile su Android, fermarsi e dichiarare il blocco prima di proporre nuove scelte. Non generare l'intero poster ricostruendo la foto.
+
+**Chiusura T1:** prova interrotta prima di V0; nessun poster o Undo; nessuna fotografia/screenshot archiviata; nessuna modifica a renderer o schema. **Un solo prossimo passo proposto:** ripetere la fase di scelta creativa con anteprima interattiva visibile, con verifica esplicita dell'utente su Android. Non avviare automaticamente il test né decidere la roadmap.
