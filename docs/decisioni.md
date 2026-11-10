@@ -16,3 +16,5 @@ Decisioni ancora aperte: griglia definitiva, font/licenze, strumenti effettivi, 
 - 2026-11-09: **rettifica dell'utente**: il formato Android riuscito NON era un carosello. Era una griglia di due immagini per riga, su due colonne, con scorrimento verticale normale della conversazione; niente swipe orizzontale. Questo layout è il riferimento da verificare nella prossima run.
 
 - 2026-11-09: **micro-test Android superato per la presentazione di riferimenti visivi**. L'utente conferma di vedere correttamente due immagini di riferimento affiancate in una griglia nativa a due colonne, scorrendo verticalmente la chat, con dimensioni soddisfacenti. Nella prova è stata usata una griglia con immagini AsyncImage. Non confondere questo successo con la prova di visualizzazione degli asset generati, dell'asset lock o dell'export, che restano aperti.
+
+- 2026-11-10: l’utente sceglie come prossimo esperimento la direzione di un post sulla propria fotografia mantenendo le scelte approvate. [Contesto di prodotto e proposta di prova in due chat](pilota-foto-diretta-android.md). La validazione sul dispositivo e la produzione del post sono aperte.
