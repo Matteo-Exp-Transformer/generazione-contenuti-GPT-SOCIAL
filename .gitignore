@@ -11,3 +11,7 @@ Thumbs.db
 outputs/
 artifacts/
 *.tmp
+
+# Deterministic render outputs
+*.render.png
+render-*.png
