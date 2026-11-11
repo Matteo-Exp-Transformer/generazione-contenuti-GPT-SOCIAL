@@ -1,23 +1,42 @@
-# STATO — aggiornato 2026-11-11 dal Technical Investigator
-Obiettivo: dirigere un post sulla propria foto senza perdere le scelte approvate.
-Mandato attivo: [MANDATO-001](docs/mandato-001-strada-unica.md).
-Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'utente; lo storico non riapre strade superate.
+# STATO — aggiornato 2026-11-11 dal Costruttore
+Obiettivo: dirigere un post sulla propria foto, preservare le scelte e ottenere una consegna verificabile.
+Mandato attivo: [MANDATO-001 aggiornato](docs/mandato-001-strada-unica.md).
+Direzione di sviluppo: regista conversazionale + layout Canva controllabili; scelta definitiva al Gate D.
+Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva non approvate.
 
-## Gate
-- F0 Consolidamento: PARTIAL — [PR #15](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/15) merged, PR #11 integrata, tutti i 6 branch docs (incluso #14) e F0 eliminati; 16 archivi byte-identici, 52 righe iniziali AGENTS+STATO, link operativi verdi. Restano 25 rimandi storici locali non risolvibili, mappati nell'[indice](docs/archivio/README.md); non è PASS globale «nessun rimando rotto».
-- F1-A Engine: PASS test sintetici locali — 18 test verdi, Python 3.13.7/Pillow 12.1.1, titolo A→B→A, schema chiuso, CLI/import del file isolato; [PR #16](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/16) con output reale. Esecuzione effettiva in ChatGPT non provata; diff e test verificati dall’orchestratore, integrazione tramite PR #16.
-- F1-A Strada A (TU-01): NON ESEGUITO — foto reale, conferma Android senza download, voto utente, minuti/turni, costo e ripresa reale da raccogliere entro 13/11. I test sintetici non sono il PASS di TU-01.
-- F1-B Sonda MCP (TU-01): OPZIONALE, NON AVVIATA — run separata attivabile dall'utente in parallelo, entro 13/11; non è una terza delega.
-- Gate D: IN ATTESA — decisione dell'utente sulle schede TU-01, 13/11, revisore una volta.
-- F2 Pilota prodotto: HOLD — dopo Gate D, un post reale entro 17/11. T1 HOLD fino al Gate D.
+## Gate e prove
+- F0: PARTIAL storico — consolidamento PR #15; 25 rimandi d'archivio irrisolti, fuori dal prossimo lavoro.
+- F1-A engine: PASS sintetico pregresso (18 test, PR #16); nessun test rieseguito in questa run.
+- TU-01 Strada A: PARTIAL, chiuso su richiesta utente; render tecnico riferito riuscito, esperienza creativa negativa e violazione procedurale con generazione. PR #20/#21 descrivono lo stesso test. Non ripetere; nessun PASS completo.
+- F1-B: PARTIAL — [sonda Canva](evidence/tu-01-mcp/canva-2026-11-11.md): import foto/testi; inline negativo, link esterno positivo in quella prova. Figma: A→B→A senza foto, upload bloccato.
+- Regista PR #22: procedura rispettata e miglioramento riferito; composizione nuova non salvata, consegna fallita. Scelte preservate nel mandato §2.
+- Capacità Canva PR #23: draft testo/media riusciti, controllo circoscritto su miniatura 480×600; commit/export finale non verificati.
+- Ripresa PR #23: baseline recuperata in altra chat; due invii inline Android falliti; ricevuto JPEG 1229×1536, non PNG 1080×1350. Cause ignote.
+- Gate D: APERTO, nessuna strada definitiva o PASS end-to-end; F2/T1 HOLD. Date originarie 13/11 e 17/11, nessuna proroga automatica.
+- Prova dettagliata: [audit Canva §§1–9](evidence/canva-capabilities/audit-2026-11-11.md). Le parti iniziali descrivono run precedenti; §9 aggiorna ripresa/Android.
+
+## Sequenza verso l'obiettivo
+- [x] Consolidare su main evidenze, skill scelte-prima e stato; aggiornare mandato con ricerca.
+- [ ] Diagnosi controllata immagini Android/browser senza Canva — UNICO PASSO ATTIVO.
+- [ ] Dopo decisione sul canale, ciclo Canva: modifica → preview → approvazione → commit → ripresa → export.
+- [ ] Dopo consegna completa, confronto manuale/assistito: tempo utente, correzioni, qualità, pubblicabilità.
+- [ ] Decisione Gate D, poi pilota F2.
 
 ## Prossimo passo (uno)
-Esperimento checkpoint sintetico concluso PARTIAL: recupero in nuova chat verificato; consegna inline Android FALLITA nei due tentativi (Markdown sandbox e output immagine diretto); export PNG 1080×1350 non acquisito. Stop ai reinvii dello stesso file. Prossimo passo proposto, non avviato: valutazione di prodotto sulle evidenze già raccolte per decidere con l'utente se accettare la consultazione esterna in Canva. Nessuna nuova prova creativa, nessun TU-01, nessun Gate D automatico.
-Le righe Gate sopra sono ereditate da main e non riconciliate dalle altre chat: PR #22 e sonda Canva sui branch separati restano evidenze/proposte non integrate.
+Costruttore/QA in chat con l'utente: eseguire mandato §5.1, riusando un PNG sintetico già salvato.
+Stesso file, stesso metodo, stessa risposta consultata su Android e browser; due conferme distinte.
+Non ripetere i reinvii falliti: cambiare la domanda sperimentale, isolando il client.
+Se manca un client o una conferma, registrare NON VERIFICATO e il limite; nessuna causa inventata.
+Nessun Canva, TU-01, nuovo post, installazione o cambio di strada in questo passo.
+Aggiornare questo stato e audit esistente; scegliere il passo successivo in base all'esito, non automaticamente.
 
 ## Ultimo passaggio
-- Chi/quando: chiusura e registrazione audit dell'esperimento checkpoint sintetico, 2026-11-11; branch `evidence/canva-capabilities-20261111`.
-- Fatto: PARTIAL; recuperato `DAHalgNO4BY` in nuova chat, verificati pagina 1080×1350 e testi iniziali, annullata ispezione senza modifiche; entrambi gli invii inline non visibili su Android secondo l'utente.
-- Prove: [audit aggiornato §9](evidence/canva-capabilities/audit-2026-11-11.md#9-audit-della-chat-successiva--esito-effettivo-del-checkpoint-2026-11-11), commit `f2b022a`; primo tentativo Markdown negativo documentato da screenshot utente; secondo output diretto con view_image negativo confermato «No non si vede nulla». Allegato ricevuto JPEG 1229×1536, 61689 byte, SHA-256 `e2d449ae8ab8b7abfb7f10ac33eba8a230ee271f875de17ee3fb0665cd7c2fa2`, malgrado nome .png.
-- Aperto/bloccato: inline Android fallito in questa chat; causa non diagnosticata. PNG originale 1080×1350 non acquisito, apertura link non confermata separatamente. Nessun PASS end-to-end; commit di revisioni e integrità foto reale fuori perimetro.
-- Serve dall'utente: nessun altro reinvio per chiudere questa prova; futura decisione se accettare consultazione esterna Canva. Non è una decisione già approvata.
+- Chi/quando: Costruttore, 2026-11-11; consolidamento autorizzato dall'utente su main.
+- Fatto: integrate evidenze PR #17/#18/#19/#23 e skill #22; riconciliati esiti #20/#21, mandato, README, PRD e istruzioni.
+- Prove: readback remoto dei documenti e dei file integrati; limiti AGENTS/STATO/SKILL e link operativi verificati; nessun test prodotto rieseguito.
+- Aperto/bloccato: anteprima Android, commit/export e foto reale non certificati; Gate D aperto. Pulizia branch dipende dai tool disponibili.
+- Serve dall'utente: nella prossima chat, riscontri separati Android/browser; nessuna nuova scelta creativa.
+
+## Prompt di prosecuzione
+Repo https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL, branch main.
+Leggi AGENTS.md, STATO.md e il mandato attivo. Esegui soltanto la diagnosi controllata del canale immagini (§5.1), con me, senza Canva e senza ripetere TU-01. Registra fatti e limiti nelle sedi esistenti e chiudi secondo AGENTS.md.
