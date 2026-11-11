@@ -31,11 +31,11 @@ Nessun Canva, TU-01, nuovo post, installazione o cambio di strada in questo pass
 Aggiornare questo stato e audit esistente; scegliere il passo successivo in base all'esito, non automaticamente.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore, 2026-11-11; consolidamento autorizzato dall'utente su main.
-- Fatto: integrate evidenze PR #17/#18/#19/#23 e skill #22; riconciliati esiti #20/#21, mandato, README, PRD e istruzioni.
-- Prove: readback remoto dei documenti e dei file integrati; limiti AGENTS/STATO/SKILL e link operativi verificati; nessun test prodotto rieseguito.
-- Aperto/bloccato: anteprima Android, commit/export e foto reale non certificati; Gate D aperto. Pulizia branch dipende dai tool disponibili.
-- Serve dall'utente: nella prossima chat, riscontri separati Android/browser; nessuna nuova scelta creativa.
+- Chi/quando: Revisore Claude su richiesta esplicita dell'utente, 2026-11-11; revisione architetturale indipendente con due subagent (ricerca fonti, secondo parere).
+- Fatto: verdetto nella PR della revisione: separare il Regista dalla governance del repo, skill breve senza contraddizioni, scheda post visibile, consenso campione/finale, prova pass^k in chat nuove.
+- Prove: lettura main, PR #24–#28 e §§16–17; fonti OpenAI/Anthropic/Canva/τ-bench citate nella PR; nessun test, nessuna modifica a skill, engine o architettura.
+- Aperto/bloccato: PR #24–#28 aperte e in conflitto su STATO e audit; Canva nei Progetti ChatGPT, export esposto e widget ripetibile non verificati; Gate D aperto.
+- Serve dall'utente: decidere sul verdetto; poi un solo task del Costruttore riconcilia le PR e riscrive un unico prossimo passo.
 
 ## Prompt di prosecuzione
 Repo https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL, branch main.
