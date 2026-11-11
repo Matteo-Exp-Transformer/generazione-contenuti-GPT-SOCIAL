@@ -17,26 +17,25 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 
 ## Sequenza verso l'obiettivo
 - [x] Consolidare su main evidenze, skill scelte-prima e stato; aggiornare mandato con ricerca.
-- [ ] Diagnosi controllata immagini Android/browser senza Canva — UNICO PASSO ATTIVO.
+- [x] Diagnosi controllata immagini Android/browser senza Canva — PARTIAL; tre contesti non visualizzano la fixture; causa non isolata.
 - [ ] Dopo decisione sul canale, ciclo Canva: modifica → preview → approvazione → commit → ripresa → export.
 - [ ] Dopo consegna completa, confronto manuale/assistito: tempo utente, correzioni, qualità, pubblicabilità.
 - [ ] Decisione Gate D, poi pilota F2.
 
 ## Prossimo passo (uno)
-Costruttore/QA in chat con l'utente: eseguire mandato §5.1, riusando un PNG sintetico già salvato.
-Stesso file, stesso metodo, stessa risposta consultata su Android e browser; due conferme distinte.
-Non ripetere i reinvii falliti: cambiare la domanda sperimentale, isolando il client.
-Se manca un client o una conferma, registrare NON VERIFICATO e il limite; nessuna causa inventata.
-Nessun Canva, TU-01, nuovo post, installazione o cambio di strada in questo passo.
-Aggiornare questo stato e audit esistente; scegliere il passo successivo in base all'esito, non automaticamente.
+QA con l'utente: valutare la diagnosi §5.1 PARTIAL (audit §10), senza attribuire una causa.
+L'unico invio Markdown da GitHub raw è risultato invisibile su app Android, browser mobile e vista desktop remota.
+La mancata visibilità su tutti e tre non discrimina sorgente URL, trasporto o renderer; nessun test causale eseguito.
+Decidere esplicitamente se autorizzare una prova discriminante con metodo/sorgente controllati o mantenere HOLD.
+Nessun Canva, TU-01, nuovo post, installazione o Gate D anticipato.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore, 2026-11-11; consolidamento autorizzato dall'utente su main.
-- Fatto: integrate evidenze PR #17/#18/#19/#23 e skill #22; riconciliati esiti #20/#21, mandato, README, PRD e istruzioni.
-- Prove: readback remoto dei documenti e dei file integrati; limiti AGENTS/STATO/SKILL e link operativi verificati; nessun test prodotto rieseguito.
-- Aperto/bloccato: anteprima Android, commit/export e foto reale non certificati; Gate D aperto. Pulizia branch dipende dai tool disponibili.
-- Serve dall'utente: nella prossima chat, riscontri separati Android/browser; nessuna nuova scelta creativa.
+- Chi/quando: QA in chat con utente, 2026-11-11; diagnosi §5.1 su branch dedicato.
+- Fatto: riutilizzata fixture baseline.png in un unico invio Markdown URL GitHub raw, senza Canva.
+- Prove: screenshot/riscontro utente — invisibile su app Android, browser mobile e vista desktop remota; audit §10.
+- Aperto/bloccato: causa non isolata, SHA-256 file mostrato non verificato, anteprima inline non certificata; Gate D aperto.
+- Serve dall'utente: decisione sul test discriminante successivo; nessun cambio automatico di strada.
 
 ## Prompt di prosecuzione
 Repo https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL, branch main.
-Leggi AGENTS.md, STATO.md e il mandato attivo. Esegui soltanto la diagnosi controllata del canale immagini (§5.1), con me, senza Canva e senza ripetere TU-01. Registra fatti e limiti nelle sedi esistenti e chiudi secondo AGENTS.md.
+Leggi AGENTS.md, STATO.md e il mandato attivo. Valuta l'esito PARTIAL della diagnosi §5.1 nell'audit §10; proponi una sola prova discriminante senza eseguirla prima della mia decisione. Chiudi secondo AGENTS.md.
