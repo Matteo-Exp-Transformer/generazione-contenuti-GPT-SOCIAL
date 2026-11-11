@@ -2,7 +2,7 @@
 Obiettivo: dirigere un post sulla propria foto, preservare le scelte e ottenere una consegna verificabile.
 Mandato attivo: [MANDATO-001 aggiornato](docs/mandato-001-strada-unica.md).
 Direzione di sviluppo: regista conversazionale + layout Canva controllabili; scelta definitiva al Gate D.
-Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva non approvate.
+Inline Android resta requisito; link esterno Canva accettato provvisoriamente nel test E/F/G, non certifica la visibilità inline. Rifinitura fuori Canva non autorizzata.
 
 ## Gate e prove
 - F0: PARTIAL storico — consolidamento PR #15; 25 rimandi d'archivio irrisolti, fuori dal prossimo lavoro.
@@ -12,6 +12,7 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 - Regista PR #22: procedura rispettata e miglioramento riferito; composizione nuova non salvata, consegna fallita. Scelte preservate nel mandato §2.
 - Capacità Canva PR #23: draft testo/media riusciti, controllo circoscritto su miniatura 480×600; commit/export finale non verificati.
 - Ripresa PR #23: baseline recuperata in altra chat; due invii inline Android falliti; ricevuto JPEG 1229×1536, non PNG 1080×1350. Cause ignote.
+- Chat E/F/G 11/11: 3 copie Canva con commit verificato; link esterni aperti dall'utente, inline thumbnail non visibile, 3 pagine in progetto unico non create; audit §11 su branch in PR. Nessun export o pulizia automatica.
 - Gate D: APERTO, nessuna strada definitiva o PASS end-to-end; F2/T1 HOLD. Date originarie 13/11 e 17/11, nessuna proroga automatica.
 - Prova dettagliata: [audit Canva §§1–9](evidence/canva-capabilities/audit-2026-11-11.md). Le parti iniziali descrivono run precedenti; §9 aggiorna ripresa/Android.
 
@@ -23,20 +24,21 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 - [ ] Decisione Gate D, poi pilota F2.
 
 ## Prossimo passo (uno)
-Costruttore/QA in chat con l'utente: eseguire mandato §5.1, riusando un PNG sintetico già salvato.
-Stesso file, stesso metodo, stessa risposta consultata su Android e browser; due conferme distinte.
-Non ripetere i reinvii falliti: cambiare la domanda sperimentale, isolando il client.
-Se manca un client o una conferma, registrare NON VERIFICATO e il limite; nessuna causa inventata.
-Nessun Canva, TU-01, nuovo post, installazione o cambio di strada in questo passo.
-Aggiornare questo stato e audit esistente; scegliere il passo successivo in base all'esito, non automaticamente.
+Nuova chat Regista indipendente, simulazione creativa reale autorizzata dall'utente.
+Leggere AGENTS, STATO, mandato e skill nell'ordine; verificare strumenti, canale preview e disponibilità Canva.
+Condurre scelta→anteprima→revisione in Canva, senza inventare capacità o PASS.
+Se più versioni, valutare progetto unico multi-pagina e dichiarare prima i limiti verificati.
+Alla fine produrre audit autonomo nell'audit esistente, poi confronto separato con §11.
+Non ripetere TU-01, non modificare engine, non pubblicare né esportare fuori Canva senza autorizzazione.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore, 2026-11-11; consolidamento autorizzato dall'utente su main.
-- Fatto: integrate evidenze PR #17/#18/#19/#23 e skill #22; riconciliati esiti #20/#21, mandato, README, PRD e istruzioni.
-- Prove: readback remoto dei documenti e dei file integrati; limiti AGENTS/STATO/SKILL e link operativi verificati; nessun test prodotto rieseguito.
-- Aperto/bloccato: anteprima Android, commit/export e foto reale non certificati; Gate D aperto. Pulizia branch dipende dai tool disponibili.
-- Serve dall'utente: nella prossima chat, riscontri separati Android/browser; nessuna nuova scelta creativa.
+- Chi/quando: Regista / audit di sessione, 2026-11-11, branch audit/chat-canva-regista-20261111.
+- Fatto: audit E/F/G §11, osservazioni tipografiche e Canva, singola istruzione riflessiva aggiunta alla skill.
+- Prove: 3 copy+commit, readback metadati, conferma utente apertura link; nessuna pagina multipla né export.
+- Aperto/bloccato: PR #25 ancora aperta all'avvio; inline, piena grafica E/F/G, export, pulizia copie e Gate D non verificati.
+- Serve dall'utente: nuova simulazione indipendente e feedback visivo reale; confronto audit successivo.
 
 ## Prompt di prosecuzione
-Repo https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL, branch main.
-Leggi AGENTS.md, STATO.md e il mandato attivo. Esegui soltanto la diagnosi controllata del canale immagini (§5.1), con me, senza Canva e senza ripetere TU-01. Registra fatti e limiti nelle sedi esistenti e chiudi secondo AGENTS.md.
+Repo https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL, branch main dopo integrazione dell'audit.
+Leggi AGENTS.md, STATO.md, docs/mandato-001-strada-unica.md e skills/post-director/SKILL.md.
+Agisci come Regista e conduci con me un nuovo post reale Canva; produci alla fine un tuo audit indipendente nella sede esistente.
