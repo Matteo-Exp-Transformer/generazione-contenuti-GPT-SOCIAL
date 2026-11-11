@@ -1,5 +1,5 @@
 # AI Social Content Workflow — PRD v0.1
-Data iniziale: 2026-11-09. Direzione aggiornata il 2026-11-10 con MANDATO-001.
+Data iniziale: 2026-11-09. Direzione aggiornata il 2026-11-11 con MANDATO-001.
 
 ## Visione
 Sistema personale che trasforma un'intenzione comunicativa in contenuti social visivi professionali: intervista, più idee, selezione umana, produzione, revisione, esportazione.
@@ -11,8 +11,15 @@ Ora: immagini statiche, fotografia editoriale, tipografia, layout articolato. Fu
 Nessun acquisto o API a pagamento senza consenso; sperimentazione incrementale; verificare capacità degli account e strumenti esistenti; gate umano prima di generare e pubblicare.
 
 ## Strada da verificare
-Foto dell'utente bloccata, crop/scala deterministici, testo e forme separati, stato JSON conforme alla skill post-director. Il prossimo test prodotto è soltanto TU-01; le precedenti ipotesi generative restano storiche.
+Regista conversazionale + pochi layout Canva controllabili. Prima si verificano le capacità,
+poi si concordano formato, impaginazione, palette, tipografia, testi ed effetti.
+La produzione segue l'approvazione; la foto originale non viene rigenerata.
+L'anteprima proviene dal progetto corrente; salvataggio, ripresa ed export sono verifiche separate.
+Inline Android resta requisito; consultazione esterna o rifinitura fuori Canva richiedono decisione esplicita.
 
 ## Stato
-Direzione operativa: revisione Claude recepita in [MANDATO-001](mandato-001-strada-unica.md) e decisioni esplicite dell'utente. F0 consolida la repo; F1-A prepara il renderer, il regista esegue TU-01 in chat ChatGPT sulla foto autorizzata. Il Gate D del 13/11 sceglie la strada; T1 HOLD fino ad allora. F1-B MCP è un'opzione separata e parallela.
-Stato corrente, prove e prossimo passo sono soltanto in [STATO.md](../STATO.md); [storico](archivio/README.md). I test sintetici non certificano Android o qualità estetica.
+TU-01 Strada A e sonda Canva PARTIAL; test chiusi, non ripetere. Procedura scelte-prima migliorata,
+consegna completa non dimostrata. Ora si isola il canale immagini Android/browser, poi si verifica
+un ciclo Canva completo e infine utilità rispetto al lavoro manuale. Gate D aperto, F2/T1 HOLD.
+Stato e unico prossimo passo: [STATO.md](../STATO.md); sequenza e ricerca: [MANDATO-001](mandato-001-strada-unica.md).
+Non confondere test sintetici, conferme utente e verifica completa del prodotto.
