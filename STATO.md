@@ -29,18 +29,19 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 - T04: PASS riferito, stesso file via Python `IPython.display.Image(filename=...)`; hash verificato in tutti i test Python.
 - T05: NON VISIBILE riferito, `baseline.png` sintetico Canva dal repository mostrato direttamente via output del connettore GitHub; metodo e sorgente cambiati rispetto a T04, non isolabile.
 - T06: VISIBILE, stesso `baseline.png` originale allegato, Python `IPython.display.Image(filename=...)`; PNG 480×600, 15702 byte, SHA-256 `17bff37339b5a60b004fcc8144e2faaeb648c5c0fcfbd85a070908e756168e1e`; Git blob SHA `1c250ff05b8bd6b0130deb50c780554702ba6ddd` coincide col file repo T05.
-- Perimetro: riscontri utente su questa chat; nessun test cross-browser certificato. T05/T06 stesso contenuto, metodi diversi; causa interna del renderer sconosciuta.
+- T07: VISIBILE riferito, stesso `baseline.png` Canva via Python `IPython.display.Image(data=...)`, hash e dimensioni uguali a T06.
+- Perimetro: riscontri utente su Android; T05–T07 stesso contenuto con percorsi diversi; nessuna causa interna o trasferimento automatico dimostrati.
 
 ## Prossimo passo (uno)
-T07 proposto: usare la medesima miniatura `baseline.png` già verificata (stessi byte/hash) e mostrarla via `IPython.display.Image(data=..., format='png')`, senza modifiche. Si isola il passaggio da `filename` a `data` sul file originato da Canva, senza nuova produzione o accesso Canva. Registrare la conferma dell'utente prima di ogni altra prova.
-Se T07 riesce, valutare separatamente una sonda di trasferimento automatico dal connettore Canva al runtime; non presumere che sia possibile. Nessun cambio strada, export o Gate D implicito.
+Ricerca documentale e analisi prima di altri test: confrontare fonti ufficiali Canva e OpenAI, inventario strumenti effettivamente esposti e prove T01–T07; mappare URL temporanei, trasferimento byte nel runtime Python, preview draft/salvata e vincoli di modificabilità, senza presupporre possibilità non dimostrate. Consultare l'audit §14 e sintetizzare una matrice fattibilità/rischi con un solo test T08 (sola lettura, fixture Canva già esistente), obiettivo e stop condition. Solo dopo eseguire T08, senza nuovo post o modifiche Canva e con feedback utente. Se il trasferimento è impedito, documentare NON VERIFICATO anziché inventare workaround.
+Gate D APERTO, F2/T1 HOLD; no Canva composizione, spese, installazioni, export fittizio, immagini generate o cambio strada implicito.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore/QA, 2026-11-11; registrazione riscontro T06 e verifica integrità allegato.
-- Fatto: T06 VISIBILE per l'utente; PNG Canva sintetico originale mostrato via Python senza modificarlo.
-- Prove: 480×600, 15702 byte, SHA-256 `17bff373…`; Git blob SHA calcolato `1c250ff0…`, uguale alla sorgente GitHub di T05.
-- Aperto/bloccato: percorso GitHub diretto T05 invisibile, Python T06 visibile; trasferimento automatico Canva→Python non verificato; Gate D APERTO, F2/T1 HOLD.
-- Serve dall'utente: confermare il prossimo test T07 (stessi byte via Python data); nessuna scelta creativa.
+- Chi/quando: Costruttore/QA, 2026-11-11; consolidamento completo T01–T07 e ricerca preliminare strumenti.
+- Fatto: 5 anteprime visibili (T01/T03/T04/T06/T07) e 2 non visibili (T02/T05), secondo l'utente su Android.
+- Prove: stesso PNG/sha nei T01–T04; stesso PNG Canva con blob Git verificato nei T05–T07; risultati e limiti nell'audit §14.
+- Aperto/bloccato: Canva→Python senza allegato manuale, salvataggio/export e affidabilità cross-client NON VERIFICATI; Gate D APERTO, F2/T1 HOLD.
+- Serve dall'utente: riscontro al futuro T08 solo dopo ricerca e un test di lettura mirato; nessuna scelta creativa.
 
 ## Prompt di prosecuzione
 Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md ed esegui il prossimo passo. Chiudi secondo AGENTS.md.
