@@ -1,8 +1,9 @@
 # generazione-contenuti-GPT-SOCIAL
 
 Stato corrente e prossimo passo: [STATO.md](STATO.md), unica fonte operativa.
-Direzione approvata: [MANDATO-001](docs/mandato-001-strada-unica.md), foto bloccata + render deterministico; decisione al Gate D.
-T1 HOLD fino al Gate D; TU-01 sulla foto reale resta da eseguire, lo storico è [archiviato](docs/archivio/README.md).
+Direzione aggiornata: [MANDATO-001](docs/mandato-001-strada-unica.md), regista + layout Canva controllabili, da validare.
+TU-01 chiuso PARTIAL: non ripetere. Gate D aperto, F2/T1 HOLD. Ora: diagnosi immagini Android/browser; poi ciclo Canva completo.
+Evidenze consolidate: [audit Canva](evidence/canva-capabilities/audit-2026-11-11.md); [storico](docs/archivio/README.md).
 
 Scopo: far dirigere all'utente un post social statico sulla propria foto senza perdere le scelte approvate.
 
@@ -14,9 +15,9 @@ Scopo: far dirigere all'utente un post social statico sulla propria foto senza p
 Le fonti operative sono in questa repo; nessuna dipendenza da una cartella memory/wiki esterna.
 Budget incrementale €0; spese, installazioni, generazione e foto in repo richiedono autorizzazione esplicita.
 
-## Engine Strada A
+## Engine Strada A — riferimento tecnico, non prossimo passo
 
-[engine/render.py](engine/render.py) è autonomo: Python ≥3.9, Pillow ≥10.1 già disponibile, nessuna dipendenza dalla repo. Usa lo stato della [skill post-director](skills/post-director/SKILL.md); la skill v0 resta invariata. `render(post_json, foto)` restituisce PNG bytes, senza scrivere file. Un terzo argomento opzionale salva il PNG fuori da qualsiasi repo Git; non può sovrascrivere foto o stato.
+[engine/render.py](engine/render.py) è autonomo: Python ≥3.9, Pillow ≥10.1 già disponibile, nessuna dipendenza dalla repo. Usa lo stato della [skill post-director](skills/post-director/SKILL.md). La procedura conversazionale è stata aggiornata; questo codice resta invariato. `render(post_json, foto)` restituisce PNG bytes, senza scrivere file. Un terzo argomento opzionale salva il PNG fuori da qualsiasi repo Git; non può sovrascrivere foto o stato.
 
 ```python
 import importlib.util
@@ -35,4 +36,4 @@ Il crop `[x,y,w,h]` usa i pixel sorgente decodificati, senza rotazione EXIF impl
 
 Unica estensione allo stato minimo: `forme`, lista opzionale di rettangoli `{ "id": "fondo", "tipo": "rettangolo", "pos": [40,60], "size": [1000,160], "colore": "#223344" }`. Ordine dei layer: foto, forme nell'ordine della lista, testi nell'ordine del JSON. Le chiavi sono chiuse a ogni livello; i colori HEX vengono normalizzati in una copia. `bloccati` può includere foto, codici testo/forma, palette e layout presenti; il render non modifica revisioni, storia o approvazioni. Undo significa ricaricare il checkpoint precedente. Il regista consegna `post.json` al Costruttore per il salvataggio in repo a ogni approvazione; nessuna foto viene inserita in repo senza autorizzazione specifica.
 
-Verifica sintetica: `python -m unittest discover -s tests/engine -v`. La fixture, gli stati temporanei e tutti i PNG sono creati nella directory temporanea di sistema; l'engine contiene un solo file Python. Questi test non certificano TU-01, Android o qualità: il regista deve eseguire il [TU-01 del mandato](docs/mandato-001-strada-unica.md#3-test-unico-tu-01-identico-per-tutte-le-strade) e consegnare la scheda per Gate D.
+Verifica sintetica: `python -m unittest discover -s tests/engine -v`. La fixture, gli stati temporanei e tutti i PNG sono creati nella directory temporanea di sistema; l'engine contiene un solo file Python. Questi test non certificano Android o qualità. TU-01 è chiuso PARTIAL e non va ripetuto; seguire esclusivamente [STATO.md](STATO.md) e il mandato aggiornato.
