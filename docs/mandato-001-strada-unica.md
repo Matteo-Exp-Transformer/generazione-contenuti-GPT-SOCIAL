@@ -10,7 +10,7 @@ modificare una parte senza perdere le scelte approvate e ottenere un file pubbli
 Direzione di sviluppo: regista conversazionale + layout Canva controllabili, da validare.
 La scelta definitiva della strada e il Gate D restano aperti: questo aggiornamento non è un PASS.
 Scelte prima della produzione; niente rigenerazione della foto, mockup spacciati per anteprime o fallback silenziosi.
-L'anteprima inline Android resta un requisito: consultazione esterna e rifinitura fuori Canva non sono già accettate.
+L'anteprima inline Android resta l'obiettivo; l'utente accetta una consultazione Canva esterna occasionale e dichiarata (decisioni 2026-11-11), senza ponte Python. Rifinitura fuori Canva e fallback silenziosi restano esclusi.
 
 ## 1. Lavoro svolto e prove consolidate
 | Lavoro | Esito / limite | Fonte |
@@ -80,32 +80,20 @@ Fonti consultate l'11/11/2026; indicazioni progettuali, non prova di capacità d
    Applicazione: verificare il catalogo effettivo, non inventare parametri o attribuire cause senza prove.
 
 ## 5. Sequenza corrente — una sola attività attiva
-1. **Ora: diagnosi controllata del canale immagini**, senza Canva e senza nuovo post.
-   Riutilizzare un PNG sintetico già in evidence/canva-capabilities/, senza modificarlo.
-   Registrare hash/dimensioni del file sorgente e metodo di invio; mostrare una sola volta con quel metodo.
-   Invitare l'utente a consultare la stessa risposta su Android e browser, quando disponibile.
-   Raccogliere due conferme distinte e contesto client; non fingere accesso al dispositivo.
-   Nessuna conferma o nessun browser disponibile = confronto incompleto, non FAIL globale.
-   Niente reinvii casuali, nuova immagine, altro metodo o diagnosi causale senza evidenza.
-   Uscita: osservazioni controllate che distinguano file/metodo/client oppure limite dichiarato.
-   Aggiornare STATO e l'audit esistente con sezione separata: non attribuire questa prova a Canva.
-2. **Dopo il risultato e una decisione sul canale:** ciclo completo su un layout Canva predisposto.
-   Verificare prima tool/piano/font/forme/placeholder; proporre solo operazioni realizzabili.
-   Testo → anteprima consultabile → approvazione → commit → riapertura → export originale conforme.
-   Se export non esposto, diagnosticare disponibilità senza installazioni; export manuale solo se accettato.
-   Se inline resta bloccato, chiedere scelta esplicita fra consultazione esterna e mantenimento dello stop.
-3. **Dopo la consegna completa:** confronto manuale Canva vs assistito sullo stesso brief/layout.
-   Misurare tempo attivo utente, correzioni, qualità e disponibilità a pubblicare; dichiarare ordine/effetto apprendimento.
-   È valutazione del prodotto personale, non evidenza scientifica generalizzabile.
-4. **Gate D:** decisione esplicita dell'utente su strada e compromessi; soltanto dopo F2.
-
-Questi sono passi sequenziali, non nuovi gate né autorizzazione a eseguirli tutti nella stessa chat.
-TU-01 non si ripete. Nessun nuovo post creativo prima di capacità e canale utili.
-Il riferimento originario Gate D 13/11 e F2 17/11 resta pianificazione, non prova di completamento;
-nessuna proroga automatica o FAIL dedotto dal calendario senza verificare i timebox realmente eseguiti.
+Aggiornata 2026-11-11 dopo la revisione architetturale approvata dall'utente (PR #29). Sostituisce la sequenza precedente
+(diagnosi canale immagini, chiusa PARTIAL in PR #24/#25) e il §5.1 proposto in PR #25.
+Principio: il Regista è un prodotto rilasciato e separato dal cantiere. Legge solo la skill versionata
+(`regista-vX.Y`) e la scheda post; la sua fedeltà si misura con prove ripetute in chat nuove, valutate da un Supervisore.
+1. **Ora:** il Supervisore verifica il pacchetto regista-v1.0 (SKILL, AVVIO, VALUTAZIONE) e guida la Preparazione.
+2. Giro A e Giro B ([VALUTAZIONE §1–2](../skills/post-director/VALUTAZIONE.md)); esito pass^3 per controllo.
+3. Azione già decisa in VALUTAZIONE §4 (v1.1 mirata, alternativa «foto fuori dalla chat», o escalation all'utente).
+4. Se tutto passa: un post reale con la stessa procedura e misure di esperienza; il confronto manuale/assistito resta facoltativo.
+5. **Gate D:** decisione esplicita dell'utente; soltanto dopo F2.
+Un server proprio o un'app fuori da ChatGPT si valutano solo se VALUTAZIONE §4 lo prevede, con ok dell'utente sui costi.
+TU-01 non si ripete. Il riferimento originario Gate D 13/11 e F2 17/11 resta pianificazione, non prova di completamento.
 
 ## 6. Regole di continuità
-Prima di lavorare: leggere AGENTS, STATO e questo mandato su main aggiornato; skill solo per conduzione post.
+Prima di lavorare (Costruttore, Supervisore, Revisore): leggere AGENTS, STATO e questo mandato su main aggiornato. Il Regista legge solo la skill tramite AVVIO.md.
 Non riprendere prompt di test o «prossimi passi» contenuti nelle evidenze storiche.
 Aggiornare STATO, non creare ulteriori audit generali; usare l'audit Canva esistente per nuove evidenze pertinenti.
 Prima delle scelte creative: verificare le capacità; prima della produzione: approvazione del riepilogo.
