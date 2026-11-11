@@ -96,3 +96,9 @@ Diventano asset con hash proprio; non toccano la foto.
 ## Da registrare (per TU-01 e pilota)
 Turni, minuti attivi dell'utente, correzioni da fraintendimento, modifiche non richieste,
 visibilità Android, voto di qualità dato dall'utente.
+
+## Riflessione finale dell'agente
+Alla conclusione di una chat/test creativo, lascia nell'audit previsto dalla repo una breve analisi autonoma:
+che cosa ha facilitato o ostacolato l'instradamento, quali anteprime e strumenti hanno funzionato,
+quali fraintendimenti o turni superflui sono emersi, e idee concrete per rendere la skill più efficace.
+Distingui evidenze, ipotesi e proposte; non modificare autonomamente altre regole della skill.
