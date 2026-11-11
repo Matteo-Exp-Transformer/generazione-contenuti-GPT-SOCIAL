@@ -22,18 +22,25 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 - [ ] Dopo consegna completa, confronto manuale/assistito: tempo utente, correzioni, qualità, pubblicabilità.
 - [ ] Decisione Gate D, poi pilota F2.
 
+## Verifiche inline controllate (feedback Android)
+- T01: PASS, PNG sintetico 480×600 (SHA-256 `82efa672d41ea3eeaa2ce522fcc00bdc923ae903580eadc46c3a5f3f284bbbd8`), Python display PIL.
+- T02: NON VISIBILE riferito, stesso file via Markdown `sandbox:`.
+- T03: PASS riferito, stesso file via Python `IPython.display.Image(data=...)`.
+- T04: PASS riferito, stesso file via Python `IPython.display.Image(filename=...)`; hash verificato in tutti i test Python.
+- Perimetro: esiti dichiarati dall'utente su questa chat; nessun test cross-browser certificato, nessun Canva in T01–T04. Indizio sul canale di presentazione, causa non accertata.
+
 ## Prossimo passo (uno)
-Decisione esplicita dell'utente sul vincolo di visibilità: accettare provvisoriamente preview esterna verificabile del medesimo progetto Canva, oppure mantenere lo STOP fino a soluzione inline.
+Su richiesta esplicita dell'utente, indagare il canale inline con test controllati. Dopo T01–T04, prossimo controllo: miniatura Canva sintetica già presente in evidence, senza modificarla, con un percorso di visualizzazione verificabile; registrare provenienza/hash, distinguendo anteprima draft da export.
 Il feedback «Mobile desktop e browser. Niente nessun caso» segnala mancata visibilità riferita su più client, ma non certifica una prova controllata stesso file/metodo/risposta; nessuna causa tecnica attribuita.
-Se l'utente mantiene lo STOP, non avviare altri post o ciclo Canva. Se accetta l'esterna, progettare solo il checkpoint sintetico successivo del mandato §5, con verifica reale e senza PASS anticipati.
+Nessun nuovo post o ciclo Canva prima di completare diagnosi e decisione sul canale; consultazione esterna non accettata implicitamente.
 Nessun Canva, TU-01, installazione, export manuale o cambio di strada implicito.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore/QA, 2026-11-11; registrazione del feedback della chat §5.1 su branch dedicato.
-- Fatto: raccolta la dichiarazione utente «Mobile desktop e browser. Niente nessun caso»; nessun nuovo invio o test eseguito in questa sessione.
-- Prove: riscontro utente di invisibilità; non disponibili qui conferme strutturate sul medesimo file, hash, metodo e stessa risposta per due client.
-- Aperto/bloccato: confronto tecnico NON VERIFICATO; problema inline riferito su più client, causa sconosciuta; Gate D aperto, F2/T1 HOLD.
-- Serve dall'utente: decisione esplicita preview esterna provvisoria oppure STOP; nessuna nuova scelta creativa.
+- Chi/quando: Costruttore/QA, 2026-11-11; serie controllata T01–T04 su Android.
+- Fatto: stesso PNG sintetico presentato in quattro modi, senza rielaborazione; l'utente conferma T01/T03/T04 visibili, T02 non visibile.
+- Prove: hash SHA-256 identico per T01/T03/T04; visualizzazione di Markdown sandbox non riuscita secondo utente; nessun test Canva in questa serie.
+- Aperto/bloccato: causa ignota, da testare miniatura Canva via percorso funzionante; Gate D aperto, F2/T1 HOLD.
+- Serve dall'utente: esito del prossimo test; nessuna nuova scelta creativa.
 
 ## Prompt di prosecuzione
 Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md ed esegui il prossimo passo. Chiudi secondo AGENTS.md.
