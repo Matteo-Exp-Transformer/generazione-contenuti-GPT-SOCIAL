@@ -31,11 +31,11 @@ Nessun Canva, TU-01, nuovo post, installazione o cambio di strada in questo pass
 Aggiornare questo stato e audit esistente; scegliere il passo successivo in base all'esito, non automaticamente.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore, 2026-11-11; consolidamento autorizzato dall'utente su main.
-- Fatto: integrate evidenze PR #17/#18/#19/#23 e skill #22; riconciliati esiti #20/#21, mandato, README, PRD e istruzioni.
-- Prove: readback remoto dei documenti e dei file integrati; limiti AGENTS/STATO/SKILL e link operativi verificati; nessun test prodotto rieseguito.
-- Aperto/bloccato: anteprima Android, commit/export e foto reale non certificati; Gate D aperto. Pulizia branch dipende dai tool disponibili.
-- Serve dall'utente: nella prossima chat, riscontri separati Android/browser; nessuna nuova scelta creativa.
+- Chi/quando: revisore indipendente, 2026-11-11; ricerca metodologica, nessun test creativo.
+- Fatto: confronto critico PR #26/#27 (aperte) e PR #25, fonti ufficiali Canva; §16 aggiunto all'audit esistente in branch dedicato.
+- Prove: fonti e patch PR lette; nessuna capacità riprovata; widget Android positivo riferito, export/foto/font esatti non certificati.
+- Aperto/bloccato: main non incorpora automaticamente le PR #25-#27; Gate D APERTO e F2/T1 HOLD; skill/engine non modificati.
+- Serve dall'utente: revisione PR e scelta successiva; proposta P0 = replica sintetica widget in altra chat, non avviata.
 
 ## Prompt di prosecuzione
 Repo https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL, branch main.
