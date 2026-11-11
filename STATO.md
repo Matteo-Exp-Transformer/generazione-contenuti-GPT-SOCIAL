@@ -38,11 +38,11 @@ Il Supervisore non conduce post e non cambia la skill senza un controllo fallito
 Merge della PR #29 su main: solo con ok dell'utente, preferibilmente dopo la verifica del Supervisore.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore Claude, 2026-11-11, su richiesta esplicita dell'utente dopo l'approvazione del verdetto PR #29.
-- Fatto: skill regista-v1.0 riscritta (80 righe), AVVIO.md prompt unico, VALUTAZIONE.md con prove, controllo nel tempo, premortem e istruzioni del Supervisore; integrate PR #24–#28; AGENTS, mandato e README allineati.
-- Prove: righe e link controllati, ricerca di contraddizioni sulla skill con revisione indipendente; nessuna chat Regista eseguita, nessun test prodotto.
-- Aperto/bloccato: lettura del branch di versione via connettore GitHub, Canva nei Progetti, export esposto e ripetibilità del widget non verificati; Gate D aperto.
-- Serve dall'utente: avviare il Supervisore; poi fare le 6 chat di prova seguendo i suoi passi.
+- Chi/quando: Revisore Claude, 2026-11-11 sera, su richiesta dell'utente dopo l'audit del Supervisore (PR #29).
+- Fatto: ricostruite R1/R2/R3 (nessuna vale per pass^3; Giro A/B 0/6); diagnosi e piano nel commento PR #29 «REVISIONE INDIPENDENTE».
+- Prove: quota_exceeded di create_design (R3); campionario font deterministico renderizzato in locale senza crediti; skill v1.0 invariata (blob 5ee452eb), branch regista-v1.0 però modificato (5fae8b3).
+- Aperto/bloccato: quota IA Canva Free esaurita; font in Python ChatGPT, lista bianca Canva e import HTML con font non verificati.
+- Serve dall'utente: decidere se ammettere campionari Python dichiarati (solo esplorazione, mai la foto), poi P0–P2 del commento.
 
 ## Prompt di prosecuzione — Supervisore (chat ChatGPT nuova)
 Sei il Supervisore test di GPT SOCIAL. Dal repo GitHub Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL,
