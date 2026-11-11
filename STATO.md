@@ -12,12 +12,12 @@ Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'uten
 - F2 Pilota prodotto: HOLD — dopo Gate D, un post reale entro 17/11. T1 HOLD fino al Gate D.
 
 ## Prossimo passo (uno)
-Unico esperimento proposto, da avviare in una nuova chat: esportazione manuale e recupero del checkpoint sintetico Canva `DAHalgNO4BY`, con conferma inline Android. Procedura e limiti nell'[audit](evidence/canva-capabilities/audit-2026-11-11.md#7-unico-prossimo-esperimento-necessario-consegna-e-ripresa-del-checkpoint-sintetico). Nessun nuovo TU-01, nessuna foto reale, nessun Gate D.
-Le righe Gate sopra sono ereditate da main e non riconciliate dalle altre chat: PR #22 e sonda Canva sui branch separati restano evidenze/proposte non integrate. Il precedente prossimo passo TU-01 non va rieseguito per questa indagine.
+Completare nella chat corrente l'unico esperimento di consegna del checkpoint sintetico Canva `DAHalgNO4BY`: l'utente apre [il progetto](https://www.canva.com/d/QoL3mbXEV1utFve), esporta PNG 1080×1350 senza modificare il layout e lo allega; l'agente controlla dimensioni/SHA-256 e mostra lo stesso file inline; l'utente conferma separatamente apertura link e visibilità inline Android. Ripresa in nuova sessione già verificata il 2026-11-11. Procedura e limiti nell'[audit §7](evidence/canva-capabilities/audit-2026-11-11.md#7-unico-prossimo-esperimento-necessario-consegna-e-ripresa-del-checkpoint-sintetico). Non ripetere TU-01, nessuna foto reale, nessun Gate D.
+Le righe Gate sopra sono ereditate da main e non riconciliate dalle altre chat: PR #22 e sonda Canva sui branch separati restano evidenze/proposte non integrate.
 
 ## Ultimo passaggio
-- Chi/quando: Technical Investigator / Product QA, 2026-11-11; branch `evidence/canva-capabilities-20261111`, da main `695769d8`.
-- Fatto: audit separato autorizzato; import HTML sintetico, editing testo/media, preview reale scaricata, resize su copia e riapertura nella stessa chat verificati; tutti i draft annullati.
-- Prove: [audit e matrice](evidence/canva-capabilities/audit-2026-11-11.md), 43 tool inventariati, risposte ripulite e PNG sintetici; pixel esterni al titolo invariati a 480×600, non export 1080×1350.
-- Aperto/bloccato: export non esposto; font family/nuovi testi/forme/z-order non esposti nell'editing; integrità foto reale, commit, inline Android e nuova sessione non verificati. Nessun PASS end-to-end, nessun merge.
-- Serve dall'utente: per il solo esperimento proposto, export manuale del checkpoint sintetico e conferma Android; nessuna nuova scelta creativa. Raccomandazione Canva assistito, non decisione di prodotto.
+- Chi/quando: accompagnamento esperimento checkpoint sintetico, 2026-11-11; branch `evidence/canva-capabilities-20261111`.
+- Fatto: avviata la sola prova indicata; recuperato `DAHalgNO4BY` in questa nuova chat e chiusa l'ispezione senza modifiche; export utente ancora atteso.
+- Prove: start_editing_transaction restituisce pagina 1 1080×1350, testi `PROBE TITLE 01` e `SYNTHETIC TEXT 02`, immagine 600×800 a (60,170); transazione `3986207491436852895` confermata cancelled.
+- Aperto/bloccato: dimensioni/hash del PNG esportato e conferme separate link/inline Android non ancora verificati; nessun PASS complessivo. Commit di revisioni e integrità foto reale fuori perimetro.
+- Serve dall'utente: aprire il link, esportare PNG 1080×1350 senza cambi e allegarlo qui; confermare apertura link, poi visibilità inline dopo che l'agente mostrerà il file.
