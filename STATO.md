@@ -40,14 +40,14 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 - T01–T07 restano 5 VISIBILI / 2 NON VISIBILI secondo utente, senza causa interna provata.
 
 ## Prossimo passo (uno)
-Verifica del ponte ufficiale completata in questa sessione: nessun trasferimento diretto Canva→Python dei byte esposto. HOLD. Prossima azione: decisione esplicita utente fra preview Canva esterna provvisoria (senza dichiararla inline) e STOP, oppure nuova verifica tecnica solo dopo disponibilità di un canale ufficiale. Nessun nuovo post; Gate D APERTO, F2/T1 HOLD.
+Test diretto T09 di sola lettura: get_design_pages sul design sintetico esistente ha restituito metadati 1080×1350 e thumbnail nominale 400×500 come URL, non immagine inline; Canva→Python non necessario per consultare il progetto in Canva. Utente accetta consultazione Canva occasionale ma mantiene STOP fino a verdetto sul canale inline. Prossimo passo: decidere se iniziare un ciclo Canva controllato con preview esterna esplicitamente dichiarata, senza confonderla con prova inline. Gate D APERTO, F2/T1 HOLD.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore/QA, 2026-11-11; lettura main e PR #25, controllo capacità esposte.
-- Fatto: verificato catalogo Canva (metadata/thumbnail URL, nessun export_design) e assenza di azione ufficiale per copiare byte nel runtime Python.
-- Prove: schemi tool sessione e documentazione ufficiale Canva/OpenAI; nessun download o nuovo test T08 eseguito.
-- Aperto/bloccato: T08 PARTIAL; recupero byte, hash e visibilità Android non verificati; Gate D APERTO, F2/T1 HOLD.
-- Serve dall'utente: scelta esplicita fra consultazione esterna provvisoria del design Canva e mantenimento dello STOP.
+- Chi/quando: Costruttore/QA, 2026-11-11; ricerca ufficiale e T09 sola lettura.
+- Fatto: escluso Python come requisito del flusso; confermata miniatura via Canva, non immagine inline nativa.
+- Prove: documentazione Canva get-design-pages/best practices; get_design_pages design sintetico DAHalgNO4BY, pagina 1080×1350, thumbnail nominale 400×500 via URL.
+- Aperto/bloccato: nessun byte acquisito, preview inline Android NON VERIFICATA; T08 PARTIAL; Gate D APERTO, F2/T1 HOLD.
+- Serve dall'utente: nessuna nuova approvazione creativa; confermare solo l'eventuale avvio di un ciclo Canva con consultazione esterna dichiarata.
 
 ## Prompt di prosecuzione
 Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md ed esegui il prossimo passo. Chiudi secondo AGENTS.md.
