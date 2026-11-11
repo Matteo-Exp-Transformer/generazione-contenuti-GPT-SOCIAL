@@ -12,15 +12,26 @@ Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'uten
 - F2 Pilota prodotto: HOLD — dopo Gate D, un post reale entro 17/11. T1 HOLD fino al Gate D.
 
 ## Prossimo passo (uno)
-Test conversazionale richiesto dall'utente: scelte creative prima del render, composizione e anteprima dallo stesso progetto Canva. Usare il prompt sotto e la skill aggiornata su questo branch; risultati da riportare dall'utente. Non ripetere TU-01 né anticipare Gate D.
+Test conversazionale eseguito e registrato sotto: progettazione approvata ma produzione Canva non completata. Prossimo passo del Costruttore: verificare una pipeline concreta di composizione/editabilità/export/anteprima sul medesimo progetto prima di proporre un nuovo test creativo. Non ripetere TU-01 né anticipare Gate D.
 Le righe Gate sopra restano quelle registrate su main; questa modifica non riconcilia le evidenze delle altre chat e non ne certifica gli esiti.
 
+## Audit test conversazionale Canva — 2026-11-11
+- **Perimetro:** prova distinta da TU-01, nessun Gate D; conversazione su post handpan bambini Bologna, foto utente, previa approvazione integrale. Nessun costo, minuto, voto o conteggio turni misurato come prova TU-01.
+- **PASS — Procedura:** letti AGENTS, STATO, MANDATO-001, skill sul branch; formato 4:5 (1080×1350), layout E «onde della musica», palette B (#8FD3D1, #F7E7A8, #B998E8, #30475E), tipografia B elegante, testi A poetici, effetti A onde incantate. Approvazione esplicita dell'utente prima di chiamare Canva. Nessun ImageGen; schemi SVG e campioni colore non erano render Canva.
+- **Testi approvati:** «Un mondo di suoni da scoprire»; «Un viaggio tra musica, gioco e meraviglia.»; «Lezioni di handpan per bambini»; «Con Matteo · Bologna»; «Su appuntamento · 327 334 7037».
+- **PASS — Accesso tecnico Canva:** trovata bozza precedente **DAHalgBPGjk**, [edit](https://www.canva.com/d/Bk2aGnfGVY6Lf-t); pagina 1080×1350, tre testi modificabili e fill fotografico asset **MAHalj9Scys** (1144×1536, import riuscito). Non prova identità pixel con originale.
+- **NON ESEGUITO:** nessuna modifica grafica salvata, nessuna decorazione/onda creata, nessun PNG finale, nessuna anteprima della nuova composizione. Transazione di sola ispezione **393460883562540677** annullata; bozza preesistente non modificata.
+- **NON VERIFICATO:** export Canva completo ad alta risoluzione nell'interfaccia strumenti disponibile; preservazione pixel; capacità di creare onde vettoriali/livelli completi; anteprima inline Android; qualità effettiva; ripresa in nuova chat.
+- **Limite osservato:** strumenti Canva espongono editing di testo, formattazione, posizione, dimensione, fill e asset, ma non è stata trovata un'operazione di esportazione PNG del progetto né una composizione vettoriale generale. Un render esterno, anche se tecnicamente possibile con foto sorgente, sarebbe raster e non la stessa revisione editabile Canva.
+- **Valutazione:** PASS raccolta e blocco scelte; PARTIAL integrazione/lettura Canva; FAIL consegna. Niente PASS TU-01 o Gate D. Distinguere capacità non trovata da impossibilità assoluta.
+- **Raccomandazione:** prima di un'altra intervista creativa provare capacità end-to-end (foto originale accessibile, forme/decorazioni, export, preview Android) su un flusso che garantisca stesso progetto e modificabilità; altrimenti chiarire il trade-off editor Canva vs PNG compositato fuori Canva.
+
 ## Ultimo passaggio
-- Chi/quando: Costruttore, 2026-11-11; correzione minima richiesta dall'utente.
-- Fatto: preparazione creativa obbligatoria e vincolo Canva nella skill; prompt unico conservato qui.
-- Prove: rilettura remota dei testi e controllo dei limiti di righe; nessun test creativo eseguito.
-- Aperto/bloccato: efficacia conversazionale e visibilità Android da verificare nel test utente; gate invariati.
-- Serve dall'utente: avviare la chat con il prompt seguente e riportarne i risultati.
+- Chi/quando: Regista post, 2026-11-11, audit richiesto dall'utente.
+- Fatto: registrato audit del test scelte-prima/Canva, senza introdurre un nuovo file audit.
+- Prove: ID Canva, asset, transazione annullata; scelte approvate in chat; nessun output grafico conclusivo.
+- Aperto/bloccato: composizione, export, anteprima Android e livello di editabilità non verificati; gate invariati.
+- Serve dall'utente: nessuna nuova scelta creativa; prossimo intervento tecnico del Costruttore.
 
 ## Prompt unico — test scelte prima / Canva
 ```text
