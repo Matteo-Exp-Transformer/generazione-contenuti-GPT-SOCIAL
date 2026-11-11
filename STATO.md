@@ -16,8 +16,8 @@ Esperimento checkpoint sintetico concluso PARTIAL: recupero in nuova chat verifi
 Le righe Gate sopra sono ereditate da main e non riconciliate dalle altre chat: PR #22 e sonda Canva sui branch separati restano evidenze/proposte non integrate.
 
 ## Ultimo passaggio
-- Chi/quando: chiusura esperimento checkpoint sintetico, 2026-11-11; branch `evidence/canva-capabilities-20261111`.
+- Chi/quando: chiusura e registrazione audit dell'esperimento checkpoint sintetico, 2026-11-11; branch `evidence/canva-capabilities-20261111`.
 - Fatto: PARTIAL; recuperato `DAHalgNO4BY` in nuova chat, verificati pagina 1080×1350 e testi iniziali, annullata ispezione senza modifiche; entrambi gli invii inline non visibili su Android secondo l'utente.
-- Prove: primo tentativo Markdown negativo documentato da screenshot utente; secondo output diretto con view_image negativo confermato «No non si vede nulla». Allegato ricevuto JPEG 1229×1536, 61689 byte, SHA-256 `e2d449ae8ab8b7abfb7f10ac33eba8a230ee271f875de17ee3fb0665cd7c2fa2`, malgrado nome .png.
+- Prove: [audit aggiornato §9](evidence/canva-capabilities/audit-2026-11-11.md#9-audit-della-chat-successiva--esito-effettivo-del-checkpoint-2026-11-11), commit `f2b022a`; primo tentativo Markdown negativo documentato da screenshot utente; secondo output diretto con view_image negativo confermato «No non si vede nulla». Allegato ricevuto JPEG 1229×1536, 61689 byte, SHA-256 `e2d449ae8ab8b7abfb7f10ac33eba8a230ee271f875de17ee3fb0665cd7c2fa2`, malgrado nome .png.
 - Aperto/bloccato: inline Android fallito in questa chat; causa non diagnosticata. PNG originale 1080×1350 non acquisito, apertura link non confermata separatamente. Nessun PASS end-to-end; commit di revisioni e integrità foto reale fuori perimetro.
 - Serve dall'utente: nessun altro reinvio per chiudere questa prova; futura decisione se accettare consultazione esterna Canva. Non è una decisione già approvata.
