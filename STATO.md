@@ -17,7 +17,7 @@ Le righe Gate sopra sono ereditate da main e non riconciliate dalle altre chat: 
 
 ## Ultimo passaggio
 - Chi/quando: accompagnamento esperimento checkpoint sintetico, 2026-11-11; branch `evidence/canva-capabilities-20261111`.
-- Fatto: recupero del design in nuova chat verificato e ispezione annullata senza modifiche; acquisita l'immagine allegata, letti formato/dimensioni/hash; stesso file proposto inline senza ritocchi.
+- Fatto: recupero del design in nuova chat verificato e ispezione annullata senza modifiche; acquisita l'immagine allegata, letti formato/dimensioni/hash; prima anteprima Markdown fallita su Android; riprovata emissione diretta dello stesso file tramite output immagine, senza ritocchi.
 - Prove: pagina Canva 1080×1350, testi iniziali confermati; allegato `Synthetic capability probe.png` decodificato JPEG 1229×1536, 61689 byte; SHA-256 `e2d449ae8ab8b7abfb7f10ac33eba8a230ee271f875de17ee3fb0665cd7c2fa2`.
-- Aperto/bloccato: export PNG originale 1080×1350 non acquisito; origine della difformità non accertata; conferme link/inline Android mancanti. Nessun PASS complessivo; commit di revisioni e integrità foto reale fuori perimetro.
-- Serve dall'utente: confermare separatamente apertura link e visibilità dell'immagine inline; inviare il PNG originale 1080×1350 come documento/file anziché come immagine, se disponibile.
+- Aperto/bloccato: export PNG originale 1080×1350 non acquisito; origine della difformità non accertata; apertura link non confermata; prima anteprima Markdown assente su Android secondo utente e screenshot. Nessun PASS complessivo; commit di revisioni e integrità foto reale fuori perimetro.
+- Serve dall'utente: confermare separatamente apertura link e visibilità del nuovo output immagine; inviare il PNG originale 1080×1350 come documento/file anziché come immagine, se disponibile.
