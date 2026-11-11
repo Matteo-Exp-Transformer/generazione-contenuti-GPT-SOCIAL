@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-11",
+  "environment": "ChatGPT Work / managed cloud",
+  "main_sha": "695769d8a9e83a759b04a33fc50be3f3daa91d6a",
+  "method": "Plugin Management search_plugins(query='Canva Figma', limit=5) e inventario ALL_TOOLS; estratto dei soli candidati, nessuna chiamata ai provider",
+  "candidates": [
+    {
+      "name": "Canva",
+      "id": "plugin_connector_68df33b1a2d081918778431a9cfca8ba",
+      "status": "ENABLED",
+      "installation_policy": "AVAILABLE",
+      "installed": false
+    },
+    {
+      "name": "Figma",
+      "id": "plugin_connector_68df038e0ba48191908c8434991bbac2",
+      "status": "ENABLED",
+      "installation_policy": "AVAILABLE",
+      "installed": false
+    }
+  ],
+  "provider_tool_names": [],
+  "authentication": "non verificata; nessun tool del provider invocabile",
+  "note": "ENABLED nel catalogo non equivale a installato, autenticato o operazione eseguita.",
+  "timing": {
+    "measured_discovery_interval_seconds": 29.585,
+    "scope": "intervallo misurato da prima della ricerca catalogo alla conferma di creazione branch; comprende letture e documentazione, esclude preparazione iniziale non cronometrata; non è tempo attivo utente né durata della sonda",
+    "authorization_wait_seconds": 0,
+    "provider_probe_started": false
+  }
+}
