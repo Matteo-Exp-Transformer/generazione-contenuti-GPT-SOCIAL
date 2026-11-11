@@ -40,14 +40,14 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 - T01–T07 restano 5 VISIBILI / 2 NON VISIBILI secondo utente, senza causa interna provata.
 
 ## Prossimo passo (uno)
-Verificare solo se esiste un canale ufficiale e realmente attivo di acquisizione dei byte Canva nel runtime Python; non ripetere tentativi di rete non autorizzati, nuovi post o allegati manuali. Se il canale rimane assente, mantenere HOLD e chiedere una decisione esplicita sull'accettazione di un workflow alternativo. Gate D APERTO, F2/T1 HOLD.
+Verifica del ponte ufficiale completata in questa sessione: nessun trasferimento diretto Canva→Python dei byte esposto. HOLD. Prossima azione: decisione esplicita utente fra preview Canva esterna provvisoria (senza dichiararla inline) e STOP, oppure nuova verifica tecnica solo dopo disponibilità di un canale ufficiale. Nessun nuovo post; Gate D APERTO, F2/T1 HOLD.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore/QA, 2026-11-11; ricerca ufficiale e T08 sola lettura.
-- Fatto: inventario Canva, matrice §15; recuperata miniatura nominale dal design sintetico esistente.
-- Prove: get_design/get_design_pages, pagina 1080×1350, thumbnail 400×500; DNS Python non risolve media.canva.com.
-- Aperto/bloccato: byte, SHA-256, Image(data=...), Android NON VERIFICATI; no export/commit, Gate D APERTO, F2/T1 HOLD.
-- Serve dall'utente: nessuna conferma visiva richiesta per T08 non mostrato; decisione solo se si propone un percorso alternativo.
+- Chi/quando: Costruttore/QA, 2026-11-11; lettura main e PR #25, controllo capacità esposte.
+- Fatto: verificato catalogo Canva (metadata/thumbnail URL, nessun export_design) e assenza di azione ufficiale per copiare byte nel runtime Python.
+- Prove: schemi tool sessione e documentazione ufficiale Canva/OpenAI; nessun download o nuovo test T08 eseguito.
+- Aperto/bloccato: T08 PARTIAL; recupero byte, hash e visibilità Android non verificati; Gate D APERTO, F2/T1 HOLD.
+- Serve dall'utente: scelta esplicita fra consultazione esterna provvisoria del design Canva e mantenimento dello STOP.
 
 ## Prompt di prosecuzione
 Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md ed esegui il prossimo passo. Chiudi secondo AGENTS.md.
