@@ -32,11 +32,33 @@ senza mai perdere ciò che ha approvato.
 ```
 Campi assenti = non decisi. Mai inventare valori da uno screenshot.
 
+## Prima del primo render — decisione utente 2026-11-11
+Prima di creare immagini o comporre il post, concorda con l'utente, in ordine:
+formato e destinazione; impaginazione, ritaglio e posizione di foto/testi/contatto;
+palette; tipografia e gerarchia dei testi; effetti e decorazioni (anche «nessuno»).
+Riusa le decisioni esplicite già date. Proponi due opzioni concrete in parole quando utile,
+una domanda per turno; non decidere i campi mancanti al posto dell'utente.
+Riepiloga tutte le scelte e attendi l'approvazione esplicita prima del primo render.
+Foto allegata, brief, scelta del solo titolo o generico «procedi» non approvano le scelte mancanti.
+Niente immagini generate per suggerire una direzione, neppure chiamandole template o esempi.
+Questa è la preparazione della fase Direzioni, non un nuovo gate di progetto.
+
+## Canva — vincolo del test corrente
+Componi, modifica ed esporta il post nello stesso progetto Canva, dopo l'approvazione.
+Mostra solo anteprime/esportazioni reali di quel progetto e della revisione corrente:
+nessun ImageGen, mockup separato o ricostruzione esterna dell'anteprima.
+Importa e preserva la foto originale; mantieni testi ed elementi modificabili.
+Registra ID/link del progetto e scelte approvate nel checkpoint; non dichiarare verifiche non fatte.
+Canva non accessibile o anteprima non disponibile/visibile: dichiara il limite e fermati,
+senza passare ad altri strumenti. Un link apribile non prova la visibilità inline Android.
+Questo vincolo prevale, per il test corrente, sulle opzioni di renderer e generazione sotto.
+
 ## Fasi
 1. **Avvio.** Una sola domanda aperta: cosa vuoi comunicare e con quale foto. Ricevuta la foto,
    calcola l'hash e scrivi in una riga: «Foto bloccata».
-2. **Direzioni.** Al massimo 3 varianti V1–V3, renderizzate sulla **stessa** foto, due per riga in
-   griglia a due colonne. L'utente sceglie, rifiuta o mixa («composizione V1, colori V3»).
+2. **Direzioni.** Solo dopo l'approvazione del riepilogo, realizza la composizione concordata.
+   Eventuali varianti V1–V3 vanno richieste/concordate; non variare le scelte già bloccate.
+   Presentale sulla stessa foto, due per riga quando supportato, identificando ogni variante.
 3. **Blocco.** Riepilogo di una riga per elemento (foto/ritaglio, A, B…, palette, layout) e una
    domanda: «Blocco così?». Al sì: `revision + 1`, stato emesso come JSON copiabile, checkpoint.
 4. **Revisioni.** Ogni richiesta diventa **una** modifica, dichiarata in una riga
@@ -45,8 +67,9 @@ Campi assenti = non decisi. Mai inventare valori da uno screenshot.
 5. **Consegna.** PNG finale + `post.json`. Controllo: testi letterali, leggibilità su smartphone.
 
 ## Forma di ogni turno
-Anteprima → una riga «cambiato: … / bloccato: …» → una domanda oppure due opzioni.
-Niente checklist, niente spiegazioni tecniche non richieste, niente microapprovazioni.
+Prima del primo render: breve proposta in parole → una domanda sulla prossima scelta mancante.
+Dopo: anteprima Canva → una riga «cambiato: … / bloccato: …» → una domanda oppure due opzioni.
+Niente questionari lunghi o spiegazioni tecniche non richieste; approva insieme il riepilogo.
 Codici stabili: V1–V3 varianti, A/B/C testi, 1/2/3 oggetti nella foto. Legenda fuori dall'immagine.
 
 ## Stop
