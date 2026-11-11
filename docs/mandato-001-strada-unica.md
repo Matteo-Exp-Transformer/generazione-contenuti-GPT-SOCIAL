@@ -10,7 +10,9 @@ modificare una parte senza perdere le scelte approvate e ottenere un file pubbli
 Direzione di sviluppo: regista conversazionale + layout Canva controllabili, da validare.
 La scelta definitiva della strada e il Gate D restano aperti: questo aggiornamento non è un PASS.
 Scelte prima della produzione; niente rigenerazione della foto, mockup spacciati per anteprime o fallback silenziosi.
-L'anteprima inline Android resta un requisito: consultazione esterna e rifinitura fuori Canva non sono già accettate.
+L'anteprima inline Android resta l'obiettivo; l'utente accetta per il prossimo test una
+consultazione esterna Canva occasionale e dichiarata, senza passaggi tramite Python.
+Rifinitura fuori Canva e fallback silenziosi restano esclusi.
 
 ## 1. Lavoro svolto e prove consolidate
 | Lavoro | Esito / limite | Fonte |
@@ -103,6 +105,25 @@ Questi sono passi sequenziali, non nuovi gate né autorizzazione a eseguirli tut
 TU-01 non si ripete. Nessun nuovo post creativo prima di capacità e canale utili.
 Il riferimento originario Gate D 13/11 e F2 17/11 resta pianificazione, non prova di completamento;
 nessuna proroga automatica o FAIL dedotto dal calendario senza verificare i timebox realmente eseguiti.
+
+## 5.1. Prossima prova conversazionale autorizzata (non TU-01)
+Eseguire un'unica chat completa di regia con post interamente composto in Canva,
+seguendo la skill post-director e il prompt di prova già impostato (PR #22).
+Prima della produzione, usare **UI nativa ChatGPT** per presentare opzioni A/B:
+mini-griglie schematiche d'impaginazione (posizioni foto, titolo, testo, contatto),
+campioni colori/palette, gerarchie tipografiche e proposte di decorazioni.
+Questi campioni sono **esempi di direzione**: non simulazioni della foto o anteprime del
+progetto Canva; niente ImageGen, mockup esterni o generazione prematura.
+Una decisione per turno, codici stabili, possibilità di combinare opzioni e correzioni;
+riusare le scelte già approvate, senza imporre una nuova intervista quando non serve.
+Solo dopo riepilogo e autorizzazione esplicita, comporre il post nello **stesso** progetto
+Canva preservando la foto originale e la modificabilità di testi/elementi.
+Mostrare la miniatura **reale** della revisione Canva; se inline non disponibile,
+fornire il link Canva dichiarandolo consultazione esterna (accettata occasionalmente).
+Raccogliere il giudizio dell'utente sulla resa, correggere solo ciò che riapre,
+poi verificare commit, riapertura e possibilità di export con i tool realmente presenti.
+Non dichiarare successo su export non eseguito né Gate D superato.
+Registrare esito e limiti nel posto esistente, evitando nuovi documenti.
 
 ## 6. Regole di continuità
 Prima di lavorare: leggere AGENTS, STATO e questo mandato su main aggiornato; skill solo per conduzione post.
