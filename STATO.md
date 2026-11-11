@@ -12,12 +12,12 @@ Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'uten
 - F2 Pilota prodotto: HOLD — dopo Gate D, un post reale entro 17/11. T1 HOLD fino al Gate D.
 
 ## Prossimo passo (uno)
-Completare nella chat corrente l'unico esperimento di consegna del checkpoint sintetico Canva `DAHalgNO4BY`: l'utente apre [il progetto](https://www.canva.com/d/QoL3mbXEV1utFve), esporta PNG 1080×1350 senza modificare il layout e lo allega; l'agente controlla dimensioni/SHA-256 e mostra lo stesso file inline; l'utente conferma separatamente apertura link e visibilità inline Android. Ripresa in nuova sessione già verificata il 2026-11-11. Procedura e limiti nell'[audit §7](evidence/canva-capabilities/audit-2026-11-11.md#7-unico-prossimo-esperimento-necessario-consegna-e-ripresa-del-checkpoint-sintetico). Non ripetere TU-01, nessuna foto reale, nessun Gate D.
+Completare nella chat corrente l'unico esperimento sul checkpoint sintetico `DAHalgNO4BY`: raccogliere conferme separate apertura link e visibilità inline Android; acquisire il file originale PNG 1080×1350 come allegato documento/file. L'immagine ricevuta è JPEG 1229×1536 malgrado il nome .png: non prova l'export richiesto; causa della trasformazione non accertata. Nessun ridimensionamento o conversione per simulare il risultato. Ripresa in nuova sessione già verificata. [Procedura audit §7](evidence/canva-capabilities/audit-2026-11-11.md#7-unico-prossimo-esperimento-necessario-consegna-e-ripresa-del-checkpoint-sintetico). Non ripetere TU-01, nessuna foto reale, nessun Gate D.
 Le righe Gate sopra sono ereditate da main e non riconciliate dalle altre chat: PR #22 e sonda Canva sui branch separati restano evidenze/proposte non integrate.
 
 ## Ultimo passaggio
 - Chi/quando: accompagnamento esperimento checkpoint sintetico, 2026-11-11; branch `evidence/canva-capabilities-20261111`.
-- Fatto: avviata la sola prova indicata; recuperato `DAHalgNO4BY` in questa nuova chat e chiusa l'ispezione senza modifiche; export utente ancora atteso.
-- Prove: start_editing_transaction restituisce pagina 1 1080×1350, testi `PROBE TITLE 01` e `SYNTHETIC TEXT 02`, immagine 600×800 a (60,170); transazione `3986207491436852895` confermata cancelled.
-- Aperto/bloccato: dimensioni/hash del PNG esportato e conferme separate link/inline Android non ancora verificati; nessun PASS complessivo. Commit di revisioni e integrità foto reale fuori perimetro.
-- Serve dall'utente: aprire il link, esportare PNG 1080×1350 senza cambi e allegarlo qui; confermare apertura link, poi visibilità inline dopo che l'agente mostrerà il file.
+- Fatto: recupero del design in nuova chat verificato e ispezione annullata senza modifiche; acquisita l'immagine allegata, letti formato/dimensioni/hash; stesso file proposto inline senza ritocchi.
+- Prove: pagina Canva 1080×1350, testi iniziali confermati; allegato `Synthetic capability probe.png` decodificato JPEG 1229×1536, 61689 byte; SHA-256 `e2d449ae8ab8b7abfb7f10ac33eba8a230ee271f875de17ee3fb0665cd7c2fa2`.
+- Aperto/bloccato: export PNG originale 1080×1350 non acquisito; origine della difformità non accertata; conferme link/inline Android mancanti. Nessun PASS complessivo; commit di revisioni e integrità foto reale fuori perimetro.
+- Serve dall'utente: confermare separatamente apertura link e visibilità dell'immagine inline; inviare il PNG originale 1080×1350 come documento/file anziché come immagine, se disponibile.
