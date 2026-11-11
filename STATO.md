@@ -32,16 +32,22 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 - T07: VISIBILE riferito, stesso `baseline.png` Canva via Python `IPython.display.Image(data=...)`, hash e dimensioni uguali a T06.
 - Perimetro: riscontri utente su Android; T05–T07 stesso contenuto con percorsi diversi; nessuna causa interna o trasferimento automatico dimostrati.
 
+## T08 — Canva → Python → Android (2026-11-11)
+- Ricerca prima della prova: confrontati Canva MCP ufficiale e inventario reale; URL thumbnail firmati/scadenti, commit/export e output client distinti.
+- get_design + get_design_pages confermano fixture `DAHalgNO4BY`, pagina 1 salvata 1080×1350, miniatura nominale 400×500. Nessun editing.
+- Python: richiesta neutra a media.canva.com bloccata dal DNS (`Errno -3`); URL firmato non usato; nessun byte, hash, formato reale o display verificato.
+- T08 PARTIAL: metadata OK; Canva→Python bloccato/non provato, Android NON TESTATO. Matrice e fonti nell'audit §15.
+- T01–T07 restano 5 VISIBILI / 2 NON VISIBILI secondo utente, senza causa interna provata.
+
 ## Prossimo passo (uno)
-Ricerca documentale e analisi prima di altri test: confrontare fonti ufficiali Canva e OpenAI, inventario strumenti effettivamente esposti e prove T01–T07; mappare URL temporanei, trasferimento byte nel runtime Python, preview draft/salvata e vincoli di modificabilità, senza presupporre possibilità non dimostrate. Consultare l'audit §14 e sintetizzare una matrice fattibilità/rischi con un solo test T08 (sola lettura, fixture Canva già esistente), obiettivo e stop condition. Solo dopo eseguire T08, senza nuovo post o modifiche Canva e con feedback utente. Se il trasferimento è impedito, documentare NON VERIFICATO anziché inventare workaround.
-Gate D APERTO, F2/T1 HOLD; no Canva composizione, spese, installazioni, export fittizio, immagini generate o cambio strada implicito.
+Verificare solo se esiste un canale ufficiale e realmente attivo di acquisizione dei byte Canva nel runtime Python; non ripetere tentativi di rete non autorizzati, nuovi post o allegati manuali. Se il canale rimane assente, mantenere HOLD e chiedere una decisione esplicita sull'accettazione di un workflow alternativo. Gate D APERTO, F2/T1 HOLD.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore/QA, 2026-11-11; consolidamento completo T01–T07 e ricerca preliminare strumenti.
-- Fatto: 5 anteprime visibili (T01/T03/T04/T06/T07) e 2 non visibili (T02/T05), secondo l'utente su Android.
-- Prove: stesso PNG/sha nei T01–T04; stesso PNG Canva con blob Git verificato nei T05–T07; risultati e limiti nell'audit §14.
-- Aperto/bloccato: Canva→Python senza allegato manuale, salvataggio/export e affidabilità cross-client NON VERIFICATI; Gate D APERTO, F2/T1 HOLD.
-- Serve dall'utente: riscontro al futuro T08 solo dopo ricerca e un test di lettura mirato; nessuna scelta creativa.
+- Chi/quando: Costruttore/QA, 2026-11-11; ricerca ufficiale e T08 sola lettura.
+- Fatto: inventario Canva, matrice §15; recuperata miniatura nominale dal design sintetico esistente.
+- Prove: get_design/get_design_pages, pagina 1080×1350, thumbnail 400×500; DNS Python non risolve media.canva.com.
+- Aperto/bloccato: byte, SHA-256, Image(data=...), Android NON VERIFICATI; no export/commit, Gate D APERTO, F2/T1 HOLD.
+- Serve dall'utente: nessuna conferma visiva richiesta per T08 non mostrato; decisione solo se si propone un percorso alternativo.
 
 ## Prompt di prosecuzione
 Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md ed esegui il prossimo passo. Chiudi secondo AGENTS.md.
