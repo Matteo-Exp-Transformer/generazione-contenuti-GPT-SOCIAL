@@ -17,26 +17,23 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 
 ## Sequenza verso l'obiettivo
 - [x] Consolidare su main evidenze, skill scelte-prima e stato; aggiornare mandato con ricerca.
-- [ ] Diagnosi controllata immagini Android/browser senza Canva — UNICO PASSO ATTIVO.
+- [x] Diagnosi immagini: feedback utente raccolto; confronto tecnico NON VERIFICATO (file/metodo/client non certificati).
 - [ ] Dopo decisione sul canale, ciclo Canva: modifica → preview → approvazione → commit → ripresa → export.
 - [ ] Dopo consegna completa, confronto manuale/assistito: tempo utente, correzioni, qualità, pubblicabilità.
 - [ ] Decisione Gate D, poi pilota F2.
 
 ## Prossimo passo (uno)
-Costruttore/QA in chat con l'utente: eseguire mandato §5.1, riusando un PNG sintetico già salvato.
-Stesso file, stesso metodo, stessa risposta consultata su Android e browser; due conferme distinte.
-Non ripetere i reinvii falliti: cambiare la domanda sperimentale, isolando il client.
-Se manca un client o una conferma, registrare NON VERIFICATO e il limite; nessuna causa inventata.
-Nessun Canva, TU-01, nuovo post, installazione o cambio di strada in questo passo.
-Aggiornare questo stato e audit esistente; scegliere il passo successivo in base all'esito, non automaticamente.
+Decisione esplicita dell'utente sul vincolo di visibilità: accettare provvisoriamente preview esterna verificabile del medesimo progetto Canva, oppure mantenere lo STOP fino a soluzione inline.
+Il feedback «Mobile desktop e browser. Niente nessun caso» segnala mancata visibilità riferita su più client, ma non certifica una prova controllata stesso file/metodo/risposta; nessuna causa tecnica attribuita.
+Se l'utente mantiene lo STOP, non avviare altri post o ciclo Canva. Se accetta l'esterna, progettare solo il checkpoint sintetico successivo del mandato §5, con verifica reale e senza PASS anticipati.
+Nessun Canva, TU-01, installazione, export manuale o cambio di strada implicito.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore, 2026-11-11; consolidamento autorizzato dall'utente su main.
-- Fatto: integrate evidenze PR #17/#18/#19/#23 e skill #22; riconciliati esiti #20/#21, mandato, README, PRD e istruzioni.
-- Prove: readback remoto dei documenti e dei file integrati; limiti AGENTS/STATO/SKILL e link operativi verificati; nessun test prodotto rieseguito.
-- Aperto/bloccato: anteprima Android, commit/export e foto reale non certificati; Gate D aperto. Pulizia branch dipende dai tool disponibili.
-- Serve dall'utente: nella prossima chat, riscontri separati Android/browser; nessuna nuova scelta creativa.
+- Chi/quando: Costruttore/QA, 2026-11-11; registrazione del feedback della chat §5.1 su branch dedicato.
+- Fatto: raccolta la dichiarazione utente «Mobile desktop e browser. Niente nessun caso»; nessun nuovo invio o test eseguito in questa sessione.
+- Prove: riscontro utente di invisibilità; non disponibili qui conferme strutturate sul medesimo file, hash, metodo e stessa risposta per due client.
+- Aperto/bloccato: confronto tecnico NON VERIFICATO; problema inline riferito su più client, causa sconosciuta; Gate D aperto, F2/T1 HOLD.
+- Serve dall'utente: decisione esplicita preview esterna provvisoria oppure STOP; nessuna nuova scelta creativa.
 
 ## Prompt di prosecuzione
-Repo https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL, branch main.
-Leggi AGENTS.md, STATO.md e il mandato attivo. Esegui soltanto la diagnosi controllata del canale immagini (§5.1), con me, senza Canva e senza ripetere TU-01. Registra fatti e limiti nelle sedi esistenti e chiudi secondo AGENTS.md.
+Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md ed esegui il prossimo passo. Chiudi secondo AGENTS.md.
