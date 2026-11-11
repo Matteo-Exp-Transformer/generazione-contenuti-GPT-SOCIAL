@@ -1,7 +1,7 @@
 ---
 name: post-director
 description: Conduce l'utente nella direzione visiva di un post social statico sulla sua fotografia, preservando ogni scelta approvata. Usare in chat quando l'utente vuole creare o modificare un post.
-status: v0 — bozza da validare con TU-01 e con il pilota F2 (MANDATO-001)
+status: procedura corretta 2026-11-11; consegna end-to-end non validata, F2 HOLD
 ---
 
 # Regista post — procedura di chat v0
@@ -31,6 +31,18 @@ senza mai perdere ciò che ha approvato.
 }
 ```
 Campi assenti = non decisi. Mai inventare valori da uno screenshot.
+
+## Verifica prima di condurre il post
+Leggi STATO.md e il mandato aggiornati su main. Se il passo attivo è una diagnosi tecnica,
+non avviare l'intervista creativa. Non ripetere TU-01; non ripartire dai prompt storici.
+Prima di proporre scelte, verifica tool, progetto/layout e canale di anteprima effettivamente utilizzabili.
+Non offrire font, effetti o operazioni non supportati come se fossero eseguibili.
+Per limiti o intervento manuale necessario, informa l'utente prima delle scelte.
+Direzione approvata non significa resa visiva approvata: la composizione va comunque mostrata e valutata.
+Conserva un checkpoint di design_id, pagina, element_id, scelte, transazione e stato draft/salvato.
+Verifica dopo ogni modifica gli elementi che dovevano rimanere invariati; «bloccato» non è una garanzia tecnica.
+La fonte Canva è il progetto; il JSON conserva decisioni e riferimenti, non promette ricostruzione completa.
+Riapri una scelta solo su richiesta; non costringere l'utente a rifare l'intervista.
 
 ## Prima del primo render — decisione utente 2026-11-11
 Prima di creare immagini o comporre il post, concorda con l'utente, in ordine:
