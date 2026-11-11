@@ -1,193 +1,115 @@
-# MANDATO-001 — Una strada, un test, una decisione rapida
+# MANDATO-001 — Direzione creativa controllata e consegna verificabile
 
-**Stato:** ATTIVO dal 2026-11-10 · **Decisione utente:** [decisioni.md](decisioni.md) (voce 2026-11-10, «strada unica»)
-**Base:** audit indipendente Claude del 2026-11-10 (verdetto: *in deriva*; sintesi al §1).
-**Sostituisce come prossimo passo:** G-FOTO-01 e ogni gate su fixture neutra. T1 resta HOLD fino al Gate D.
+Aggiornato 2026-11-11 su richiesta esplicita dell'utente; continuità con la revisione Claude.
+Questo testo sostituisce le istruzioni operative del [mandato originario](archivio/mandato-001-originale-20261110.md), conservato integralmente come storico.
+Stato corrente e unico prossimo passo: [STATO.md](../STATO.md). Decisioni: [decisioni.md](decisioni.md).
 
-## 0. In una frase
-Entro il **13/11** sapere se la strada «foto bloccata + render deterministico» permette di dirigere un
-post sulla propria foto; altrimenti passare a Canva/Figma via MCP. Se i risultati sono lontani, non si
-insiste: si cambia strada.
+## 0. Obiettivo e direzione attuale
+Consentire all'utente di dirigere un post sulla propria fotografia, vedere il risultato reale,
+modificare una parte senza perdere le scelte approvate e ottenere un file pubblicabile.
+Direzione di sviluppo: regista conversazionale + layout Canva controllabili, da validare.
+La scelta definitiva della strada e il Gate D restano aperti: questo aggiornamento non è un PASS.
+Scelte prima della produzione; niente rigenerazione della foto, mockup spacciati per anteprime o fallback silenziosi.
+L'anteprima inline Android resta un requisito: consultazione esterna e rifinitura fuori Canva non sono già accettate.
 
-## 0-bis. Direzione approvata e mandato esecutivo (utente, 2026-11-10)
-La revisione Claude recepita in questo mandato e le decisioni dell'utente concordate con lui
-sono la direzione operativa della repo. Le successive decisioni esplicite dell'utente prevalgono;
-le proposte di un agente non diventano decisioni senza approvazione. F0 riporta questa conferma
-in `docs/decisioni.md`. Lo storico non riapre strade superate.
+## 1. Lavoro svolto e prove consolidate
+| Lavoro | Esito / limite | Fonte |
+|---|---|---|
+| Consolidamento F0 | Archivi e fonti operative riordinati; rimangono 25 rimandi storici irrisolti | PR #15, indice archivio |
+| Engine F1-A | 18 test sintetici verdi riferiti e verificati nella run precedente; nessuna modifica in questa riconciliazione | PR #16 |
+| TU-01 reale Strada A | PARTIAL: tecnica riferita riuscita, esperienza creativa rifiutata, violazione procedurale con generazione immagine; non ripetere | PR #20 e #21, feedback utente |
+| Discovery MCP iniziale | Tool assenti nelle sessioni iniziali; non un FAIL generale dei servizi | PR #17/#18, evidence/tu-01-mcp/ |
+| Sonda fotografica Canva | Import foto/HTML e testi separati; inline Android negativo, link esterno positivo; B→A/export non eseguiti | [scheda](../evidence/tu-01-mcp/canva-2026-11-11.md), PR #19 |
+| Sonda Figma | Modifica A→B→A senza foto; import foto bloccato DNS, nessun PASS fotografico | [scheda](../evidence/tu-01-mcp/sonda-2026-11-11.md), PR #19 |
+| Correzione regista | Scelte approvate prima di Canva; nessun ImageGen; migliore esperienza riferita dall'utente | PR #22, §2 |
+| Capacità Canva | Import 1080×1350, testi/media modificabili in draft; cambio titolo circoscritto nella miniatura 480×600; tutti i draft annullati | [audit §§1–8](../evidence/canva-capabilities/audit-2026-11-11.md), PR #23 |
+| Ripresa e consegna | Baseline recuperata in nuova chat; due invii inline falliti su Android; ricevuto JPEG 1229×1536 invece del PNG richiesto | [audit §9](../evidence/canva-capabilities/audit-2026-11-11.md#9-audit-della-chat-successiva--esito-effettivo-del-checkpoint-2026-11-11), PR #23 |
 
-La prossima run Sol 6.1 è il Senior Orchestrator con un sub agent esecutore:
-- Massimo due task delegati complessivi: F0 (§5), poi engine F1-A (§6). Nessun terzo task,
-  retry delegato o ciclo supplementare dopo il secondo; gli incompleti si dichiarano.
-- Contesto orchestratore ≤170k token. Legge solo AGENTS.md, questo mandato,
-  skills/post-director/SKILL.md e tests/creative-console/*.py; nessuna lettura storica.
-  Sono consentiti metadati Git/PR, diff e output necessari alle verifiche e il readback dei file
-  prodotti. Il sub agent legge i file operativi da modificare, archivia lo storico senza studiarlo.
-- Brief autosufficienti; report del sub agent ≤300 parole con diff e output dei test
-  (output esteso nella PR, riferimento e sintesi nel report).
-- Nessuna spesa, installazione, download di asset/dipendenze, generazione AI o foto reale.
-  Restano necessari l'accesso ai sorgenti della repo e la fixture sintetica prodotta via codice.
-- Merge autorizzato per PR #14 e PR dei due task dopo verifica di diff e test pertinenti;
-  eliminare i branch conclusi dopo verifica di integrazione e dipendenze.
-  Se #14 risulta già merged, verificarlo e proseguire: non ripetere il merge.
-- L'engine passa con test sintetici verdi e output reale in PR. Questo NON è il PASS di TU-01:
-  il test sulla foto reale spetta al regista in una nuova chat ChatGPT avviata dall'utente.
-- Chiusura: aggiornare gate e «Ultimo passaggio» in STATO.md; Fatto (prove), Stato,
-  Prossimo passo; prompt ≤180 parole per il regista, con repo, STATO.md, mandato e skill,
-  esecuzione TU-01 e consegna della scheda per Gate D. F1-B è un'opzione separata,
-  avviabile dall'utente in parallelo, non una terza delega di questa run.
+Le PR #20/#21 documentano lo stesso esito Strada A: non sono due nuovi test.
+#20 riferisce invarianti pixel e undo tecnici; #21 non li certifica autonomamente.
+Conservare la distinzione: resoconto pregresso, non nuova verifica indipendente né PASS completo.
+Le schede di discovery e la matrice iniziale dell'audit sono fotografie di quelle sessioni;
+il §9 aggiorna ripresa/Android senza riscrivere retroattivamente le prove.
+Nessuna misura mancante (tempo, costo, voto, turni) va ricostruita per stima.
 
-## 1. Perché (sintesi audit)
-- Tre tentativi su foto reale (Pilota A, T1-01, T1-02): tutti FAIL. Causa già diagnosticata nella
-  [PR #11](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/11):
-  rigenerazione dell'intera scena invece di foto bloccata + overlay.
-- Il codice 002 è un banco di prova su una sola fixture: non gestisce foto né testo.
-- Dopo l'ultimo commit di codice (10/11, 13:52) solo documentazione e riconciliazioni.
-- Stato corrente sparso su 3 branch non integrati; in `main` README, PRD, decisioni e audit sulle
-  interfacce sono superati; AGENTS.md rimanda a un file inesistente.
+## 2. Test conversazionale PR #22 — risultato preservato
+La raccolta delle scelte e la loro approvazione sono riuscite; la consegna è fallita.
+Formato 4:5 1080×1350; layout E «onde della musica»; palette B
+#8FD3D1, #F7E7A8, #B998E8, #30475E; tipografia B elegante; testi A; effetti A onde incantate.
+Testi: «Un mondo di suoni da scoprire»; «Un viaggio tra musica, gioco e meraviglia.»;
+«Lezioni di handpan per bambini»; «Con Matteo · Bologna»; contatto approvato nel progetto.
+Progetto esistente DAHalgBPGjk: tre testi modificabili e fill fotografico, pagina 1080×1350.
+Sola ispezione; nessuna nuova composizione/decorazione salvata o PNG finale.
+Schemi SVG/campioni colore non erano render Canva. Integrità fotografica pixel non certificata.
+La disponibilità di un progetto non dimostra che le scelte approvate vi siano state applicate.
 
-## 2. Tabella di marcia (timebox rigidi)
-| Fase | Chi | Timebox | Uscita |
-|---|---|---|---|
-| **F0** Consolidamento | Costruttore | 1 sessione, ≤2 h, entro 11/11 | `main` pulito, `STATO.md`, AGENTS ridotto, archivio |
-| **F1-A** Strada A | Costruttore | ≤2 sessioni, entro 13/11 | TU-01 eseguito su Strada A |
-| **F1-B** Sonda MCP | Costruttore, in parallelo a F1-A | ≤1 sessione, entro 13/11 | TU-01 eseguito su 1–2 strumenti MCP |
-| **Gate D** | Utente (+ revisore, una volta) | 30 min, 13/11 | Strada scelta, registrata in `decisioni.md` |
-| **F2** Pilota prodotto | Regista post + utente | 1 post reale, entro 17/11 | Post consegnato con la skill `post-director` |
+## 3. Cosa resta da dimostrare
+Separare quattro livelli: conduzione creativa; operazioni del connettore; revisione salvata/export;
+visualizzazione sul dispositivo. Un successo a un livello non certifica gli altri.
+- Editing osservato senza font_family, insert_text, creazione generale di forme, crop esplicito e z-order.
+- Decorazioni importate visibili ma non tutte indirizzabili separatamente.
+- Export documentato dal servizio, assente nel catalogo delle sessioni esaminate; causa non diagnosticata.
+- Commit e recupero di una modifica salvata, export originale e piena integrità foto ancora non verificati.
+- Lock dichiarato dall'agente non è un vincolo tecnico: il titolo centrato può cambiare geometria;
+  resize può ricomporre il layout e creare un nuovo progetto.
+- Foto preservata = originale conservato e nessuna rigenerazione; crop/scala approvati sono distinti.
+  Identità pixel fra revisioni equivalenti verifica cambiamenti collaterali, non identità byte dopo export.
 
-F1-B, se attivata dall'utente separatamente, corre in parallelo a F1-A per non perdere giorni se A fallisce. Toccano file diversi
-(`engine/` contro `evidence/tu-01-mcp/`). Superato un timebox senza uscita, la fase è FAIL: niente proroghe
-automatiche, decide l'utente al Gate D.
+## 4. Indicazioni dalla ricerca e conseguenze operative
+Fonti consultate l'11/11/2026; indicazioni progettuali, non prova di capacità della nostra integrazione.
+1. [OptiMuse, CHI 2024](https://www.microsoft.com/en-us/research/publication/understanding-nonlinear-collaboration-between-human-and-ai-agents-a-co-design-framework-for-creative-design/):
+   studio formativo con 12 esperti e valutazione comparativa; esplorazione e remix non lineari.
+   Applicazione: scelte prima del render, ma riapribili esplicitamente; evitare questionari rigidi e decisioni estetiche alla cieca.
+2. [User-centered co-creativity, CHI EA 2024](https://www.research.ed.ac.uk/en/publications/a-user-centered-framework-for-human-ai-co-creativity/):
+   framework su agency/controllo, non benchmark Canva. Applicazione: distinguere proposta AI da decisione utente.
+3. [Canva best practices](https://www.canva.dev/docs/apps/mcp/best-practices/):
+   stato strutturato, ID e transazioni; il prompt non garantisce il rendering di URL in ogni client.
+   Applicazione: checkpoint con design_id, pagina, elementi, scelte, transazione e stato di salvataggio;
+   verifiche dopo ogni modifica. Non costruire ora un nuovo orchestratore.
+4. [Canva verifica end-to-end](https://www.canva.dev/docs/apps/mcp/verify-app/):
+   verificare creazione/apertura/modifica/commit/export e corrispondenza al risultato salvato.
+   Applicazione: nessun «fatto» sulla sola risposta di editing in draft.
+5. [Canva autofill](https://www.canva.dev/docs/apps/mcp/tools/autofill-design/):
+   template/campi per testi e immagini; piano e campi da verificare, nessun acquisto implicito.
+   Applicazione: iniziare da pochi layout predisposti; autofill è un candidato non ancora provato.
+6. [Anthropic, Building effective agents](https://www.anthropic.com/research/building-effective-agents):
+   principio di semplicità e workflow prevedibili; tooling dell'articolo soggetto ad aggiornamenti.
+   Applicazione: un agente regista e strumenti necessari; nessuna nuova architettura multi-agente.
+7. [Canva export](https://www.canva.dev/docs/apps/mcp/tools/export-design/):
+   export è una capacità documentata, non prova della sua esposizione nel client.
+   Applicazione: verificare il catalogo effettivo, non inventare parametri o attribuire cause senza prove.
 
-## 3. Test unico TU-01 (identico per tutte le strade)
-**Input:** una foto dell'utente, autorizzata per il test; formato 1080×1350; titolo A e titolo B scritti
-*prima* del test; una palette.
-**Sequenza:** render A → visibile su Android → cambio **solo** del titolo in B → visibile → ritorno ad A
-→ export PNG.
+## 5. Sequenza corrente — una sola attività attiva
+1. **Ora: diagnosi controllata del canale immagini**, senza Canva e senza nuovo post.
+   Riutilizzare un PNG sintetico già in evidence/canva-capabilities/, senza modificarlo.
+   Registrare hash/dimensioni del file sorgente e metodo di invio; mostrare una sola volta con quel metodo.
+   Invitare l'utente a consultare la stessa risposta su Android e browser, quando disponibile.
+   Raccogliere due conferme distinte e contesto client; non fingere accesso al dispositivo.
+   Nessuna conferma o nessun browser disponibile = confronto incompleto, non FAIL globale.
+   Niente reinvii casuali, nuova immagine, altro metodo o diagnosi causale senza evidenza.
+   Uscita: osservazioni controllate che distinguano file/metodo/client oppure limite dichiarato.
+   Aggiornare STATO e l'audit esistente con sezione separata: non attribuire questa prova a Canva.
+2. **Dopo il risultato e una decisione sul canale:** ciclo completo su un layout Canva predisposto.
+   Verificare prima tool/piano/font/forme/placeholder; proporre solo operazioni realizzabili.
+   Testo → anteprima consultabile → approvazione → commit → riapertura → export originale conforme.
+   Se export non esposto, diagnosticare disponibilità senza installazioni; export manuale solo se accettato.
+   Se inline resta bloccato, chiedere scelta esplicita fra consultazione esterna e mantenimento dello stop.
+3. **Dopo la consegna completa:** confronto manuale Canva vs assistito sullo stesso brief/layout.
+   Misurare tempo attivo utente, correzioni, qualità e disponibilità a pubblicare; dichiarare ordine/effetto apprendimento.
+   È valutazione del prodotto personale, non evidenza scientifica generalizzabile.
+4. **Gate D:** decisione esplicita dell'utente su strada e compromessi; soltanto dopo F2.
 
-| # | Misura | Strada A | Strada MCP |
-|---|---|---|---|
-| 1 | Foto preservata | pixel fuori dall'area titolo identici (test automatico) | confronto pixel sugli export se possibile, altrimenti visivo dichiarato |
-| 2 | Undo esatto | A finale = A iniziale (hash dei pixel) | idem o visivo dichiarato |
-| 3 | Visibile su Android senza download | conferma utente | conferma utente |
-| 4 | Qualità estetica | voto utente 1–5 | voto utente 1–5 |
-| 5 | Tempo | minuti attivi utente, numero turni | idem |
-| 6 | Costo extra | € effettivi | € effettivi (account di prova ammessi) |
-| 7 | Ripresa | lo stato si riapre in una nuova sessione? sì/no | idem |
+Questi sono passi sequenziali, non nuovi gate né autorizzazione a eseguirli tutti nella stessa chat.
+TU-01 non si ripete. Nessun nuovo post creativo prima di capacità e canale utili.
+Il riferimento originario Gate D 13/11 e F2 17/11 resta pianificazione, non prova di completamento;
+nessuna proroga automatica o FAIL dedotto dal calendario senza verificare i timebox realmente eseguiti.
 
-Prove in `evidence/tu-01-<strada>/` (scheda + PNG solo se l'utente autorizza la foto in repo).
-Il voto di qualità lo dà solo l'utente. Mai stimare minuti o voti.
-
-## 4. Regole del Gate D
-- **A vince** se 1, 2, 3 = sì e qualità ≥ 3.
-- **Si passa a MCP** se A fallisce 1–3 entro il timebox, oppure qualità A ≤ 2 con MCP ≥ A + 1, oppure
-  minuti A > 2 × minuti MCP.
-- **Falliscono entrambe:** stop e riformulazione del prodotto con l'utente. Non nuovi micro-gate.
-- **Kill rapido MCP:** se in 30 minuti uno strumento non sa importare la foto, inserire un testo
-  modificabile ed esportare PNG, è scartato; si prova il secondo (massimo due strumenti).
-- Prima del Gate D nessun nuovo gate prodotto oltre TU-01; ammessi i test automatici dell'engine al §6.
-
-## 5. F0 — Consolidamento (Costruttore)
-1. **Integrare o chiudere:** PR #11 (merge come archivio); branch `docs/g-ui-02-evidence-20261110`
-   (merge di evidenze e stato); branch `docs/independent-product-audit-claude-20261110` (merge come archivio).
-   Eliminare i branch conclusi `docs/creative-console-003-handoff` e
-   `docs/android-t1-reconciliation-gate-20261110`, dopo aver verificato che non hanno commit non integrati.
-2. **Creare `STATO.md`** dal modello al §9: unica fonte dello stato corrente. La sezione «Stato operativo»
-   di `pilota-foto-diretta-android.md` diventa storica.
-3. **Archiviare** in `docs/archivio/` tutti i documenti di audit, report, handoff, protocollo e piano
-   (oggi: `audit-*`, `report-*`, `handoff-*`, `PLAN-*`, `protocollo-*`, `test-cono-creativo-v01.md`,
-   `pilota-foto-diretta-android.md`). Senza riscriverli; `docs/archivio/README.md` con una riga per file.
-   In `docs/` restano solo `PRD-v0.1.md`, `decisioni.md` e il mandato attivo.
-4. **Correggere** README (3 righe di stato + link a `STATO.md`), PRD §Stato, il rinvio a `memory/wiki`.
-5. **Sostituire AGENTS.md** con lo scheletro al §8.
-6. Aggiungere a `.gitignore` gli output di render (`*.render.png`, `render-*.png`).
-
-**Criterio:** un agente nuovo legge `AGENTS.md` + `STATO.md` (≤ 130 righe in tutto) e sa cosa fare.
-
-## 6. F1-A — Strada A (Costruttore)
-- Nuovo `engine/` con un solo file Python, stdlib + Pillow già disponibile, eseguibile anche nel Python della chat ChatGPT: `render(post.json, foto) → PNG` con tre tipi di layer: foto bloccata (crop/scala),
-  testo (font predefinito Pillow o già presente, versione registrata), forma/colore. Schema = quello della skill
-  [`post-director`](../skills/post-director/SKILL.md).
-- **Test:** hash della foto sorgente; pixel fuori dall'area testo identici tra A e B; A→B→A identico.
-  Includere le correzioni emerse dall'audit sull'harness 002: colori HEX normalizzati, `revision`
-  booleana rifiutata, chiavi chiuse, solo `ValueError`, hash sui pixel decodificati, output fuori repo.
-- **Uso con l'utente:** nella chat ChatGPT (Python + Pillow, immagine mostrata inline) caricando
-  engine e foto; `post.json` salvato in repo dal Costruttore a ogni approvazione.
-- **Non costruire:** Apps SDK, server, UI reattive, generazione immagini sulla foto.
-- `tests/creative-console/` resta come riferimento, senza nuovi gate.
-
-## 7. F1-B — Sonda MCP (Costruttore)
-- Candidati: Canva e Figma; account di prova ammessi. Nell'ambiente Claude Code dell'utente i
-  connettori Canva e Figma sono presenti e vanno solo autorizzati; verificare anche le app equivalenti
-  in ChatGPT.
-- Primi 15 minuti per strumento: si può importare la foto, cambiare un testo via MCP, esportare PNG?
-  Costo? Se no → kill rapido (§4).
-- Eseguire TU-01 e compilare la scheda. **Non costruire** integrazioni o template complessi.
-
-## 8. Sistema agenti — scheletro di `AGENTS.md` (≤ 45 righe)
-```
-# GPT SOCIAL — istruzioni agenti
-Scopo: far dirigere all'utente un post social statico sulla sua foto senza perdere le scelte approvate.
-Leggi: 1) questo file 2) STATO.md 3) il mandato attivo linkato in STATO.md. Altro solo se serve.
-
-Ruoli
-- Utente: decide, autorizza, giudica la qualità.
-- Costruttore (Codex o Claude Code sulla repo): repo, engine, test, commit/PR. Non conduce post.
-- Regista post (chat, skill skills/post-director): conduce il post con l'utente. Non modifica la repo.
-- Revisore (sessione nuova): solo al gate indicato da STATO.md. Nessun audit di audit.
-
-Regole
-- Direzione: MANDATO-001 recepisce Claude e le decisioni utente; prevalgono le successive decisioni esplicite.
-- Fonti: STATO.md = stato corrente (si sovrascrive); decisioni.md = decisioni (si aggiunge una riga).
-- Fatto / ipotesi / proposta sempre distinti. Mai un PASS non eseguito.
-- Spese, installazioni, foto in repo, push su main: solo con ok dell'utente.
-- Un branch per task del mandato; si elimina dopo il merge. Prove in evidence/<caso>/ o nella PR.
-- Vietati nuovi file di handoff, audit, report o protocollo: si aggiorna STATO.md.
-- Un file nuovo in docs/ solo se ne sostituisce o archivia uno esistente.
-
-Passaggio testimone (fine di ogni lavoro)
-1. Aggiorna in STATO.md il blocco «Ultimo passaggio» (5 righe).
-2. Se c'è una decisione dell'utente, una riga in decisioni.md.
-3. Rispondi all'utente in 3 blocchi: Fatto (con prove) · Stato (righe dei gate) · Prossimo passo.
-4. Chiudi con il prompt puntatore:
-   «Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md
-    ed esegui il prossimo passo. Chiudi secondo AGENTS.md.» (+ al massimo una riga dell'utente)
-
-Limiti di pulizia: AGENTS ≤45 righe, STATO ≤80, SKILL ≤120. Al passaggio di ogni gate,
-ciò che è superato va in docs/archivio/.
-```
-
-## 9. Modello di `STATO.md` (≤ 80 righe)
-```
-# STATO — aggiornato <data> da <ruolo>
-Obiettivo: dirigere un post sulla propria foto senza perdere le scelte approvate.
-Mandato attivo: docs/mandato-001-strada-unica.md
-
-## Gate
-- F0 Consolidamento: <PASS/IN CORSO/FAIL> — <prova>
-- F1-A Strada A (TU-01): ...
-- F1-B Sonda MCP (TU-01): ...
-- Gate D: ...
-- F2 Pilota prodotto: ...
-
-## Prossimo passo (uno)
-<chi> — <cosa> — <criterio di completamento> — <entro>
-
-## Ultimo passaggio
-- Chi/quando:
-- Fatto:
-- Prove:
-- Aperto/bloccato:
-- Serve dall'utente:
-```
-
-## 10. Chat con il regista post (procedura standard)
-La procedura del prodotto è la skill [`skills/post-director/SKILL.md`](../skills/post-director/SKILL.md):
-cinque fasi (avvio → direzioni → blocco → revisioni → consegna), un formato fisso per ogni turno e stop
-espliciti. È **indipendente dalla strada**: con la Strada A renderizza l'engine, con la Strada MCP lo
-strumento scelto. In ChatGPT va installata come istruzioni di un Project o di un GPT personale,
-con l'engine allegato; il prompt d'avvio dell'utente è libero («Voglio un post su…»).
-La skill v0 viene corretta solo con prove di TU-01 o F2, non per ipotesi.
-
-## Stop del mandato
-Superamento dei timebox, spesa non autorizzata, foto non autorizzata, oppure due fallimenti della stessa
-misura TU-01 sulla stessa strada → fermarsi e portare la scheda all'utente.
+## 6. Regole di continuità
+Prima di lavorare: leggere AGENTS, STATO e questo mandato su main aggiornato; skill solo per conduzione post.
+Non riprendere prompt di test o «prossimi passi» contenuti nelle evidenze storiche.
+Aggiornare STATO, non creare ulteriori audit generali; usare l'audit Canva esistente per nuove evidenze pertinenti.
+Prima delle scelte creative: verificare le capacità; prima della produzione: approvazione del riepilogo.
+Riaprire solo le decisioni richieste, mantenere foto e altre scelte; distinguere direzione approvata da resa visiva approvata.
+Nessuna spesa, installazione, foto in repo, pubblicazione o passaggio a renderer esterno implicito.
+Engine e test invariati; nessuna riapertura dei due task delegati F0/F1-A già conclusi.
+L'utente autorizza in questa run consolidamento e aggiornamento di main, non un PASS del prodotto.
