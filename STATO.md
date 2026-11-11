@@ -12,12 +12,12 @@ Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'uten
 - F2 Pilota prodotto: HOLD — dopo Gate D, un post reale entro 17/11. T1 HOLD fino al Gate D.
 
 ## Prossimo passo (uno)
-Completare nella chat corrente l'unico esperimento sul checkpoint sintetico `DAHalgNO4BY`: raccogliere conferme separate apertura link e visibilità inline Android; acquisire il file originale PNG 1080×1350 come allegato documento/file. L'immagine ricevuta è JPEG 1229×1536 malgrado il nome .png: non prova l'export richiesto; causa della trasformazione non accertata. Nessun ridimensionamento o conversione per simulare il risultato. Ripresa in nuova sessione già verificata. [Procedura audit §7](evidence/canva-capabilities/audit-2026-11-11.md#7-unico-prossimo-esperimento-necessario-consegna-e-ripresa-del-checkpoint-sintetico). Non ripetere TU-01, nessuna foto reale, nessun Gate D.
+Esperimento checkpoint sintetico concluso PARTIAL: recupero in nuova chat verificato; consegna inline Android FALLITA nei due tentativi (Markdown sandbox e output immagine diretto); export PNG 1080×1350 non acquisito. Stop ai reinvii dello stesso file. Prossimo passo proposto, non avviato: valutazione di prodotto sulle evidenze già raccolte per decidere con l'utente se accettare la consultazione esterna in Canva. Nessuna nuova prova creativa, nessun TU-01, nessun Gate D automatico.
 Le righe Gate sopra sono ereditate da main e non riconciliate dalle altre chat: PR #22 e sonda Canva sui branch separati restano evidenze/proposte non integrate.
 
 ## Ultimo passaggio
-- Chi/quando: accompagnamento esperimento checkpoint sintetico, 2026-11-11; branch `evidence/canva-capabilities-20261111`.
-- Fatto: recupero del design in nuova chat verificato e ispezione annullata senza modifiche; acquisita l'immagine allegata, letti formato/dimensioni/hash; prima anteprima Markdown fallita su Android; riprovata emissione diretta dello stesso file tramite output immagine, senza ritocchi.
-- Prove: pagina Canva 1080×1350, testi iniziali confermati; allegato `Synthetic capability probe.png` decodificato JPEG 1229×1536, 61689 byte; SHA-256 `e2d449ae8ab8b7abfb7f10ac33eba8a230ee271f875de17ee3fb0665cd7c2fa2`.
-- Aperto/bloccato: export PNG originale 1080×1350 non acquisito; origine della difformità non accertata; apertura link non confermata; prima anteprima Markdown assente su Android secondo utente e screenshot. Nessun PASS complessivo; commit di revisioni e integrità foto reale fuori perimetro.
-- Serve dall'utente: confermare separatamente apertura link e visibilità del nuovo output immagine; inviare il PNG originale 1080×1350 come documento/file anziché come immagine, se disponibile.
+- Chi/quando: chiusura esperimento checkpoint sintetico, 2026-11-11; branch `evidence/canva-capabilities-20261111`.
+- Fatto: PARTIAL; recuperato `DAHalgNO4BY` in nuova chat, verificati pagina 1080×1350 e testi iniziali, annullata ispezione senza modifiche; entrambi gli invii inline non visibili su Android secondo l'utente.
+- Prove: primo tentativo Markdown negativo documentato da screenshot utente; secondo output diretto con view_image negativo confermato «No non si vede nulla». Allegato ricevuto JPEG 1229×1536, 61689 byte, SHA-256 `e2d449ae8ab8b7abfb7f10ac33eba8a230ee271f875de17ee3fb0665cd7c2fa2`, malgrado nome .png.
+- Aperto/bloccato: inline Android fallito in questa chat; causa non diagnosticata. PNG originale 1080×1350 non acquisito, apertura link non confermata separatamente. Nessun PASS end-to-end; commit di revisioni e integrità foto reale fuori perimetro.
+- Serve dall'utente: nessun altro reinvio per chiudere questa prova; futura decisione se accettare consultazione esterna Canva. Non è una decisione già approvata.
