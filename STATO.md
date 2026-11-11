@@ -27,20 +27,21 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 - T02: NON VISIBILE riferito, stesso file via Markdown `sandbox:`.
 - T03: PASS riferito, stesso file via Python `IPython.display.Image(data=...)`.
 - T04: PASS riferito, stesso file via Python `IPython.display.Image(filename=...)`; hash verificato in tutti i test Python.
-- Perimetro: esiti dichiarati dall'utente su questa chat; nessun test cross-browser certificato, nessun Canva in T01–T04. Indizio sul canale di presentazione, causa non accertata.
+- T05: NON VISIBILE riferito, `baseline.png` sintetico Canva dal repository mostrato direttamente via output del connettore GitHub; metodo e sorgente cambiati rispetto a T04, non isolabile.
+- Perimetro: riscontri utente su questa chat; nessun test cross-browser certificato. Indizio sul canale di presentazione, causa non accertata.
 
 ## Prossimo passo (uno)
-Su richiesta esplicita dell'utente, indagare il canale inline con test controllati. Dopo T01–T04, prossimo controllo: miniatura Canva sintetica già presente in evidence, senza modificarla, con un percorso di visualizzazione verificabile; registrare provenienza/hash, distinguendo anteprima draft da export.
+Su richiesta esplicita dell'utente, indagare il canale inline con test controllati. Dopo T05, verificare `evidence/canva-capabilities/baseline.png` *identico* via output Python già funzionante (T06). Blocco attuale: il file GitHub è leggibile dal connettore ma il trasferimento byte al runtime Python non è disponibile; download diretto non raggiungibile. Non sostituire con file ricreato e non dichiarare test eseguito. Richiedere allegato originale per T06, poi hash e display.
 Il feedback «Mobile desktop e browser. Niente nessun caso» segnala mancata visibilità riferita su più client, ma non certifica una prova controllata stesso file/metodo/risposta; nessuna causa tecnica attribuita.
 Nessun nuovo post o ciclo Canva prima di completare diagnosi e decisione sul canale; consultazione esterna non accettata implicitamente.
 Nessun Canva, TU-01, installazione, export manuale o cambio di strada implicito.
 
 ## Ultimo passaggio
 - Chi/quando: Costruttore/QA, 2026-11-11; serie controllata T01–T04 su Android.
-- Fatto: stesso PNG sintetico presentato in quattro modi, senza rielaborazione; l'utente conferma T01/T03/T04 visibili, T02 non visibile.
-- Prove: hash SHA-256 identico per T01/T03/T04; visualizzazione di Markdown sandbox non riuscita secondo utente; nessun test Canva in questa serie.
-- Aperto/bloccato: causa ignota, da testare miniatura Canva via percorso funzionante; Gate D aperto, F2/T1 HOLD.
-- Serve dall'utente: esito del prossimo test; nessuna nuova scelta creativa.
+- Fatto: T01/T03/T04 visibili; T02 non visibile. T05 miniatura sintetica Canva da GitHub NON VISIBILE secondo utente.
+- Prove: hash identico T01/T03/T04; T05 file Canva `baseline.png` ref GitHub blob `1c250ff05b8bd6b0130deb50c780554702ba6ddd` (blob SHA Git, non SHA-256), visualizzazione diretta fallita secondo utente.
+- Aperto/bloccato: causa ignota; T06 via Python in attesa di acquisire stessi byte del file Canva; Gate D aperto, F2/T1 HOLD.
+- Serve dall'utente: allegare `baseline.png` originale del repository per test T06; nessuna nuova scelta creativa.
 
 ## Prompt di prosecuzione
 Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md ed esegui il prossimo passo. Chiudi secondo AGENTS.md.
