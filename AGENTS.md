@@ -16,13 +16,16 @@ Regole
 - Un branch per task del mandato; si elimina dopo il merge. Prove in evidence/<caso>/ o nella PR.
 - Vietati nuovi file di handoff, audit, report o protocollo: si aggiorna STATO.md.
 - Un file nuovo in docs/ solo se ne sostituisce o archivia uno esistente.
-- Run MANDATO-001: massimo due deleghe (F0, engine F1-A); limiti e letture al §0-bis.
-- T1 HOLD fino al Gate D; test sintetici verdi non sono TU-01. F1-B opzionale e separata.
+- I due task delegati F0/F1-A sono conclusi: non riavviarli. Nessuna nuova delega implicita.
+- TU-01 chiuso PARTIAL: non ripetere. Gate D aperto; F2/T1 HOLD.
+- Parti da main aggiornato: evidenze e prompt storici non dettano il prossimo lavoro.
+- Unico passo attivo: STATO.md; capacità, salvataggio/export e visibilità client sono verifiche distinte.
+- Nessun nuovo post prima della verifica del canale e delle capacità; nessun fallback silenzioso.
 
 Passaggio testimone (fine di ogni lavoro)
 1. Aggiorna in STATO.md il blocco «Ultimo passaggio» (5 righe).
 2. Se c'è una decisione dell'utente, una riga in docs/decisioni.md.
-3. Rispondi all'utente in 3 blocchi: Fatto (con prove) · Stato (righe dei gate) · Prossimo passo.
+3. Rispondi con risultato/prove, breve checklist e prossimo passo: spiega cosa farà l'agente e cosa aspettarsi.
 4. Chiudi con il prompt puntatore:
    «Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md
     ed esegui il prossimo passo. Chiudi secondo AGENTS.md.» (+ al massimo una riga dell'utente)
