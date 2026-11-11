@@ -1,4 +1,4 @@
-# STATO — aggiornato 2026-11-10 dal Costruttore
+# STATO — aggiornato 2026-11-11 dal Costruttore
 Obiettivo: dirigere un post sulla propria foto senza perdere le scelte approvate.
 Mandato attivo: [MANDATO-001](docs/mandato-001-strada-unica.md).
 Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'utente; lo storico non riapre strade superate.
@@ -12,11 +12,26 @@ Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'uten
 - F2 Pilota prodotto: HOLD — dopo Gate D, un post reale entro 17/11. T1 HOLD fino al Gate D.
 
 ## Prossimo passo (uno)
-Regista, nuova chat ChatGPT — seguire [skill post-director](skills/post-director/SKILL.md), caricare engine e foto autorizzata dall'utente, eseguire TU-01 del mandato e consegnare la scheda con misure reali per Gate D — entro 13/11. Foto/PNG in repo solo con autorizzazione; post.json di ogni approvazione da consegnare al Costruttore.
+Test conversazionale richiesto dall'utente: scelte creative prima del render, composizione e anteprima dallo stesso progetto Canva. Usare il prompt sotto e la skill aggiornata su questo branch; risultati da riportare dall'utente. Non ripetere TU-01 né anticipare Gate D.
+Le righe Gate sopra restano quelle registrate su main; questa modifica non riconcilia le evidenze delle altre chat e non ne certifica gli esiti.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore + orchestratore, 2026-11-10; completati i 2/2 task delegati, nessuna delega extra.
-- Fatto: F0 integrato e branch conclusi eliminati; engine Pillow in un file, schema skill con rettangoli opzionali, test sintetici e istruzioni ChatGPT; skill v0 invariata.
-- Prove: PR #14 e #15 merged; PR #16 con diff/output completo e verifica indipendente dell’orchestratore; 18 test sintetici locali verdi, A finale identico ad A iniziale; nessuna foto reale usata.
-- Aperto/bloccato: 25 rimandi storici locali; TU-01 reale, Android/qualità e Gate D aperti.
-- Serve dall'utente: nuova chat del regista con foto autorizzata, titoli A/B e palette prima del test, conferme Android, voto 1–5 e minuti attivi effettivi.
+- Chi/quando: Costruttore, 2026-11-11; correzione minima richiesta dall'utente.
+- Fatto: preparazione creativa obbligatoria e vincolo Canva nella skill; prompt unico conservato qui.
+- Prove: rilettura remota dei testi e controllo dei limiti di righe; nessun test creativo eseguito.
+- Aperto/bloccato: efficacia conversazionale e visibilità Android da verificare nel test utente; gate invariati.
+- Serve dall'utente: avviare la chat con il prompt seguente e riportarne i risultati.
+
+## Prompt unico — test scelte prima / Canva
+```text
+Agisci come Regista post.
+Repo: https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL
+Branch: fix/post-director-scelte-prima-canva.
+Leggi AGENTS.md, STATO.md, il mandato attivo e skills/post-director/SKILL.md su questo branch. Se non puoi leggerli, fermati.
+
+Conduci il test conversazionale descritto in STATO.md. Prima di creare immagini, concorda con me formato, impaginazione e posizione degli elementi, palette, tipografia, testi ed effetti. Una domanda per turno, due opzioni concrete quando utili; riusa ciò che ho già deciso. Riepiloga le scelte e attendi la mia approvazione esplicita.
+
+Solo dopo componi il post in Canva. Mostra esclusivamente anteprime/esportazioni dello stesso progetto Canva che modificherai e consegnerai. Non usare ImageGen né mockup separati; preserva la foto originale. Se Canva o la sua anteprima non sono disponibili, dichiaralo e fermati senza sostituzioni.
+
+Non ripetere TU-01, non modificare la repo e non anticipare Gate D. Inizia dalla prima scelta mancante, senza generare immagini.
+```
