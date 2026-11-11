@@ -2,7 +2,8 @@
 Obiettivo: dirigere un post sulla propria foto, preservare le scelte e ottenere una consegna verificabile.
 Mandato attivo: [MANDATO-001 aggiornato](docs/mandato-001-strada-unica.md).
 Direzione di sviluppo: regista conversazionale + layout Canva controllabili; scelta definitiva al Gate D.
-Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva non approvate.
+Inline Android resta obiettivo; per il prossimo test è accettata preview Canva esterna occasionale.
+Nessun ponte Python; rifinitura fuori Canva e fallback silenziosi non approvati.
 
 ## Gate e prove
 - F0: PARTIAL storico — consolidamento PR #15; 25 rimandi d'archivio irrisolti, fuori dal prossimo lavoro.
@@ -40,14 +41,22 @@ Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva n
 - T01–T07 restano 5 VISIBILI / 2 NON VISIBILI secondo utente, senza causa interna provata.
 
 ## Prossimo passo (uno)
-Test diretto T09 di sola lettura: get_design_pages sul design sintetico esistente ha restituito metadati 1080×1350 e thumbnail nominale 400×500 come URL, non immagine inline; Canva→Python non necessario per consultare il progetto in Canva. Utente accetta consultazione Canva occasionale ma mantiene STOP fino a verdetto sul canale inline. Prossimo passo: decidere se iniziare un ciclo Canva controllato con preview esterna esplicitamente dichiarata, senza confonderla con prova inline. Gate D APERTO, F2/T1 HOLD.
+Chat pilota completa di direzione creativa e composizione **interamente in Canva**.
+Seguire skill post-director e MANDATO-001 §5.1 (continuità PR #22): prima mostrare
+**mini-anteprime schematiche native ChatGPT** A/B per layout, griglie, palette,
+gerarchia tipografica ed effetti, una scelta alla volta; sono campioni di scelta,
+NON rendering del post. Dopo riepilogo e autorizzazione, comporre sulla foto originale
+nel medesimo progetto Canva; mostrare la preview Canva reale, anche con link esterno
+dichiarato se inline non funziona. Correggere solo su scelta utente; verificare
+salvataggio/ripresa/export solo se i tool lo permettono. T08 PARTIAL, T09 sola lettura;
+nessun PASS inline o export presunto. Gate D APERTO, F2/T1 HOLD fino a verifica.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore/QA, 2026-11-11; ricerca ufficiale e T09 sola lettura.
-- Fatto: escluso Python come requisito del flusso; confermata miniatura via Canva, non immagine inline nativa.
-- Prove: documentazione Canva get-design-pages/best practices; get_design_pages design sintetico DAHalgNO4BY, pagina 1080×1350, thumbnail nominale 400×500 via URL.
-- Aperto/bloccato: nessun byte acquisito, preview inline Android NON VERIFICATA; T08 PARTIAL; Gate D APERTO, F2/T1 HOLD.
-- Serve dall'utente: nessuna nuova approvazione creativa; confermare solo l'eventuale avvio di un ciclo Canva con consultazione esterna dichiarata.
+- Chi/quando: Costruttore, 2026-11-11; allineamento documentale pre-test.
+- Fatto: fissata chat completa con opzioni visive native ChatGPT prima di composizione Canva, nel solco della PR #22.
+- Prove: T08 PARTIAL; T09 metadati miniatura Canva; nessun nuovo post/test end-to-end in questa run.
+- Aperto/bloccato: anteprima inline, commit/ripresa/export finale non verificati; Gate D APERTO, F2/T1 HOLD.
+- Serve dall'utente: svolgere nella prossima chat le scelte e approvare il riepilogo prima di comporre.
 
 ## Prompt di prosecuzione
 Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md ed esegui il prossimo passo. Chiudi secondo AGENTS.md.
