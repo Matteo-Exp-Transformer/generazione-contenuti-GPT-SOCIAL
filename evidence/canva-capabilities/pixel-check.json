@@ -1,0 +1,16 @@
+{
+  "thumbnail_size": [
+    480,
+    600
+  ],
+  "changed_bbox": [
+    45,
+    41,
+    270,
+    56
+  ],
+  "outside_title_strip_bbox": null,
+  "source_sha256": "570829f4e18cd0a62bbb2b4af9f14432f99ff7320693b90f5e4edac8e540c0c0",
+  "formatted_png_sha256": "f0a7bd62fe42b4b69616cf529047b08707d81cbf00964f625f9631ead1d73096",
+  "narrow_png_sha256": "559fc27e9c7c55797440282aaa9a3ba3cc6d17bf70b402d6f81c56aed2795d16"
+}

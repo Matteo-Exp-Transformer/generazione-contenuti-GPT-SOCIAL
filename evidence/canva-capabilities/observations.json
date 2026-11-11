@@ -1,0 +1,643 @@
+{
+  "date": "2026-11-11",
+  "scope": "synthetic only; no user photos",
+  "design_id": "DAHalgNO4BY",
+  "resized_design_id": "DAHalifnz8g",
+  "transactions_final_state": "all cancelled; no commit",
+  "notes": [
+    "Not TU-01; no A-B-A sequence",
+    "Responses sanitized: signed URLs and account metadata omitted",
+    "Reopen is same chat, not new session"
+  ],
+  "initial": {
+    "transaction": {
+      "status": "open",
+      "transaction_id": "6113032408453129061"
+    },
+    "richtexts": [
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "PROBE TITLE 01"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 40,
+            "left": 59.99999999999997
+          },
+          "dimension": {
+            "width": 464.09,
+            "height": 67
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LB3SPHXjZrryPKZ7"
+      },
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "SYNTHETIC TEXT 02"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 1092,
+            "left": 60
+          },
+          "dimension": {
+            "width": 315.34,
+            "height": 37
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBcB8CZW3NyfvNVV"
+      }
+    ],
+    "fills": [
+      {
+        "type": "image",
+        "asset_id": "MAHaloBc00g",
+        "page_index": 1,
+        "editable": true,
+        "containerElement": {
+          "type": "SHAPE",
+          "position": {
+            "top": 170,
+            "left": 60
+          },
+          "dimension": {
+            "width": 600,
+            "height": 800
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBhNLlKC01JcDcwH"
+      }
+    ],
+    "thumbnails": [
+      {
+        "width": -1,
+        "height": -1
+      }
+    ],
+    "pages": [
+      {
+        "page_id": "PBzH5nJwTtXfBjN5",
+        "page_number": 1,
+        "dimension": {
+          "width": 1080,
+          "height": 1350
+        },
+        "is_responsive": false,
+        "is_empty": false,
+        "is_editable": true
+      }
+    ]
+  },
+  "format": {
+    "richtexts": [
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "PROBE TITLE EDITED"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 80,
+            "left": 100
+          },
+          "dimension": {
+            "width": 506.703125,
+            "height": 57.4
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LB3SPHXjZrryPKZ7"
+      },
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "SYNTHETIC TEXT 02"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 1092,
+            "left": 60
+          },
+          "dimension": {
+            "width": 315.34,
+            "height": 37
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBcB8CZW3NyfvNVV"
+      }
+    ],
+    "fills": [
+      {
+        "type": "image",
+        "asset_id": "MAHaloBc00g",
+        "page_index": 1,
+        "editable": true,
+        "containerElement": {
+          "type": "SHAPE",
+          "position": {
+            "top": 170,
+            "left": 60
+          },
+          "dimension": {
+            "width": 480,
+            "height": 640
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBhNLlKC01JcDcwH"
+      }
+    ],
+    "thumbnails": [
+      {
+        "width": -1,
+        "height": -1
+      }
+    ],
+    "edit_operation_results": [
+      {
+        "status": "success",
+        "operation_info": {
+          "type": "format_text",
+          "element_id": "PBzH5nJwTtXfBjN5-LB3SPHXjZrryPKZ7"
+        }
+      },
+      {
+        "status": "success",
+        "operation_info": {
+          "type": "position_element",
+          "element_id": "PBzH5nJwTtXfBjN5-LB3SPHXjZrryPKZ7",
+          "top": 80,
+          "left": 100
+        }
+      },
+      {
+        "status": "success",
+        "operation_info": {
+          "type": "resize_element",
+          "element_id": "PBzH5nJwTtXfBjN5-LBhNLlKC01JcDcwH",
+          "width": 480,
+          "height": 640,
+          "preserve_aspect_ratio": true
+        }
+      }
+    ],
+    "pages": [
+      {
+        "page_id": "PBzH5nJwTtXfBjN5",
+        "page_number": 1,
+        "dimension": {
+          "width": 1080,
+          "height": 1350
+        },
+        "is_responsive": false,
+        "is_empty": false,
+        "is_editable": true
+      }
+    ]
+  },
+  "narrow": {
+    "richtexts": [
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "PROBE ONLY TITLE"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 80,
+            "left": 121.34375
+          },
+          "dimension": {
+            "width": 464.015625,
+            "height": 57.4
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LB3SPHXjZrryPKZ7"
+      },
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "SYNTHETIC TEXT 02"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 1092,
+            "left": 60
+          },
+          "dimension": {
+            "width": 315.34,
+            "height": 37
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBcB8CZW3NyfvNVV"
+      }
+    ],
+    "fills": [
+      {
+        "type": "image",
+        "asset_id": "MAHaloBc00g",
+        "page_index": 1,
+        "editable": true,
+        "containerElement": {
+          "type": "SHAPE",
+          "position": {
+            "top": 170,
+            "left": 60
+          },
+          "dimension": {
+            "width": 480,
+            "height": 640
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBhNLlKC01JcDcwH"
+      }
+    ],
+    "thumbnails": [
+      {
+        "width": -1,
+        "height": -1
+      }
+    ],
+    "edit_operation_results": [
+      {
+        "status": "success",
+        "operation_info": {
+          "type": "replace_text",
+          "element_id": "PBzH5nJwTtXfBjN5-LB3SPHXjZrryPKZ7"
+        }
+      }
+    ],
+    "pages": [
+      {
+        "page_id": "PBzH5nJwTtXfBjN5",
+        "page_number": 1,
+        "dimension": {
+          "width": 1080,
+          "height": 1350
+        },
+        "is_responsive": false,
+        "is_empty": false,
+        "is_editable": true
+      }
+    ]
+  },
+  "media": {
+    "richtexts": [
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "PROBE ONLY TITLE"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 80,
+            "left": 121.34375
+          },
+          "dimension": {
+            "width": 464.015625,
+            "height": 57.4
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LB3SPHXjZrryPKZ7"
+      },
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "SYNTHETIC TEXT 02"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 1092,
+            "left": 60
+          },
+          "dimension": {
+            "width": 315.34,
+            "height": 37
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBcB8CZW3NyfvNVV"
+      }
+    ],
+    "fills": [
+      {
+        "type": "image",
+        "asset_id": "MAHalmcJWkA",
+        "page_index": 1,
+        "alt_text": {
+          "text": "Synthetic checkerboard original 01",
+          "decorative": false
+        },
+        "editable": true,
+        "containerElement": {
+          "type": "SHAPE",
+          "position": {
+            "top": 170,
+            "left": 60
+          },
+          "dimension": {
+            "width": 480,
+            "height": 640
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBhNLlKC01JcDcwH"
+      },
+      {
+        "type": "image",
+        "asset_id": "MAHalmcJWkA",
+        "page_index": 1,
+        "alt_text": {
+          "text": "Synthetic overlay probe",
+          "decorative": false
+        },
+        "editable": true,
+        "containerElement": {
+          "type": "RECT",
+          "position": {
+            "top": 300,
+            "left": 450
+          },
+          "dimension": {
+            "width": 240,
+            "height": 320
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBp2WStncBbT7yCV"
+      }
+    ],
+    "thumbnails": [
+      {
+        "width": -1,
+        "height": -1
+      }
+    ],
+    "edit_operation_results": [
+      {
+        "status": "success",
+        "operation_info": {
+          "type": "update_fill",
+          "element_id": "PBzH5nJwTtXfBjN5-LBhNLlKC01JcDcwH"
+        }
+      },
+      {
+        "status": "success",
+        "operation_info": {
+          "type": "insert_fill",
+          "page_id": "PBzH5nJwTtXfBjN5",
+          "asset_type": "image",
+          "asset_id": "MAHalmcJWkA",
+          "top": 300,
+          "left": 450,
+          "width": 240,
+          "height": 320,
+          "rotation": 10,
+          "opacity": 0.5
+        }
+      }
+    ],
+    "pages": [
+      {
+        "page_id": "PBzH5nJwTtXfBjN5",
+        "page_number": 1,
+        "dimension": {
+          "width": 1080,
+          "height": 1350
+        },
+        "is_responsive": false,
+        "is_empty": false,
+        "is_editable": true
+      }
+    ]
+  },
+  "resize": {
+    "job": {
+      "id": "794dd951-c2b6-42c0-9609-23098e9d2158",
+      "status": "success",
+      "result": {
+        "design": {
+          "id": "DAHalifnz8g",
+          "title": "GPT SOCIAL Synthetic Capability Probe 20261111",
+          "thumbnail": {
+            "width": 400,
+            "height": 400
+          },
+          "created_at": 1794379676,
+          "updated_at": 1794379678,
+          "page_count": 1
+        },
+        "trial_information": {
+          "uses_remaining": 1
+        }
+      }
+    }
+  },
+  "reopen": {
+    "transaction": {
+      "status": "open",
+      "transaction_id": "7621738282981984132"
+    },
+    "richtexts": [
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "PROBE TITLE 01"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 40,
+            "left": 59.99999999999997
+          },
+          "dimension": {
+            "width": 464.09,
+            "height": 67
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LB3SPHXjZrryPKZ7"
+      },
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "SYNTHETIC TEXT 02"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 1092,
+            "left": 60
+          },
+          "dimension": {
+            "width": 315.34,
+            "height": 37
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBcB8CZW3NyfvNVV"
+      }
+    ],
+    "fills": [
+      {
+        "type": "image",
+        "asset_id": "MAHaloBc00g",
+        "page_index": 1,
+        "editable": true,
+        "containerElement": {
+          "type": "SHAPE",
+          "position": {
+            "top": 170,
+            "left": 60
+          },
+          "dimension": {
+            "width": 600,
+            "height": 800
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBhNLlKC01JcDcwH"
+      }
+    ],
+    "thumbnails": [
+      {
+        "width": -1,
+        "height": -1
+      }
+    ],
+    "pages": [
+      {
+        "page_id": "PBzH5nJwTtXfBjN5",
+        "page_number": 1,
+        "dimension": {
+          "width": 1080,
+          "height": 1350
+        },
+        "is_responsive": false,
+        "is_empty": false,
+        "is_editable": true
+      }
+    ]
+  },
+  "resizedInspect": {
+    "transaction": {
+      "status": "open",
+      "transaction_id": "2319875622794738832"
+    },
+    "richtexts": [
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "PROBE TITLE 01"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 31.999999999999996,
+            "left": 60
+          },
+          "dimension": {
+            "width": 349.27069629629625,
+            "height": 50.4237037037037
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LB3SPHXjZrryPKZ7"
+      },
+      {
+        "page_index": 1,
+        "regions": [
+          {
+            "type": "character",
+            "text": "SYNTHETIC TEXT 02"
+          }
+        ],
+        "containerElement": {
+          "type": "TEXT",
+          "position": {
+            "top": 853.8311111111111,
+            "left": 178.7555555555556
+          },
+          "dimension": {
+            "width": 237.32254814814812,
+            "height": 27.845925925925922
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBcB8CZW3NyfvNVV"
+      }
+    ],
+    "fills": [
+      {
+        "type": "image",
+        "asset_id": "MAHaloBc00g",
+        "page_index": 1,
+        "editable": true,
+        "containerElement": {
+          "type": "SHAPE",
+          "position": {
+            "top": 238.962962962963,
+            "left": 201.04358518518526
+          },
+          "dimension": {
+            "width": 451.5555555555555,
+            "height": 602.074074074074
+          }
+        },
+        "element_id": "PBzH5nJwTtXfBjN5-LBhNLlKC01JcDcwH"
+      }
+    ],
+    "thumbnails": [
+      {
+        "width": -1,
+        "height": -1
+      }
+    ],
+    "pages": [
+      {
+        "page_id": "PBzH5nJwTtXfBjN5",
+        "page_number": 1,
+        "dimension": {
+          "width": 1080,
+          "height": 1080
+        },
+        "is_responsive": false,
+        "is_empty": false,
+        "is_editable": true
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-# STATO — aggiornato 2026-11-10 dal Costruttore
+# STATO — aggiornato 2026-11-11 dal Technical Investigator
 Obiettivo: dirigere un post sulla propria foto senza perdere le scelte approvate.
 Mandato attivo: [MANDATO-001](docs/mandato-001-strada-unica.md).
 Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'utente; lo storico non riapre strade superate.
@@ -12,11 +12,12 @@ Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'uten
 - F2 Pilota prodotto: HOLD — dopo Gate D, un post reale entro 17/11. T1 HOLD fino al Gate D.
 
 ## Prossimo passo (uno)
-Regista, nuova chat ChatGPT — seguire [skill post-director](skills/post-director/SKILL.md), caricare engine e foto autorizzata dall'utente, eseguire TU-01 del mandato e consegnare la scheda con misure reali per Gate D — entro 13/11. Foto/PNG in repo solo con autorizzazione; post.json di ogni approvazione da consegnare al Costruttore.
+Esperimento checkpoint sintetico concluso PARTIAL: recupero in nuova chat verificato; consegna inline Android FALLITA nei due tentativi (Markdown sandbox e output immagine diretto); export PNG 1080×1350 non acquisito. Stop ai reinvii dello stesso file. Prossimo passo proposto, non avviato: valutazione di prodotto sulle evidenze già raccolte per decidere con l'utente se accettare la consultazione esterna in Canva. Nessuna nuova prova creativa, nessun TU-01, nessun Gate D automatico.
+Le righe Gate sopra sono ereditate da main e non riconciliate dalle altre chat: PR #22 e sonda Canva sui branch separati restano evidenze/proposte non integrate.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore + orchestratore, 2026-11-10; completati i 2/2 task delegati, nessuna delega extra.
-- Fatto: F0 integrato e branch conclusi eliminati; engine Pillow in un file, schema skill con rettangoli opzionali, test sintetici e istruzioni ChatGPT; skill v0 invariata.
-- Prove: PR #14 e #15 merged; PR #16 con diff/output completo e verifica indipendente dell’orchestratore; 18 test sintetici locali verdi, A finale identico ad A iniziale; nessuna foto reale usata.
-- Aperto/bloccato: 25 rimandi storici locali; TU-01 reale, Android/qualità e Gate D aperti.
-- Serve dall'utente: nuova chat del regista con foto autorizzata, titoli A/B e palette prima del test, conferme Android, voto 1–5 e minuti attivi effettivi.
+- Chi/quando: chiusura e registrazione audit dell'esperimento checkpoint sintetico, 2026-11-11; branch `evidence/canva-capabilities-20261111`.
+- Fatto: PARTIAL; recuperato `DAHalgNO4BY` in nuova chat, verificati pagina 1080×1350 e testi iniziali, annullata ispezione senza modifiche; entrambi gli invii inline non visibili su Android secondo l'utente.
+- Prove: [audit aggiornato §9](evidence/canva-capabilities/audit-2026-11-11.md#9-audit-della-chat-successiva--esito-effettivo-del-checkpoint-2026-11-11), commit `f2b022a`; primo tentativo Markdown negativo documentato da screenshot utente; secondo output diretto con view_image negativo confermato «No non si vede nulla». Allegato ricevuto JPEG 1229×1536, 61689 byte, SHA-256 `e2d449ae8ab8b7abfb7f10ac33eba8a230ee271f875de17ee3fb0665cd7c2fa2`, malgrado nome .png.
+- Aperto/bloccato: inline Android fallito in questa chat; causa non diagnosticata. PNG originale 1080×1350 non acquisito, apertura link non confermata separatamente. Nessun PASS end-to-end; commit di revisioni e integrità foto reale fuori perimetro.
+- Serve dall'utente: nessun altro reinvio per chiudere questa prova; futura decisione se accettare consultazione esterna Canva. Non è una decisione già approvata.
