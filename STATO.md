@@ -1,4 +1,4 @@
-# STATO — aggiornato 2026-11-10 dal Costruttore
+# STATO — aggiornato 2026-11-11 dal Technical Investigator
 Obiettivo: dirigere un post sulla propria foto senza perdere le scelte approvate.
 Mandato attivo: [MANDATO-001](docs/mandato-001-strada-unica.md).
 Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'utente; lo storico non riapre strade superate.
@@ -12,11 +12,12 @@ Direzione: revisione Claude recepita dal mandato + decisioni esplicite dell'uten
 - F2 Pilota prodotto: HOLD — dopo Gate D, un post reale entro 17/11. T1 HOLD fino al Gate D.
 
 ## Prossimo passo (uno)
-Regista, nuova chat ChatGPT — seguire [skill post-director](skills/post-director/SKILL.md), caricare engine e foto autorizzata dall'utente, eseguire TU-01 del mandato e consegnare la scheda con misure reali per Gate D — entro 13/11. Foto/PNG in repo solo con autorizzazione; post.json di ogni approvazione da consegnare al Costruttore.
+Unico esperimento proposto, da avviare in una nuova chat: esportazione manuale e recupero del checkpoint sintetico Canva `DAHalgNO4BY`, con conferma inline Android. Procedura e limiti nell'[audit](evidence/canva-capabilities/audit-2026-11-11.md#7-unico-prossimo-esperimento-necessario-consegna-e-ripresa-del-checkpoint-sintetico). Nessun nuovo TU-01, nessuna foto reale, nessun Gate D.
+Le righe Gate sopra sono ereditate da main e non riconciliate dalle altre chat: PR #22 e sonda Canva sui branch separati restano evidenze/proposte non integrate. Il precedente prossimo passo TU-01 non va rieseguito per questa indagine.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore + orchestratore, 2026-11-10; completati i 2/2 task delegati, nessuna delega extra.
-- Fatto: F0 integrato e branch conclusi eliminati; engine Pillow in un file, schema skill con rettangoli opzionali, test sintetici e istruzioni ChatGPT; skill v0 invariata.
-- Prove: PR #14 e #15 merged; PR #16 con diff/output completo e verifica indipendente dell’orchestratore; 18 test sintetici locali verdi, A finale identico ad A iniziale; nessuna foto reale usata.
-- Aperto/bloccato: 25 rimandi storici locali; TU-01 reale, Android/qualità e Gate D aperti.
-- Serve dall'utente: nuova chat del regista con foto autorizzata, titoli A/B e palette prima del test, conferme Android, voto 1–5 e minuti attivi effettivi.
+- Chi/quando: Technical Investigator / Product QA, 2026-11-11; branch `evidence/canva-capabilities-20261111`, da main `695769d8`.
+- Fatto: audit separato autorizzato; import HTML sintetico, editing testo/media, preview reale scaricata, resize su copia e riapertura nella stessa chat verificati; tutti i draft annullati.
+- Prove: [audit e matrice](evidence/canva-capabilities/audit-2026-11-11.md), 43 tool inventariati, risposte ripulite e PNG sintetici; pixel esterni al titolo invariati a 480×600, non export 1080×1350.
+- Aperto/bloccato: export non esposto; font family/nuovi testi/forme/z-order non esposti nell'editing; integrità foto reale, commit, inline Android e nuova sessione non verificati. Nessun PASS end-to-end, nessun merge.
+- Serve dall'utente: per il solo esperimento proposto, export manuale del checkpoint sintetico e conferma Android; nessuna nuova scelta creativa. Raccomandazione Canva assistito, non decisione di prodotto.
