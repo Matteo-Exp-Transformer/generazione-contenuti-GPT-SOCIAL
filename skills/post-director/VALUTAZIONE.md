@@ -9,7 +9,7 @@ Poche chat possono smentire la skill, non dimostrarla: nessuna soglia qui è val
 
 ## 0. Preparazione — una volta, prima delle prove (5 minuti ciascuna)
 Ogni esito va nel registro (§8) come riga `ambiente`.
-- [ ] V1 · Avvia una chat con AVVIO.md: legge `SKILL.md` al tag? La prima riga dice `Regista v1.0 · letto da: tag`? Se no, usa il testo incollato (AVVIO) e annotalo.
+- [ ] V1 · Avvia una chat con AVVIO.md: legge `SKILL.md` dal branch `regista-v1.0`? La prima riga dice `Regista v1.0 · letto da: branch regista-v1.0`? Se no, usa il testo incollato (AVVIO) e annotalo.
 - [ ] V2 · La prima riga dichiara `create_design` ed `export`: annota cosa c'è (cambia con modello e sessione).
 - [ ] V3 · Prova un modello diverso (es. Instant e Thinking): Canva resta disponibile? (alcuni modelli non usano app).
 - [ ] V4 · Facoltativo: in un Progetto ChatGPT su Android, l'app Canva funziona? Se sì, il Progetto diventa candidato per v1.1.
@@ -88,7 +88,7 @@ Se falliscono più controlli, si corregge **uno solo**, in quest'ordine: F1 → 
 | Canva o un tool mancano | Non è colpa della skill: riga `ambiente`; si ripete un altro giorno; se persiste, si aggiorna la tabella capacità | — |
 
 ## 5. Controllo nel tempo
-- **Versioni.** Ogni cambiamento di SKILL.md o del prompt di AVVIO.md = nuovo tag `regista-vX.Y`, aggiornato in AVVIO.md, con una riga in §8.
+- **Versioni.** Ogni cambiamento di SKILL.md o del prompt di AVVIO.md = nuovo branch congelato `regista-vX.Y`, aggiornato in AVVIO.md, con una riga in §8.
   Aggiungere righe al registro non cambia versione.
   Una modifica per versione, sempre legata a un controllo fallito o a un cambio di Canva/ChatGPT. Mai da un aneddoto isolato.
 - **Budget.** SKILL.md resta ≤ 80 righe. Una regola nuova entra solo se un controllo fallito la richiede; se possibile ne esce un'altra.
@@ -109,7 +109,7 @@ Se falliscono più controlli, si corregge **uno solo**, in quest'ordine: F1 → 
 | Prove truccate senza volerlo: l'utente aiuta il Regista o lo script cambia | U3 = 0 ma uso reale peggiore | Messaggi esatti; fuori script non correggere |
 | La chat diventa burocratica: fedele ma lenta | U1 alto, voto in calo | Riga «esperienza» della tabella §4 |
 | Il widget Canva sparisce su Android | F5 frequente | Link «Edit in Canva» già previsto |
-| Il tag non si legge più e il Regista legge un main diverso | Prima riga senza tag | AVVIO con testo incollato |
+| Il branch di versione non si legge più e il Regista legge un main diverso | Prima riga senza versione | AVVIO con testo incollato |
 | Stanchezza da test: si smette di misurare | Registro fermo | Solo 6 chat per giro; controlli da 2 chat |
 | PR parallele che riscrivono lo stato | Più PR aperte su STATO.md | Una sola PR alla volta |
 

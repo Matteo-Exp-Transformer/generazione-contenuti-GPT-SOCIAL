@@ -20,7 +20,8 @@ Regole
 - Vietati nuovi file di handoff, audit, report o protocollo: si aggiorna STATO.md.
   Prove ed esiti del Regista: solo nel registro di VALUTAZIONE.md. Skill: SKILL + AVVIO + VALUTAZIONE.
 - Una sola PR aperta alla volta può modificare STATO.md o la skill; le altre si riallineano prima.
-- Skill: ogni modifica a SKILL o al prompt di AVVIO = nuovo tag regista-vX.Y + riga nel registro.
+- Skill: ogni modifica a SKILL o al prompt di AVVIO = nuovo branch di versione regista-vX.Y (mai modificato,
+  mai eliminato) + riga nel registro.
 - Un file nuovo in docs/ solo se ne sostituisce o archivia uno esistente.
 - I due task delegati F0/F1-A sono conclusi: non riavviarli. Nessuna nuova delega implicita.
 - TU-01 chiuso PARTIAL: non ripetere. Gate D aperto; F2/T1 HOLD.

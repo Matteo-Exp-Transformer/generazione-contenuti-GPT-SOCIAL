@@ -25,7 +25,7 @@ Inline Android resta obiettivo; link Canva esterno accettato occasionalmente; ne
 
 ## Decisioni operative già prese dal Costruttore (non serve chiederle)
 - PR #24–#28: dopo il merge della PR #29 si chiudono senza merge, con un commento che rimanda a questa PR.
-- Il tag `regista-v1.0` è creato sul commit di questa PR: le prove possono partire anche prima del merge; leggibilità via connettore da verificare (VALUTAZIONE V1).
+- Versione congelata nel branch `regista-v1.0` (i tag non si possono pubblicare da questo ambiente): le prove possono partire anche prima del merge; lettura via connettore da verificare (VALUTAZIONE V1).
 - Una chat senza la prima riga `Regista v1.0` vale come F9 = no, secondo VALUTAZIONE §3–4.
 - Il Regista non legge STATO né mandato; i vincoli di cantiere (TU-01, gate) valgono per Costruttore e Supervisore.
 - Engine Pillow e test restano nel repo come riferimento storico, non usati dal Regista.
@@ -41,7 +41,7 @@ Merge della PR #29 su main: solo con ok dell'utente, preferibilmente dopo la ver
 - Chi/quando: Costruttore Claude, 2026-11-11, su richiesta esplicita dell'utente dopo l'approvazione del verdetto PR #29.
 - Fatto: skill regista-v1.0 riscritta (80 righe), AVVIO.md prompt unico, VALUTAZIONE.md con prove, controllo nel tempo, premortem e istruzioni del Supervisore; integrate PR #24–#28; AGENTS, mandato e README allineati.
 - Prove: righe e link controllati, ricerca di contraddizioni sulla skill con revisione indipendente; nessuna chat Regista eseguita, nessun test prodotto.
-- Aperto/bloccato: lettura del tag via connettore GitHub, Canva nei Progetti, export esposto e ripetibilità del widget non verificati; Gate D aperto.
+- Aperto/bloccato: lettura del branch di versione via connettore GitHub, Canva nei Progetti, export esposto e ripetibilità del widget non verificati; Gate D aperto.
 - Serve dall'utente: avviare il Supervisore; poi fare le 6 chat di prova seguendo i suoi passi.
 
 ## Prompt di prosecuzione — Supervisore (chat ChatGPT nuova)
