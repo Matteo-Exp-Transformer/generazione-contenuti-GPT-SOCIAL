@@ -15,7 +15,7 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 - [ ] **M0** · unire questa PR (ok dell'utente); PR #30 chiusa senza merge; branch remoti superati eliminati.
 - [ ] **B0** · Costruttore: opzione `foto` nel kit (copia ridotta, hash dell'originale prima/dopo), test, zip ricostruito.
 - [ ] **M1** · Banco di prova T0, T1–T4, T6 (+T5 facoltativo), [ROADMAP §6](docs/ROADMAP.md); esiti nel registro §8.
-- [ ] **M2** · Officina: 3–5 modelli in [modelli/CATALOGO.md](modelli/CATALOGO.md), via import HTML se T6 passa, altrimenti a mano.
+- [ ] **M2** · Officina: 3–5 modelli in [modelli/CATALOGO.md](modelli/CATALOGO.md), via import HTML se T6 passa, altrimenti chat GPT che replicano la struttura via connettore Canva.
 - [ ] **M3** · Regista v2: SKILL + AVVIO riscritti; checklist §7.
 - [ ] **M4** · Primo post reale consegnato. **M5** · tre post reali, poi decisioni sul parcheggio.
 

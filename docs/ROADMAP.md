@@ -48,7 +48,7 @@ budget incrementale €0 (ChatGPT Plus e Canva Free già esistenti) · nessuna s
 |---|---|---|---|---|
 | **M0** | Ripristino di scope e pulizia repo | — | Costruttore | questa PR unita; STATO, AGENTS, ROADMAP coerenti; test del kit verdi |
 | **M1** | Banco di prova del flusso (§6) | M0; B0 | Utente + chat di prova | T1–T4 eseguiti una volta ciascuno, esiti nel registro §8 |
-| **M2** | Officina: 3–5 modelli nel catalogo, costruiti via import HTML se T6 passa, altrimenti guidati a mano | M1 (T2 e T6) | Utente + chat Officina | ogni modello copiabile, slot letti da `get_design_content`, font letti dall'utente, nessun elemento Pro |
+| **M2** | Officina: 3–5 modelli nel catalogo, costruiti via import HTML se T6 passa, altrimenti con chat GPT che replicano la struttura via connettore Canva | M1 (T2 e T6) | Utente + chat Officina | ogni modello copiabile, slot letti da `get_design_content`, font letti dall'utente, nessun elemento Pro |
 | **M3** | Regista v2 (skill riscritta sul flusso §2) | M1, M2 | Costruttore | SKILL ≤80 righe senza contraddizioni con §1–2; AVVIO aggiornato; checklist §7 |
 | **M4** | **Primo post reale consegnato** (handpan) | M3 | Utente + Regista v2 | checklist §7 tutta sì; PNG 1080×1350 esportato; «lo pubblicherei: sì/con ritocchi»; voto ≥4 |
 | **M5** | Consolidamento: 3 post reali su temi diversi | M4 | Utente + Regista | misure U nel registro; poi decisioni su Progetto ChatGPT, export automatico, parcheggio |
@@ -67,7 +67,7 @@ SHA-256 dell'originale prima e dopo; test con fixture sintetica; zip ricostruito
 | T3: trasparenza o caricamento falliscono | decorazioni dagli elementi gratuiti di Canva; GPT suggerisce quali cercare |
 | T4: export dall'app Android non pubblicabile | export da browser/desktop; si annota |
 | T6: import HTML con i font della lista passa | Officina costruisce i modelli via HTML generato in chat (decisione 12/11) |
-| T6 fallisce (tool rifiuta il file, font sostituiti, quota consumata) | Officina guidata a mano, con al massimo una `create_design` senza foto come base, quota letta prima |
+| T6 fallisce (tool rifiuta il file, font sostituiti, quota consumata) | Officina via connettore: chat GPT che, con gli strumenti Canva, prova a replicare la struttura del post di ispirazione come bozza Canva (senza foto; `create_design` con brief strutturale, quota letta prima e dopo); l'utente rifinisce a mano ciò che manca |
 | Quota IA o tool mancanti | riga «ambiente» nel registro; non è un fallimento del flusso, si ripete un altro giorno |
 
 ## 6. Piano M1 — Banco di prova (circa 90 minuti dell'utente, 4 chat)
