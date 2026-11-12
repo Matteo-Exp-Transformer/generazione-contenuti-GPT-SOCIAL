@@ -32,6 +32,18 @@ Inline Android resta obiettivo; link Canva esterno accettato occasionalmente; ne
 - Esiti dei micro-test → azioni già scritte nella tabella di VALUTAZIONE §0b.
 - Engine Pillow e test restano nel repo come riferimento storico, non usati dal Regista.
 
+## Review PM · 2026-11-12 (proposta, nessun nuovo PASS)
+- **Verdetto:** prototipo sperimentale, non pronto al rilascio; Gate D resta aperto. Salute repository discreta per tracciabilità, prodotto fragile per ripetibilità e consegna.
+- **Acquisito:** separazione Regista/Costruttore/Supervisore; SKILL v1.0 e controlli F/U; import e editing Canva su fixture; widget Android osservato in almeno una sessione; kit deterministico locale e test sintetici. Nessuno equivale a end-to-end.
+- **Non certificato:** foto originale immutata fino all'export; corrispondenza scelta→composizione; font effettivo; anteprime ripetibili su Android; modifica circoscritta salvata e ripresa; export pubblicabile. R1–R3 non danno pass^3.
+- **Nuovi segnali da chat utente 12/11, da verificare in registro:** interesse per più layout/palette e input libero; insufficienza di scelte A/B; campionario chiesto realmente visibile; prove Canva e limiti quota/tool variabili. Non trasformare resoconti in PASS.
+- **Rischio di coerenza:** VALUTAZIONE §0b prevede fogli Python/PNG mentre SKILL regola 5 nega «ponte via Python»; chiarire *esplorazione simulata* vs *render finale*, prima di v1.1. §0b T-F3 import HTML e fallback template sono ipotesi, non capacità certificate su tutti i client.
+- **P0 product:** matrice evidenze per capacità, provenienza, modello/client, quota, costo e stato (provato/negativo/non testato); distinguere tool esposto da risultato utente visibile.
+- **P1 UX:** 5–9 alternative per campionari, scelta libera o combinata, preview inline etichettate «SIMULAZIONE»; definire criterio di accettazione, non imporre ancora nella skill.
+- **P1 delivery:** percorso minimo unico «brief→scelte→composizione→modifica→readback→consegna» con foto sintetica, consenso e controllo link/export; nessun nuovo giro completo prima del triage.
+- **P2:** P0 e T-F1/T-F2/T-F3 di VALUTAZIONE §0b; poi eventuale v1.1 mirata e Giri A/B. Se tool, quota o canale bloccano, registrare impedimento invece di moltiplicare prove equivalenti.
+- **Decisione richiesta a revisore indipendente:** contestare anche questa priorità e proporre il più piccolo insieme di prove discriminanti; non modificare automaticamente skill, architettura o main.
+
 ## Prossimo passo (uno)
 Supervisore in una chat ChatGPT nuova (prompt qui sotto): guida l'utente in P0 e nei micro-test §0b, applica la tabella
 degli esiti e consegna le righe di registro. Cosa aspettarsi: circa 45 minuti dell'utente; 3 chat brevi per T-F1 con lo zip
@@ -39,11 +51,11 @@ allegato (scaricato da `campionari/kit-campionari-v1.zip`), 15 minuti nell'app C
 Poi il Costruttore registra gli esiti e, se previsto, scrive la v1.1 in una sola PR.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore Claude, 2026-11-12, su autorizzazione esplicita dell'utente («procedi», merge, un solo branch).
-- Fatto: kit campionari v1 (script, 14 famiglie OFL, esempi, test); VALUTAZIONE §0b con micro-test ed esiti già decisi; AVVIO su main con controllo `version:`; AGENTS allineato; R1/R3 in evidence; merge PR #29; PR #24–#28 chiuse; branch eliminati.
-- Prove: `python -m unittest discover -s tests/campionari -v` e `tests/engine` verdi; fogli in `evidence/campionari/`; skill invariata.
-- Aperto/bloccato: quota IA Canva; fogli in Python ChatGPT, lista bianca Canva e arrivo del font in Canva non verificati.
-- Serve dall'utente: leggere il contatore IA di Canva e fare i micro-test con il Supervisore.
+- Chi/quando: Product Manager GPT SOCIAL, 2026-11-12, review documentale su main e testimonianze test; branch review/pm-stato-prodotto-20261112.
+- Fatto: sintesi evidence-based di maturità, rischi UX e priorità prima del ciclo successivo; nessuna modifica a skill, test, asset o decisioni.
+- Prove: AGENTS, STATO, MANDATO-001, SKILL, VALUTAZIONE, audit Canva e cronologia PR; nessun nuovo PASS prodotto.
+- Aperto/bloccato: fedeltà visuale, campionari Android, quota/tool Canva, font, modifica persistente, export finale.
+- Serve dall'utente: confronto ragionato con Claude prima di eventuale approvazione della sequenza e merge della PR.
 
 ## Prompt di prosecuzione — Supervisore (chat ChatGPT nuova)
 Sei il Supervisore test di GPT SOCIAL. Dal repo GitHub Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL,
