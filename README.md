@@ -2,13 +2,14 @@
 
 Stato corrente e prossimo passo: [STATO.md](STATO.md), unica fonte operativa.
 Direzione aggiornata: [MANDATO-001](docs/mandato-001-strada-unica.md), regista + layout Canva controllabili, da validare.
-TU-01 chiuso PARTIAL: non ripetere. Gate D aperto, F2/T1 HOLD. Ora: diagnosi immagini Android/browser; poi ciclo Canva completo.
+TU-01 chiuso PARTIAL: non ripetere. Gate D aperto, F2/T1 HOLD. Ora: micro-test dei campionari deterministici, poi prove del Regista v1.0 ([avvio](skills/post-director/AVVIO.md), [valutazione](skills/post-director/VALUTAZIONE.md)).
 Evidenze consolidate: [audit Canva](evidence/canva-capabilities/audit-2026-11-11.md); [storico](docs/archivio/README.md).
 
 Scopo: far dirigere all'utente un post social statico sulla propria foto senza perdere le scelte approvate.
 
 - [Istruzioni agenti](AGENTS.md)
-- [Procedura del regista post](skills/post-director/SKILL.md)
+- [Procedura del regista post](skills/post-director/SKILL.md) · [prompt di avvio](skills/post-director/AVVIO.md) · [valutazione](skills/post-director/VALUTAZIONE.md)
+- [Kit campionari](campionari/kit-campionari-v1.zip): font, palette e impaginazioni come SIMULAZIONE in chat ([script](campionari/campionario.py))
 - [PRD](docs/PRD-v0.1.md)
 - [Decisioni dell'utente](docs/decisioni.md)
 
@@ -17,7 +18,7 @@ Budget incrementale €0; spese, installazioni, generazione e foto in repo richi
 
 ## Engine Strada A — riferimento tecnico, non prossimo passo
 
-[engine/render.py](engine/render.py) è autonomo: Python ≥3.9, Pillow ≥10.1 già disponibile, nessuna dipendenza dalla repo. Usa lo stato della [skill post-director](skills/post-director/SKILL.md). La procedura conversazionale è stata aggiornata; questo codice resta invariato. `render(post_json, foto)` restituisce PNG bytes, senza scrivere file. Un terzo argomento opzionale salva il PNG fuori da qualsiasi repo Git; non può sovrascrivere foto o stato.
+[engine/render.py](engine/render.py) è autonomo: Python ≥3.9, Pillow ≥10.1 già disponibile, nessuna dipendenza dalla repo. Usava lo stato `post.json` della skill pre-v1.0; il Regista v1.0 non lo usa. La procedura conversazionale è stata aggiornata; questo codice resta invariato. `render(post_json, foto)` restituisce PNG bytes, senza scrivere file. Un terzo argomento opzionale salva il PNG fuori da qualsiasi repo Git; non può sovrascrivere foto o stato.
 
 ```python
 import importlib.util

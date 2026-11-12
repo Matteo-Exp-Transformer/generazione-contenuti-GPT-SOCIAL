@@ -20,3 +20,4 @@ Stato corrente: [STATO.md](../../STATO.md). Documenti byte-identici; stati, prop
 - [test-cono-creativo-v01.md](test-cono-creativo-v01.md) — [vista originale](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/716c69b50e10b5b161752fd8f6b4d1e0f9b82c6f/docs/test-cono-creativo-v01.md).
 
 - [MANDATO-001 originale 2026-11-10](mandato-001-originale-20261110.md): conservato integralmente; storico non operativo, sostituito dal mandato corrente l'11/11 su richiesta dell'utente.
+- [skill-post-director-v0-20261111.md](skill-post-director-v0-20261111.md) — skill post-director pre-v1.0 (main al 2026-11-11), sostituita da regista-v1.0; solo storico, non va seguita.

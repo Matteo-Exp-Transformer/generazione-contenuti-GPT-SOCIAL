@@ -1,42 +1,53 @@
-# STATO — aggiornato 2026-11-11 dal Costruttore
+# STATO — aggiornato 2026-11-12 dal Costruttore (Claude)
 Obiettivo: dirigere un post sulla propria foto, preservare le scelte e ottenere una consegna verificabile.
 Mandato attivo: [MANDATO-001 aggiornato](docs/mandato-001-strada-unica.md).
-Direzione di sviluppo: regista conversazionale + layout Canva controllabili; scelta definitiva al Gate D.
-Inline Android resta requisito; consultazione esterna e rifinitura fuori Canva non approvate.
+Regista in uso: **regista-v1.0** su main — [SKILL](skills/post-director/SKILL.md) · [avvio](skills/post-director/AVVIO.md) · [valutazione](skills/post-director/VALUTAZIONE.md).
+Repo: un solo branch stabile, `main` (decisione utente 2026-11-12). Versione della skill = riga `version:` di SKILL.md.
+Direzione: regista conversazionale; **esplorazione con campionari deterministici in chat, Canva per comporre**; Gate D aperto.
+Inline Android resta obiettivo; link Canva esterno accettato occasionalmente; nessun ImageGen; Python mai sulla foto.
 
 ## Gate e prove
-- F0: PARTIAL storico — consolidamento PR #15; 25 rimandi d'archivio irrisolti, fuori dal prossimo lavoro.
-- F1-A engine: PASS sintetico pregresso (18 test, PR #16); nessun test rieseguito in questa run.
-- TU-01 Strada A: PARTIAL, chiuso su richiesta utente; render tecnico riferito riuscito, esperienza creativa negativa e violazione procedurale con generazione. PR #20/#21 descrivono lo stesso test. Non ripetere; nessun PASS completo.
-- F1-B: PARTIAL — [sonda Canva](evidence/tu-01-mcp/canva-2026-11-11.md): import foto/testi; inline negativo, link esterno positivo in quella prova. Figma: A→B→A senza foto, upload bloccato.
-- Regista PR #22: procedura rispettata e miglioramento riferito; composizione nuova non salvata, consegna fallita. Scelte preservate nel mandato §2.
-- Capacità Canva PR #23: draft testo/media riusciti, controllo circoscritto su miniatura 480×600; commit/export finale non verificati.
-- Ripresa PR #23: baseline recuperata in altra chat; due invii inline Android falliti; ricevuto JPEG 1229×1536, non PNG 1080×1350. Cause ignote.
-- Gate D: APERTO, nessuna strada definitiva o PASS end-to-end; F2/T1 HOLD. Date originarie 13/11 e 17/11, nessuna proroga automatica.
-- Prova dettagliata: [audit Canva §§1–9](evidence/canva-capabilities/audit-2026-11-11.md). Le parti iniziali descrivono run precedenti; §9 aggiorna ripresa/Android.
+- F0: PARTIAL storico (PR #15). F1-A engine: PASS sintetico pregresso (PR #16), engine fuori dalla strada attuale.
+- TU-01 Strada A: PARTIAL, chiuso; non ripetere.
+- F1-B, capacità Canva, canale immagini, chat E/F/G, campionario font (PR #19–#28): PARTIAL; sintesi nell'[audit Canva](evidence/canva-capabilities/audit-2026-11-11.md).
+- Revisione architetturale e pacchetto Regista v1.0 (PR #29): unita su main il 2026-11-12.
+- Prove v1.0 dell'11/11: R1, R2, R3 naturalistiche, **nessuna vale per pass^3**; Giri A/B 0/6 ([registro](skills/post-director/VALUTAZIONE.md), [evidenze](evidence/regista-v1/)).
+- Quota IA Canva Free esaurita l'11/11 (R3 `quota_exceeded`): blocca `create_design` fino al rinnovo.
+- Revisione indipendente serale: [commento PR #29](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/29#issuecomment-6807087310) — diagnosi, alternative, piano P0–P3.
+- Kit campionari v1 ([campionari/](campionari/)): 4 fogli generati in locale senza crediti ([prove](evidence/campionari/)); **non ancora provato in ChatGPT**.
+- Gate D: APERTO; nessun PASS end-to-end; F2/T1 HOLD.
 
 ## Sequenza verso l'obiettivo
-- [x] Consolidare su main evidenze, skill scelte-prima e stato; aggiornare mandato con ricerca.
-- [ ] Diagnosi controllata immagini Android/browser senza Canva — UNICO PASSO ATTIVO.
-- [ ] Dopo decisione sul canale, ciclo Canva: modifica → preview → approvazione → commit → ripresa → export.
-- [ ] Dopo consegna completa, confronto manuale/assistito: tempo utente, correzioni, qualità, pubblicabilità.
-- [ ] Decisione Gate D, poi pilota F2.
+- [x] Pacchetto Regista v1.0, revisione indipendente, kit campionari, merge e pulizia dei branch.
+- [ ] **P0 + micro-test T-F1, T-F2, T-F3** ([VALUTAZIONE §0b](skills/post-director/VALUTAZIONE.md)) — PROSSIMO PASSO.
+- [ ] Costruttore: applica gli esiti di §0b (lista bianca nei font, eventuale v1.1 di una sola sezione).
+- [ ] Preparazione §0, poi Giri A e B sulla versione risultante; esiti nel registro; azione secondo §4.
+- [ ] Se tutto passa: un post reale con misure U; poi decisione Gate D e pilota F2.
+
+## Decisioni operative già prese (non serve chiederle)
+- PR #24–#28 chiuse senza merge; i loro contenuti sono nell'audit Canva. Branch eliminati dopo il merge di #29.
+- Il branch `regista-v1.0` è stato eliminato: SKILL.md su main è identico (blob `5ee452eb`); i resoconti che conteneva sono in `evidence/regista-v1/`.
+- Una chat Regista non scrive mai nel repo: i resoconti si incollano al Supervisore o in un commento di PR.
+- Il kit si usa solo per esplorare; ogni foglio porta «SIMULAZIONE»; la famiglia del font la certifica l'utente toccando il testo in Canva.
+- Esiti dei micro-test → azioni già scritte nella tabella di VALUTAZIONE §0b.
+- Engine Pillow e test restano nel repo come riferimento storico, non usati dal Regista.
 
 ## Prossimo passo (uno)
-Costruttore/QA in chat con l'utente: eseguire mandato §5.1, riusando un PNG sintetico già salvato.
-Stesso file, stesso metodo, stessa risposta consultata su Android e browser; due conferme distinte.
-Non ripetere i reinvii falliti: cambiare la domanda sperimentale, isolando il client.
-Se manca un client o una conferma, registrare NON VERIFICATO e il limite; nessuna causa inventata.
-Nessun Canva, TU-01, nuovo post, installazione o cambio di strada in questo passo.
-Aggiornare questo stato e audit esistente; scegliere il passo successivo in base all'esito, non automaticamente.
+Supervisore in una chat ChatGPT nuova (prompt qui sotto): guida l'utente in P0 e nei micro-test §0b, applica la tabella
+degli esiti e consegna le righe di registro. Cosa aspettarsi: circa 45 minuti dell'utente; 3 chat brevi per T-F1 con lo zip
+allegato (scaricato da `campionari/kit-campionari-v1.zip`), 15 minuti nell'app Canva per T-F2, una chat con Canva per T-F3.
+Poi il Costruttore registra gli esiti e, se previsto, scrive la v1.1 in una sola PR.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore, 2026-11-11; consolidamento autorizzato dall'utente su main.
-- Fatto: integrate evidenze PR #17/#18/#19/#23 e skill #22; riconciliati esiti #20/#21, mandato, README, PRD e istruzioni.
-- Prove: readback remoto dei documenti e dei file integrati; limiti AGENTS/STATO/SKILL e link operativi verificati; nessun test prodotto rieseguito.
-- Aperto/bloccato: anteprima Android, commit/export e foto reale non certificati; Gate D aperto. Pulizia branch dipende dai tool disponibili.
-- Serve dall'utente: nella prossima chat, riscontri separati Android/browser; nessuna nuova scelta creativa.
+- Chi/quando: Costruttore Claude, 2026-11-12, su autorizzazione esplicita dell'utente («procedi», merge, un solo branch).
+- Fatto: kit campionari v1 (script, 14 famiglie OFL, esempi, test); VALUTAZIONE §0b con micro-test ed esiti già decisi; AVVIO su main con controllo `version:`; AGENTS allineato; R1/R3 in evidence; merge PR #29; PR #24–#28 chiuse; branch eliminati.
+- Prove: `python -m unittest discover -s tests/campionari -v` e `tests/engine` verdi; fogli in `evidence/campionari/`; skill invariata.
+- Aperto/bloccato: quota IA Canva; fogli in Python ChatGPT, lista bianca Canva e arrivo del font in Canva non verificati.
+- Serve dall'utente: leggere il contatore IA di Canva e fare i micro-test con il Supervisore.
 
-## Prompt di prosecuzione
-Repo https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL, branch main.
-Leggi AGENTS.md, STATO.md e il mandato attivo. Esegui soltanto la diagnosi controllata del canale immagini (§5.1), con me, senza Canva e senza ripetere TU-01. Registra fatti e limiti nelle sedi esistenti e chiudi secondo AGENTS.md.
+## Prompt di prosecuzione — Supervisore (chat ChatGPT nuova)
+Sei il Supervisore test di GPT SOCIAL. Dal repo GitHub Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL,
+branch main, leggi AGENTS.md, STATO.md e skills/post-director/VALUTAZIONE.md (§0b e §7). Non fare il Regista e non
+scrivere nel repo. Guidami un passo alla volta in P0 e nei micro-test T-F1, T-F2, T-F3; per ogni test dimmi cosa fare,
+cosa devo vedere e annota l'esito. Alla fine applica la tabella degli esiti di §0b e dammi le righe per il registro §8
+e un prompt per il Costruttore. Fatti, ipotesi e proposte distinti; mai un PASS non visto. Chiudi secondo AGENTS.md.
