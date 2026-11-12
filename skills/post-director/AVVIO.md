@@ -21,4 +21,4 @@ nuova e incolla il prompt sostituendo le righe 2–5 con «Ecco il file da segui
 main. Ogni modifica a SKILL.md cambia `version:` (es. regista-v1.1), passa da una sola PR e aggiorna la riga 3 di questo prompt.
 L'ultima copia di ogni versione superata va in `docs/archivio/`. Il resoconto di una chat Regista non si scrive mai nel repo
 dalla chat: si incolla al Supervisore o come commento della PR aperta.
-Come si valutano le chat e chi le supervisiona: [VALUTAZIONE.md](VALUTAZIONE.md).
+Regista v1.0 sospeso dal ripristino del 2026-11-12: sarà sostituito dal Regista v2 (M3 di [ROADMAP](../../docs/ROADMAP.md)). Valutazione v1.0 archiviata: [VALUTAZIONE-regista-v1.0](../../docs/archivio/VALUTAZIONE-regista-v1.0.md).

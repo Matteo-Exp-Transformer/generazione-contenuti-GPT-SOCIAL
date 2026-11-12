@@ -21,3 +21,16 @@ Stato corrente: [STATO.md](../../STATO.md). Documenti byte-identici; stati, prop
 
 - [MANDATO-001 originale 2026-11-10](mandato-001-originale-20261110.md): conservato integralmente; storico non operativo, sostituito dal mandato corrente l'11/11 su richiesta dell'utente.
 - [skill-post-director-v0-20261111.md](skill-post-director-v0-20261111.md) — skill post-director pre-v1.0 (main al 2026-11-11), sostituita da regista-v1.0; solo storico, non va seguita.
+
+## Rimossi nel ripristino di scope 2026-11-12
+
+Nuovo scope: Officina modelli Canva → esplorazione con kit campionari → copy_design del modello, foto, testi, commit → decorazioni come livelli separati → ritocco ed export manuale; engine Pillow come ripiego. I percorsi seguenti appartengono a strade o gate superati (benchmark FORMA, creative-console, G-UI, TU-01, discovery MCP iniziale). Il contenuto resta nella storia git al commit `b8dbac3`; i rimandi relativi nelle voci precedenti verso questi percorsi vanno letti nella vista originale.
+
+- `benchmarks/` (FORMA-001) — cancellato. [Vista originale](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/tree/b8dbac3/benchmarks).
+- `forma - content/` (immagini A1/A2/B1 del benchmark FORMA) — cancellato. [Vista originale](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/tree/b8dbac3/forma%20-%20content).
+- `tests/creative-console/` — cancellato. [Vista originale](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/tree/b8dbac3/tests/creative-console).
+- `docs/evidence/` (g-ui-02-20261110) — cancellato. [Vista originale](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/tree/b8dbac3/docs/evidence).
+- `evidence/tu-01-mcp/` — spostato in [../../evidence/archivio/tu-01-mcp/](../../evidence/archivio/tu-01-mcp/). [Vista originale](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/tree/b8dbac3/evidence/tu-01-mcp).
+- `docs/mandato-001-strada-unica.md` — archiviato come [mandato-001-aggiornato-20261111.md](mandato-001-aggiornato-20261111.md). [Vista originale](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/b8dbac3/docs/mandato-001-strada-unica.md).
+- `docs/PRD-v0.1.md` — archiviato come [PRD-v0.1.md](PRD-v0.1.md). [Vista originale](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/b8dbac3/docs/PRD-v0.1.md).
+- `skills/post-director/VALUTAZIONE.md` — archiviato come [VALUTAZIONE-regista-v1.0.md](VALUTAZIONE-regista-v1.0.md). [Vista originale](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/blob/b8dbac3/skills/post-director/VALUTAZIONE.md).
