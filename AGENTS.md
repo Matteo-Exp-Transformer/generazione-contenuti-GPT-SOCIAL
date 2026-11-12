@@ -4,7 +4,8 @@ Leggi: 1) questo file 2) [STATO.md](STATO.md) 3) [ROADMAP](docs/ROADMAP.md). Alt
 
 Ruoli
 - Utente: decide, approva, giudica la qualità, ritocca ed esporta in Canva.
-- Costruttore (Claude Code o Codex sulla repo): repo, kit, skill, registro, commit/PR. Non conduce post.
+- Costruttore / Direttore (Claude Code o Codex sulla repo): dirige la roadmap un passo alla volta, cura repo, kit, skill,
+  registro, commit/PR; scrive i prompt delle chat di prova; dopo ogni passo si consulta con l'utente. Non conduce post.
 - Chat di lavoro ChatGPT (Banco di prova, Officina modelli, Regista): eseguono il compito del loro prompt.
   Non scrivono mai nel repo: l'utente incolla al Costruttore resoconti ed esiti.
 - Revisore indipendente: solo su richiesta esplicita dell'utente.
@@ -30,7 +31,7 @@ Regole di lavoro
 - Ciò che è superato va in docs/archivio/ o si cancella (resta nella storia git), con una riga nell'indice dell'archivio.
 
 Passaggio testimone (fine di ogni lavoro)
-1. Aggiorna in STATO.md il blocco «Ultimo passaggio» (5 righe) e, se serve, il registro ROADMAP §8.
+1. Consultati con l'utente; poi aggiorna «Ultimo passaggio» in STATO.md (5 righe), il registro ROADMAP §8 e la ROADMAP se decisa.
 2. Se c'è una decisione dell'utente, una riga in docs/decisioni.md.
 3. Rispondi con risultato e prove, cosa resta aperto e il prossimo passo (cosa farà chi, cosa aspettarsi).
 4. Chiudi con il prompt puntatore:

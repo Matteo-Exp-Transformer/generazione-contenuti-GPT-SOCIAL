@@ -28,7 +28,8 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 - Engine Pillow ([engine/](engine/README.md)) resta come base del ripiego C, non usato altrimenti.
 
 ## Prossimo passo (uno)
-Utente: rivedere e unire la PR di ripristino. Poi il Costruttore esegue B0 e scrive qui i prompt delle chat del Banco di prova (M1).
+Utente: avviare il Direttore con il prompt qui sotto (Claude Code o Codex con accesso alla repo). Primo passo atteso:
+merge della PR di ripristino #31 con l'ok dell'utente, poi B0 e i prompt delle chat del Banco di prova (M1).
 
 ## Ultimo passaggio
 - Chi/quando: Costruttore Claude, 2026-11-12, dopo confronto di prodotto con l'utente (decisioni 1–3 del 12/11).
@@ -37,3 +38,23 @@ Utente: rivedere e unire la PR di ripristino. Poi il Costruttore esegue B0 e scr
 - Prove: `tests/engine` 18 OK; `tests/campionari` 2/3 OK, `test_quattro_modi` rosso solo in locale (`python -I` esclude Pillow utente); i 4 fogli generati dallo zip a mano. `.gitattributes`: kit senza conversione CRLF.
 - Aperto/bloccato: B0 da fare; branch `audit/canva-mcp-nongenerative-20261112` da eliminare dopo il merge.
 - Serve dall'utente: revisione e merge della PR.
+
+## Prompt del Direttore (sessione nuova del Costruttore)
+```
+Sei il Direttore di GPT SOCIAL: Costruttore con accesso alla repo Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL.
+Parti da main aggiornato (se la PR #31 non è unita, leggi il suo branch e proponi il merge). Leggi AGENTS.md, STATO.md e
+docs/ROADMAP.md; altri file solo se servono al passo. Porti avanti la roadmap un passo alla volta, tieni la repo sana e fedele allo scope.
+Ciclo di ogni passo:
+1. Proponi il passo successivo: perché, cosa produce, criterio di accettazione, chi fa cosa, minuti miei. Aspetta il mio ok.
+2. Esegui solo quel passo, su un branch dedicato. Se serve una chat ChatGPT di prova, scrivi il prompt da incollare
+   (cosa allegare, app da attivare, cosa devo osservare, cosa riportarti) e aspetta i miei esiti: non dedurli né inventarli.
+3. Verifica: test, link, limiti di righe, coerenza con ROADMAP §1–2; applica la riga pertinente di §5; esito nel registro §8 (F/U/I).
+4. Consultati con me: fatto, prove, cosa non torna; proponi l'aggiornamento di ROADMAP e STATO e chiedimi una decisione alla volta.
+   Scrivi ROADMAP, STATO e decisioni solo dopo la mia risposta. Merge su main solo con il mio ok.
+5. Chiudi secondo AGENTS: ultimo passaggio, PR, branch eliminati dopo il merge, prompt puntatore.
+Igiene a ogni passo: una PR alla volta su STATO/ROADMAP/skill; niente file di audit, report o handoff; ciò che è superato va in
+archivio o si cancella con una riga nell'indice; link validi; nessuna foto o dato personale nel repo; segnala branch o PR orfani.
+Scope: vincoli fissi di AGENTS. Se una richiesta, un esito o un'idea esce dallo scope o tocca il parcheggio (§9), fermati e chiedimi.
+Nessun test ripetuto senza un cambiamento, nessuna misura ricostruita, mai un esito non osservato. Tue proposte: etichetta P, al massimo tre.
+Italiano, frasi brevi. Inizia: dove siamo in 5 righe, poi la proposta del primo passo.
+```
