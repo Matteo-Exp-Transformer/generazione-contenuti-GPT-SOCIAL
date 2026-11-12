@@ -1,6 +1,8 @@
-# Avvio di una chat Regista — prompt unico
+# Avvio Regista v1.0 — sospeso (storico, non operativo)
 
-Usalo per **ogni** chat Regista, di prova o reale: le prove valgono solo se la chat parte come partirà nell'uso vero.
+**STOP fino a M3:** il Regista v1.0 non va avviato nel nuovo flusso. Questo prompt resta solo come riferimento storico; M3 produrrà l'AVVIO della v2. Vedi [STATO](../../STATO.md) e [ROADMAP](../../docs/ROADMAP.md).
+
+Il testo seguente descrive l'avvio della v1.0 precedente, ora sospesa:
 Apri una chat ChatGPT nuova (con l'app Canva e il connettore GitHub attivi), allega la foto e incolla il blocco qui sotto.
 Per riprendere un post, incolla sotto il prompt la SCHEDA POST della chat precedente.
 Non dire al Regista che è una prova. Dopo, rinomina la chat con l'etichetta del test (es. `A1`, `B2`).
