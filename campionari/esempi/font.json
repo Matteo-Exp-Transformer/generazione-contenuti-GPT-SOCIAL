@@ -1,0 +1,75 @@
+{
+ "modo": "font",
+ "testi": [
+  "Lezioni di handpan per bambini",
+  "Bologna · con Matteo",
+  "Su prenotazione"
+ ],
+ "palette": [
+  {
+   "codice": "P1",
+   "nome": "Terra e miele",
+   "colori": [
+    "#F3E6CC",
+    "#D5A35C",
+    "#A46C43",
+    "#667052",
+    "#342E29"
+   ]
+  }
+ ],
+ "coppie": [
+  {
+   "codice": "F1",
+   "titolo": "Playfair Display",
+   "peso_titolo": 700,
+   "corpo": "Montserrat",
+   "peso_corpo": 500
+  },
+  {
+   "codice": "F2",
+   "titolo": "DM Serif Display",
+   "corpo": "DM Sans",
+   "peso_corpo": 500
+  },
+  {
+   "codice": "F3",
+   "titolo": "Fraunces",
+   "peso_titolo": 700,
+   "corpo": "Nunito Sans",
+   "peso_corpo": 600
+  },
+  {
+   "codice": "F4",
+   "titolo": "Poppins Bold",
+   "corpo": "Poppins"
+  },
+  {
+   "codice": "F5",
+   "titolo": "Fredoka",
+   "peso_titolo": 600,
+   "corpo": "Quicksand",
+   "peso_corpo": 500
+  },
+  {
+   "codice": "F6",
+   "titolo": "Baloo 2",
+   "peso_titolo": 700,
+   "corpo": "Nunito Sans",
+   "peso_corpo": 500
+  },
+  {
+   "codice": "F7",
+   "titolo": "Cormorant Garamond",
+   "peso_titolo": 700,
+   "corpo": "Lato"
+  },
+  {
+   "codice": "F8",
+   "titolo": "Libre Baskerville",
+   "peso_titolo": 700,
+   "corpo": "DM Sans",
+   "peso_corpo": 400
+  }
+ ]
+}

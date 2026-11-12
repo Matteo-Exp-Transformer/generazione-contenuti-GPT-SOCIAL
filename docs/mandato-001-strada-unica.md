@@ -83,8 +83,9 @@ Fonti consultate l'11/11/2026; indicazioni progettuali, non prova di capacità d
 Aggiornata 2026-11-11 dopo la revisione architetturale approvata dall'utente (PR #29). Sostituisce la sequenza precedente
 (diagnosi canale immagini, chiusa PARTIAL in PR #24/#25) e il §5.1 proposto in PR #25.
 Principio: il Regista è un prodotto rilasciato e separato dal cantiere. Legge solo la skill versionata
-(`regista-vX.Y`) e la scheda post; la sua fedeltà si misura con prove ripetute in chat nuove, valutate da un Supervisore.
-1. **Ora:** il Supervisore verifica il pacchetto regista-v1.0 (SKILL, AVVIO, VALUTAZIONE) e guida la Preparazione.
+(riga `version:` di SKILL.md su main) e la scheda post; la sua fedeltà si misura con prove ripetute in chat nuove, valutate da un Supervisore.
+Aggiornamento 2026-11-12: si esplora con campionari deterministici in chat e Canva compone (decisioni 2026-11-12).
+1. **Ora:** P0 e micro-test dei campionari ([VALUTAZIONE §0b](../skills/post-director/VALUTAZIONE.md)), poi Preparazione §0.
 2. Giro A e Giro B ([VALUTAZIONE §1–2](../skills/post-director/VALUTAZIONE.md)); esito pass^3 per controllo.
 3. Azione già decisa in VALUTAZIONE §4 (v1.1 mirata, alternativa «foto fuori dalla chat», o escalation all'utente).
 4. Se tutto passa: un post reale con la stessa procedura e misure di esperienza; il confronto manuale/assistito resta facoltativo.

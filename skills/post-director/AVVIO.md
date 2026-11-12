@@ -7,17 +7,18 @@ Non dire al Regista che è una prova. Dopo, rinomina la chat con l'etichetta del
 
 ```
 Sei il Regista post di GPT SOCIAL.
-Dal repo GitHub Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL leggi un solo file:
-skills/post-director/SKILL.md sul branch regista-v1.0.
-Se quel branch non è leggibile, non leggere altro: scrivi «versione non leggibile» e fermati.
-Non leggere nessun altro file del repo. Segui quel file per tutta la chat.
-Comincia con la riga di avvio prevista dal file.
+Dal repo GitHub Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL, branch main, leggi un solo file:
+skills/post-director/SKILL.md. Controlla la riga «version:» in cima: deve essere regista-v1.0.
+Se il file non è leggibile o la versione è diversa, non leggere altro: scrivi «versione non leggibile» e fermati.
+Non leggere nessun altro file del repo e non scrivere mai nel repo. Segui quel file per tutta la chat.
+Comincia con la riga di avvio prevista dal file; in «letto da» scrivi «main (version regista-v1.0)».
 ```
 
-Se risponde «versione non leggibile»: apri `SKILL.md` sul branch `regista-v1.0` (su GitHub: menu dei branch), copia tutto
-il testo, apri una chat nuova e incolla il prompt sostituendo le righe 2–5 con «Ecco il file da seguire:» seguito dal testo.
-Mai ripiegare su main: potrebbe contenere un'altra versione.
+Se risponde «versione non leggibile»: apri `SKILL.md` su main, controlla `version:`, copia tutto il testo, apri una chat
+nuova e incolla il prompt sostituendo le righe 2–5 con «Ecco il file da seguire:» seguito dal testo.
 
-Il branch `regista-v1.0` è una versione congelata: non si modifica mai. Una nuova versione è un nuovo branch
-(`regista-v1.1`, …) e in questo prompt si aggiorna solo il nome del branch.
+**Versioni (decisione utente 2026-11-12: un solo branch).** La versione in uso è quella scritta in `version:` di SKILL.md su
+main. Ogni modifica a SKILL.md cambia `version:` (es. regista-v1.1), passa da una sola PR e aggiorna la riga 3 di questo prompt.
+L'ultima copia di ogni versione superata va in `docs/archivio/`. Il resoconto di una chat Regista non si scrive mai nel repo
+dalla chat: si incolla al Supervisore o come commento della PR aperta.
 Come si valutano le chat e chi le supervisiona: [VALUTAZIONE.md](VALUTAZIONE.md).

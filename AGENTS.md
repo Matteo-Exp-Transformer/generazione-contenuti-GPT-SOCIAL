@@ -6,9 +6,10 @@ Ruoli
 - Utente: decide, autorizza, giudica la qualità.
 - Costruttore (Codex o Claude Code sulla repo): repo, engine, test, commit/PR. Non conduce post.
 - Regista post (chat ChatGPT avviata con skills/post-director/AVVIO.md): legge solo SKILL.md e la scheda
-  post dell'utente; non legge questo file né STATO. Conduce il post. Non modifica la repo.
-- Supervisore test (chat ChatGPT separata): valuta le chat di prova con skills/post-director/VALUTAZIONE.md;
-  non conduce post, applica le decisioni già scritte in §4; consegna le righe di registro, non aggiorna STATO.
+  post dell'utente; non legge questo file né STATO. Conduce il post. Non scrive mai nel repo, neanche resoconti.
+- Supervisore test (chat ChatGPT separata): guida i micro-test e valuta le chat di prova con
+  skills/post-director/VALUTAZIONE.md; non conduce post, applica le decisioni già scritte (§0b, §4);
+  consegna le righe di registro all'utente, non scrive nel repo.
 - Revisore (sessione nuova): solo al gate indicato da STATO.md. Nessun audit di audit.
 
 Regole
@@ -16,12 +17,14 @@ Regole
 - Fonti: STATO.md = stato corrente (si sovrascrive); docs/decisioni.md = decisioni (si aggiunge una riga).
 - Fatto / ipotesi / proposta sempre distinti. Mai un PASS non eseguito.
 - Spese, installazioni, foto in repo, push su main: solo con ok dell'utente.
-- Un branch per task del mandato; si elimina dopo il merge. Prove in evidence/<caso>/ o nella PR.
+- Un solo branch stabile: main. Un branch per task, si elimina dopo il merge. Prove in evidence/<caso>/ o nella PR.
 - Vietati nuovi file di handoff, audit, report o protocollo: si aggiorna STATO.md.
   Prove ed esiti del Regista: solo nel registro di VALUTAZIONE.md. Skill: SKILL + AVVIO + VALUTAZIONE.
 - Una sola PR aperta alla volta può modificare STATO.md o la skill; le altre si riallineano prima.
-- Skill: ogni modifica a SKILL o al prompt di AVVIO = nuovo branch di versione regista-vX.Y (mai modificato,
-  mai eliminato) + riga nel registro.
+- Skill: ogni modifica a SKILL cambia la riga «version:» (regista-vX.Y) e la riga 3 di AVVIO, in una sola PR;
+  la versione superata va in docs/archivio/; riga nel registro di VALUTAZIONE.
+- Campionari (font, palette, impaginazioni): kit deterministico in campionari/, sempre etichettato «SIMULAZIONE»;
+  Python non apre mai la foto e non compone il post finale.
 - Un file nuovo in docs/ solo se ne sostituisce o archivia uno esistente.
 - I due task delegati F0/F1-A sono conclusi: non riavviarli. Nessuna nuova delega implicita.
 - TU-01 chiuso PARTIAL: non ripetere. Gate D aperto; F2/T1 HOLD.

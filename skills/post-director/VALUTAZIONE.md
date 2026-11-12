@@ -9,12 +9,55 @@ Poche chat possono smentire la skill, non dimostrarla: nessuna soglia qui è val
 
 ## 0. Preparazione — una volta, prima delle prove (5 minuti ciascuna)
 Ogni esito va nel registro (§8) come riga `ambiente`.
-- [ ] V1 · Avvia una chat con AVVIO.md: legge `SKILL.md` dal branch `regista-v1.0`? La prima riga dice `Regista v1.0 · letto da: branch regista-v1.0`? Se no, usa il testo incollato (AVVIO) e annotalo.
+- [ ] V1 · Avvia una chat con AVVIO.md: legge `SKILL.md` da main con `version: regista-v1.0`? La prima riga dice `Regista v1.0 · letto da: main (version regista-v1.0)`? Se no, usa il testo incollato (AVVIO) e annotalo.
 - [ ] V2 · La prima riga dichiara `create_design` ed `export`: annota cosa c'è (cambia con modello e sessione).
 - [ ] V3 · Prova un modello diverso (es. Instant e Thinking): Canva resta disponibile? (alcuni modelli non usano app).
 - [ ] V4 · Facoltativo: in un Progetto ChatGPT su Android, l'app Canva funziona? Se sì, il Progetto diventa candidato per v1.1.
 - [ ] V5 · Al primo commit Canva, ChatGPT chiede una conferma? Annota sì/no.
 Usa **la stessa foto** in tutte le prove (es. la foto handpan già usata). Non va nel repo.
+
+## 0b. Micro-test dei campionari deterministici — PRIMA dei Giri A/B (decisione utente 2026-11-12)
+Perché: l'11/11 `create_design` ha esaurito la quota IA di Canva Free (R3: `quota_exceeded`) e i campionari generativi
+non certificano il font (R1/R2). Strategia: si esplora con fogli deterministici in chat, Canva serve solo a comporre.
+Diagnosi completa: [commento PR #29 «REVISIONE INDIPENDENTE»](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/29#issuecomment-6807087310).
+Kit: [`campionari/kit-campionari-v1.zip`](../../campionari/kit-campionari-v1.zip) (script, 14 famiglie OFL con licenze, esempi).
+Nessun test usa la foto: i fogli mostrano un riquadro «FOTO». Ogni esito va nel registro §8 con versione `kit-v1`.
+
+- [ ] **P0 · Quota.** In Canva: Impostazioni → Fatturazione → uso IA. Annota uso residuo e data di rinnovo.
+  Finché la quota è a zero: nessun `create_design` e nessun Giro A/B; i micro-test qui sotto si fanno lo stesso.
+- [ ] **T-F1 · Fogli visibili su Android (3 chat nuove).** In ogni chat allega lo zip e incolla il prompt qui sotto.
+  Passa se: in 3 chat su 3 vedi i fogli dentro la chat, entro 2 risposte dall'avvio, con l'etichetta «SIMULAZIONE».
+  ```
+  Prova campionari GPT SOCIAL. Ti allego kit-campionari-v1.zip. Con Python: estrai lo zip in /mnt/data/kit,
+  esegui «python /mnt/data/kit/campionario.py <spec> <png>» con i quattro file in esempi/ (font, palette, layout, combo)
+  e mostrami ogni PNG direttamente in chat. Non modificare lo script, non usare generazione di immagini, non usare Canva.
+  Poi crea una spec «combo» nuova con 6 combinazioni diverse e i testi: «Un mondo di suoni» / «Handpan per bambini» /
+  «Bologna · su prenotazione», e mostrala. Per ogni immagine scrivi «Simulazione, non anteprima Canva».
+  ```
+- [ ] **T-F2 · Lista bianca dei font.** Nell'app Canva, in un design qualsiasi, cerca ognuna delle 14 famiglie di
+  `campionari/fonts.json` nel menu font. Annota per ciascuna: `gratis` · `Pro (corona)` · `assente`.
+  Il Costruttore aggiorna il campo `canva_free` e ricostruisce lo zip. Passa se tutte e 14 sono annotate.
+- [ ] **T-F3 · Il font scelto arriva in Canva?** In una chat con l'app Canva (contatore IA letto prima e dopo):
+  (a) *import HTML*: Python scrive una pagina HTML 1080×1350 con 5 testi, ciascuno con `font-family` di un font `gratis`
+  della lista; il Supervisore chiede di importarla con `import-design-from-url` (file della chat) e annota se il tool lo accetta.
+  (b) *template*: crei tu in Canva un design 1080×1350 con un solo testo in un font `gratis` e dai il link; l'agente fa
+  `copy-design`, cambia il testo e il colore, salva solo dopo il tuo «sì».
+  In entrambi i casi apri il design in Canva, tocca ogni testo e leggi il nome del font. Passa se il nome coincide
+  con quello scelto e il contatore IA non è cambiato.
+
+**Decisioni già prese sugli esiti (si applicano senza chiedere):**
+| Esito | Azione |
+|---|---|
+| T-F1 passa 3/3 | v1.1: si cambia solo §2 «Scelte» della skill: fogli del kit con 5–9 opzioni, «oppure dimmi la tua», combinazioni layout+palette+font; `create_design` facoltativo al massimo una volta per post |
+| T-F1 passa 2/3 | Come sopra, ma con ripiego dichiarato: se il foglio non si vede, schema testuale etichettato |
+| T-F1 passa ≤1/3 | Il kit non entra nella skill; si resta alla v1.0 e si rivaluta con l'utente |
+| T-F3 (a) passa | Composizione v1.1 via import HTML con i font della lista bianca |
+| T-F3 (a) fallisce, (b) passa | Composizione v1.1 da template dell'utente (`copy-design`) |
+| Entrambe falliscono | Font dichiarato manuale prima della scelta («lo cambi tu in Canva»), come già in v1.0 |
+| Contatore IA cambiato da import/copia | Annotarlo: anche quel percorso costa quota; si rivaluta con l'utente |
+Solo dopo questi esiti il Costruttore scrive la v1.1 (una sola sezione) e si passa al Giro A/B.
+Criteri aggiunti per il Giro A/B della v1.1: primo foglio entro 2 turni; ≥5 opzioni per scelta; un input libero
+accolto senza ricadere in A/B; 0 `create_design` per esplorare; famiglia del font letta dall'utente in Canva.
 
 ## 1. Giro A — percorso completo con prove inserite (3 chat: A1, A2, A3)
 Rispondi in modo naturale alle domande del Regista. Nei momenti indicati usa **esattamente** questi messaggi.
@@ -108,6 +151,7 @@ Se falliscono più controlli, si corregge **uno solo**, in quest'ordine: F1 → 
 | Valutazione autoreferenziale: ci si fida dell'autovalutazione o della scheda | Esiti senza citazioni dalla chat | Il Supervisore cita la chat per ogni «no» |
 | Prove truccate senza volerlo: l'utente aiuta il Regista o lo script cambia | U3 = 0 ma uso reale peggiore | Messaggi esatti; fuori script non correggere |
 | La chat diventa burocratica: fedele ma lenta | U1 alto, voto in calo | Riga «esperienza» della tabella §4 |
+| La quota IA di Canva Free si esaurisce (successo l'11/11) | `quota_exceeded` | Esplorazione con il kit (§0b), `create_design` al massimo 1 per post; prove solo con quota letta (P0) |
 | Il widget Canva sparisce su Android | F5 frequente | Link «Edit in Canva» già previsto |
 | Il branch di versione non si legge più e il Regista legge un main diverso | Prima riga senza versione | AVVIO con testo incollato |
 | Stanchezza da test: si smette di misurare | Registro fermo | Solo 6 chat per giro; controlli da 2 chat |
@@ -117,7 +161,8 @@ Se falliscono più controlli, si corregge **uno solo**, in quest'ordine: F1 → 
 Ruolo: controlli il lavoro e valuti le chat di prova. **Non** conduci post, **non** fai il Regista, **non** riscrivi le regole a tuo gusto.
 1. **Prima di tutto, verifica il pacchetto** v1.0: SKILL.md, AVVIO.md e questo file. Cerca contraddizioni, capacità promesse
    e non documentate, controlli non valutabili da una trascrizione. Distingui *bloccante* (va corretto prima delle prove) da *migliorabile*.
-   Proponi le correzioni bloccanti come testo pronto; senza bloccanti, dì all'utente di partire con la Preparazione (§0).
+   Proponi le correzioni bloccanti come testo pronto; senza bloccanti, guida l'utente in quest'ordine:
+   P0 e micro-test §0b (applica la loro tabella), poi Preparazione §0 e Giri A/B sulla versione che ne risulta.
 2. **Per ogni chat di prova**, l'utente ti dà il link condiviso (se riesci ad aprirlo) oppure il testo e gli screenshot.
    Compila F1–F9 citando la frase della chat che giustifica ogni «no» o «non valutabile»; riporta U1–U6 dall'utente.
    Non usare l'autovalutazione finale del Regista come prova: è solo un'opinione da riportare.
@@ -129,3 +174,6 @@ Ruolo: controlli il lavoro e valuti le chat di prova. **Non** conduci post, **no
 ## 8. Registro esiti (si aggiunge una riga, non si riscrive)
 | Data | Versione | Chat | Modello | create_design / export | F1 F2 F3 F4 F5 F6 F7 F8 F9 | U1 U2 U3 U4 U5 | Note | Valutato da |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-11 | v1.0 | R1 (naturalistica) | GPT-6 | sì / no | non valutato: auto-resoconto, fuori script | — | campionario 409 poi ritrovato `DAHan1iHiaM`; nessuna composizione · [evidenza](../../evidence/regista-v1/R1-autoresoconto-2026-11-11.md) | Revisore (non pass^3) |
+| 2026-11-11 | v1.0 | R2 (naturalistica) | n.d. | sì / n.d. | non valutato: solo screenshot | — | post salvato `DAHaoUnqueM`; testi in basso, forma verde, font non certificato (commento PR #29) | Revisore (non pass^3) |
+| 2026-11-11 | v1.0 | R3 (naturalistica) | GPT-6 | sì / no | non valutato: interrotta | — | `create_design` → `quota_exceeded` · [evidenza](../../evidence/regista-v1/R3-autoresoconto-2026-11-11.md) | ambiente |

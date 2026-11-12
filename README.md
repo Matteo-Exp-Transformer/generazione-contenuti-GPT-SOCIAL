@@ -2,13 +2,14 @@
 
 Stato corrente e prossimo passo: [STATO.md](STATO.md), unica fonte operativa.
 Direzione aggiornata: [MANDATO-001](docs/mandato-001-strada-unica.md), regista + layout Canva controllabili, da validare.
-TU-01 chiuso PARTIAL: non ripetere. Gate D aperto, F2/T1 HOLD. Ora: prove del Regista v1.0 ([avvio](skills/post-director/AVVIO.md), [valutazione](skills/post-director/VALUTAZIONE.md)).
+TU-01 chiuso PARTIAL: non ripetere. Gate D aperto, F2/T1 HOLD. Ora: micro-test dei campionari deterministici, poi prove del Regista v1.0 ([avvio](skills/post-director/AVVIO.md), [valutazione](skills/post-director/VALUTAZIONE.md)).
 Evidenze consolidate: [audit Canva](evidence/canva-capabilities/audit-2026-11-11.md); [storico](docs/archivio/README.md).
 
 Scopo: far dirigere all'utente un post social statico sulla propria foto senza perdere le scelte approvate.
 
 - [Istruzioni agenti](AGENTS.md)
 - [Procedura del regista post](skills/post-director/SKILL.md) · [prompt di avvio](skills/post-director/AVVIO.md) · [valutazione](skills/post-director/VALUTAZIONE.md)
+- [Kit campionari](campionari/kit-campionari-v1.zip): font, palette e impaginazioni come SIMULAZIONE in chat ([script](campionari/campionario.py))
 - [PRD](docs/PRD-v0.1.md)
 - [Decisioni dell'utente](docs/decisioni.md)
 
