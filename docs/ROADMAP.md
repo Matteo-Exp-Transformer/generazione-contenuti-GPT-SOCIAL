@@ -106,6 +106,7 @@ Misure: messaggi fino alla prima bozza Canva, minuti totali, interventi manuali,
 ## 8. Registro esiti (una riga per test o post; non si riscrive)
 | Data | Test/post | Ambiente (modello, Canva, quota) | Esito | Note | Fonte |
 |---|---|---|---|---|---|
+| 2026-11-13 | P1 · preparazione M0 | Codex locale: Windows, Python 3.13.7, Pillow 12.1.1; Canva/Android non testati | F · PASS tecnico 21/21 | Engine 18/18, campionari 3/3 dopo correzione test `python -I`; ZIP coerente. M0 approvato al merge, non è un PASS di prodotto. | [PR #31 · verifica Codex](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/31#issuecomment-6833677415) |
 
 ## 9. Parcheggio — non ora
 Variante generativa dell'intero post · server proprio o app fuori da ChatGPT · autofill e Brand Template (Pro) ·
