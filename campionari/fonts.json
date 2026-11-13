@@ -1,16 +1,74 @@
 {
-  "Playfair Display": {"file": "PlayfairDisplay.ttf", "variabile": true, "stile": "serif elegante", "canva_free": "da verificare"},
-  "Libre Baskerville": {"file": "LibreBaskerville.ttf", "variabile": true, "stile": "serif classico", "canva_free": "da verificare"},
-  "Cormorant Garamond": {"file": "CormorantGaramond.ttf", "variabile": true, "stile": "serif raffinato", "canva_free": "da verificare"},
-  "DM Serif Display": {"file": "DMSerifDisplay-Regular.ttf", "variabile": false, "stile": "serif da titolo", "canva_free": "da verificare"},
-  "Fraunces": {"file": "Fraunces.ttf", "variabile": true, "stile": "serif morbido", "canva_free": "da verificare"},
-  "Montserrat": {"file": "Montserrat.ttf", "variabile": true, "stile": "sans geometrico", "canva_free": "da verificare"},
-  "DM Sans": {"file": "DMSans.ttf", "variabile": true, "stile": "sans pulito", "canva_free": "da verificare"},
-  "Nunito Sans": {"file": "NunitoSans.ttf", "variabile": true, "stile": "sans amichevole", "canva_free": "da verificare"},
-  "Lato": {"file": "Lato-Regular.ttf", "variabile": false, "stile": "sans neutro", "canva_free": "da verificare"},
-  "Poppins": {"file": "Poppins-Regular.ttf", "variabile": false, "stile": "sans geometrico", "canva_free": "da verificare"},
-  "Poppins Bold": {"file": "Poppins-Bold.ttf", "variabile": false, "stile": "sans geometrico pieno", "canva_free": "da verificare"},
-  "Quicksand": {"file": "Quicksand.ttf", "variabile": true, "stile": "sans arrotondato", "canva_free": "da verificare"},
-  "Fredoka": {"file": "Fredoka.ttf", "variabile": true, "stile": "arrotondato giocoso", "canva_free": "da verificare"},
-  "Baloo 2": {"file": "Baloo2.ttf", "variabile": true, "stile": "giocoso morbido", "canva_free": "da verificare"}
+  "Playfair Display": {
+    "file": "PlayfairDisplay.ttf",
+    "variabile": true,
+    "stile": "serif elegante",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "Libre Baskerville": {
+    "file": "LibreBaskerville.ttf",
+    "variabile": true,
+    "stile": "serif classico",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "Cormorant Garamond": {
+    "file": "CormorantGaramond.ttf",
+    "variabile": true,
+    "stile": "serif raffinato",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "DM Serif Display": {
+    "file": "DMSerifDisplay-Regular.ttf",
+    "variabile": false,
+    "stile": "serif da titolo",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "Fraunces": {
+    "file": "Fraunces.ttf",
+    "variabile": true,
+    "stile": "serif morbido",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "Montserrat": {
+    "file": "Montserrat.ttf",
+    "variabile": true,
+    "stile": "sans geometrico",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "DM Sans": {
+    "file": "DMSans.ttf",
+    "variabile": true,
+    "stile": "sans pulito",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "Nunito Sans": {
+    "file": "NunitoSans.ttf",
+    "variabile": true,
+    "stile": "sans amichevole",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "Lato": {
+    "file": "Lato-Regular.ttf",
+    "variabile": false,
+    "stile": "sans neutro",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "Poppins": {
+    "file": "Poppins-Regular.ttf",
+    "variabile": false,
+    "stile": "sans geometrico",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "Quicksand": {
+    "file": "Quicksand.ttf",
+    "variabile": true,
+    "stile": "sans arrotondato",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  },
+  "Fredoka": {
+    "file": "Fredoka.ttf",
+    "variabile": true,
+    "stile": "arrotondato giocoso",
+    "canva_free": "gratis (screenshot o verifica utente 2026-11-13)"
+  }
 }
