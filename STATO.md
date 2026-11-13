@@ -28,14 +28,14 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 - Engine Pillow ([engine/](engine/README.md)) resta come base del ripiego C, non usato altrimenti.
 
 ## Prossimo passo (uno)
-**M1 da proporre, non autorizzato:** Banco di prova (ROADMAP §6), partendo dalle prerequisiti T0 e T1. Nessuna chat o prova M1 avviata.
+**M1 autorizzato il 13/11, non ancora eseguito:** Costruttore prepara un test alla volta da ROADMAP §6, iniziando dalle verifiche necessarie; utenti/chat riportano esiti osservati. M2 resta fermo.
 
 ## Ultimo passaggio
-- Chi/quando: Direttore, 2026-11-13; merge PR #32 e aggiornamenti autorizzati dall'utente.
+- Chi/quando: Direttore, 2026-11-13; PR #32 unita e M1 autorizzato dall'utente.
 - Fatto: B0 unito su main (`5caa9f5`); kit fotografico, ZIP e registro aggiornati; nessuna nuova prova di prodotto.
 - Prove: [Codex, verifica indipendente](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/32#issuecomment-6849167347): 5/5 test, ZIP e SHA verificati su `cdd5fd8`.
-- Aperto/bloccato: M1 non autorizzato; contrasto sulla foto non adattivo; branch B0 da eliminare manualmente se presente.
-- Serve dall'utente: decisione sulla proposta M1, test utente nelle chat dedicate solo dopo autorizzazione.
+- Aperto/bloccato: M1 autorizzato ma non eseguito; contrasto sulla foto non adattivo; branch B0 da eliminare manualmente se presente.
+- Serve dall'utente: esiti osservati dei singoli test M1 quando il nuovo Costruttore fornisce i prompt; nessun dato da presumere.
 
 ## Prompt del Direttore (sessione nuova del Costruttore)
 ```
