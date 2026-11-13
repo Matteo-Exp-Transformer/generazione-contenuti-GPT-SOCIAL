@@ -1,44 +1,41 @@
 # GPT SOCIAL — istruzioni agenti
-Scopo: far dirigere all'utente un post social statico sulla sua foto senza perdere le scelte approvate.
-Leggi: 1) questo file 2) [STATO.md](STATO.md) 3) il mandato attivo linkato in STATO.md. Altro solo se serve.
+Scopo: in ChatGPT (Android prioritario) l'utente dirige un post statico sulla propria foto e riceve un PNG pubblicabile.
+Leggi: 1) questo file 2) [STATO.md](STATO.md) 3) [ROADMAP](docs/ROADMAP.md). Altro solo se serve.
 
 Ruoli
-- Utente: decide, autorizza, giudica la qualità.
-- Costruttore (Codex o Claude Code sulla repo): repo, engine, test, commit/PR. Non conduce post.
-- Regista post (chat ChatGPT avviata con skills/post-director/AVVIO.md): legge solo SKILL.md e la scheda
-  post dell'utente; non legge questo file né STATO. Conduce il post. Non scrive mai nel repo, neanche resoconti.
-- Supervisore test (chat ChatGPT separata): guida i micro-test e valuta le chat di prova con
-  skills/post-director/VALUTAZIONE.md; non conduce post, applica le decisioni già scritte (§0b, §4);
-  consegna le righe di registro all'utente, non scrive nel repo.
-- Revisore (sessione nuova): solo al gate indicato da STATO.md. Nessun audit di audit.
+- Utente: decide, approva, giudica la qualità, ritocca ed esporta in Canva.
+- Costruttore / Direttore (Claude Code o Codex sulla repo): dirige la roadmap un passo alla volta, cura repo, kit, skill,
+  registro, commit/PR; scrive i prompt delle chat di prova; dopo ogni passo si consulta con l'utente. Non conduce post.
+- Chat di lavoro ChatGPT (Banco di prova, Officina modelli, Regista): eseguono il compito del loro prompt.
+  Non scrivono mai nel repo: l'utente incolla al Costruttore resoconti ed esiti.
+- Revisore indipendente: solo su richiesta esplicita dell'utente.
 
-Regole
-- Direzione: [MANDATO-001](docs/mandato-001-strada-unica.md) recepisce Claude e le decisioni utente; prevalgono le successive decisioni esplicite.
-- Fonti: STATO.md = stato corrente (si sovrascrive); docs/decisioni.md = decisioni (si aggiunge una riga).
-- Fatto / ipotesi / proposta sempre distinti. Mai un PASS non eseguito.
-- Spese, installazioni, foto in repo, push su main: solo con ok dell'utente.
-- Un solo branch stabile: main. Un branch per task, si elimina dopo il merge. Prove in evidence/<caso>/ o nella PR.
-- Vietati nuovi file di handoff, audit, report o protocollo: si aggiorna STATO.md.
-  Prove ed esiti del Regista: solo nel registro di VALUTAZIONE.md. Skill: SKILL + AVVIO + VALUTAZIONE.
-- Una sola PR aperta alla volta può modificare STATO.md o la skill; le altre si riallineano prima.
-- Skill: ogni modifica a SKILL cambia la riga «version:» (regista-vX.Y) e la riga 3 di AVVIO, in una sola PR;
-  la versione superata va in docs/archivio/; riga nel registro di VALUTAZIONE.
-- Campionari (font, palette, impaginazioni): kit deterministico in campionari/, sempre etichettato «SIMULAZIONE»;
-  Python non apre mai la foto e non compone il post finale.
-- Un file nuovo in docs/ solo se ne sostituisce o archivia uno esistente.
-- I due task delegati F0/F1-A sono conclusi: non riavviarli. Nessuna nuova delega implicita.
-- TU-01 chiuso PARTIAL: non ripetere. Gate D aperto; F2/T1 HOLD.
-- Parti da main aggiornato: evidenze e prompt storici non dettano il prossimo lavoro.
-- Unico passo attivo: STATO.md; capacità, salvataggio/export e visibilità client sono verifiche distinte.
-- Post e prove del Regista: secondo VALUTAZIONE.md; nessun fallback silenzioso.
+Vincoli di prodotto (cambiano solo con decisione esplicita dell'utente)
+- Foto originale mai rigenerata o alterata: solo ritaglio, scala, posizione, elementi sopra/sotto.
+- Canva = livelli ed elementi (modelli, foto, testi, salvataggio, export). Niente `create_design` per esplorare i post.
+- Python = fogli deterministici «SIMULAZIONE», anche con una copia ridotta della foto; mai sull'originale, mai il post finale
+  (salvo ripiego C di ROADMAP §5).
+- Generazione immagini GPT = solo elementi decorativi separati, come livello Canva. Mai sulla foto né sul post intero.
+- Budget incrementale €0. Spese, installazioni, foto in repo, push su main: solo con ok dell'utente.
+
+Regole di lavoro
+- Fatto / riferito / ipotesi / proposta sempre distinti. Mai un esito non osservato.
+- Fonti: STATO.md = stato corrente (si sovrascrive) · ROADMAP = scope, traguardi, esiti decisi, registro (§8, si aggiunge) ·
+  docs/decisioni.md = decisioni dell'utente (si aggiunge una riga).
+- Un test si fa una volta; si ripete solo se cambia qualcosa. Gli esiti seguono la tabella ROADMAP §5.
+- Un solo branch stabile: main. Un branch per task, eliminato dopo il merge. Una sola PR aperta alla volta su STATO/skill.
+- Niente nuovi file di audit, handoff, report o protocollo: si aggiornano STATO, il registro e la PR.
+  Nuovi file solo se servono al prodotto (codice, kit, modelli, skill) o sostituiscono un file esistente.
+- Skill Regista: SKILL.md + AVVIO.md; ogni modifica cambia `version:` e la riga 3 di AVVIO in una sola PR;
+  la versione superata va in docs/archivio/.
+- Ciò che è superato va in docs/archivio/ o si cancella (resta nella storia git), con una riga nell'indice dell'archivio.
 
 Passaggio testimone (fine di ogni lavoro)
-1. Aggiorna in STATO.md il blocco «Ultimo passaggio» (5 righe).
+1. Consultati con l'utente; poi aggiorna «Ultimo passaggio» in STATO.md (5 righe), il registro ROADMAP §8 e la ROADMAP se decisa.
 2. Se c'è una decisione dell'utente, una riga in docs/decisioni.md.
-3. Rispondi con risultato/prove, breve checklist e prossimo passo: spiega cosa farà l'agente e cosa aspettarsi.
+3. Rispondi con risultato e prove, cosa resta aperto e il prossimo passo (cosa farà chi, cosa aspettarsi).
 4. Chiudi con il prompt puntatore:
    «Repo generazione-contenuti-GPT-SOCIAL, branch main. Leggi AGENTS.md e STATO.md
-    ed esegui il prossimo passo. Chiudi secondo AGENTS.md.» (+ al massimo una riga dell'utente)
+    ed esegui il prossimo passo. Chiudi secondo AGENTS.md.»
 
-Limiti di pulizia: AGENTS ≤45 righe, STATO ≤80, SKILL ≤80. Al passaggio di ogni gate,
-ciò che è superato va in docs/archivio/.
+Limiti: AGENTS ≤45 righe, STATO ≤80, SKILL ≤80.
