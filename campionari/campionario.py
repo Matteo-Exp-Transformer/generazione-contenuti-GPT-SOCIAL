@@ -2,14 +2,18 @@
 
 Uso (Python di ChatGPT, dopo aver estratto lo zip del kit):
     python campionario.py spec.json uscita.png
-Non apre mai la foto dell'utente: al suo posto disegna un riquadro «FOTO».
+Opzione spec.json["foto"] (layout/combo): percorso relativo al JSON o assoluto.
+Legge l'originale senza scriverlo, usa una copia in memoria (lato lungo <= 800),
+stampa SHA-256 prima/dopo. Senza foto disegna il riquadro «FOTO».
 Modi in spec.json["modo"]: "font", "palette", "layout", "combo" (vedi esempi/).
 """
-import json, os, sys
-from PIL import Image, ImageDraw, ImageFont
+import hashlib, json, os, sys
+from pathlib import Path
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 KIT = os.path.dirname(os.path.abspath(__file__))
-FONTS = json.load(open(os.path.join(KIT, "fonts.json"), encoding="utf-8"))
+with open(os.path.join(KIT, "fonts.json"), encoding="utf-8") as source:
+    FONTS = json.load(source)
 HEAD = "SIMULAZIONE · non è un'anteprima Canva · kit campionari v1"
 
 
@@ -97,15 +101,20 @@ LAYOUT = {
 }
 
 
-def mini_post(d, x, y, w, h, lay, pal, coppia, testi):
+def mini_post(d, x, y, w, h, lay, pal, coppia, testi, canvas=None, foto=None):
     L = LAYOUT[lay]
     box = lambda r: (x + r[0] * w, y + r[1] * h, x + r[2] * w, y + r[3] * h)
     d.rectangle(box((0, 0, 1, 1)), fill=pal[L.get("fondo", 0) % len(pal)])
     if "cornice" in L:
         d.rectangle(box(L["cornice"]), outline=pal[2 % len(pal)], width=max(2, w // 120))
     fx = box(L["foto"])
-    d.rectangle(fx, fill="#B9B4AC")
-    d.text(((fx[0] + fx[2]) / 2, (fx[1] + fx[3]) / 2), "FOTO", font=font("DM Sans", max(12, w // 14), 700), fill="#6E6A64", anchor="mm")
+    if foto is None:
+        d.rectangle(fx, fill="#B9B4AC")
+        d.text(((fx[0] + fx[2]) / 2, (fx[1] + fx[3]) / 2), "FOTO", font=font("DM Sans", max(12, w // 14), 700), fill="#6E6A64", anchor="mm")
+    else:
+        left, top, right, bottom = map(round, fx)
+        tile = ImageOps.fit(foto, (right - left, bottom - top), method=Image.Resampling.LANCZOS)
+        canvas.paste(tile, (left, top))
     if "fascia" in L:
         d.rectangle(box(L["fascia"]), fill=pal[0])
     if "bollino" in L:
@@ -131,8 +140,7 @@ def coppia(c):
     return (c["titolo"], c.get("peso_titolo"), c["corpo"], c.get("peso_corpo"))
 
 
-def main(spec_path, out):
-    s = json.load(open(spec_path, encoding="utf-8"))
+def genera(s, out, foto=None):
     modo, testi = s["modo"], s.get("testi", ["Titolo del post", "Riga info", "Contatto"])
     pal0 = s.get("palette", [{"nome": "neutra", "colori": ["#F3E6CC", "#D5A35C", "#A46C43", "#342E29"]}])
     if modo == "font":
@@ -169,11 +177,46 @@ def main(spec_path, out):
             p = next((q["colori"] for q in pal0 if q.get("codice") == it.get("palette")), pal0[0]["colori"])
             c = coppia(it["coppia"]) if "coppia" in it else base
             etichetta(d, x, y, it["codice"] + " · " + it["layout"].split(" ")[0])
-            mini_post(d, x, y + 34, 320, 400, it["layout"], p, c, testi)
+            mini_post(d, x, y + 34, 320, 400, it["layout"], p, c, testi, img, foto)
     else:
         raise SystemExit("modo sconosciuto: " + modo)
     img.save(out)
     print(out, img.size)
+
+
+def sha256(path):
+    with open(path, "rb") as source:
+        return hashlib.file_digest(source, "sha256").hexdigest()
+
+
+def carica_foto(path):
+    """Solo la copia in memoria viene orientata, ridotta e convertita."""
+    with Image.open(path) as source:
+        foto = ImageOps.exif_transpose(source)
+        foto.thumbnail((800, 800), Image.Resampling.LANCZOS)
+        return foto.convert("RGB")
+
+
+def main(spec_path, out):
+    with open(spec_path, encoding="utf-8") as source:
+        s = json.load(source)
+    if not s.get("foto"):
+        return genera(s, out)
+    if s["modo"] not in ("layout", "combo"):
+        raise ValueError("foto supportata solo nei modi layout e combo")
+    originale = (Path(spec_path).resolve().parent / s["foto"]).resolve()
+    destinazione = Path(out).resolve()
+    if originale == destinazione or (destinazione.exists() and os.path.samefile(originale, destinazione)):
+        raise ValueError("L'uscita non può sovrascrivere la foto originale")
+    prima = sha256(originale)
+    print("SHA-256 originale prima:", prima)
+    try:
+        genera(s, out, carica_foto(originale))
+    finally:
+        dopo = sha256(originale)
+        print("SHA-256 originale dopo:", dopo)
+        if prima != dopo:
+            raise RuntimeError("SHA-256 originale cambiato durante la simulazione")
 
 
 if __name__ == "__main__":
