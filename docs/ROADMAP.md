@@ -55,7 +55,7 @@ budget incrementale €0 (ChatGPT Plus e Canva Free già esistenti) · nessuna s
 
 **B0 · lavoro del Costruttore prima di M1:** opzione `foto` in `campionari/campionario.py`: legge una copia ridotta
 (lato lungo ≤ 800 px), la mette nei riquadri «FOTO» con ritaglio a riempimento, non scrive mai sull'originale e stampa
-SHA-256 dell'originale prima e dopo; test con fixture sintetica; zip ricostruito. Chiusura tecnica approvata il 13/11 (registro §8); merge in attesa di ok.
+SHA-256 dell'originale prima e dopo; test con fixture sintetica; zip ricostruito. B0 unito su main con PR #32 il 13/11; verifica indipendente nel registro §8.
 
 ## 5. Esiti già decisi (si applicano senza nuova discussione)
 | Esito | Azione |
@@ -108,6 +108,8 @@ Misure: messaggi fino alla prima bozza Canva, minuti totali, interventi manuali,
 |---|---|---|---|---|---|
 | 2026-11-13 | P1 · preparazione M0 | Codex locale: Windows, Python 3.13.7, Pillow 12.1.1; Canva/Android non testati | F · PASS tecnico 21/21 | Engine 18/18, campionari 3/3 dopo correzione test `python -I`; ZIP coerente. M0 approvato al merge, non è un PASS di prodotto. | [PR #31 · verifica Codex](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/31#issuecomment-6833677415) |
 | 2026-11-13 | B0 · foto nei campionari | Codex locale: Windows, Python 3.13.7, Pillow 12.1.1; nessun test ChatGPT/Canva/Android | F · PASS tecnico 5/5; U · chiusura tecnica approvata | ZIP estratto e coerente, 4 modi, foto layout/combo, crop centrato, copia ≤800 px, EXIF, hash invariato, sovrascrittura e hard link bloccati; foglio sintetico verificato visivamente. Contrasto sulla foto non adattivo. Merge separato; M1 non avviato. | [Test](../tests/campionari/test_campionario.py) · [kit](../campionari/kit-campionari-v1.zip) · [decisione B0](decisioni.md) |
+
+| 2026-11-13 | B0 · verifica indipendente e merge | Codex locale: Windows, Python 3.13.7, Pillow 12.1.1; Android/Canva non provati | F · PASS tecnico 5/5; merge autorizzato | ZIP, font, SHA e fixture confrontati sul commit `cdd5fd8`; PR #32 unita (`5caa9f5`). Contrasto non adattivo resta noto; nessuna prova M1. | [Verifica indipendente PR #32](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/32#issuecomment-6849167347) |
 
 ## 9. Parcheggio — non ora
 Variante generativa dell'intero post · server proprio o app fuori da ChatGPT · autofill e Brand Template (Pro) ·
