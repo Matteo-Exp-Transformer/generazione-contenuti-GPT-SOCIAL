@@ -1,0 +1,184 @@
+# Catalogo font Canva — T0 (13 novembre 2026)
+
+Fonte: 25 screenshot forniti dall'utente dall'app Canva Android. Lista deduplicata. «Senza corona» significa nome visibile senza marchio Premium, non prova che sia stato applicato o esportato. «Con corona» significa marcato Premium nell'interfaccia. Alcune grafie decorative richiedono controllo puntuale.
+
+Sono font presenti nelle schermate esaminate, non un censimento completo del catalogo Canva. I 12 font rimasti nel kit sono confermati dall'utente e/o nei suoi screenshot. Nessun file binario Canva fa parte di questo catalogo.
+
+## Senza corona Premium visibile (134)
+
+- 29LT Adir
+- 29LT Arapix
+- 29LT Azer
+- 29LT Baseet
+- 29LT Bukra
+- 29LT Bukra Condensed
+- 29LT Bukra Semi Condensed
+- 29LT Bukra Semi Wide
+- 29LT Bukra Wide
+- 29LT Makina
+- 29LT Okaso
+- 29LT Riwaya
+- 29LT Riwaya Informal
+- 29LT Zarid Display
+- 29LT Zarid Sans
+- 29LT Zarid Serif
+- 29LT Zarid Slab
+- 29LT Zarid Stencil
+- 29LT Zarid Text
+- 29LT Zawi
+- 29LT Zeyn
+- A Day Without Sun
+- A Day Without Sun Text
+- Ablation
+- Above the Beyond Script
+- Abhaya Libre
+- Abibas
+- Abril Fatface
+- AC Real Adult
+- Academy
+- Adam Script
+- Adelina
+- Adigiana Toybox
+- Adirek HC
+- Adirek Sans
+- Adirek Serif
+- Adirek Slab
+- Adlery Blockletter
+- Adlery Pro
+- Adlery Swash
+- Adriana
+- Adumu Regular
+- Alice
+- Allura
+- Anonymous Pro
+- Antic Didone
+- Anton
+- Arapey
+- Arimo
+- Archivo Black
+- Asset
+- Avallon
+- Baloo
+- Barlow
+- Bebas Neue
+- Bebas Neue Cyrillic
+- Belleza
+- Bodoni FLF
+- Breathing
+- Bree Serif
+- Brittany
+- Bryndan Write
+- Bukhari Script
+- Canva Sans
+- Cardo
+- Chau Philomene
+- Cheque
+- Chewy
+- Clear Sans
+- Codec Pro
+- Cocomat Pro
+- Contrail One
+- Cooper Hewitt
+- Cormorant Garamond
+- DM Sans
+- DM Serif Display
+- Diphylleia
+- Fraunces
+- Fredoka
+- Forum
+- Gagalin
+- Garet
+- Glacial Indifference
+- Gliker
+- Great Vibes
+- Hammersmith One
+- HK Grotesk
+- Horizon
+- Horizon Outline
+- Inria Serif
+- Inter
+- Lato
+- League Gothic
+- League Spartan
+- Libre Baskerville
+- Lora
+- Lovelo
+- Lovelo Line
+- Madani Arabic
+- Marykate
+- Medula One
+- Merriweather
+- Montaser Arabic
+- Montserrat
+- More Sugar
+- Nickainley
+- Noto Serif
+- Nunito
+- Nunito Sans
+- Old Standard
+- Open Sans
+- Open Sauce
+- Oswald
+- Pathway Gothic One
+- Playfair Display
+- Pompiere
+- Poppins
+- Proxima Nova
+- Questrial
+- Quicksand
+- Railey
+- Raleway
+- Roboto
+- Sanchez
+- Shrikhand
+- Simonetta
+- Source Serif Pro
+- Sugo Display
+- Tenor Sans
+- The Seasons
+- Times New Roman MT
+- Virtual
+- Yanone Kaffeesatz
+- Yeseva One
+
+## Con corona Premium visibile (30)
+
+- Abang
+- Abia
+- Abiah
+- Abril
+- Abula
+- ADA Hybrid
+- Adel I
+- Adele II
+- Adoretime
+- Avatar
+- Benedict
+- Bright
+- Chloe
+- Decasia
+- Enita
+- Findel
+- Fiona
+- Intro Rust
+- Joliet
+- Kare
+- London
+- Madelyn
+- Oilvare Base
+- Pierson
+- Sailors
+- Sense Brush
+- Stoic
+- Sunborn
+- Versailles
+- Zing Rust Base
+
+## Distinzioni e limiti
+
+- Poppins Bold e Baloo 2: non trovati come voci esatte, rimossi dal catalogo operativo del kit su decisione dell'utente. Poppins e Baloo sono stati osservati, ma non dimostrano che tali varianti siano identiche.
+- Alcuni nomi decorativi dalla grafia sottile vanno ricontrollati prima dell'uso (es. Above the Beyond Script, Adlery, Oilvare Base, Madani Arabic).
+- Baloo è anche riferito nella verifica manuale dall'utente.
+- Questo elenco serve alla selezione dei modelli Canva. I nomi non corrispondono automaticamente a file font disponibili nel kit locale o a licenze redistribuibili.
+
+- Nel kit locale Poppins è solo Regular: gli esempi non richiedono il peso 700. La presenza della famiglia in Canva non verifica i singoli pesi né la corrispondenza del rendering locale.

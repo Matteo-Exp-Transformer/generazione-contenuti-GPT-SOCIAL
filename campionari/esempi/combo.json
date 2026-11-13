@@ -1,143 +1,143 @@
 {
- "modo": "combo",
- "testi": [
-  "Lezioni di handpan per bambini",
-  "Bologna · con Matteo",
-  "Su prenotazione"
- ],
- "palette": [
-  {
-   "codice": "P1",
-   "nome": "Terra e miele",
-   "colori": [
-    "#F3E6CC",
-    "#D5A35C",
-    "#A46C43",
-    "#667052",
-    "#342E29"
-   ]
-  },
-  {
-   "codice": "P2",
-   "nome": "Notte e oro",
-   "colori": [
-    "#F8F4EA",
-    "#D8A34F",
-    "#78928B",
-    "#202A2C"
-   ]
-  },
-  {
-   "codice": "P3",
-   "nome": "Salvia e crema",
-   "colori": [
-    "#F4F1E6",
-    "#B8C4A9",
-    "#6F8B6E",
-    "#2F3B2F"
-   ]
-  },
-  {
-   "codice": "P4",
-   "nome": "Mare caldo",
-   "colori": [
-    "#FFF6EC",
-    "#F2A65A",
-    "#2A9D8F",
-    "#264653"
-   ]
-  },
-  {
-   "codice": "P5",
-   "nome": "Pastello gioco",
-   "colori": [
-    "#FFF8F0",
-    "#FFD6A5",
-    "#BDE0FE",
-    "#A0C4FF",
-    "#3D405B"
-   ]
-  },
-  {
-   "codice": "P6",
-   "nome": "Bosco e rame",
-   "colori": [
-    "#EFE7DA",
-    "#C07A4E",
-    "#5B7553",
-    "#1F2A24"
-   ]
-  }
- ],
- "elementi": [
-  {
-   "codice": "C1",
-   "layout": "L1 Titolo alto, foto centrale, info in basso",
-   "palette": "P1",
-   "coppia": {
-    "codice": "F1",
-    "titolo": "Playfair Display",
-    "peso_titolo": 700,
-    "corpo": "Montserrat",
-    "peso_corpo": 500
-   }
-  },
-  {
-   "codice": "C2",
-   "layout": "L2 Foto piena, fascia testi in basso",
-   "palette": "P2",
-   "coppia": {
-    "codice": "F2",
-    "titolo": "DM Serif Display",
-    "corpo": "DM Sans",
-    "peso_corpo": 500
-   }
-  },
-  {
-   "codice": "C3",
-   "layout": "L3 Foto a sinistra, testi a destra",
-   "palette": "P3",
-   "coppia": {
-    "codice": "F3",
-    "titolo": "Fraunces",
-    "peso_titolo": 700,
-    "corpo": "Nunito Sans",
-    "peso_corpo": 600
-   }
-  },
-  {
-   "codice": "C4",
-   "layout": "L4 Foto in alto, titolo grande sotto",
-   "palette": "P4",
-   "coppia": {
-    "codice": "F4",
-    "titolo": "Poppins Bold",
-    "corpo": "Poppins"
-   }
-  },
-  {
-   "codice": "C5",
-   "layout": "L5 Cornice: foto al centro, testi sopra e sotto",
-   "palette": "P5",
-   "coppia": {
-    "codice": "F5",
-    "titolo": "Fredoka",
-    "peso_titolo": 600,
-    "corpo": "Quicksand",
-    "peso_corpo": 500
-   }
-  },
-  {
-   "codice": "C6",
-   "layout": "L6 Titolo sulla foto in alto, bollino info",
-   "palette": "P6",
-   "coppia": {
-    "codice": "F6",
-    "titolo": "Baloo 2",
-    "peso_titolo": 700,
-    "corpo": "Nunito Sans",
-    "peso_corpo": 500
-   }
-  }
- ]
+  "modo": "combo",
+  "testi": [
+    "Lezioni di handpan per bambini",
+    "Bologna · con Matteo",
+    "Su prenotazione"
+  ],
+  "palette": [
+    {
+      "codice": "P1",
+      "nome": "Terra e miele",
+      "colori": [
+        "#F3E6CC",
+        "#D5A35C",
+        "#A46C43",
+        "#667052",
+        "#342E29"
+      ]
+    },
+    {
+      "codice": "P2",
+      "nome": "Notte e oro",
+      "colori": [
+        "#F8F4EA",
+        "#D8A34F",
+        "#78928B",
+        "#202A2C"
+      ]
+    },
+    {
+      "codice": "P3",
+      "nome": "Salvia e crema",
+      "colori": [
+        "#F4F1E6",
+        "#B8C4A9",
+        "#6F8B6E",
+        "#2F3B2F"
+      ]
+    },
+    {
+      "codice": "P4",
+      "nome": "Mare caldo",
+      "colori": [
+        "#FFF6EC",
+        "#F2A65A",
+        "#2A9D8F",
+        "#264653"
+      ]
+    },
+    {
+      "codice": "P5",
+      "nome": "Pastello gioco",
+      "colori": [
+        "#FFF8F0",
+        "#FFD6A5",
+        "#BDE0FE",
+        "#A0C4FF",
+        "#3D405B"
+      ]
+    },
+    {
+      "codice": "P6",
+      "nome": "Bosco e rame",
+      "colori": [
+        "#EFE7DA",
+        "#C07A4E",
+        "#5B7553",
+        "#1F2A24"
+      ]
+    }
+  ],
+  "elementi": [
+    {
+      "codice": "C1",
+      "layout": "L1 Titolo alto, foto centrale, info in basso",
+      "palette": "P1",
+      "coppia": {
+        "codice": "F1",
+        "titolo": "Playfair Display",
+        "peso_titolo": 700,
+        "corpo": "Montserrat",
+        "peso_corpo": 500
+      }
+    },
+    {
+      "codice": "C2",
+      "layout": "L2 Foto piena, fascia testi in basso",
+      "palette": "P2",
+      "coppia": {
+        "codice": "F2",
+        "titolo": "DM Serif Display",
+        "corpo": "DM Sans",
+        "peso_corpo": 500
+      }
+    },
+    {
+      "codice": "C3",
+      "layout": "L3 Foto a sinistra, testi a destra",
+      "palette": "P3",
+      "coppia": {
+        "codice": "F3",
+        "titolo": "Fraunces",
+        "peso_titolo": 700,
+        "corpo": "Nunito Sans",
+        "peso_corpo": 600
+      }
+    },
+    {
+      "codice": "C4",
+      "layout": "L4 Foto in alto, titolo grande sotto",
+      "palette": "P4",
+      "coppia": {
+        "codice": "F4",
+        "titolo": "Poppins",
+        "corpo": "Poppins"
+      }
+    },
+    {
+      "codice": "C5",
+      "layout": "L5 Cornice: foto al centro, testi sopra e sotto",
+      "palette": "P5",
+      "coppia": {
+        "codice": "F5",
+        "titolo": "Fredoka",
+        "peso_titolo": 600,
+        "corpo": "Quicksand",
+        "peso_corpo": 500
+      }
+    },
+    {
+      "codice": "C6",
+      "layout": "L6 Titolo sulla foto in alto, bollino info",
+      "palette": "P6",
+      "coppia": {
+        "codice": "F6",
+        "titolo": "Fredoka",
+        "peso_titolo": 700,
+        "corpo": "Nunito Sans",
+        "peso_corpo": 500
+      }
+    }
+  ]
 }
