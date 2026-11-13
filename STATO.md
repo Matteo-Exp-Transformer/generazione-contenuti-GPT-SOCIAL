@@ -6,14 +6,14 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 ## Dove siamo
 - **M0 Ripristino:** completato: PR #31 unita su `main` il 2026-11-13; restano due branch da eliminare manualmente ([indice](docs/archivio/README.md)).
 - **Regista v1.0** ([SKILL](skills/post-director/SKILL.md)): **sospeso**, non avviare chat Regista. Si riscrive in M3 sul nuovo flusso.
-- Kit campionari v1 ([campionari/](campionari/)): fogli deterministici verificati in locale; in ChatGPT non ancora provato.
+- Kit campionari v1 ([campionari/](campionari/)): B0 chiuso tecnicamente e approvato; foto nei fogli layout/combo, ZIP aggiornato; in ChatGPT non ancora provato.
 - Canva: `copy_design` → modifica testi → commit → rilettura osservato il 12/11 anche con quota IA esaurita
   ([evidenza](evidence/canva-template/2026-11-12-copy-edit-commit.md)). Foto nel modello, livelli decorativi ed export: non provati.
 - Mai dimostrato finora: un post consegnato end-to-end.
 
 ## Sequenza
 - [x] **M0** · 21/21 test tecnici superati da Codex; PR #31 unita su main il 13/11. Pulizia dei due branch superati affidata all'utente.
-- [ ] **B0** · Costruttore: opzione `foto` nel kit (copia ridotta, hash dell'originale prima/dopo), test, zip ricostruito.
+- [x] **B0** · chiusura tecnica approvata il 13/11: foto ridotta ≤800 px, SHA-256 prima/dopo, fixture sintetica, 5/5 test e ZIP coerente; merge ancora da approvare.
 - [ ] **M1** · Banco di prova T0, T1–T4, T6 (+T5 facoltativo), [ROADMAP §6](docs/ROADMAP.md); esiti nel registro §8.
 - [ ] **M2** · Officina: 3–5 modelli in [modelli/CATALOGO.md](modelli/CATALOGO.md), via import HTML se T6 passa, altrimenti chat GPT che replicano la struttura via connettore Canva.
 - [ ] **M3** · Regista v2: SKILL + AVVIO riscritti; checklist §7.
@@ -28,19 +28,19 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 - Engine Pillow ([engine/](engine/README.md)) resta come base del ripiego C, non usato altrimenti.
 
 ## Prossimo passo (uno)
-**B0 da proporre, non ancora autorizzato:** opzione foto nel kit campionari; fixture sintetica, hash, ZIP e test. Non avviare chat M1 prima della chiusura B0.
+**Revisione e merge B0:** attendere ok al merge della PR su `feat/campionari-foto-b0`. Dopo il merge, proporre M1 (Banco di prova, ROADMAP §6) e attendere autorizzazione prima di preparare i prompt o avviare prove.
 
 ## Ultimo passaggio
-- Chi/quando: Direttore, 2026-11-13, con autorizzazione utente a completare M0 e fare merge PR #31.
-- Fatto: revisione scope, stop Regista v1.0, privacy del ripiego C, correzione test, registro P1; PR #31 unita su main (`e23c235`).
-- Prove: [Codex PR #31](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/31#issuecomment-6833677415): engine 18/18, campionari 3/3, ZIP coerente; nessuna prova prodotto.
-- Aperto/bloccato: B0 non iniziato; eliminare dopo merge i branch `reset/ripristino-scope-20261112` e `audit/canva-mcp-nongenerative-20261112` se ancora presenti.
-- Serve dall'utente: autorizzazione separata del prossimo passo B0.
+- Chi/quando: Costruttore Codex, 2026-11-13; B0 autorizzato, chiusura tecnica e aggiornamenti approvati dall'utente.
+- Fatto: foto nei campionari layout/combo su copia ridotta; hash prima/dopo e protezione sovrascrittura; ZIP e README aggiornati, branch `feat/campionari-foto-b0`.
+- Prove: 5/5 test campionari superati; kit estratto, quattro modi, crop, EXIF, integrità e alias hard link; foglio sintetico verificato; nessuna prova Android/Canva.
+- Aperto/bloccato: merge B0; contrasto dei testi sulla foto non adattivo; M1 non autorizzato; due vecchi branch restano affidati all'utente come in M0.
+- Serve dall'utente: revisione della PR B0 e ok separato al merge; poi proposta M1 del Costruttore (prove svolte dall'utente nelle chat dedicate).
 
 ## Prompt del Direttore (sessione nuova del Costruttore)
 ```
 Sei il Direttore di GPT SOCIAL: Costruttore con accesso alla repo Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL.
-Parti da main aggiornato (se la PR #31 non è unita, leggi il suo branch e proponi il merge). Leggi AGENTS.md, STATO.md e
+Parti da main aggiornato; se B0 attende il merge, leggi anche la sua PR. Leggi AGENTS.md, STATO.md e
 docs/ROADMAP.md; altri file solo se servono al passo. Porti avanti la roadmap un passo alla volta, tieni la repo sana e fedele allo scope.
 Ciclo di ogni passo:
 1. Proponi il passo successivo: perché, cosa produce, criterio di accettazione, chi fa cosa, minuti miei. Aspetta il mio ok.
