@@ -61,3 +61,4 @@ Decisioni ancora aperte: griglia definitiva, font/licenze, strumenti effettivi, 
 - 2026-11-13: l'utente autorizza esplicitamente la chiusura di M0, l'aggiornamento STATO/ROADMAP/decisioni, il merge della PR #31 su `main` e la pulizia dei branch superati; se la cancellazione non è possibile, la farà manualmente. B0 non è autorizzato in questa decisione.
 
 - 2026-11-13: l'utente autorizza B0 (foto nei campionari, fixture sintetica, hash, test e ZIP) e ne approva la chiusura tecnica e l'aggiornamento di STATO/registro/decisioni; M1 è il prossimo passo da proporre. Preparazione di commit e PR B0; merge soggetto a revisione e ok separato. Nessuna autorizzazione ad avviare M1.
+- 2026-11-13: l'utente autorizza il merge della PR #32 e l'allineamento STATO/ROADMAP con pulizia del branch B0. Subito dopo autorizza il prossimo Costruttore a eseguire M1 secondo ROADMAP §6, un test alla volta e senza anticipare M2; gli esiti reali delle chat restano da acquisire.
