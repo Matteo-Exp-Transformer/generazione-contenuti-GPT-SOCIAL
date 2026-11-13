@@ -1,10 +1,10 @@
-# STATO — aggiornato 2026-11-12 dal Costruttore (Claude)
+# STATO — aggiornato 2026-11-13 dal Direttore
 Obiettivo: dirigere un post sulla propria foto e ricevere un PNG pubblicabile. Scope e traguardi: [ROADMAP](docs/ROADMAP.md).
 **Ripristino di progetto del 2026-11-12** (decisione utente): nuovo flusso Officina modelli → chat del post →
 bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDATO-001, PRD v0.1 e VALUTAZIONE v1.0 archiviati.
 
 ## Dove siamo
-- **M0 Ripristino:** in corso (questa PR). Repo ripulita: strade e gate superati cancellati o archiviati ([indice](docs/archivio/README.md)).
+- **M0 Ripristino:** verificato, merge PR #31 autorizzato dall'utente; chiusura effettiva subordinata al merge GitHub. Repo ripulita ([indice](docs/archivio/README.md)).
 - **Regista v1.0** ([SKILL](skills/post-director/SKILL.md)): **sospeso**, non avviare chat Regista. Si riscrive in M3 sul nuovo flusso.
 - Kit campionari v1 ([campionari/](campionari/)): fogli deterministici verificati in locale; in ChatGPT non ancora provato.
 - Canva: `copy_design` → modifica testi → commit → rilettura osservato il 12/11 anche con quota IA esaurita
@@ -12,7 +12,7 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 - Mai dimostrato finora: un post consegnato end-to-end.
 
 ## Sequenza
-- [ ] **M0** · unire questa PR (ok dell'utente); PR #30 chiusa senza merge; branch remoti superati eliminati.
+- [x] **M0 verifica** · 21/21 test tecnici superati da Codex; merge PR #31 autorizzato il 13/11. Pulizia branch dopo merge (se non automatizzabile: utente).
 - [ ] **B0** · Costruttore: opzione `foto` nel kit (copia ridotta, hash dell'originale prima/dopo), test, zip ricostruito.
 - [ ] **M1** · Banco di prova T0, T1–T4, T6 (+T5 facoltativo), [ROADMAP §6](docs/ROADMAP.md); esiti nel registro §8.
 - [ ] **M2** · Officina: 3–5 modelli in [modelli/CATALOGO.md](modelli/CATALOGO.md), via import HTML se T6 passa, altrimenti chat GPT che replicano la struttura via connettore Canva.
@@ -28,16 +28,14 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 - Engine Pillow ([engine/](engine/README.md)) resta come base del ripiego C, non usato altrimenti.
 
 ## Prossimo passo (uno)
-Utente: avviare il Direttore con il prompt qui sotto (Claude Code o Codex con accesso alla repo). Primo passo atteso:
-merge della PR di ripristino #31 con l'ok dell'utente, poi B0 e i prompt delle chat del Banco di prova (M1).
+**B0 da proporre, non ancora autorizzato:** opzione foto nel kit campionari; fixture sintetica, hash, ZIP e test. Non avviare chat M1 prima della chiusura B0.
 
 ## Ultimo passaggio
-- Chi/quando: Costruttore Claude, 2026-11-12, dopo confronto di prodotto con l'utente (decisioni 1–3 del 12/11).
-- Fatto: ROADMAP (scope, traguardi M0–M5, esiti decisi, piano M1, checklist, registro); AGENTS e STATO riscritti;
-  MANDATO-001, PRD, VALUTAZIONE archiviati; pulizia repo con sub-agente; catalogo modelli vuoto; audit 12/11 importato.
-- Prove: `tests/engine` 18 OK; `tests/campionari` 2/3 OK, `test_quattro_modi` rosso solo in locale (`python -I` esclude Pillow utente); i 4 fogli generati dallo zip a mano. `.gitattributes`: kit senza conversione CRLF.
-- Aperto/bloccato: B0 da fare; branch `audit/canva-mcp-nongenerative-20261112` da eliminare dopo il merge.
-- Serve dall'utente: revisione e merge della PR.
+- Chi/quando: Direttore, 2026-11-13, con autorizzazione utente a completare M0 e fare merge PR #31.
+- Fatto: revisione scope, avviso stop Regista v1.0, chiarimento privacy del ripiego C, correzione test Codex e registro P1; merge autorizzato.
+- Prove: [Codex PR #31](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/31#issuecomment-6833677415): engine 18/18, campionari 3/3, ZIP coerente; nessuna prova prodotto.
+- Aperto/bloccato: B0 non iniziato; eliminare dopo merge i branch `reset/ripristino-scope-20261112` e `audit/canva-mcp-nongenerative-20261112` se ancora presenti.
+- Serve dall'utente: autorizzazione separata del prossimo passo B0.
 
 ## Prompt del Direttore (sessione nuova del Costruttore)
 ```
