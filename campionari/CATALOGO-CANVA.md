@@ -180,3 +180,5 @@ Sono font presenti nelle schermate esaminate, non un censimento completo del cat
 - Alcuni nomi decorativi dalla grafia sottile vanno ricontrollati prima dell'uso (es. Above the Beyond Script, Adlery, Oilvare Base, Madani Arabic).
 - Baloo è anche riferito nella verifica manuale dall'utente.
 - Questo elenco serve alla selezione dei modelli Canva. I nomi non corrispondono automaticamente a file font disponibili nel kit locale o a licenze redistribuibili.
+
+- Nel kit locale Poppins è solo Regular: gli esempi non richiedono il peso 700. La presenza della famiglia in Canva non verifica i singoli pesi né la corrispondenza del rendering locale.
