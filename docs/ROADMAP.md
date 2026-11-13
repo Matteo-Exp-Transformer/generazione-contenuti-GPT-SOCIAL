@@ -36,7 +36,7 @@ budget incrementale €0 (ChatGPT Plus e Canva Free già esistenti) · nessuna s
 | F | `copy_design` → `replace_text`/`format_text` → commit → rilettura funziona anche con quota IA esaurita | [12/11](../evidence/canva-template/2026-11-12-copy-edit-commit.md) |
 | F | Editing Canva: niente famiglia font, forme nuove, nuove caselle, ordine livelli; export assente dal catalogo | [audit Canva §3](../evidence/canva-capabilities/audit-2026-11-11.md) |
 | F | `create_design` ha esaurito la quota IA Free l'11/11 | [R3](../evidence/regista-v1/R3-autoresoconto-2026-11-11.md) |
-| F | Kit campionari: fogli deterministici con 14 famiglie OFL, generati in locale | [campionari/](../campionari/) · [fogli](../evidence/campionari/) |
+| F/U | Kit: 12 famiglie OFL nel branch T0; catalogo Canva da screenshot/verifiche utente (134 senza corona visibile, 30 Premium); applicazione/export non provati | [catalogo T0](../campionari/CATALOGO-CANVA.md) · [PR #33](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/33) |
 | U | Widget Canva su Android «eccezionale»; scelte A/B troppo strette, servono 5–9 opzioni e input libero | audit Canva PR #27; confronto 12/11 |
 | U | Strada A (render Pillow) rifiutata per la resa creativa | [decisioni 11/11](decisioni.md) |
 | I | Upload foto in Canva + `update_fill` su una copia di modello: non ancora provato sul flusso a modelli | — |
@@ -83,8 +83,8 @@ Prima di iniziare: leggi il contatore IA di Canva (Impostazioni → Fatturazione
   senza ricevere la foto; lo carichi (o lo carica il tool, se può) e lo metti sopra la foto. Criterio: livello separato,
   spostabile ed eliminabile; sfondo trasparente; foto non toccata.
 - **T4 · Export** (app Canva Android). Esporti PNG. Criterio: 1080×1350, testi leggibili sul telefono, decorazione presente.
-- **T0 · Lista bianca font** (app Canva, 15 minuti). Cerca le 14 famiglie di `campionari/fonts.json`: `gratis` · `Pro` · `assente`.
-  Il Costruttore aggiorna `canva_free` e lo zip. Serve a T1, T6 e a tutti i modelli.
+- **T0 · Lista bianca font** (verifica utente del 13/11, elaborazione in PR #33): 12 famiglie operative in `campionari/fonts.json`, con `canva_free` e ZIP aggiornati sul branch; catalogo esteso in `campionari/CATALOGO-CANVA.md`.
+  Disponibilità dichiarata da screenshot/verifica utente; singoli pesi, applicazione ed export non verificati. T0 non è ancora su `main`. Serve a T1, T6 e ai modelli.
 - **T6 · Modello via import HTML** (chat nuova con app Canva; contatore IA letto prima e dopo). Python scrive una pagina HTML
   1080×1350 con riquadro foto vuoto, 3 testi in font `gratis` diversi e una forma; si chiede `import-design-from-url` sul file della chat.
   Criterio: il tool accetta il file; nel design tocchi ogni testo e il font coincide; forma e riquadro presenti; contatore invariato.
@@ -110,6 +110,8 @@ Misure: messaggi fino alla prima bozza Canva, minuti totali, interventi manuali,
 | 2026-11-13 | B0 · foto nei campionari | Codex locale: Windows, Python 3.13.7, Pillow 12.1.1; nessun test ChatGPT/Canva/Android | F · PASS tecnico 5/5; U · chiusura tecnica approvata | ZIP estratto e coerente, 4 modi, foto layout/combo, crop centrato, copia ≤800 px, EXIF, hash invariato, sovrascrittura e hard link bloccati; foglio sintetico verificato visivamente. Contrasto sulla foto non adattivo. Merge separato; M1 non avviato. | [Test](../tests/campionari/test_campionario.py) · [kit](../campionari/kit-campionari-v1.zip) · [decisione B0](decisioni.md) |
 
 | 2026-11-13 | B0 · verifica indipendente e merge | Codex locale: Windows, Python 3.13.7, Pillow 12.1.1; Android/Canva non provati | F · PASS tecnico 5/5; merge autorizzato | ZIP, font, SHA e fixture confrontati sul commit `cdd5fd8`; PR #32 unita (`5caa9f5`). Contrasto non adattivo resta noto; nessuna prova M1. | [Verifica indipendente PR #32](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/32#issuecomment-6849167347) |
+
+| 2026-11-13 | T0 · catalogo font, verifica PR #33 | Canva Android: 25 screenshot/verifiche manuali riferiti; GitHub: diff letto, 5 commit avanti e 0 indietro da main; nessuna esecuzione locale o workflow CI al commit verificata | U · 12 font confermati; F · PR aperta e file consultati; I · applicazione/export Canva | 134 nomi senza corona visibile e 30 Premium nel catalogo, non equivalgono a 164 font esportabili gratis. Poppins Bold e Baloo 2 esclusi; 5/5 test riportati dalla PR, non rieseguiti dal Direttore. T0 attende merge; T1 non avviato. | [PR #33](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/33) · [catalogo](../campionari/CATALOGO-CANVA.md) |
 
 ## 9. Parcheggio — non ora
 Variante generativa dell'intero post · server proprio o app fuori da ChatGPT · autofill e Brand Template (Pro) ·
