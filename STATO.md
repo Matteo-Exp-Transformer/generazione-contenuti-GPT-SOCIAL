@@ -14,7 +14,7 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 ## Sequenza
 - [x] **M0** · 21/21 test tecnici superati da Codex; PR #31 unita su main il 13/11.
 - [x] **B0** · foto ridotta ≤800 px, SHA-256, fixture sintetica; test indipendenti 5/5, ZIP coerente; PR #32 unita su main il 13/11.
-- [ ] **M1** · Banco di prova T0, T1–T4, T6 (+T5 facoltativo), [ROADMAP §6](docs/ROADMAP.md); esiti nel registro §8.
+- [ ] **M1** · T0 catalogato nella PR #33 (non su main); T1–T4 e T6 non eseguiti (+T5 facoltativo). [ROADMAP §6](docs/ROADMAP.md).
 - [ ] **M2** · Officina: 3–5 modelli in [modelli/CATALOGO.md](modelli/CATALOGO.md), via import HTML se T6 passa, altrimenti chat GPT che replicano la struttura via connettore Canva.
 - [ ] **M3** · Regista v2: SKILL + AVVIO riscritti; checklist §7.
 - [ ] **M4** · Primo post reale consegnato. **M5** · tre post reali, poi decisioni sul parcheggio.
@@ -28,14 +28,14 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 - Engine Pillow ([engine/](engine/README.md)) resta come base del ripiego C, non usato altrimenti.
 
 ## Prossimo passo (uno)
-**M1 autorizzato il 13/11, non ancora eseguito:** Costruttore prepara un test alla volta da ROADMAP §6, iniziando dalle verifiche necessarie; utenti/chat riportano esiti osservati. M2 resta fermo.
+**M1 · T0 in PR #33, senza merge:** dopo la decisione sulla PR, proporre T1 (fogli con foto in chat Android) con prompt e raccolta esiti. M2 fermo.
 
 ## Ultimo passaggio
-- Chi/quando: Direttore, 2026-11-13; PR #32 unita e M1 autorizzato dall'utente.
-- Fatto: B0 unito su main (`5caa9f5`); kit fotografico, ZIP e registro aggiornati; nessuna nuova prova di prodotto.
-- Prove: [Codex, verifica indipendente](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/32#issuecomment-6849167347): 5/5 test, ZIP e SHA verificati su `cdd5fd8`.
-- Aperto/bloccato: M1 autorizzato ma non eseguito; contrasto sulla foto non adattivo; branch B0 da eliminare manualmente se presente.
-- Serve dall'utente: esiti osservati dei singoli test M1 quando il nuovo Costruttore fornisce i prompt; nessun dato da presumere.
+- Chi/quando: Direttore, 2026-11-13; P1 T0 autorizzato, consolidamento sul branch PR #33, merge non autorizzato.
+- Fatto: catalogo di 12 font operativi e 134 senza corona/30 Premium dal materiale utente; documenti T0 allineati alla PR.
+- Prove: [PR #33](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/33), diff 5 commit avanti/0 indietro; 5/5 test dichiarati, non rieseguiti dal Direttore.
+- Aperto/bloccato: conferma merge #33; disponibilità/esportazione font Canva non testata; contrasto foto non adattivo; branch B0 residuo.
+- Serve dall'utente: decisione sul merge #33; successivamente T1 Android con foto handpan e ZIP aggiornato.
 
 ## Prompt del Direttore (sessione nuova del Costruttore)
 ```
