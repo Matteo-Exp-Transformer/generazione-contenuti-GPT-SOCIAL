@@ -14,7 +14,7 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 ## Sequenza
 - [x] **M0** · 21/21 test tecnici superati da Codex; PR #31 unita su main il 13/11.
 - [x] **B0** · foto ridotta ≤800 px, SHA-256, fixture sintetica; test indipendenti 5/5, ZIP coerente; PR #32 unita su main il 13/11.
-- [ ] **M1** · T0 catalogato nella PR #33 (non su main); T1–T4 e T6 non eseguiti (+T5 facoltativo). [ROADMAP §6](docs/ROADMAP.md).
+- [ ] **M1** · T0 unito con PR #33; T1 riferito dall'utente con imperfezioni, verifica tecnica originale da consolidare; T2–T4 e T6 non eseguiti (+T5 facoltativo). [ROADMAP §6](docs/ROADMAP.md).
 - [ ] **M2** · Officina: 3–5 modelli in [modelli/CATALOGO.md](modelli/CATALOGO.md), via import HTML se T6 passa, altrimenti chat GPT che replicano la struttura via connettore Canva.
 - [ ] **M3** · Regista v2: SKILL + AVVIO riscritti; checklist §7.
 - [ ] **M4** · Primo post reale consegnato. **M5** · tre post reali, poi decisioni sul parcheggio.
@@ -28,14 +28,14 @@ bozza Canva da modello → decorazioni come livelli → ritocco ed export. MANDA
 - Engine Pillow ([engine/](engine/README.md)) resta come base del ripiego C, non usato altrimenti.
 
 ## Prossimo passo (uno)
-**M1 · T0 in PR #33, senza merge:** dopo la decisione sulla PR, proporre T1 (fogli con foto in chat Android) con prompt e raccolta esiti. M2 fermo.
+**M1:** consolidare feedback T1 già ricevuto senza ripetere il test; poi proporre T2 (modello → bozza Canva) secondo ROADMAP §6. La sonda Canva read-only non sostituisce T2. M2 fermo.
 
 ## Ultimo passaggio
-- Chi/quando: Direttore, 2026-11-13; P1 T0 autorizzato, consolidamento sul branch PR #33, merge non autorizzato.
-- Fatto: catalogo di 12 font operativi e 134 senza corona/30 Premium dal materiale utente; documenti T0 allineati alla PR.
-- Prove: [PR #33](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/33), diff 5 commit avanti/0 indietro; 5/5 test dichiarati, non rieseguiti dal Direttore.
-- Aperto/bloccato: conferma merge #33; disponibilità/esportazione font Canva non testata; contrasto foto non adattivo; branch B0 residuo.
-- Serve dall'utente: decisione sul merge #33; successivamente T1 Android con foto handpan e ZIP aggiornato.
+- Chi/quando: Direttore, 2026-11-13; PR #33 unita su main (`b5bce9c`); sonda Canva read-only autorizzata.
+- Fatto: 1 chiamata `search_designs`, 12 design propri visibili (incluse bozze handpan/E-F-G); T1: utente riferisce impaginazioni viste, alcune imperfezioni.
+- Prove: [PR #33](https://github.com/Matteo-Exp-Transformer/generazione-contenuti-GPT-SOCIAL/pull/33); risposta Canva MCP in chat; registro ROADMAP §8. Nessuna modifica Canva.
+- Aperto/bloccato: T1 tecnico da verificare dal resoconto originale; T2 non testato; branch B0 e T0 residui; proposta modalità «bozza/modello esistente» non approvata.
+- Serve dall'utente: approvare eventuale merge di questa PR documentale; poi autorizzare T2, un passo alla volta.
 
 ## Prompt del Direttore (sessione nuova del Costruttore)
 ```
